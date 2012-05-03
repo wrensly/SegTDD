@@ -12,7 +12,7 @@ class UserIdentity extends CUserIdentity
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
-	 * are both 'demo'.
+	 * are both 'demo'. This is a comment.
 	 * In practical applications, this should be changed to authenticate
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
