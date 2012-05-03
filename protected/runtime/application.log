@@ -19,3 +19,55 @@ Stack trace:
 REQUEST_URI=/SegTDD/site/login.htm
 HTTP_REFERER=http://localhost/SegTDD/site/login.htm
 ---
+2012/05/03 09:23:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sie".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('sie')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/sie
+---
+2012/05/03 09:23:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/03 09:23:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/03 09:25:57 [error] [php] imagettfbbox() [<a href='function.imagettfbbox'>function.imagettfbbox</a>]: Problem loading glyph (C:\wamp\www\SegTDD\framework\web\widgets\captcha\CCaptchaAction.php:246)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\actions\CAction.php(75): CCaptchaAction->run()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(309): CCaptchaAction->runWithParams()
+#2 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#5 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/captcha.htm?v=4fa24f25512a0
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/03 09:29:29 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "isGuest".' in C:\wamp\www\SegTDD\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(32): CComponent->__call('isGuest', Array)
+#1 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(32): CWebUser->isGuest()
+#2 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('index')
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#8 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/SegTDD/site/index.htm
+HTTP_REFERER=http://localhost/SegTDD/site/contact.htm
+---
