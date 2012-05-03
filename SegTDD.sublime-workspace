@@ -1,0 +1,449 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"JSON",
+				"json_encode"
+			],
+			[
+				"controller",
+				"controller	Yii Create controller class"
+			],
+			[
+				"array",
+				"array	$… = array (…)"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"rea",
+				"ready	document ready - jQuery"
+			],
+			[
+				"re",
+				"ready	document ready (safe)"
+			],
+			[
+				"arr",
+				"array	$… = array (…)"
+			],
+			[
+				"par",
+				"icon-play-circle"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"border",
+				"border	border-bottom-style: style"
+			],
+			[
+				"a",
+				"act	Yii Create controller action method"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"al",
+				"text-align"
+			],
+			[
+				"load",
+				"this->load->get_var	\\$this->load->get_var"
+			],
+			[
+				"form_va",
+				"this->form_validation->run	\\$this->form_validation->run"
+			],
+			[
+				"vie",
+				"this->load->view	\\$this->load->view"
+			],
+			[
+				"load-",
+				"this->load->view	\\$this->load->view"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Snippet: Yii",
+				"Snippet: Yii CHtml::ajax"
+			],
+			[
+				"Pac",
+				"Package Control: Install Package"
+			],
+			[
+				"primat",
+				"Snippet: Bootstrap primary button"
+			],
+			[
+				"boots form",
+				"Snippet: Bootstrap horizontal form"
+			],
+			[
+				"",
+				"Bookmarks: Select Previous"
+			],
+			[
+				"bootstrap",
+				"Snippet: Bootstrap fluid layout"
+			],
+			[
+				"Snippet",
+				"Snippet: Bootstrap info link button"
+			],
+			[
+				"Snippet: ",
+				"Snippet: crud"
+			],
+			[
+				"yii",
+				"Snippet: Yii CHtml::fileField"
+			],
+			[
+				"boo",
+				"Snippet: Bootstrap modal"
+			],
+			[
+				"Boot",
+				"Snippet: Bootstrap basic two column grid"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Bo",
+				"Snippet: Bootstrap tabbable navigation tabs on the bottom"
+			],
+			[
+				"border",
+				"Snippet: border-color: color"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"jquery",
+				"Set Syntax: jQuery (JavaScript)"
+			],
+			[
+				"p",
+				"Package Control: List Packages"
+			],
+			[
+				"boots",
+				"Snippet: Bootstrap starter"
+			],
+			[
+				"theme",
+				"Snippet: Bootstrap hero example"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Yii",
+				"Snippet: Yii CHtml::checkBox"
+			],
+			[
+				"Bootsrt",
+				"Snippet: Bootstrap tabbable navigation tabs"
+			],
+			[
+				"Boots",
+				"Snippet: Bootstrap accordion"
+			],
+			[
+				"Boot	",
+				"Snippet: Bootstrap breadcrumb"
+			],
+			[
+				"Pasc",
+				"Package Control: Install Package"
+			],
+			[
+				"lint",
+				"Preferences: SublimeLint – User"
+			],
+			[
+				"t",
+				"Tidy PHP"
+			],
+			[
+				"Php",
+				"Tidy PHP"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: form",
+				"Snippet: form_upload"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 123.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/.htaccess",
+		"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/index.php",
+		"/C/Users/Seth Busque/TRACERdemo.phpfogapp.com/.htaccess",
+		"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/site/protected/config/main.php",
+		"/C/Users/Seth Busque/TRACERdemo.phpfogapp.com/.gitignore",
+		"/C/Users/Seth Busque/TRACERdemo.phpfogapp.com/CHANGELOG",
+		"/C/Users/Seth Busque/.gitconfig",
+		"/C/xampp/htdocs/yii/site/protected/views/site/pages/about.php",
+		"/C/xampp/htdocs/yii/site/protected/controllers/ScholarController.php",
+		"/C/xampp/htdocs/yii/site/protected/views/scholar/admin.php",
+		"/C/Users/Seth Busque/TRACERdemo.phpfogapp.com/site/protected/config/main.php",
+		"/C/xampp/htdocs/yii/site/protected/views/scholar/_search.php",
+		"/C/xampp/htdocs/yii/site/protected/views/layouts/column1_mod.php",
+		"/C/xampp/htdocs/yii/site/protected/config/main.php",
+		"/C/xampp/htdocs/yii/site/.htaccess",
+		"/C/xampp/htdocs/yii/site/protected/models/Scholar.php",
+		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootActiveForm.php",
+		"/C/xampp/htdocs/yii/site/protected/views/layouts/main.php",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/xampp/htdocs/yii/site/protected/behaviors/EJsonBehavior.php",
+		"/C/xampp/htdocs/yii/site/protected/views/scholar/view.php",
+		"/C/xampp/htdocs/yii/site/protected/components/Controller.php",
+		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootButtonColumn.php",
+		"/C/xampp/htdocs/yii/site/protected/models/Admin.php",
+		"/C/xampp/htdocs/yii/site/protected/components/UserIdentity.php",
+		"/C/xampp/htdocs/yii/site/protected/controllers/SiteController.php",
+		"/C/xampp/htdocs/yii/site/protected/views/site/login.php",
+		"/C/xampp/php/php.ini",
+		"/C/xampp/htdocs/yii/site/protected/components/build/api/structure.xml",
+		"/C/xampp/htdocs/yii/site/protected/views/site/index.php",
+		"/C/xampp/htdocs/yii/site/protected/models/User.php",
+		"/C/xampp/htdocs/yii/site/protected/views/site/contact.php",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Bootstrap Snippets/yii-bootstrap-ActiveForm.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/PhpDoc/Default.sublime-keymap",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/PhpDoc/CodeDoc.py",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/phpDocumentor/phpdocumentor.py",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/phpDocumentor/Main.sublime-menu",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/phpDocumentor/Side Bar.sublime-menu",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/phpDocumentor/phpdocumentor.sublime-settings",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/PhpDoc/README",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/PhpDoc/PhpDoc.sublime-completions",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Framework Snippets/yii-button.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Framework Snippets/yii-ajax.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Framework Snippets/yii-activeDataProvider.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Framework Snippets/yii-params.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Framework Snippets/yii-controller-class.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Bootstrap Snippets/README.md",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Bootstrap Snippets/package-metadata.json",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/div-col.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/grid-one.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/div-row.sublime-snippet",
+		"//ADMIN-PC/Dropsite/asad",
+		"/C/xampp/htdocs/yii/site/protected/views/scholar/index.php",
+		"/C/xampp/htdocs/yii/framework/web/CClientScript.php",
+		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/input/BootInput.php",
+		"/C/xampp/htdocs/yii/framework/web/CHttpSession.php",
+		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootBadge.php",
+		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootGridView.php",
+		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootCarousel.php",
+		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootBreadcrumbs.php",
+		"/C/xampp/htdocs/yii/site/protected/views/scholar/_view.php",
+		"/C/xampp/htdocs/yii/framework/web/CController.php",
+		"/C/xampp/htdocs/yii/site/protected/views/layouts/column1.php",
+		"/C/xampp/htdocs/yii/site/protected/views/scholar/create.php",
+		"/C/xampp/htdocs/yii/site/protected/views/scholar/_form.php",
+		"/C/xampp/htdocs/yii/site/protected/views/layouts/column2.php",
+		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootListView.php",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/grid-three.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/grid-two.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/package-metadata.json",
+		"/C/xampp/htdocs/yii/site/protected/views/site/bootstrap2.php",
+		"/C/xampp/htdocs/yii/site/protected/views/site/bootstrap.php",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Color Scheme - Default/Obsidian.tmTheme",
+		"/C/Program Files/Notepad++/themes/Obsidian.xml",
+		"/C/Program Files/Notepad++/themes/Monokai.xml",
+		"/C/xampp/htdocs/yii/site/protected/controllers/file.css",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Examples/starter.sublime-snippet",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/PHP/PHP-codeigniter.sublime-completions",
+		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/assets/css/bootstrap.min.css",
+		"/C/xampp/htdocs/yii/site/protected/views/scholar/update.php",
+		"/C/xampp/htdocs/TRACER/css/login.css",
+		"/C/xampp/htdocs/TRACER/css/main.css",
+		"/C/xampp/htdocs/TRACER/css/bootstrap-responsive.min.css",
+		"/C/xampp/htdocs/TRACER/css/bootstrap.min.css",
+		"/C/xampp/htdocs/TRACER/.htaccess",
+		"/D/Seth Busque/Desktop/test.php",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/User/SublimeLint.sublime-settings",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/sublimelint/SublimeLint.sublime-settings",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/sublimelint/Default.sublime-commands",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/PHP/PHP.sublime-completions",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			";extension=php_xsl.dll",
+			"f",
+			"=",
+			"id",
+			"breadcrumbs",
+			"menu",
+			"3E3D32",
+			"Current",
+			"3B3A32",
+			"#272822",
+			"#F8F8F2",
+			"#272822",
+			"icon-barcode",
+			"\"\"",
+			">\"",
+			"\"<",
+			";}",
+			"{back",
+			".icon",
+			"$secondary",
+			"#99cc99",
+			"<?php echo $heading; ?>",
+			"$heading",
+			"<?php echo $heading; ?>",
+			"$heading"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/TRACERdemo.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 236.0,
+	"status_bar_visible": true
+}

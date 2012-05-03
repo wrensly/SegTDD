@@ -1,0 +1,19 @@
+body {
+ 	padding-top: 60px;
+}
+
+@media (max-width: 979px)
+body {
+	padding-top: 0;
+}
+
+.footer{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 1px solid #C9E0ED;
+	font-size: 85%;
+}
+
+.right{
+	text-align: right;
+}

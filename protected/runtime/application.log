@@ -1,0 +1,21 @@
+2012/05/03 09:33:47 [error] [exception.CException] exception 'CException' with message 'Property "User.userID" is not defined.' in C:\xampp\htdocs\SegTDD\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\db\ar\CActiveRecord.php(144): CComponent->__get('userID')
+#1 C:\xampp\htdocs\SegTDD\protected\components\UserIdentity.php(28): CActiveRecord->__get('userID')
+#2 C:\xampp\htdocs\SegTDD\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#3 C:\xampp\htdocs\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#4 C:\xampp\htdocs\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\xampp\htdocs\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\xampp\htdocs\SegTDD\protected\controllers\SiteController.php(88): CModel->validate()
+#7 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#12 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#13 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SegTDD\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/SegTDD/site/login.htm
+HTTP_REFERER=http://localhost/SegTDD/site/login.htm
+---

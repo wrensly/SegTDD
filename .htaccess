@@ -1,0 +1,9 @@
+# This htaccess file is for configuring the Web server 
+# so that a URL without the entry script can still
+# be handled by the entry script.
+RewriteEngine on
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward it to index.php
+RewriteRule . index.php
