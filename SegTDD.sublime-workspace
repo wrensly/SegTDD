@@ -83,6 +83,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "protected/components/UserIdentity.php",
+			"settings":
+			{
+				"buffer_size": 1119,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/views/site/index.php",
+			"settings":
+			{
+				"buffer_size": 680,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/models/User.php",
+			"settings":
+			{
+				"buffer_size": 2359,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/views/site/login.php",
+			"settings":
+			{
+				"buffer_size": 1246,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -228,6 +260,19 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/SegTDD/README",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/login.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/User.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main.php",
+		"/C/xampp/htdocs/SegTDD/css/doc.css",
+		"/C/xampp/htdocs/SegTDD/protected/.htaccess",
+		"/C/xampp/htdocs/SegTDD/.htaccess",
+		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column2.php",
+		"/C/xampp/htdocs/SegTDD/protected/controllers/SiteController.php",
 		"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/.htaccess",
 		"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/index.php",
 		"/C/Users/Seth Busque/TRACERdemo.phpfogapp.com/.htaccess",
@@ -379,8 +424,116 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "protected/components/UserIdentity.php",
+					"settings":
+					{
+						"buffer_size": 1119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								834,
+								834
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "protected/views/site/index.php",
+					"settings":
+					{
+						"buffer_size": 680,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								680,
+								680
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "protected/models/User.php",
+					"settings":
+					{
+						"buffer_size": 2359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2286,
+								2286
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "protected/views/site/login.php",
+					"settings":
+					{
+						"buffer_size": 1246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								918,
+								918
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -415,6 +568,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.phpdocumentor":
+	{
+		"height": 118.0
+	},
 	"replace":
 	{
 		"height": 0.0
