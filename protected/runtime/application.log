@@ -71,3 +71,37 @@ Stack trace:
 REQUEST_URI=/SegTDD/site/index.htm
 HTTP_REFERER=http://localhost/SegTDD/site/contact.htm
 ---
+2012/05/04 08:42:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "gii".' in C:\xampp\htdocs\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(271): CController->missingAction('gii')
+#1 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('gii')
+#2 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/gii')
+#3 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/gii
+---
+2012/05/04 08:50:25 [error] [exception.CException] exception 'CException' with message 'Property "FieldController.content_title" is not defined.' in C:\xampp\htdocs\SegTDD\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\protected\views\layouts\column1_mod.php(7): CComponent->__get('content_title')
+#1 C:\xampp\htdocs\SegTDD\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(133): CController->render('index', Array)
+#5 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionIndex()
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('index')
+#15 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/index')
+#16 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\SegTDD\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/SegTDD/field/index.htm
+HTTP_REFERER=http://localhost/SegTDD/field/create.htm
+---

@@ -24,27 +24,46 @@
 	<?php $this->widget('bootstrap.widgets.BootNavbar', array(
 		'fixed' => 'top',
 		'brand' => CHtml::encode(Yii::app()->name),
-		'brandUrl' => '#',
+		'brandUrl' => Yii::app()->request->baseUrl,
 		'collapse' => true,
 		'items' => array(
 			array(
 				'class' => 'bootstrap.widgets.BootMenu',
 				'items' => array(
-					array('label'=>'Home', 'url'=>array('/site/index'), 'icon' => 'home white'),
-					array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about'), 'icon' => 'book white'),
-					array('label'=>'Contact', 'url'=>array('/site/contact'), 'icon' => 'envelope white'),
+					array(
+						'label'=>'Home',
+						'url'=>array('/site/index'),
+						'icon' => 'home white'
+					),
+					array(
+						'label'=>'Fields',
+						'url'=>array('/fields'),
+						'icon' => 'white'
+					),
 				),
 			),
 			array(
 				'class' => 'bootstrap.widgets.BootMenu',
 				'htmlOptions' => array('class' => 'pull-right'),
 				'items' => array(
-					array('label' => 'Users', 'url' => '#', 'visible'=>Yii::app()->user->isGuest, 'items' => array(
-						array('label'=>'Login', 'url'=>array('/site/login'), 'icon' => 'user'),
-					)),
-					array('label' => 'Welcome, '.Yii::app()->user->name.'!', 'url' => '#', 'visible'=>!Yii::app()->user->isGuest, 'items' => array(
-						array('label'=>'Logout', 'url'=>array('/site/logout'), 'icon' => 'user'),
-					)),
+					array(
+						'label'=>'Login',
+						'url'=>array('/site/login'),
+						'icon' => 'user white',
+						'visible'=>Yii::app()->user->isGuest,
+					),
+					array(
+						'label' => 'Welcome,'.Yii::app()->user->name.'!',
+						'url' => '#',
+						'visible'=>!Yii::app()->user->isGuest,
+						'items' => array(
+							array(
+								'label'=>'Logout',
+								'url'=>array('/site/logout'),
+								'icon' => 'user'
+							),
+						),
+					),
 				),
 			),
 		),
@@ -52,28 +71,34 @@
 	?>
 <div class="container">
 
-	<?php if(isset($this->breadcrumbs)):?>
+	<?php if( count($this->breadcrumbs) !== 0 ): ?>
 		<?php $this->widget('bootstrap.widgets.BootBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+		)); ?>
+	<?php endif ?><!-- breadcrumbs -->
 	
 	<?php echo $content; ?>
 	
 	<div class="clear"></div>
 
 	<div class="row">
-		<div class="span12">
-			<div class="footer">
-				<div class="row">
-					<div class="span6">
-						Copyright &copy; <?php echo date('Y'); ?> by Segworks Technologies Corporation.
-						All Rights Reserved.
-					</div>
-					<div class="span6 right"><?php echo Yii::powered(); ?></div>
-				</div>	
-			</div><!-- footer -->
-		</div>
+		<div class="footer">
+			<div class="span6">
+				Copyright &copy; <?php echo date('Y'); ?> by Segworks Technologies Corporation.
+				All Rights Reserved.<br/>
+				<?php echo Yii::powered(); ?>
+			</div>
+			<div class="span6 right">
+				<?php $this->widget('bootstrap.widgets.BootMenu', array(
+				    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
+				    'items'=>array(
+				        array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+						array('label'=>'Contact Us', 'url'=>array('/site/contact')),
+				    ),
+				    'htmlOptions' => array('class' => 'pull-right')
+				)); ?>
+			</div>
+		</div><!-- footer -->
 	</div>
 
 </div><!-- page -->
