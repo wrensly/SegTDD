@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "Entity".
+ * This is the model class for table "entity".
  *
- * The followings are the available columns in table 'Entity':
+ * The followings are the available columns in table 'entity':
  * @property integer $id
  * @property string $entityname
  * @property string $description
@@ -39,7 +39,9 @@ class Entity extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'Entity';
+
+		return 'entity';
+
 	}
 
 	/**
@@ -50,6 +52,9 @@ class Entity extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+
+			array('id', 'required'),
+			array('id', 'numerical', 'integerOnly'=>true),
 			array('entityname, description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -111,4 +116,27 @@ class Entity extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+
+	private static $_items=array();
+		
+	public static function items($type){
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return self::$_items[$type];
+	}
+	
+	public static function item($type,$code){
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
+	}
+	
+	private static function loadItems($type){
+		self::$_items[$type]=array();
+		$models=self::model()->findAll();
+		foreach($models as $model)
+			self::$_items[$type][$model->id]=$model->$type;
+	}
+
 }
