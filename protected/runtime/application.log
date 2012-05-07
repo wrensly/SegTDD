@@ -2058,3 +2058,14 @@ Stack trace:
 REQUEST_URI=/SegTDD/site/login
 HTTP_REFERER=http://localhost/SegTDD/site/login
 ---
+2012/05/07 10:14:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "none".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('none')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('none')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/none')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/none.htm
+HTTP_REFERER=http://localhost/SegTDD/site/contact.htm
+---
