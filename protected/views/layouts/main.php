@@ -145,20 +145,25 @@
 	<div class="clear"></div>
 
 	<?php if(!Yii::app()->user->isGuest): ?>
-		<div class="row">
-			<div class="span12">
-				<div class="footer">
-					<div class="row">
-						<div class="span6">
-							Copyright &copy; <?php echo date('Y'); ?> by Segworks Technologies Corporation.
-							All Rights Reserved.<br/>
-							<?php echo Yii::powered(); ?>
-						</div>
-						<div class="span6 right"></div>
-					</div>	
-				</div><!-- footer -->
+	<div class="row">
+		<div class="footer">
+			<div class="span6">
+				Copyright &copy; <?php echo date('Y'); ?> by Segworks Technologies Corporation.
+				All Rights Reserved.<br/>
+				<?php echo Yii::powered(); ?>
 			</div>
-		</div>
+			<div class="span6 right">
+				<?php $this->widget('bootstrap.widgets.BootMenu', array(
+				    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
+				    'items'=>array(
+				        array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+						array('label'=>'Contact Us', 'url'=>array('/site/contact')),
+				    ),
+				    'htmlOptions' => array('class' => 'pull-right')
+				)); ?>
+			</div>
+		</div><!-- footer -->
+	</div>
 	<?php endif ?>
 
 </div><!-- page -->
