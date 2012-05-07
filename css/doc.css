@@ -40,6 +40,12 @@ margin-top: 18px;
 }
 
 .myBodybg {
+	background-image: -ms-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
+	background-image: -moz-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
+	background-image: -o-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
+	background-image: -webkit-gradient(radial, center center, 0, center center, 510, color-stop(0, #FFFFFF), color-stop(1, #00A3A3));
+	background-image: -webkit-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
+	background-image: radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
 	background-color: white;
 	background-position: top left;
     background-attachment: fixed;
