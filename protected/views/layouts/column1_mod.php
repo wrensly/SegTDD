@@ -16,6 +16,7 @@
 							'htmlOptions' => array('class'=>'pull-right'),
 						)); ?>
 					<?php endif ?><!-- breadcrumbs -->
+
 				</div>
 			</div>
 		</div>	

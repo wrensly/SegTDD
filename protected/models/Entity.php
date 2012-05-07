@@ -39,7 +39,9 @@ class Entity extends CActiveRecord
 	 */
 	public function tableName()
 	{
+
 		return 'entity';
+
 	}
 
 	/**
@@ -50,6 +52,7 @@ class Entity extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+
 			array('id', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
 			array('entityname, description', 'safe'),
@@ -114,6 +117,7 @@ class Entity extends CActiveRecord
 		));
 	}
 
+
 	private static $_items=array();
 		
 	public static function items($type){
@@ -134,4 +138,5 @@ class Entity extends CActiveRecord
 		foreach($models as $model)
 			self::$_items[$type][$model->id]=$model->$type;
 	}
+
 }

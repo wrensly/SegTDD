@@ -20,6 +20,7 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
+
 <?php
 	if(!Yii::app()->user->isGuest)
 		echo "<body>";
@@ -63,16 +64,16 @@
 						),
 						array(
 							'label'=>'Form',
-							'url'=>array('/site/contact'), 
+							'url'=>array('/form/index'), 
 							'items'=>array(
 								array(
 									'label'=>'manage form',
-									'url'=>array('/site/contact'), 
+									'url'=>array('/form/admin'), 
 									'icon' => 'file white',
 								),
 								array(
 									'label'=>'create form',
-									'url'=>'#',
+									'url'=>array('/form/create'),
 									'icon'=>'plus white',
 								), 
 							),
@@ -124,11 +125,13 @@
 							),
 						),
 					),
+
 				),
 			),
 		));
 	}
 	?>
+
 <div class="container">
 	<?php
 	if(!Yii::app()->user->isGuest) {
