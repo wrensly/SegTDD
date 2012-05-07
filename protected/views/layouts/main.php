@@ -32,8 +32,10 @@
 					array('label'=>'Home', 'url'=>array('/site/index'), 'icon' => 'home white'),
 					array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about'), 'icon' => 'book white'),
 					array('label'=>'Contact', 'url'=>array('/site/contact'), 'icon' => 'envelope white'),
+
 				),
 			),
+			"<form class = 'navbar-search'><input type = 'text' class='search-query span2' placeholder='Search'></form>",
 			array(
 				'class' => 'bootstrap.widgets.BootMenu',
 				'htmlOptions' => array('class' => 'pull-right'),
@@ -49,7 +51,7 @@
 		),
 	));
 	?>
-<div class="container">
+	<div class="container">
 
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('bootstrap.widgets.BootBreadcrumbs', array(

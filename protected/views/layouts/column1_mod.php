@@ -10,7 +10,7 @@
 					<?php $this->widget('bootstrap.widgets.BootButtonGroup', array(
 						'type' => 'success',
 						'buttons' => array(
-							array( 'label' => 'Options', 'items' => $this->menu, ),
+							array( 'label' => 'Options', 'items' => $this->menu),
 						),
 						'htmlOptions' => array('class'=>'pull-right'),
 					)); ?>
