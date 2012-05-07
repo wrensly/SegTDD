@@ -99,3 +99,75 @@ Stack trace:
 REQUEST_URI=/SegTDD/site/login
 HTTP_REFERER=http://localhost/SegTDD/site/login
 ---
+2012/05/03 09:58:33 [error] [php] imagettfbbox() [<a href='function.imagettfbbox'>function.imagettfbbox</a>]: Problem loading glyph (C:\wamp\www\SegTDD\framework\web\widgets\captcha\CCaptchaAction.php:246)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\actions\CAction.php(75): CCaptchaAction->run()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(309): CCaptchaAction->runWithParams()
+#2 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#5 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/captcha.htm?v=4fa256c9b8c57
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/03 10:03:13 [error] [php] imagettfbbox() [<a href='function.imagettfbbox'>function.imagettfbbox</a>]: Problem loading glyph (C:\wamp\www\SegTDD\framework\web\widgets\captcha\CCaptchaAction.php:246)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\actions\CAction.php(75): CCaptchaAction->run()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(309): CCaptchaAction->runWithParams()
+#2 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#5 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/captcha.htm?v=4fa257e14dbf7
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/03 10:03:17 [error] [php] imagettfbbox() [<a href='function.imagettfbbox'>function.imagettfbbox</a>]: Problem loading glyph (C:\wamp\www\SegTDD\framework\web\widgets\captcha\CCaptchaAction.php:246)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\actions\CAction.php(75): CCaptchaAction->run()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(309): CCaptchaAction->runWithParams()
+#2 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#5 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/captcha.htm?v=4fa257e50ea84
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/03 11:20:11 [error] [php] imagettfbbox() [<a href='function.imagettfbbox'>function.imagettfbbox</a>]: Problem loading glyph (C:\wamp\www\SegTDD\framework\web\widgets\captcha\CCaptchaAction.php:246)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\actions\CAction.php(75): CCaptchaAction->run()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(309): CCaptchaAction->runWithParams()
+#2 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#5 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/captcha.htm?v=4fa269eb7c23c
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/03 12:19:04 [error] [php] imagettfbbox() [<a href='function.imagettfbbox'>function.imagettfbbox</a>]: Problem loading glyph (C:\wamp\www\SegTDD\framework\web\widgets\captcha\CCaptchaAction.php:246)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\actions\CAction.php(75): CCaptchaAction->run()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(309): CCaptchaAction->runWithParams()
+#2 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#5 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/captcha.htm?v=4fa277b7eab68
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/03 12:19:08 [error] [php] imagettfbbox() [<a href='function.imagettfbbox'>function.imagettfbbox</a>]: Problem loading glyph (C:\wamp\www\SegTDD\framework\web\widgets\captcha\CCaptchaAction.php:246)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\actions\CAction.php(75): CCaptchaAction->run()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(309): CCaptchaAction->runWithParams()
+#2 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#5 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/captcha.htm?v=4fa277bc92bf6
+in C:\wamp\www\SegTDD\index.php (13)
