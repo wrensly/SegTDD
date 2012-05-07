@@ -1,79 +1,64 @@
-<div class="wide form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
+	'htmlOptions' => array(
+		'class' => 'search-form',
+		'style' => 'display:none',
+	),
+	'type' => 'vertical',
 )); ?>
-
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+	
+<div class="row">
+	<div class="span6">
+		<fieldset>
+ 			<legend>Properties</legend>
+ 			<div class="row">
+ 				<div class="span3">
+ 					<?php echo $form->textFieldRow($model,'fieldname',array('size'=>60,'maxlength'=>100)); ?>
+					<?php echo $form->textFieldRow($model,'label',array('size'=>45,'maxlength'=>45)); ?>
+					<?php echo $form->textFieldRow($model,'alias',array('size'=>45,'maxlength'=>45)); ?>
+					<?php echo $form->dropDownListRow($model,'datatype',
+						array(
+							'T' => 'Text',
+							'N' => 'Numeric',
+							'D' => 'Date',
+							't' => 'Time',
+							'd' => 'Datetime',
+							'O' => 'Option',
+							'F' => 'File',
+							'C' => 'Compound',
+						),
+						array(
+							'size'=>1,
+							'maxlength'=>1
+						) ); ?>
+ 				</div>
+ 				<div class="span3">
+ 					<?php echo $form->textAreaRow($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+					<?php echo $form->checkBoxRow($model,'multiple'); ?>
+					<?php echo $form->checkBoxRow($model,'required'); ?>
+					<?php echo $form->checkBoxRow($model,'derived'); ?>
+					<?php echo $form->checkBoxRow($model,'attribute'); ?>
+ 				</div>
+ 			</div>
+		</fieldset>
 	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'fieldname'); ?>
-		<?php echo $form->textField($model,'fieldname',array('size'=>60,'maxlength'=>100)); ?>
+	<div class="span6">
+		<fieldset>
+			<legend>Constraints</legend>
+			<?php echo $form->textFieldRow($model,'default',array('size'=>45,'maxlength'=>45)); ?>
+		</fieldset>
+		<fieldset>
+			<legend>Others</legend>
+			<?php echo $form->textFieldRow($model,'entity_id'); ?>
+			<?php echo $form->textFieldRow($model,'parent_id'); ?>
+		</fieldset>
 	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'datatype'); ?>
-		<?php echo $form->textField($model,'datatype',array('size'=>1,'maxlength'=>1)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'multiple'); ?>
-		<?php echo $form->textField($model,'multiple'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'alias'); ?>
-		<?php echo $form->textField($model,'alias',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'default'); ?>
-		<?php echo $form->textField($model,'default',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'entity_id'); ?>
-		<?php echo $form->textField($model,'entity_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'label'); ?>
-		<?php echo $form->textField($model,'label',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'required'); ?>
-		<?php echo $form->textField($model,'required'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'parent_id'); ?>
-		<?php echo $form->textField($model,'parent_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'derived'); ?>
-		<?php echo $form->textField($model,'derived'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'attribute'); ?>
-		<?php echo $form->textField($model,'attribute'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+</div>
+<div class="form-actions">
+	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'type'=>'primary', 'icon'=>'ok white', 'label'=>'Submit')); ?>
+	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Reset')); ?>
+</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- search-form -->
+<!-- search-form -->

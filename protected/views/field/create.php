@@ -5,11 +5,18 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Field', 'url'=>array('index')),
-	array('label'=>'Manage Field', 'url'=>array('admin')),
+	array('label'=>'Manage Field', 'url'=>array('index')),
 );
+
+$this->content_title = 'Ceate Field';
 ?>
 
-<h1>Create Field</h1>
-
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array(
+	'fieldModel'              =>$fieldModel,
+	'constraintTextModel'     =>$constraintTextModel,
+	'constraintNumericModel'  =>$constraintNumericModel,
+	'constraintDatetimeModel' =>$constraintDatetimeModel,
+	'constraintEnumModel'     =>$constraintEnumModel,
+	'constraintFileModel'     =>$constraintFileModel,
+	'constraintDerivedModel'  =>$constraintDerivedModel,
+)); ?>

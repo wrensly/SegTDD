@@ -61,20 +61,69 @@ class FieldController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Field;
+		$fieldModel              = new Field;
+		$constraintTextModel     = new ConstraintText;
+		$constraintNumericModel  = new ConstraintNumeric;
+		$constraintDatetimeModel = new ConstraintDatetime;
+		$constraintEnumModel     = new ConstraintEnum;
+		$constraintFileModel     = new ConstraintFile;
+		$constraintDerivedModel  = new ConstraintDerived;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Field']))
 		{
-			$model->attributes=$_POST['Field'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$save = false;
+			$fieldModel->attributes=$_POST['Field'];
+			//$save = $fieldModel->save();
+			$dataType = $_POST['Field']['datatype'];
+			$constraintDataType = '';
+			$constraintModel = '';
+			switch ($dataType){
+				case 'T':
+					$constraintDataType = 'ConstraintText';
+					$constraintModel = $constraintTextModel;
+					break;
+				case 'N':
+					$constraintDataType = 'ConstraintNumeric';
+					$constraintModel = $constraintNumericModel;
+					break;
+				case 'D':
+				case 't':
+				case 'd':
+					$constraintDataType = 'ConstraintDatetime';
+					$constraintModel = $constraintDatetimeModel;
+					break;
+				case 'O':
+					$constraintDataType = 'ConstraintEnum';
+					$constraintModel = $constraintEnumModel;
+					break;
+				case 'F':
+					$constraintDataType = 'ConstraintFile';
+					$constraintModel = $constraintFileModel;
+					break;
+				case 'C':
+					break;
+			}
+			if(isset($_POST[$constraintDataType])){
+				$_POST[$constraintDataType]['field_id'] = $fieldModel->id;
+		    	$constraintModel->attributes=$_POST[$constraintDataType]; 
+		    }
+		    $constraintModel->save();
+			/*if($save)
+				$this->redirect(array('view','id'=>$fieldModel->id));
+				*/
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
+			'fieldModel'              =>$fieldModel,
+			'constraintTextModel'     =>$constraintTextModel,
+			'constraintNumericModel'  =>$constraintNumericModel,
+			'constraintDatetimeModel' =>$constraintDatetimeModel,
+			'constraintEnumModel'     =>$constraintEnumModel,
+			'constraintFileModel'     =>$constraintFileModel,
+			'constraintDerivedModel'  =>$constraintDerivedModel,
 		));
 	}
 
@@ -123,27 +172,16 @@ class FieldController extends Controller
 	}
 
 	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Field');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionIndex()
 	{
 		$model=new Field('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Field']))
 			$model->attributes=$_GET['Field'];
 
-		$this->render('admin',array(
+		$this->render('index',array(
 			'model'=>$model,
 		));
 	}
@@ -172,5 +210,33 @@ class FieldController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function renderDataType($data,$row){
+		// ... generate the output for a full address
+ 
+          // Params:
+          // $data ... the current row data   
+         // $row ... the row index
+		$dataType = '';
+		switch ($data->datatype){
+				case 'T':
+					$dataType = 'Text'; break;
+				case 'N':
+					$dataType = 'Numeric'; break;
+				case 'D':
+					$dataType = 'Date'; break;
+				case 't':
+					$dataType = 'Time'; break;
+				case 'd':
+					$dataType = 'Datetime'; break;
+				case 'O':
+					$dataType = 'option'; break;
+				case 'F':
+					$dataType = 'File'; break;
+				case 'C':
+					$dataType = 'Compound'; break;
+			}
+        return $dataType;
 	}
 }

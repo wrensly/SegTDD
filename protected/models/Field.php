@@ -64,6 +64,7 @@ class Field extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('fieldname, datatype, description, multiple, label, required, derived, attribute', 'required'),
 			array('multiple, entity_id, required, parent_id, derived, attribute', 'numerical', 'integerOnly'=>true),
 			array('fieldname', 'length', 'max'=>100),
 			array('datatype', 'length', 'max'=>1),
@@ -83,12 +84,12 @@ class Field extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'constraintDatetimes' => array(self::HAS_MANY, 'ConstraintDatetime', 'field_id'),
-			'constraintDeriveds' => array(self::HAS_MANY, 'ConstraintDerived', 'field_id'),
-			'constraintEnums' => array(self::HAS_MANY, 'ConstraintEnum', 'field_id'),
-			'constraintFiles' => array(self::HAS_MANY, 'ConstraintFile', 'field_id'),
-			'constraintNumerics' => array(self::HAS_MANY, 'ConstraintNumeric', 'field_id'),
-			'constraintTexts' => array(self::HAS_MANY, 'ConstraintText', 'field_id'),
+			'constraintDatetimes' => array(self::HAS_ONE, 'ConstraintDatetime', 'field_id'),
+			'constraintDeriveds' => array(self::HAS_ONE, 'ConstraintDerived', 'field_id'),
+			'constraintEnums' => array(self::HAS_ONE, 'ConstraintEnum', 'field_id'),
+			'constraintFiles' => array(self::HAS_ONE, 'ConstraintFile', 'field_id'),
+			'constraintNumerics' => array(self::HAS_ONE, 'ConstraintNumeric', 'field_id'),
+			'constraintTexts' => array(self::HAS_ONE, 'ConstraintText', 'field_id'),
 			'entityAttributes' => array(self::HAS_MANY, 'EntityAttribute', 'field_id'),
 			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
 			'fieldValueCompound' => array(self::HAS_ONE, 'FieldValueCompound', 'id'),
@@ -109,13 +110,13 @@ class Field extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'fieldname' => 'Fieldname',
-			'datatype' => 'Datatype',
+			'fieldname' => 'Field Name',
+			'datatype' => 'Data Type',
 			'description' => 'Description',
 			'multiple' => 'Multiple',
 			'alias' => 'Alias',
 			'default' => 'Default',
-			'entity_id' => 'Entity',
+			'entity_id' => 'Entity Association',
 			'label' => 'Label',
 			'required' => 'Required',
 			'parent_id' => 'Parent',
@@ -152,5 +153,27 @@ class Field extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	private static $_items=array();
+		
+	public static function items($type){
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return self::$_items[$type];
+	}
+	
+	public static function item($type,$code){
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
+	}
+	
+	private static function loadItems($type){
+		self::$_items[$type]=array();
+		$models=self::model()->findAll();
+		foreach($models as $model)
+			self::$_items[$type][$model->id]=$model->$type;
+
 	}
 }

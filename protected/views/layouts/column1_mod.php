@@ -7,13 +7,15 @@
 					<h1><?php echo $this->content_title; ?></h1>
 				</div>
 				<div class="span6">
-					<?php $this->widget('bootstrap.widgets.BootButtonGroup', array(
-						'type' => 'success',
-						'buttons' => array(
-							array( 'label' => 'Options', 'items' => $this->menu, ),
-						),
-						'htmlOptions' => array('class'=>'pull-right'),
-					)); ?>
+					<?php if( count($this->menu) !== 0 ): ?>
+						<?php $this->widget('bootstrap.widgets.BootButtonGroup', array(
+							'type' => 'success',
+							'buttons' => array(
+								array( 'label' => 'Options', 'items' => $this->menu, ),
+							),
+							'htmlOptions' => array('class'=>'pull-right'),
+						)); ?>
+					<?php endif ?><!-- breadcrumbs -->
 				</div>
 			</div>
 		</div>	

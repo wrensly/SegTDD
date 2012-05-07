@@ -33,12 +33,10 @@
 					array(
 						'label'=>'Home',
 						'url'=>array('/site/index'),
-						'icon' => 'home white'
 					),
 					array(
 						'label'=>'Fields',
-						'url'=>array('/fields'),
-						'icon' => 'white'
+						'url'=>array('/field'),
 					),
 				),
 			),

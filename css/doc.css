@@ -17,3 +17,24 @@ body {
 .right{
 	text-align: right;
 }
+
+.grid-view .pagination {
+height: 36px;
+margin: 0 0 18px 0;
+}
+
+.no-display{
+	display: none;
+}
+
+.constraint {
+margin-top: 18px;
+-webkit-margin-top-collapse: separate;
+}
+
+.view-code-textarea{
+	height: 200px;
+	width: 490px;
+	font-family: "Lucida Console","Consolas","Courier New", Courier, monospace;
+	resize: none;
+}

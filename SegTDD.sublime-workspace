@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"resize"
+			],
+			[
+				"Li",
+				"\"Lucida Console\""
+			],
+			[
+				"Cour",
+				"\"Courier New\", Courier, monospace"
+			],
+			[
+				"constraint",
+				"constraintTextModel"
+			],
+			[
+				"constraintNum",
+				"ConstraintNumeric"
+			],
+			[
 				"print",
 				"print_r"
 			],
@@ -26,10 +46,6 @@
 			[
 				"rea",
 				"ready	document ready - jQuery"
-			],
-			[
-				"re",
-				"ready	document ready (safe)"
 			],
 			[
 				"arr",
@@ -84,44 +100,64 @@
 	"buffers":
 	[
 		{
-			"file": "protected/components/UserIdentity.php",
+			"file": "protected/models/Field.php",
 			"settings":
 			{
-				"buffer_size": 1119,
-				"line_ending": "Unix"
+				"buffer_size": 6338,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "protected/views/site/index.php",
+			"file": "protected/views/field/index.php",
 			"settings":
 			{
-				"buffer_size": 680,
-				"line_ending": "Unix"
+				"buffer_size": 1835,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "protected/models/User.php",
+			"file": "protected/views/field/_form.php",
 			"settings":
 			{
-				"buffer_size": 2359,
-				"line_ending": "Unix"
+				"buffer_size": 5554,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "protected/views/site/login.php",
+			"file": "protected/controllers/FieldController.php",
 			"settings":
 			{
-				"buffer_size": 1246,
-				"line_ending": "Unix"
+				"buffer_size": 5798,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/views/field/create.php",
+			"settings":
+			{
+				"buffer_size": 607,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/views/field/_constraintDerivedForm.php",
+			"settings":
+			{
+				"buffer_size": 1337,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 104.0,
 		"selected_items":
 		[
+			[
+				"Bootstrap for",
+				"Snippet: Bootstrap horizontal form"
+			],
 			[
 				"Snippet: Yii",
 				"Snippet: Yii CHtml::ajax"
@@ -260,19 +296,58 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/SegTDD/README",
-		"/C/xampp/htdocs/SegTDD/protected/views/site/login.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/User.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootButtonColumn.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootGridView.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootDataColumn.php",
 		"/C/xampp/htdocs/SegTDD/css/doc.css",
-		"/C/xampp/htdocs/SegTDD/protected/.htaccess",
-		"/C/xampp/htdocs/SegTDD/.htaccess",
-		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/site/index.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column2.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDerived.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintText.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintNumeric.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintFile.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintEnum.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDatetime.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/Entity.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDerivedForm.php",
+		"/D/Seth Busque/Downloads/Tambakan/create-next-postcard-flyer-smart-colors_designBrief",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintEnumForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintTextForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintNumericForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintFileForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDatetimeForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldController.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_form.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/update.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/contact.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/SiteController.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/error.php",
+		"/D/Seth Busque/Downloads/Tambakan/field.sql",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/Field.php",
+		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootActiveForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/assets/css/bootstrap-yii.css",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootCarousel.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootAlert.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/components/Bootstrap.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootWidget.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/view.php",
+		"/C/xampp/htdocs/SegTDD/protected/config/test.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/create.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/admin.php",
+		"/C/xampp/htdocs/SegTDD/protected/components/UserIdentity.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/User.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/login.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_view.php",
+		"/C/xampp/htdocs/SegTDD/protected/components/Controller.php",
+		"/C/xampp/htdocs/SegTDD/protected/.htaccess",
+		"/C/xampp/htdocs/SegTDD/README",
+		"/C/xampp/htdocs/SegTDD/.htaccess",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column2.php",
 		"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/.htaccess",
 		"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/index.php",
 		"/C/Users/Seth Busque/TRACERdemo.phpfogapp.com/.htaccess",
@@ -348,23 +423,7 @@
 		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Color Scheme - Default/Obsidian.tmTheme",
 		"/C/Program Files/Notepad++/themes/Obsidian.xml",
 		"/C/Program Files/Notepad++/themes/Monokai.xml",
-		"/C/xampp/htdocs/yii/site/protected/controllers/file.css",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Examples/starter.sublime-snippet",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/PHP/PHP-codeigniter.sublime-completions",
-		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/assets/css/bootstrap.min.css",
-		"/C/xampp/htdocs/yii/site/protected/views/scholar/update.php",
-		"/C/xampp/htdocs/TRACER/css/login.css",
-		"/C/xampp/htdocs/TRACER/css/main.css",
-		"/C/xampp/htdocs/TRACER/css/bootstrap-responsive.min.css",
-		"/C/xampp/htdocs/TRACER/css/bootstrap.min.css",
-		"/C/xampp/htdocs/TRACER/.htaccess",
-		"/D/Seth Busque/Desktop/test.php",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/User/SublimeLint.sublime-settings",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/sublimelint/SublimeLint.sublime-settings",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/sublimelint/Default.sublime-commands",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/PHP/PHP.sublime-completions",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap"
+		"/C/xampp/htdocs/yii/site/protected/controllers/file.css"
 	],
 	"find":
 	{
@@ -382,6 +441,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<div class=\"row\">",
+			"</div>",
+			"$constraintTextmodel",
+			"$model",
+			"$form->textField",
+			"<div class=\"row\">",
+			"</div>",
+			"$model",
+			"<div class=\"row\">",
+			"	\";",
+			"$ items",
+			"}\",",
+			" = ''",
+			">",
+			"$form->textField(",
+			"</div>\n",
+			"<div class=\"row\">",
 			";extension=php_xsl.dll",
 			"f",
 			"=",
@@ -429,18 +505,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "protected/components/UserIdentity.php",
+					"file": "protected/models/Field.php",
 					"settings":
 					{
-						"buffer_size": 1119,
+						"buffer_size": 6338,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								834,
-								834
+								4553,
+								4553
 							]
 						],
 						"settings":
@@ -449,30 +525,112 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.y": 699.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "protected/views/site/index.php",
+					"file": "protected/views/field/index.php",
 					"settings":
 					{
-						"buffer_size": 680,
+						"buffer_size": 1835,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								680,
-								680
+								1576,
+								1576
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 756.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "protected/views/field/_form.php",
+					"settings":
+					{
+						"buffer_size": 5554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1824,
+								1824
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1116.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "protected/controllers/FieldController.php",
+					"settings":
+					{
+						"buffer_size": 5798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2881,
+								2881
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1324.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "protected/views/field/create.php",
+					"settings":
+					{
+						"buffer_size": 607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								495,
+								495
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -481,52 +639,26 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "protected/models/User.php",
+					"buffer": 5,
+					"file": "protected/views/field/_constraintDerivedForm.php",
 					"settings":
 					{
-						"buffer_size": 2359,
+						"buffer_size": 1337,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2286,
-								2286
+								808,
+								808
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 540.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "protected/views/site/login.php",
-					"settings":
-					{
-						"buffer_size": 1246,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								918,
-								918
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -568,10 +700,6 @@
 		]
 	},
 	"menu_visible": true,
-	"output.phpdocumentor":
-	{
-		"height": 118.0
-	},
 	"replace":
 	{
 		"height": 0.0
@@ -592,7 +720,7 @@
 		[
 			[
 				"",
-				"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/TRACERdemo.sublime-project"
+				"/C/xampp/htdocs/SegTDD/SegTDD.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -601,6 +729,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 236.0,
+	"side_bar_width": 194.0,
 	"status_bar_visible": true
 }
