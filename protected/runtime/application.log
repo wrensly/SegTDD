@@ -1966,4 +1966,67 @@ Stack trace:
 #6 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
 #7 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
 REQUEST_URI=/SegTDD/site/captcha.htm?v=4fa277bc92bf6
-in C:\wamp\www\SegTDD\index.php (13)
+in C:\wamp\www\SegTDD\index.php (13)2012/05/07 11:02:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\SegTDD\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\SegTDD\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\SegTDD\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\xampp\htdocs\SegTDD\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 C:\xampp\htdocs\SegTDD\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#7 C:\xampp\htdocs\SegTDD\protected\models\User.php(20): CActiveRecord::model('User')
+#8 C:\xampp\htdocs\SegTDD\protected\components\UserIdentity.php(22): User::model()
+#9 C:\xampp\htdocs\SegTDD\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#10 C:\xampp\htdocs\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#11 C:\xampp\htdocs\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 C:\xampp\htdocs\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#13 C:\xampp\htdocs\SegTDD\protected\controllers\SiteController.php(98): CModel->validate()
+#14 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#15 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#19 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#20 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\SegTDD\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/07 11:05:29 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\SegTDD\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('view')
+#9 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/view/abou...')
+#10 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\SegTDD\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/SegTDD/field/view/about.htm
+HTTP_REFERER=http://localhost/SegTDD/site/index.htm
+---
+2012/05/07 11:05:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\SegTDD\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('view')
+#9 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/view/abou...')
+#10 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\SegTDD\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/SegTDD/field/view/about.htm
+HTTP_REFERER=http://localhost/SegTDD/site/index.htm
+---

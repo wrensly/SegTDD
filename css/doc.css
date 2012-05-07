@@ -38,3 +38,16 @@ margin-top: 18px;
 	font-family: "Lucida Console","Consolas","Courier New", Courier, monospace;
 	resize: none;
 }
+
+.myBodybg {
+	background-color: white;
+	background-position: top left;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/*over Ride*/
+.navbar .nav > li {
+	padding-right:10px;
+	font-weight: bold;
+}
