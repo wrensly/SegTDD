@@ -7379,3 +7379,75 @@ Stack trace:
 REQUEST_URI=/SegTDD/site/login
 HTTP_REFERER=http://localhost/SegTDD/site/login
 ---
+2012/05/07 10:44:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "array(".' in G:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 G:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('array(')
+#1 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('array(')
+#2 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('form/array(/for...')
+#3 G:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 G:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/form/array(/form/create)
+HTTP_REFERER=http://localhost/SegTDD/form/admin.htm
+---
+2012/05/07 10:44:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "array(".' in G:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 G:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('array(')
+#1 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('array(')
+#2 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('form/array(/for...')
+#3 G:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 G:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/form/array(/form/create)
+HTTP_REFERER=http://localhost/SegTDD/form/admin.htm
+---
+2012/05/07 10:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "array(".' in G:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 G:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('array(')
+#1 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('array(')
+#2 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('form/array(/for...')
+#3 G:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 G:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/form/array(/form/create)
+---
+2012/05/07 10:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "array(".' in G:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 G:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('array(')
+#1 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('array(')
+#2 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('form/array(/for...')
+#3 G:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 G:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/form/array(/form/create)
+---
+2012/05/07 10:44:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "array(".' in G:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 G:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('array(')
+#1 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('array(')
+#2 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('form/array(/for...')
+#3 G:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 G:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/form/array(/form/create)
+---
+2012/05/07 10:44:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "array".' in G:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 G:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('array')
+#1 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('array')
+#2 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('form/array/form...')
+#3 G:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 G:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/form/array/form/create
+---
+2012/05/07 10:44:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "array".' in G:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 G:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('array')
+#1 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('array')
+#2 G:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('form/array/form...')
+#3 G:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 G:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/form/array/form/create
+---

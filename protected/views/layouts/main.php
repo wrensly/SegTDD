@@ -64,16 +64,16 @@
 						),
 						array(
 							'label'=>'Form',
-							'url'=>array('/site/contact'), 
+							'url'=>array('/form/index'), 
 							'items'=>array(
 								array(
 									'label'=>'manage form',
-									'url'=>array('/site/contact'), 
+									'url'=>array('/form/admin'), 
 									'icon' => 'file white',
 								),
 								array(
 									'label'=>'create form',
-									'url'=>'#',
+									'url'=>array('/form/create'),
 									'icon'=>'plus white',
 								), 
 							),
