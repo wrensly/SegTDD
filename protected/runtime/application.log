@@ -7479,3 +7479,14 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/SegTDD/form/array/form/create
 ---
+2012/05/07 13:08:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "none".' in C:\xampp\htdocs\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(271): CController->missingAction('none')
+#1 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('none')
+#2 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/none')
+#3 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/none.htm
+HTTP_REFERER=http://localhost/SegTDD/field/create.htm
+---
