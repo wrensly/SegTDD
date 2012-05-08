@@ -19,17 +19,9 @@
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
-
-
-<?php
-	if(!Yii::app()->user->isGuest)
-		echo "<body>";
-	else
-		echo "<body class='myBodybg'>";
-?>
+<body>
 <!-- 'htmlOption'=>array('class'=>'myNavBarPad') -->
 	<?php 
-	if(!Yii::app()->user->isGuest) {
 		$this->widget('bootstrap.widgets.BootNavbar', array(
 			'fixed' => 'top',
 			'brand' => CHtml::encode(Yii::app()->name),
@@ -129,25 +121,21 @@
 				),
 			),
 		));
-	}
 	?>
 
 <div class="container">
 	<?php
-	if(!Yii::app()->user->isGuest) {
 		if(count($this->breadcrumbs) !== 0) {
 			$this->widget('bootstrap.widgets.BootBreadcrumbs', array(
 				'links'=>$this->breadcrumbs,
 			)); // breadcrumbs
 		}
-	}
 	?>
 	
 	<?php echo $content; ?>
 	
 	<div class="clear"></div>
 
-	<?php if(!Yii::app()->user->isGuest): ?>
 	<div class="row">
 		<div class="footer">
 			<div class="span6">
@@ -167,9 +155,6 @@
 			</div>
 		</div><!-- footer -->
 	</div>
-	<?php endif ?>
-
 </div><!-- page -->
-
 </body>
 </html>
