@@ -52,7 +52,7 @@
 <div class="container">
 
 	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('bootstrap.widgets.BootBreadcrumbs', array(
+		<!--<?php $this->widget('bootstrap.widgets.BootBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>

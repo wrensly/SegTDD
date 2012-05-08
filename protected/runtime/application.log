@@ -71,3 +71,120 @@ Stack trace:
 REQUEST_URI=/SegTDD/site/index.htm
 HTTP_REFERER=http://localhost/SegTDD/site/contact.htm
 ---
+2012/05/07 05:34:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getcustomer.asp".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('getcustomer.asp')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('getcustomer.asp')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/getcustome...')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/getcustomer.asp?q=ALFKI
+HTTP_REFERER=http://localhost/SegTDD/site/page.htm?view=about
+---
+2012/05/07 05:34:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getcustomer.asp".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('getcustomer.asp')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('getcustomer.asp')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/getcustome...')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/getcustomer.asp?q=NORTS
+HTTP_REFERER=http://localhost/SegTDD/site/page.htm?view=about
+---
+2012/05/07 05:34:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getcustomer.asp".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('getcustomer.asp')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('getcustomer.asp')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/getcustome...')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/getcustomer.asp?q=WOLZA
+HTTP_REFERER=http://localhost/SegTDD/site/page.htm?view=about
+---
+2012/05/07 06:07:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'segtdd'' in C:\wamp\www\SegTDD\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\wamp\www\SegTDD\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\wamp\www\SegTDD\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#7 C:\wamp\www\SegTDD\protected\models\User.php(20): CActiveRecord::model('User')
+#8 C:\wamp\www\SegTDD\protected\components\UserIdentity.php(22): User::model()
+#9 C:\wamp\www\SegTDD\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#10 C:\wamp\www\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#11 C:\wamp\www\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#13 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(91): CModel->validate()
+#14 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#15 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#19 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#20 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/07 07:59:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getcustomer.asp".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('getcustomer.asp')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('getcustomer.asp')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/getcustome...')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/getcustomer.asp?q=ALFKI
+HTTP_REFERER=http://localhost/SegTDD/site/page.htm?view=about
+---
+2012/05/07 08:31:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getcustomer.asp".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('getcustomer.asp')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('getcustomer.asp')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/getcustome...')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/getcustomer.asp?q=NORTS
+HTTP_REFERER=http://localhost/SegTDD/site/page.htm?view=about
+---
+2012/05/07 08:31:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getcustomer.asp".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('getcustomer.asp')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('getcustomer.asp')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/getcustome...')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/getcustomer.asp?q=WOLZA
+HTTP_REFERER=http://localhost/SegTDD/site/page.htm?view=about
+---
+2012/05/07 09:59:06 [error] [exception.CException] exception 'CException' with message 'Property "BootNavbar.0" is not defined.' in C:\wamp\www\SegTDD\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWidgetFactory.php(162): CComponent->__set('0', '<form class="na...')
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\wamp\www\SegTDD\protected\views\site\pages\about.php(43): CBaseController->widget('bootstrap.widge...', Array)
+#4 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#5 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', NULL, true)
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', NULL, true)
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('pages/about', NULL, true)
+#8 C:\wamp\www\SegTDD\framework\web\actions\CViewAction.php(141): CController->render('pages/about')
+#9 C:\wamp\www\SegTDD\framework\web\actions\CAction.php(75): CViewAction->run()
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('page')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/site/page.htm?view=about
+HTTP_REFERER=http://localhost/SegTDD/site/page.htm?view=about
+---
