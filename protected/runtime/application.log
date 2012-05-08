@@ -7570,3 +7570,29 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/SegTDD/form/array/form/create
 ---
+2012/05/08 02:15:45 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'segtdd.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in C:\wamp\www\SegTDD\protected\models\User.php (20)
+in C:\wamp\www\SegTDD\protected\components\UserIdentity.php (22)
+in C:\wamp\www\SegTDD\protected\models\LoginForm.php (52)
+2012/05/08 02:15:45 [error] [exception.CDbException] exception 'CDbException' with message 'The table "user" for active record class "User" cannot be found in the database.' in C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#1 C:\wamp\www\SegTDD\protected\models\User.php(20): CActiveRecord::model('User')
+#2 C:\wamp\www\SegTDD\protected\components\UserIdentity.php(22): User::model()
+#3 C:\wamp\www\SegTDD\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\wamp\www\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#5 C:\wamp\www\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): CModel->validate()
+#8 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#14 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
