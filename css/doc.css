@@ -1,5 +1,5 @@
 body {
- 	padding-top: 60px;
+ 	padding: 60px;
 }
 
 @media (max-width: 979px)
@@ -16,4 +16,44 @@ body {
 
 .right{
 	text-align: right;
+}
+
+.grid-view .pagination {
+height: 36px;
+margin: 0 0 18px 0;
+}
+
+.no-display{
+	display: none;
+}
+
+.constraint {
+margin-top: 18px;
+-webkit-margin-top-collapse: separate;
+}
+
+.view-code-textarea{
+	height: 200px;
+	width: 490px;
+	font-family: "Lucida Console","Consolas","Courier New", Courier, monospace;
+	resize: none;
+}
+
+.myBodybg {
+	background-image: -ms-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
+	background-image: -moz-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
+	background-image: -o-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
+	background-image: -webkit-gradient(radial, center center, 0, center center, 510, color-stop(0, #FFFFFF), color-stop(1, #00A3A3));
+	background-image: -webkit-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
+	background-image: radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
+	background-color: white;
+	background-position: top left;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/*over Ride*/
+.navbar .nav > li {
+	padding-right:10px;
+	font-weight: bold;
 }
