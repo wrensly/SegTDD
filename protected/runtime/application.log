@@ -7596,3 +7596,34 @@ Stack trace:
 REQUEST_URI=/SegTDD/site/login
 HTTP_REFERER=http://localhost/SegTDD/site/login
 ---
+2012/05/08 02:24:22 [error] [exception.CException] exception 'CException' with message 'Either "name" or "value" must be specified for CDataColumn.' in C:\wamp\www\SegTDD\framework\zii\widgets\grid\CDataColumn.php:86
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\zii\widgets\grid\CGridView.php(326): CDataColumn->init()
+#1 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\BootGridView.php(78): CGridView->initColumns()
+#2 C:\wamp\www\SegTDD\framework\zii\widgets\grid\CGridView.php(284): BootGridView->initColumns()
+#3 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\BootGridView.php(51): CGridView->init()
+#4 C:\wamp\www\SegTDD\framework\web\CBaseController.php(148): BootGridView->init()
+#5 C:\wamp\www\SegTDD\framework\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#6 C:\wamp\www\SegTDD\protected\views\field\index.php(89): CBaseController->widget('bootstrap.widge...', Array)
+#7 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#8 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#11 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(186): CController->render('index', Array)
+#12 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionIndex()
+#13 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#22 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field')
+#23 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/SegTDD/field.htm
+HTTP_REFERER=http://localhost/SegTDD/site/index.htm
+---
