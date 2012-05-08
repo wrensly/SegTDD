@@ -35,7 +35,7 @@ class Form extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'Form';
+		return 'form';
 	}
 
 	/**
