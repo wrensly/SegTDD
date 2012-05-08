@@ -55,7 +55,7 @@ $this->widget('bootstrap.widgets.BootGridView', array(
 	'pagerCssClass' => 'pagination pull-right',
 	'columns'=>array(
 		array(
-            'class'=>'zii.widgets.grid.CCheckboxColumn',
+            'class'=>'zii.widgets.grid.CCheckBoxColumn',
             'name' => 'id',
         	'selectableRows' => 2,
         ),
