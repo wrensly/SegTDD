@@ -39,6 +39,8 @@ $this->content_title = 'Manage Fields';
 	'model'=>$model,
 )); ?><!-- search-form -->
 
+
+
 <?php 
 $template = "
 	{items}

@@ -7637,3 +7637,217 @@ Stack trace:
 REQUEST_URI=/SegTDD/site/none.htm
 HTTP_REFERER=http://localhost/SegTDD/field/create.htm
 ---
+2012/05/08 02:30:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "none".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('none')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('none')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/none')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/none.htm
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/08 02:30:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "none".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('none')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('none')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/none')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/none.htm
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/08 02:36:14 [error] [exception.CException] exception 'CException' with message 'FieldController contains improperly nested widget tags in its view "C:\wamp\www\SegTDD\protected\views\field\index.php". A BootActiveForm widget does not have an endWidget() call.' in C:\wamp\www\SegTDD\framework\web\CBaseController.php:102
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#2 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(186): CController->render('index', Array)
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field')
+#14 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/field.htm
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/08 02:37:29 [error] [exception.CException] exception 'CException' with message 'FieldController contains improperly nested widget tags in its view "C:\wamp\www\SegTDD\protected\views\field\index.php". A BootActiveForm widget does not have an endWidget() call.' in C:\wamp\www\SegTDD\framework\web\CBaseController.php:102
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#2 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(186): CController->render('index', Array)
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field')
+#14 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/field.htm
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/08 02:44:21 [error] [exception.CException] exception 'CException' with message 'Property "Field.textField" is not defined.' in C:\wamp\www\SegTDD\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(144): CComponent->__get('textField')
+#1 C:\wamp\www\SegTDD\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('textField')
+#2 C:\wamp\www\SegTDD\framework\web\helpers\CHtml.php(1774): CHtml::resolveValue(Object(Field), 'textField')
+#3 C:\wamp\www\SegTDD\framework\web\helpers\CHtml.php(1205): CHtml::activeInputField('text', Object(Field), 'textField', Array)
+#4 C:\wamp\www\SegTDD\framework\web\widgets\CActiveForm.php(575): CHtml::activeTextField(Object(Field), 'textField', Array)
+#5 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\input\BootInputSearch.php(30): CActiveForm->textField(Object(Field), 'textField', Array)
+#6 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\input\BootInput.php(124): BootInputSearch->textField()
+#7 C:\wamp\www\SegTDD\framework\web\CBaseController.php(174): BootInput->run()
+#8 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\BootActiveForm.php(493): CBaseController->widget('bootstrap.widge...', Array)
+#9 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\BootActiveForm.php(180): BootActiveForm->inputRow('textfield', Object(Field), 'textField', NULL, Array)
+#10 C:\wamp\www\SegTDD\protected\views\field\index.php(51): BootActiveForm->textFieldRow(Object(Field), 'textField', Array)
+#11 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#12 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#13 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#14 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#15 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(186): CController->render('index', Array)
+#16 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionIndex()
+#17 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#24 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#26 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field')
+#27 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/SegTDD/field.htm
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/08 02:47:08 [error] [exception.CException] exception 'CException' with message 'BootAlert and its behaviors do not have a method or closure named "textFieldRow".' in C:\wamp\www\SegTDD\framework\base\CComponent.php:266
+Stack trace:
+#0 [internal function]: CComponent->__call('textFieldRow', Array)
+#1 C:\wamp\www\SegTDD\protected\views\field\index.php(48): BootAlert->textFieldRow(Object(Field), 'textField', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#3 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(186): CController->render('index', Array)
+#7 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionIndex()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#17 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field')
+#18 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/SegTDD/field.htm
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/08 02:47:28 [error] [exception.CException] exception 'CException' with message 'BootAlert and its behaviors do not have a method or closure named "textFieldRow".' in C:\wamp\www\SegTDD\framework\base\CComponent.php:266
+Stack trace:
+#0 [internal function]: CComponent->__call('textFieldRow', Array)
+#1 C:\wamp\www\SegTDD\protected\views\field\index.php(48): BootAlert->textFieldRow(Object(Field), 'textField', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#3 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(186): CController->render('index', Array)
+#7 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionIndex()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#17 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field')
+#18 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/SegTDD/field.htm
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/08 02:47:31 [error] [exception.CException] exception 'CException' with message 'BootAlert and its behaviors do not have a method or closure named "textFieldRow".' in C:\wamp\www\SegTDD\framework\base\CComponent.php:266
+Stack trace:
+#0 [internal function]: CComponent->__call('textFieldRow', Array)
+#1 C:\wamp\www\SegTDD\protected\views\field\index.php(48): BootAlert->textFieldRow(Object(Field), 'textField', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#3 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(186): CController->render('index', Array)
+#7 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionIndex()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#17 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field')
+#18 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/SegTDD/field.htm
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/08 02:50:53 [error] [exception.CException] exception 'CException' with message 'Property "Field.textField" is not defined.' in C:\wamp\www\SegTDD\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(144): CComponent->__get('textField')
+#1 C:\wamp\www\SegTDD\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('textField')
+#2 C:\wamp\www\SegTDD\framework\web\helpers\CHtml.php(1774): CHtml::resolveValue(Object(Field), 'textField')
+#3 C:\wamp\www\SegTDD\framework\web\helpers\CHtml.php(1205): CHtml::activeInputField('text', Object(Field), 'textField', Array)
+#4 C:\wamp\www\SegTDD\framework\web\widgets\CActiveForm.php(575): CHtml::activeTextField(Object(Field), 'textField', Array)
+#5 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\input\BootInputSearch.php(30): CActiveForm->textField(Object(Field), 'textField', Array)
+#6 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\input\BootInput.php(124): BootInputSearch->textField()
+#7 C:\wamp\www\SegTDD\framework\web\CBaseController.php(174): BootInput->run()
+#8 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\BootActiveForm.php(493): CBaseController->widget('bootstrap.widge...', Array)
+#9 C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\BootActiveForm.php(180): BootActiveForm->inputRow('textfield', Object(Field), 'textField', NULL, Array)
+#10 C:\wamp\www\SegTDD\protected\views\field\index.php(51): BootActiveForm->textFieldRow(Object(Field), 'textField', Array)
+#11 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#12 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#13 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#14 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#15 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(186): CController->render('index', Array)
+#16 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionIndex()
+#17 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#24 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#26 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field')
+#27 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/SegTDD/field.htm
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
