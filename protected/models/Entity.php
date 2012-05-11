@@ -1,14 +1,16 @@
 <?php
 
 /**
- * This is the model class for table "entity".
+ * This is the model class for table "Entity".
  *
- * The followings are the available columns in table 'entity':
+ * The followings are the available columns in table 'Entity':
  * @property integer $id
  * @property string $entityname
  * @property string $description
+ * @property integer $form_id
  *
  * The followings are the available model relations:
+ * @property Form $form
  * @property EntityAttribute $entityAttribute
  * @property EntityInstance[] $entityInstances
  * @property Field[] $fields
@@ -39,9 +41,7 @@ class Entity extends CActiveRecord
 	 */
 	public function tableName()
 	{
-
-		return 'entity';
-
+		return 'Entity';
 	}
 
 	/**
@@ -52,13 +52,11 @@ class Entity extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-
-			array('id', 'required'),
-			array('id', 'numerical', 'integerOnly'=>true),
+			array('form_id', 'numerical', 'integerOnly'=>true),
 			array('entityname, description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, entityname, description', 'safe', 'on'=>'search'),
+			array('id, entityname, description, form_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,6 +68,7 @@ class Entity extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'form' => array(self::BELONGS_TO, 'Form', 'form_id'),
 			'entityAttribute' => array(self::HAS_ONE, 'EntityAttribute', 'id'),
 			'entityInstances' => array(self::HAS_MANY, 'EntityInstance', 'entity_id'),
 			'fields' => array(self::HAS_MANY, 'Field', 'entity_id'),
@@ -92,8 +91,9 @@ class Entity extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'entityname' => 'Entity Name',
+			'entityname' => 'Entityname',
 			'description' => 'Description',
+			'form_id' => 'Default Form',
 		);
 	}
 
@@ -111,12 +111,12 @@ class Entity extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('entityname',$this->entityname,true);
 		$criteria->compare('description',$this->description,true);
+		$criteria->compare('form_id',$this->form_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-
 
 	private static $_items=array();
 		
@@ -138,5 +138,4 @@ class Entity extends CActiveRecord
 		foreach($models as $model)
 			self::$_items[$type][$model->id]=$model->$type;
 	}
-
 }

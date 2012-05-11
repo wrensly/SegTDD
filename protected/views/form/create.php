@@ -5,8 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Form', 'url'=>array('index')),
-	array('label'=>'Manage Form', 'url'=>array('admin')),
+	array('label'=>'Manage Form', 'url'=>array('index')),
 );
 
 $this->content_title = "Create Form"; 
