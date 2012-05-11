@@ -7490,3 +7490,1393 @@ Stack trace:
 REQUEST_URI=/SegTDD/site/none.htm
 HTTP_REFERER=http://localhost/SegTDD/field/create.htm
 ---
+2012/05/09 08:03:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "teacher/update".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/update')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/teacher/update/
+---
+2012/05/09 08:17:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "teacher".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/teacher
+---
+2012/05/09 08:17:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "teacher/update".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/update')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/teacher/update/
+---
+2012/05/09 08:18:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\wamp\www\SegTDD\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\wamp\www\SegTDD\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\wamp\www\SegTDD\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\wamp\www\SegTDD\framework\base\CModule.php(104): CModule->getComponent('db')
+#4 C:\wamp\www\SegTDD\framework\gii\generators\model\ModelCode.php(54): CModule->__get('db')
+#5 C:\wamp\www\SegTDD\framework\web\CFormModel.php(40): ModelCode->init()
+#6 C:\wamp\www\SegTDD\framework\gii\CCodeGenerator.php(152): CFormModel->__construct()
+#7 C:\wamp\www\SegTDD\framework\gii\CCodeGenerator.php(64): CCodeGenerator->prepare()
+#8 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('gii/model')
+#14 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/gii/model.htm
+HTTP_REFERER=http://localhost/SegTDD/gii
+---
+2012/05/09 08:20:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'segtdd.teacher' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `Teacher`.
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:26:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/09 08:26:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('admin')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/admin
+---
+2012/05/09 08:28:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index/gii".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index/gii')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index/gii
+---
+2012/05/09 08:32:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bed_db3.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in C:\wamp\www\SegTDD\protected\models\User.php (20)
+in C:\wamp\www\SegTDD\protected\components\UserIdentity.php (22)
+in C:\wamp\www\SegTDD\protected\models\LoginForm.php (52)
+2012/05/09 08:32:02 [error] [exception.CDbException] exception 'CDbException' with message 'The table "user" for active record class "User" cannot be found in the database.' in C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#1 C:\wamp\www\SegTDD\protected\models\User.php(20): CActiveRecord::model('User')
+#2 C:\wamp\www\SegTDD\protected\components\UserIdentity.php(22): User::model()
+#3 C:\wamp\www\SegTDD\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\wamp\www\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#5 C:\wamp\www\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): CModel->validate()
+#8 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#14 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 08:34:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bed_db3.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in C:\wamp\www\SegTDD\protected\models\User.php (20)
+in C:\wamp\www\SegTDD\protected\components\UserIdentity.php (22)
+in C:\wamp\www\SegTDD\protected\models\LoginForm.php (52)
+2012/05/09 08:34:43 [error] [exception.CDbException] exception 'CDbException' with message 'The table "user" for active record class "User" cannot be found in the database.' in C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#1 C:\wamp\www\SegTDD\protected\models\User.php(20): CActiveRecord::model('User')
+#2 C:\wamp\www\SegTDD\protected\components\UserIdentity.php(22): User::model()
+#3 C:\wamp\www\SegTDD\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\wamp\www\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#5 C:\wamp\www\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): CModel->validate()
+#8 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#14 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 08:35:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/09 08:35:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index/main".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index/main')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index/main
+---
+2012/05/09 08:36:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('admin')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/admin
+---
+2012/05/09 08:36:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index/main".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index/main')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index/main
+---
+2012/05/09 08:36:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bed_db3.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in C:\wamp\www\SegTDD\protected\models\User.php (20)
+in C:\wamp\www\SegTDD\protected\components\UserIdentity.php (22)
+in C:\wamp\www\SegTDD\protected\models\LoginForm.php (52)
+2012/05/09 08:36:18 [error] [exception.CDbException] exception 'CDbException' with message 'The table "user" for active record class "User" cannot be found in the database.' in C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#1 C:\wamp\www\SegTDD\protected\models\User.php(20): CActiveRecord::model('User')
+#2 C:\wamp\www\SegTDD\protected\components\UserIdentity.php(22): User::model()
+#3 C:\wamp\www\SegTDD\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\wamp\www\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#5 C:\wamp\www\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): CModel->validate()
+#8 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#14 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/site/login.htm
+HTTP_REFERER=http://localhost/SegTDD/site/login.htm
+---
+2012/05/09 08:36:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/admin/index
+---
+2012/05/09 08:37:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/09 08:38:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/09 08:39:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/09 08:42:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "view".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('view')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/view
+---
+2012/05/09 08:42:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/09 08:42:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/09 08:42:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/admin/index
+---
+2012/05/09 08:42:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index/view".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index/view')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index/view
+---
+2012/05/09 08:42:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('index')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/index
+---
+2012/05/09 08:46:12 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:46:59 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:47:08 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:47:09 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:48:21 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:49:19 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:49:21 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:49:21 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:50:41 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:50:45 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:51:02 [error] [php] Undefined variable: dataProvider (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/index.php
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:51:55 [error] [php] Undefined variable: dataProvider (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:52:22 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:52:43 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:52:50 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:53:00 [error] [php] Undefined variable: model (C:\wamp\www\SegTDD\protected\views\site\index.php:4)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(41): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/
+in C:\wamp\www\SegTDD\protected\views\site\index.php (4)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (41)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:54:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "10-3643".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('10-3643')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('10-3643')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/10-3643')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/teacher/10-3643.htm
+HTTP_REFERER=http://localhost/SegTDD/teacher/admin.htm
+---
+2012/05/09 08:57:36 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\SegTDD\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('view')
+#9 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/view')
+#10 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/SegTDD/teacher/view
+---
+2012/05/09 08:58:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "09-2312".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('09-2312')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('09-2312')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/09-2312')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/teacher/09-2312.htm
+HTTP_REFERER=http://localhost/SegTDD/teacher/admin.htm
+---
+2012/05/09 08:58:52 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'inactiveDate' at row 1. The SQL statement executed was: UPDATE `teacher` SET `TID`=:yp0, `Firstname`=:yp1, `Midname`=:yp2, `Lastname`=:yp3, `Address`=:yp4, `Bdate`=:yp5, `Status`=:yp6, `Level`=:yp7, `SubjectArea`=:yp8, `inactiveDate`=:yp9 WHERE `teacher`.`TID`='102312'.
+in C:\wamp\www\SegTDD\protected\controllers\TeacherController.php (96)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 08:58:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'inactiveDate' at row 1. The SQL statement executed was: UPDATE `teacher` SET `TID`=:yp0, `Firstname`=:yp1, `Midname`=:yp2, `Lastname`=:yp3, `Address`=:yp4, `Bdate`=:yp5, `Status`=:yp6, `Level`=:yp7, `SubjectArea`=:yp8, `inactiveDate`=:yp9 WHERE `teacher`.`TID`='102312'' in C:\wamp\www\SegTDD\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('102312', Array)
+#2 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\SegTDD\protected\controllers\TeacherController.php(96): CActiveRecord->save()
+#4 [internal function]: TeacherController->actionUpdate('102312')
+#5 C:\wamp\www\SegTDD\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TeacherController), Array)
+#6 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TeacherController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/update')
+#17 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/SegTDD/teacher/update/102312.htm
+HTTP_REFERER=http://localhost/SegTDD/teacher/update/102312.htm
+---
+2012/05/09 08:59:02 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\SegTDD\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('update')
+#9 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/update/...')
+#10 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/SegTDD/teacher/update/10-3643.htm
+HTTP_REFERER=http://localhost/SegTDD/teacher/admin.htm
+---
+2012/05/09 09:00:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "10-3643".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('10-3643')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('10-3643')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/10-3643')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/teacher/10-3643.htm
+HTTP_REFERER=http://localhost/SegTDD/teacher/admin.htm
+---
+2012/05/09 09:02:44 [error] [exception.CException] exception 'CException' with message 'Property "BootDetailView.dataProvider" is not defined.' in C:\wamp\www\SegTDD\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWidgetFactory.php(162): CComponent->__set('dataProvider', Object(CActiveDataProvider))
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(TeacherController), 'bootstrap.widge...', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\wamp\www\SegTDD\protected\views\teacher\index.php(17): CBaseController->widget('bootstrap.widge...', Array)
+#4 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#5 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#8 C:\wamp\www\SegTDD\protected\controllers\TeacherController.php(139): CController->render('index', Array)
+#9 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): TeacherController->actionIndex()
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('index')
+#19 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/index')
+#20 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/SegTDD/teacher/index.htm
+HTTP_REFERER=http://localhost/SegTDD/teacher/103735.htm
+---
+2012/05/09 09:20:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "09-2312".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('09-2312')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('09-2312')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/09-2312')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/teacher/09-2312.htm
+HTTP_REFERER=http://localhost/SegTDD/teacher/admin
+---
+2012/05/09 09:20:56 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\SegTDD\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('view')
+#9 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/view')
+#10 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/SegTDD/teacher/view
+---
+2012/05/09 09:23:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'segtdd.teacher' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `teacher`.
+in C:\wamp\www\SegTDD\protected\controllers\TeacherController.php (147)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 09:23:34 [error] [exception.CDbException] exception 'CDbException' with message 'The table "teacher" for active record class "Teacher" cannot be found in the database.' in C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Teacher))
+#1 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('Teacher')
+#2 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 C:\wamp\www\SegTDD\protected\controllers\TeacherController.php(147): CActiveRecord->__construct('search')
+#4 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): TeacherController->actionAdmin()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('admin')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher/admin')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/teacher/admin.htm
+---
+2012/05/09 09:24:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('login')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/login
+---
+2012/05/09 10:29:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "none".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('none')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('none')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/none')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/none.htm
+HTTP_REFERER=http://localhost/SegTDD/site/index.htm
+---
+2012/05/09 10:31:54 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'segtdd.teacher' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `teacher`.
+in C:\wamp\www\SegTDD\protected\controllers\TeacherController.php (130)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 10:31:54 [error] [exception.CDbException] exception 'CDbException' with message 'The table "teacher" for active record class "Teacher" cannot be found in the database.' in C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Teacher))
+#1 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('Teacher')
+#2 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 C:\wamp\www\SegTDD\protected\controllers\TeacherController.php(130): CActiveRecord->__construct('search')
+#4 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): TeacherController->actionIndex()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/teacher
+---
+2012/05/09 10:32:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'segtdd.teacher' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `teacher`.
+in C:\wamp\www\SegTDD\protected\controllers\TeacherController.php (130)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 10:32:06 [error] [exception.CDbException] exception 'CDbException' with message 'The table "teacher" for active record class "Teacher" cannot be found in the database.' in C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Teacher))
+#1 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('Teacher')
+#2 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 C:\wamp\www\SegTDD\protected\controllers\TeacherController.php(130): CActiveRecord->__construct('search')
+#4 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): TeacherController->actionIndex()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/teacher
+---
+2012/05/09 10:32:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "none".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('none')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('none')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/none')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/none.htm
+HTTP_REFERER=http://localhost/SegTDD/form/index.htm
+---
+2012/05/09 10:40:07 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.textField" is not defined.' in C:\wamp\www\SegTDD\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\views\site\login.php(32): CComponent->__get('textField')
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#5 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#6 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#11 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#12 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/field.htm
+---
+2012/05/09 10:41:32 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.textField" is not defined.' in C:\wamp\www\SegTDD\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\views\site\login.php(32): CComponent->__get('textField')
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#5 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#6 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#11 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#12 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/field.htm
+---
+2012/05/09 10:49:50 [error] [exception.CException] exception 'CException' with message 'LoginForm and its behaviors do not have a method or closure named "widget".' in C:\wamp\www\SegTDD\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\models\LoginForm.php(54): CComponent->__call('widget', Array)
+#1 C:\wamp\www\SegTDD\protected\models\LoginForm.php(54): LoginForm->widget('bootstrap.widge...')
+#2 C:\wamp\www\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#3 C:\wamp\www\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#5 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): CModel->validate()
+#6 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#11 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#12 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 10:51:51 [error] [exception.CException] exception 'CException' with message 'LoginForm and its behaviors do not have a method or closure named "widget".' in C:\wamp\www\SegTDD\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\models\LoginForm.php(54): CComponent->__call('widget', Array)
+#1 C:\wamp\www\SegTDD\protected\models\LoginForm.php(54): LoginForm->widget('bootstrap.widge...')
+#2 C:\wamp\www\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#3 C:\wamp\www\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#5 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): CModel->validate()
+#6 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#11 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#12 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:07:16 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.flash.Flash" is invalid. Make sure it points to an existing PHP file.' in C:\wamp\www\SegTDD\framework\YiiBase.php:318
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWidgetFactory.php(147): YiiBase::import('application.ext...', true)
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'application.ext...', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(173): CBaseController->createWidget('application.ext...', Array)
+#3 C:\wamp\www\SegTDD\protected\views\site\login.php(42): CBaseController->widget('application.ext...', Array)
+#4 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#5 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#8 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#9 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:10:45 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.flash.Flash" is invalid. Make sure it points to an existing PHP file.' in C:\wamp\www\SegTDD\framework\YiiBase.php:318
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWidgetFactory.php(147): YiiBase::import('application.ext...', true)
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'application.ext...', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(173): CBaseController->createWidget('application.ext...', Array)
+#3 C:\wamp\www\SegTDD\protected\views\site\login.php(42): CBaseController->widget('application.ext...', Array)
+#4 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#5 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#8 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#9 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:11:03 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.flash.Flash" is invalid. Make sure it points to an existing PHP file.' in C:\wamp\www\SegTDD\framework\YiiBase.php:318
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWidgetFactory.php(147): YiiBase::import('application.ext...', true)
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'application.ext...', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(173): CBaseController->createWidget('application.ext...', Array)
+#3 C:\wamp\www\SegTDD\protected\views\site\login.php(42): CBaseController->widget('application.ext...', Array)
+#4 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#5 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#8 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#9 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:11:25 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.flash.Flash" is invalid. Make sure it points to an existing PHP file.' in C:\wamp\www\SegTDD\framework\YiiBase.php:318
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWidgetFactory.php(147): YiiBase::import('application.ext...', true)
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'application.ext...', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(173): CBaseController->createWidget('application.ext...', Array)
+#3 C:\wamp\www\SegTDD\protected\views\site\login.php(42): CBaseController->widget('application.ext...', Array)
+#4 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#5 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#8 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#9 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:13:41 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.flash.Flash" is invalid. Make sure it points to an existing PHP file.' in C:\wamp\www\SegTDD\framework\YiiBase.php:318
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWidgetFactory.php(147): YiiBase::import('application.ext...', true)
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'application.ext...', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(173): CBaseController->createWidget('application.ext...', Array)
+#3 C:\wamp\www\SegTDD\protected\views\site\login.php(42): CBaseController->widget('application.ext...', Array)
+#4 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#5 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#8 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#9 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:13:44 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.flash.Flash" is invalid. Make sure it points to an existing PHP file.' in C:\wamp\www\SegTDD\framework\YiiBase.php:318
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWidgetFactory.php(147): YiiBase::import('application.ext...', true)
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'application.ext...', Array)
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(173): CBaseController->createWidget('application.ext...', Array)
+#3 C:\wamp\www\SegTDD\protected\views\site\login.php(42): CBaseController->widget('application.ext...', Array)
+#4 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#5 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#8 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#9 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:37:20 [error] [php] Object of class CActiveForm could not be converted to string (C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\BootAlert.php:64)
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\views\site\login.php(24): SiteController->widget()
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require()
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): SiteController->renderInternal()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#5 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): SiteController->render()
+#6 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#10 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#11 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#12 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\extensions\bootstrap\widgets\BootAlert.php (64)
+in C:\wamp\www\SegTDD\protected\views\site\login.php (24)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (104)
+2012/05/09 11:38:11 [error] [exception.CException] exception 'CException' with message 'LoginForm and its behaviors do not have a method or closure named "widget".' in C:\wamp\www\SegTDD\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\models\LoginForm.php(55): CComponent->__call('widget', Array)
+#1 C:\wamp\www\SegTDD\protected\models\LoginForm.php(55): LoginForm->widget('bootstrap.widge...')
+#2 C:\wamp\www\SegTDD\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#3 C:\wamp\www\SegTDD\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#5 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): CModel->validate()
+#6 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#11 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#12 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:39:51 [error] [php] Object of class LoginForm could not be converted to string (C:\wamp\www\SegTDD\protected\models\LoginForm.php:56)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): LoginForm->validate()
+#2 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#6 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\models\LoginForm.php (56)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (98)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 11:40:14 [error] [php] Use of undefined constant errorCode - assumed 'errorCode' (C:\wamp\www\SegTDD\protected\models\LoginForm.php:55)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): LoginForm->validate()
+#2 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#6 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\models\LoginForm.php (55)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (98)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 11:40:20 [error] [php] Use of undefined constant error - assumed 'error' (C:\wamp\www\SegTDD\protected\models\LoginForm.php:55)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): LoginForm->validate()
+#2 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#6 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\models\LoginForm.php (55)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (98)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 11:40:46 [error] [php] Object of class LoginForm could not be converted to string (C:\wamp\www\SegTDD\protected\models\LoginForm.php:55)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): LoginForm->validate()
+#2 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#6 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\models\LoginForm.php (55)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (98)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 11:41:01 [error] [php] Use of undefined constant message - assumed 'message' (C:\wamp\www\SegTDD\protected\models\LoginForm.php:55)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(98): LoginForm->validate()
+#2 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#6 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\models\LoginForm.php (55)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (98)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 11:41:46 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "addError".' in C:\wamp\www\SegTDD\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\views\site\login.php(33): CComponent->__call('addError', Array)
+#1 C:\wamp\www\SegTDD\protected\views\site\login.php(33): SiteController->addError('password', 'Incorrect usern...')
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#3 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#6 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#7 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#13 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:42:39 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.error" is not defined.' in C:\wamp\www\SegTDD\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\views\site\login.php(25): CComponent->__get('error')
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#5 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#6 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#11 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#12 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/site/login
+---
+2012/05/09 11:53:57 [error] [php] Use of undefined constant errorOne - assumed 'errorOne' (C:\wamp\www\SegTDD\protected\views\site\login.php:24)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\views\site\login.php (24)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (104)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 12:37:33 [error] [php] Use of undefined constant error - assumed 'error' (C:\wamp\www\SegTDD\protected\views\site\login.php:25)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\views\site\login.php (25)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (104)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 15:48:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'segtdd.teacher' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `teacher`.
+in C:\wamp\www\SegTDD\protected\controllers\TeacherController.php (130)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/09 15:48:53 [error] [exception.CDbException] exception 'CDbException' with message 'The table "teacher" for active record class "Teacher" cannot be found in the database.' in C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Teacher))
+#1 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('Teacher')
+#2 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 C:\wamp\www\SegTDD\protected\controllers\TeacherController.php(130): CActiveRecord->__construct('search')
+#4 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): TeacherController->actionIndex()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('teacher')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/teacher
+---
+2012/05/09 16:03:01 [error] [php] Undefined variable: errorOne (C:\wamp\www\SegTDD\protected\views\site\login.php:23)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\views\site\login.php (23)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (104)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/10 03:29:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "none".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('none')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('none')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/none')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/none.htm
+HTTP_REFERER=http://localhost/SegTDD/field.htm
+---
+2012/05/10 05:30:36 [error] [php] Undefined variable: errorOne (C:\wamp\www\SegTDD\protected\views\site\login.php:26)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(105): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\views\site\login.php (26)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (105)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/10 05:30:43 [error] [php] Undefined variable: errorOne (C:\wamp\www\SegTDD\protected\views\site\login.php:26)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(105): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\views\site\login.php (26)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (105)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/10 05:30:51 [error] [php] Undefined variable: errorOne (C:\wamp\www\SegTDD\protected\views\site\login.php:26)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(105): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\views\site\login.php (26)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (105)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/10 05:38:52 [error] [php] Undefined variable: error (C:\wamp\www\SegTDD\protected\views\site\login.php:25)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(105): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\views\site\login.php (25)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (105)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/10 06:16:57 [error] [php] Undefined variable: errorTwo (C:\wamp\www\SegTDD\protected\views\site\login.php:33)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\views\site\login.php (33)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (104)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/10 07:06:12 [error] [exception.CException] exception 'CException' with message 'Property "SiteController.username" is not defined.' in C:\wamp\www\SegTDD\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\views\site\login.php(27): CComponent->__get('username')
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#5 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): CController->render('login', Array)
+#6 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('login')
+#11 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#12 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/SegTDD/site/login
+HTTP_REFERER=http://localhost/SegTDD/index.php
+---
+2012/05/11 05:30:52 [error] [php] Undefined variable: errorTwo (C:\wamp\www\SegTDD\protected\views\site\login.php:27)
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\SegTDD\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\SegTDD\protected\controllers\SiteController.php(104): SiteController->render()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): SiteController->run()
+#8 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\SegTDD\index.php(13): CWebApplication->run()
+REQUEST_URI=/SegTDD/site/login
+in C:\wamp\www\SegTDD\protected\views\site\login.php (27)
+in C:\wamp\www\SegTDD\protected\controllers\SiteController.php (104)
+in C:\wamp\www\SegTDD\index.php (13)
+2012/05/11 05:43:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "none".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('none')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('none')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('site/none')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/site/none.htm
+HTTP_REFERER=http://localhost/SegTDD/form/index.htm
+---
