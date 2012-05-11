@@ -11,5 +11,4 @@ $this->menu=array(
 
 $this->content_title = "Create Category";
 ?>
-
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

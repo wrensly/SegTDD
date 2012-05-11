@@ -14,6 +14,7 @@
  */
 class FormCategory extends CActiveRecord
 {
+	public $code, $name, $description, $status, $layout, $attribute, $category_name, $entity_id;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -40,11 +41,12 @@ class FormCategory extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
-			array('id, category_id, form_id', 'numerical', 'integerOnly'=>true),
+			array('id, category_id, form_id, status, attribute', 'numerical', 'integerOnly'=>true),
+			array('code', 'length', 'max'=>50),
+			array('name, description, layout, category_name', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, category_id, form_id', 'safe', 'on'=>'search'),
+			array('category_name, code, name, description, layout, entity_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,6 +74,14 @@ class FormCategory extends CActiveRecord
 			'id' => 'ID',
 			'category_id' => 'Category',
 			'form_id' => 'Form',
+			'category_name' => 'Category',
+			'code' => 'Code',
+			'name' => 'Form Name',
+			'description' => 'Description',
+			'layout' => 'Layout',
+			'attribute' => 'Attribute',
+			'status' => 'Status',
+			'entity_id' => 'Entity Name',
 		);
 	}
 
@@ -85,13 +95,62 @@ class FormCategory extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('category_id',$this->category_id);
-		$criteria->compare('form_id',$this->form_id);
+		$criteria->with = array('form','category');
+		$criteria->compare('form.code',$this->code);
+		$criteria->compare('form.name',$this->name);
+		$criteria->compare('form.description',$this->description);
+		$criteria->compare('category.category_name',$this->category_name);
+		$criteria->compare('form.status',$this->status);
+		$criteria->compare('form.entity_id',$this->entity_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+        	'attributes'=>array(
+        	'id',
+
+        	'category_name'=>array(
+                'asc'=>'form.description',
+                'desc'=>'form.description DESC',
+            ),
+
+            'name'=>array( 
+                'asc'=>'form.name',
+                'desc'=>'form.name DESC',
+            ),
+
+            'code'=>array(
+                'asc'=>'form.code',
+                'desc'=>'form.code DESC',
+            ),
+
+            'description'=>array(
+                'asc'=>'form.description',
+                'desc'=>'form.description DESC',
+            ),
+            
+            'status'=>array(
+                'asc'=>'form.status',
+                'desc'=>'form.status DESC',
+            ),
+
+            
+        ),
+    ),
 		));
+	}
+
+	public function getTags($id)
+	{
+		$sql = "select t.tag_name as tagName from tag t left join form_tag ft on (t.id = ft.tag_id) left join form f on (f.id = ft.form_id) where f.id = :id";
+		$command = Yii::app()->db->createCommand($sql);
+		$command->bindParam(":id",$id,PDO::PARAM_STR);
+		$tags = $command->query()->readAll();
+		$arr = array();
+		foreach($tags as $row)
+		{
+			$arr[] = $row['tagName'];
+		}
+		return $arr;
 	}
 }

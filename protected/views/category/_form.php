@@ -15,8 +15,15 @@
 		<?php echo $form->error($model,'category_name'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'description'); ?>
+		<?php echo $form->textArea($model,'description', array('maxlength' => 240, 'rows' => 6)); ?>
+		<?php echo $form->error($model,'description'); ?>
+	</div>
+
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php $this->widget('bootstrap.widgets.BootButton', array('label' => 'Save', 'icon' => 'ok', 'buttonType' => 'submit')); ?>
+		<?php $this->widget('bootstrap.widgets.BootButton', array('label' => 'Cancel', 'icon' => 'remove', 'htmlOptions'=>array('data-dismiss'=>'modal'))); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

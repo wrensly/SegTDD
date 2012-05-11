@@ -1,6 +1,6 @@
 <?php
 
-class FormController extends Controller
+class FormCategoryController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -50,14 +50,16 @@ class FormController extends Controller
 	 */
 	public function actionView($id)
 	{
-
-		$formCategory = FormCategory::model()->findByAttributes(array('form_id'=>$id));
-		$category = Category::model()->findByPk($formCategory->category_id);
+		$model = $this->loadModel($id);
+		$form = Form::model()->findByPk($model->form_id);
+		$entity = Entity::model()->findByPk($form->entity_id);
+		$tags = $model->getTags($model->form_id);
 		$this->render('view',array(
-			'model'=> $this->loadModel($id),
-			'category' => $category,
+			'model'=>$model,
+			'entity'=>$entity,
+			'tags'=>$tags,
 		));
-	
+
 	}
 
 	/**
@@ -69,29 +71,47 @@ class FormController extends Controller
 		$model=new Form;
 		$formCategory = new FormCategory;
 		$category = new Category;
-
+		$tags = new Tag;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		$arr = array();
 		if(isset($_POST['Form']))
 		{
 			$model->attributes=$_POST['Form'];
 
 			if($model->save())
 			{
+				$tags->attributes=$_POST['Tag'];
+				$arr = preg_split('/,/', $tags->tag_name, -1, PREG_SPLIT_NO_EMPTY);
+				foreach($arr as $val)
+				{
+					$tags = new Tag;
+					$tags->tag_name = trim($val);
+					$tagCount = Tag::model()->countByAttributes(array('tag_name' => $tags->tag_name));
+					if($tagCount == 0)
+					$tags->save();
+					else
+					$tag_id = Tag::model()->findByAttributes(array('tag_name' => $tags->tag_name));
+				
+					$formTag = new FormTag;
+					$formTag->tag_id = $tag_id->id;
+					$formTag->form_id = $model->id;
+					$tagCount = FormTag::model()->countByAttributes(array('tag_id' => $formTag->id , 'form_id' => $formTag->id));
+					if($tagCount == 0)
+					$formTag->save();
+				}
 				$formCategory->attributes=$_POST['FormCategory'];
 				$formCategory->form_id = $model->id;
 				$formCategory->save(false);
-				$this->redirect(array('view','id'=>$model->id));
-
+				$this->redirect(array('view','id'=>$formCategory->id));
 			}
-				
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 			'formCategory' => $formCategory,
 			'category' => $category,
+			'tags' => $tags,
 		));
 	}
 
@@ -102,9 +122,9 @@ class FormController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-		$formCategory = FormCategory::model()->findByAttributes(array('form_id'=>$id));
-		$category = new Category;
+		$formCategory=$this->loadModel($id);
+		$model=Form::model()->findByPk($formCategory->form_id);
+		$category=new Category;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -117,14 +137,14 @@ class FormController extends Controller
 			{
 				$formCategory->attributes=$_POST['FormCategory'];
 				$formCategory->save();
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$formCategory->id));
 			}
 				
 		}
 
-		$this->render('create',array(
+		$this->render('update',array(
 			'model'=>$model,
-			'formCategory' => $formCategory,
+			'formCategory'=>$formCategory,
 			'category' => $category,
 		));
 	}
@@ -154,11 +174,13 @@ class FormController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new Form('search');
-		$model->unsetAttributes();  // clear any default values
 
-		if(isset($_GET['Form']))
-			$model->attributes=$_GET['Form'];
+		$model=new FormCategory('search');
+		$model->unsetAttributes(); 
+		
+
+		if(isset($_GET['FormCategory']))
+			$model->attributes=$_GET['FormCategory'];
 
 		$this->render('index',array(
 			'model' => $model,
@@ -170,10 +192,10 @@ class FormController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Form('search');
+		$model=new FormCategory('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Form']))
-			$model->attributes=$_GET['Form'];
+		if(isset($_GET['FormCategory']))
+			$model->attributes=$_GET['FormCategory'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -187,7 +209,7 @@ class FormController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Form::model()->findByPk($id);
+		$model=FormCategory::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -199,7 +221,7 @@ class FormController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='form-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='form-category-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
@@ -208,9 +230,8 @@ class FormController extends Controller
 
 	public function renderStatus($data, $row)
 	{
-		if($data->status == 1)
+		if($data->form->status == 1)
 			return 'Active';
 		return 'Inactive';
 	}
-
 }

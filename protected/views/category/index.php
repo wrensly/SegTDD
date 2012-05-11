@@ -4,9 +4,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Category', 'url'=>array('create')),
-	array('label'=>'Manage Category', 'url'=>array('admin')),
+	array('label'=>'Create Category', 'url'=>'#myModal', 'linkOptions'=>array('data-toggle'=>'modal')),
 );
+
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -23,12 +23,9 @@ $('.search-form form').submit(function(){
 
 $this->content_title = "List of Categories";
 ?>
-
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<div class="search-form">
 <?php $this->renderPartial('_search',array(
-	'model'=>$model,
+	'model'=>$category,
 )); ?>
 </div>
 
@@ -37,17 +34,29 @@ $this->content_title = "List of Categories";
 $this->widget('bootstrap.widgets.BootGridView', array(
 	'id'=>'form-grid',
 	'type'=>'striped bordered condensed',
-    'dataProvider'=>$model->search(),
-    'filter'=>$model,
+    'dataProvider'=>$category->search(),
 	'columns'=>array(
-		'id',
 		'category_name',
+		'description',
 	array(
             'class'=>'bootstrap.widgets.BootButtonColumn',
-            'template' => '{view}',
             'htmlOptions'=>array('style'=>'width: 50px'),
         ),
 		))); 
-
-
 ?>
+
+<?php $this->beginWidget('bootstrap.widgets.BootModal', array('id'=>'myModal')); ?>
+ 
+<div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Create Category</h3>
+</div>
+ 
+<div class="modal-body">
+    <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>
+ 
+<?php $this->endWidget(); ?>
+
+
+
