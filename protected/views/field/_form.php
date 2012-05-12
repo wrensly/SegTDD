@@ -1,51 +1,61 @@
 <?php 
+$cs=Yii::app()->getClientScript();
+$cs->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.calculation.min.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.format.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.'/js/template.js');
 
 $form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 	'id'=>'field-form',
 	'type' => 'horizontal',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 ));
 
 Yii::app()->clientScript->registerScript('switchConstraint', "
-$('#Field_datatype').change(function(){
-	var datatype = $('option:selected', this).val();
-	$('#constraintText').addClass('no-display');
-	$('#constraintNumeric').addClass('no-display');
-	$('#constraintDatetime').addClass('no-display');
-	$('#constraintEnum').addClass('no-display');
-	$('#constraintFile').addClass('no-display');
-	$('#constraintCompound').addClass('no-display');
+
+function toggleConstraint(object){
+	var datatype = $('option:selected', object).val();
+	$('#constraintText').hide(250);
+	$('#constraintNumeric').hide(250);
+	$('#constraintDatetime').hide(250);
+	$('#constraintEnum').hide(250);
+	$('#constraintFile').hide(250);
+	$('#constraintCompound').hide(250);
 
 	switch (datatype) {
 		case 'T':
-			$('#constraintText').toggleClass('no-display');
+			$('#constraintText').show(250);
 			break;
 		case 'N':
-			$('#constraintNumeric').toggleClass('no-display');
+			$('#constraintNumeric').show(250);
 			break;
 		case 'D':
 		case 't':
 		case 'd':
-			$('#constraintDatetime').toggleClass('no-display');
+			$('#constraintDatetime').show(250);
 			break;
 		case 'O':
-			$('#constraintEnum').toggleClass('no-display');
+			$('#constraintEnum').show(250);
 			break;
 		case 'F':
-			$('#constraintFile').toggleClass('no-display');
+			$('#constraintFile').show(250);
 			break;
 		case 'C':
-			$('#constraintCompound').toggleClass('no-display');
+			$('#constraintCompound').show(250);
 			break;
 		default:
 			break;
 	}
+}
+toggleConstraint($('#Field_datatype'));
+$('#Field_datatype').change(function(){
+	toggleConstraint(this);
 });
 ");
 
 Yii::app()->clientScript->registerScript('derived-checked', "
+$('#Field_derived').is(':checked') ? $('#constraintDerived').show(250) : $('#constraintDerived').hide(250);
 $('#Field_derived').click(function(){
-	$('#constraintDerived').toggleClass('no-display');
+	$('#constraintDerived').toggle(250);
 });
 ");
 
@@ -70,21 +80,42 @@ $('#Field_derived').click(function(){
 							'size'=>45,
 							'maxlength'=>45,
 							'hint' => 'Short Name of the field when querying to the database.',)); ?>
-						<?php echo $form->dropDownListRow($fieldModel,'datatype',
-							array(
-								'T' => 'Text',
-								'N' => 'Numeric',
-								'D' => 'Date',
-								't' => 'Time',
-								'd' => 'Datetime',
-								'O' => 'Option',
-								'F' => 'File',
-								'C' => 'Compound',
-							),
-							array(
-								'size'=>1,
-								'maxlength'=>1
-							) ); ?>	 				
+						<?php
+						if (!isset($fieldModel->datatype)){
+							echo $form->dropDownListRow($fieldModel,'datatype',
+								array(
+									'T' => 'Text',
+									'N' => 'Numeric',
+									'D' => 'Date',
+									't' => 'Time',
+									'd' => 'Datetime',
+									'O' => 'Option',
+									'F' => 'File',
+									'C' => 'Compound',
+								),
+								array(
+									'size'=>1,
+									'maxlength'=>1
+								) );
+						} else {
+							echo $form->dropDownListRow($fieldModel,'datatype',
+								array(
+									'T' => 'Text',
+									'N' => 'Numeric',
+									'D' => 'Date',
+									't' => 'Time',
+									'd' => 'Datetime',
+									'O' => 'Option',
+									'F' => 'File',
+									'C' => 'Compound',
+								),
+								array(
+									'size'=>1,
+									'maxlength'=>1,
+									'disabled'=>true,
+								) );
+						}
+						?>	 				
 	 					<?php echo $form->textAreaRow($fieldModel,'description',array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->checkBoxRow($fieldModel,'multiple'); ?>
 						<?php echo $form->checkBoxRow($fieldModel,'required'); ?>
@@ -95,7 +126,7 @@ $('#Field_derived').click(function(){
 		<div class="span6">
 			<fieldset>
 				<legend>Constraints <small>(Optional)</small></legend>
-				<div id="constraintText" class="constraint">
+				<div id="constraintText" class="constraint no-display">
 					<?php echo $this->renderPartial('_constraintTextForm', array(
 						'form' => $form,
 						'constraintTextModel' =>$constraintTextModel,
@@ -132,16 +163,16 @@ $('#Field_derived').click(function(){
 					)); ?>					
 				</div>
 				<div id="constraintCompound" class="constraint no-display">
-					<?php echo $form->dropDownListRow($fieldModel,'parent_id',Field::items('fieldname'),array(
-			 			'prompt' => '-SELECT-',
-			 			'hint' => 'Select an entity to associate this field.',)); ?>
+					<?php echo $this->renderPartial('_constraintCompoundForm', array(
+						'form' => $form,
+						'fieldModel' =>$fieldModel,
+					)); ?>	
 				</div>
 			</fieldset>
 			<fieldset>
 				<legend>Others</legend>
 				<?php echo $form->dropDownListRow($fieldModel,'entity_id',Entity::items('entityname'),array(
-					'prompt' => '-SELECT-',
-			 		'hint' => 'Select an entity to associate this field.',)); ?>
+					'hint' => 'Select an entity to associate this field.',)); ?>
 			</fieldset>
 		</div>
 	</div>

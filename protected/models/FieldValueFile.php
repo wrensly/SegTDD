@@ -1,26 +1,30 @@
 <?php
 
 /**
- * This is the model class for table "constraint_text".
+ * This is the model class for table "field_value_file".
  *
- * The followings are the available columns in table 'constraint_text':
+ * The followings are the available columns in table 'field_value_file':
  * @property integer $id
  * @property integer $field_id
- * @property integer $minlength
- * @property integer $maxlength
- * @property string $encoding
- * @property string $format
- * @property string $default_value
+ * @property string $filename
+ * @property integer $entity_id
+ * @property string $filetype
+ * @property integer $priority
+ * @property integer $snapshot_id
+ * @property integer $entity_instance_id
  *
  * The followings are the available model relations:
+ * @property Entity $entity
+ * @property EntityInstance $entityInstance
  * @property Field $field
+ * @property Snapshot $snapshot
  */
-class ConstraintText extends CActiveRecord
+class FieldValueFile extends MyActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return ConstraintText the static model class
+	 * @return FieldValueFile the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -32,7 +36,7 @@ class ConstraintText extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'constraint_text';
+		return 'field_value_file';
 	}
 
 	/**
@@ -43,12 +47,13 @@ class ConstraintText extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('minlength, maxlength','required'),
-			array('id, field_id, minlength, maxlength', 'numerical', 'integerOnly'=>true),
-			array('encoding, format, default_value', 'safe'),
+			array('id', 'required'),
+			array('id, field_id, entity_id, priority, snapshot_id, entity_instance_id', 'numerical', 'integerOnly'=>true),
+			array('filetype', 'length', 'max'=>50),
+			array('filename', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, field_id, minlength, maxlength, encoding, format, default_value', 'safe', 'on'=>'search'),
+			array('id, field_id, filename, entity_id, filetype, priority, snapshot_id, entity_instance_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,7 +65,10 @@ class ConstraintText extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
+			'entityInstance' => array(self::BELONGS_TO, 'EntityInstance', 'entity_instance_id'),
 			'field' => array(self::BELONGS_TO, 'Field', 'field_id'),
+			'snapshot' => array(self::BELONGS_TO, 'Snapshot', 'snapshot_id'),
 		);
 	}
 
@@ -72,11 +80,12 @@ class ConstraintText extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'field_id' => 'Field',
-			'minlength' => 'Minimum Length',
-			'maxlength' => 'Maximum Length',
-			'encoding' => 'Encoding',
-			'format' => 'Format',
-			'default_value' => 'Default Value',
+			'filename' => 'Filename',
+			'entity_id' => 'Entity',
+			'filetype' => 'Filetype',
+			'priority' => 'Priority',
+			'snapshot_id' => 'Snapshot',
+			'entity_instance_id' => 'Entity Instance',
 		);
 	}
 
@@ -93,11 +102,12 @@ class ConstraintText extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('field_id',$this->field_id);
-		$criteria->compare('minlength',$this->minlength);
-		$criteria->compare('maxlength',$this->maxlength);
-		$criteria->compare('encoding',$this->encoding,true);
-		$criteria->compare('format',$this->format,true);
-		$criteria->compare('default_value',$this->default_value,true);
+		$criteria->compare('filename',$this->filename,true);
+		$criteria->compare('entity_id',$this->entity_id);
+		$criteria->compare('filetype',$this->filetype,true);
+		$criteria->compare('priority',$this->priority);
+		$criteria->compare('snapshot_id',$this->snapshot_id);
+		$criteria->compare('entity_instance_id',$this->entity_instance_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

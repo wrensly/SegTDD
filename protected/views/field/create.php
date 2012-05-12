@@ -8,7 +8,7 @@ $this->menu=array(
 	array('label'=>'Manage Field', 'url'=>array('index')),
 );
 
-$this->content_title = 'Ceate Field';
+$this->content_title = 'Create Field';
 ?>
 
 <?php echo $this->renderPartial('_form', array(

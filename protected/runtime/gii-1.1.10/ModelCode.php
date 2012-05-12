@@ -3,6 +3,6 @@ return array (
   'template' => 'default',
   'tablePrefix' => '',
   'modelPath' => 'application.models',
-  'baseClass' => 'CActiveRecord',
+  'baseClass' => 'MyActiveRecord',
   'buildRelations' => '1',
 );

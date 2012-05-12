@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"jqu",
+				"jQuery.each	jQuery.each"
+			],
+			[
+				"jQ",
+				"jQuery.map	jQuery.map"
+			],
+			[
 				"get",
 				"getenv"
 			],
@@ -108,45 +116,86 @@
 	"buffers":
 	[
 		{
-			"file": "protected/views/layouts/main.php",
+			"file": "protected/views/field/_form.php",
 			"settings":
 			{
-				"buffer_size": 4794,
+				"buffer_size": 5905,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "<?php\n\n// uncomment the following to define a path alias\n// Yii::setPathOfAlias('local','path/to/local-folder');\n\n// This is the main Web application configuration. Any writable\n// CWebApplication properties can be configured here.\nreturn array(\n	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',\n	'name'=>'TRACER Data Dictionary',\n\n	// Default Controller to be invoked when the webapp root is accessed\n	'defaultController'=>'site',\n\n	// preloading 'log' component\n	'preload'=>array('log', 'bootstrap',),\n\n	// autoloading model and component classes\n	'import'=>array(\n		'application.models.*',\n		'application.components.*',\n	),\n\n	'modules'=>array(\n		// uncomment the following to enable the Gii tool\n		\n		'gii'=>array(\n			'class'=>'system.gii.GiiModule',\n			'password'=>'12345',\n		 	// If removed, Gii defaults to localhost only. Edit carefully to taste.\n			'ipFilters'=>array('127.0.0.1','::1'),\n			'generatorPaths'=>array(\n				'bootstrap.gii'),\n		),\n		\n	),\n\n	// application components\n	'components'=>array(\n		'user'=>array(\n			// enable cookie-based authentication\n			'allowAutoLogin'=>true,\n		),\n		// uncomment the following to enable URLs in path-format\n		\n		'urlManager'=>array(\n			'urlFormat'=>'path',\n			'rules'=>array(\n				'<controller:\\w+>/<id:\\d+>'=>'<controller>/view',\n				'<controller:\\w+>/<action:\\w+>/<id:\\d+>'=>'<controller>/<action>',\n				'<controller:\\w+>/<action:\\w+>'=>'<controller>/<action>',\n			),\n			// further clean our URLs, i.e., hiding the entry script index.php in the URL\n			'showScriptName' => false,\n			// We may also add some sux to our URLs. For example, we can have /post/100.html\n			// instead of /post/100. This makes it look more like a URL to a static Web page.\n			'urlSuffix' => '.htm',\n		),	\n		\n		'db'=>array(\n			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',\n		),\n		// uncomment the following to use a MySQL database\n		\n		'db'=>array(\n			'connectionString' => 'mysql:host=localhost;dbname=segtdd',\n			'emulatePrepare' => true,\n			'username' => 'root',\n			'password' => '',\n			'charset' => 'utf8',\n		),\n		\n		'errorHandler'=>array(\n			// use 'site/error' action to display errors\n            'errorAction'=>'site/error',\n        ),\n		'log'=>array(\n			'class'=>'CLogRouter',\n			'routes'=>array(\n				array(\n					'class'=>'CFileLogRoute',\n					'levels'=>'error, warning',\n				),\n				// uncomment the following to show log messages on web pages\n				/*\n				array(\n					'class'=>'CWebLogRoute',\n				),\n				*/\n			),\n		),\n		'bootstrap'=>array(\n			'class'=>'ext.bootstrap.components.Bootstrap',\n		),\n	),\n\n	// application-level parameters that can be accessed\n	// using Yii::app()->params['paramName']\n	'params'=>array(\n		// this is used in contact page\n		'adminEmail'=>'sethbusque@gmail.com',\n	),\n	/*'defaultController' => 'login',*/\n);\n",
-			"file": "protected/config/main.php",
-			"file_size": 2904,
-			"file_write_time": 129808611517615735,
+			"file": "protected/views/field/_constraintCompoundForm.php",
 			"settings":
 			{
-				"buffer_size": 2802,
+				"buffer_size": 2574,
+				"line_ending": "Windows",
+				"name": "_constraintCompoundForm.php"
+			}
+		},
+		{
+			"file": "protected/views/field/_constraintDerivedForm.php",
+			"settings":
+			{
+				"buffer_size": 1479,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/xampp/htdocs/segTDD.phpfogapp.com/protected/config/main.php",
+			"file": "protected/views/field/_constraintEnumForm.php",
 			"settings":
 			{
-				"buffer_size": 2877,
+				"buffer_size": 5315,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "css/doc.css",
+			"file": "protected/controllers/FieldController.php",
 			"settings":
 			{
-				"buffer_size": 1327,
+				"buffer_size": 15332,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "protected/views/site/index.php",
+			"file": "protected/views/field/view.php",
 			"settings":
 			{
-				"buffer_size": 680,
+				"buffer_size": 3153,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/views/field/index.php",
+			"settings":
+			{
+				"buffer_size": 2671,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\n\n/**\n * This is the model class for table \"field\".\n *\n * The followings are the available columns in table 'field':\n * @property integer $id\n * @property string $fieldname\n * @property string $datatype\n * @property string $description\n * @property integer $multiple\n * @property string $alias\n * @property string $default\n * @property integer $entity_id\n * @property string $label\n * @property integer $required\n * @property integer $parent_id\n * @property integer $derived\n * @property integer $attribute\n *\n * The followings are the available model relations:\n * @property ConstraintDatetime[] $constraintDatetimes\n * @property ConstraintDerived[] $constraintDeriveds\n * @property ConstraintEnum[] $constraintEnums\n * @property ConstraintFile[] $constraintFiles\n * @property ConstraintNumeric[] $constraintNumerics\n * @property ConstraintText[] $constraintTexts\n * @property EntityAttribute[] $entityAttributes\n * @property Entity $entity\n * @property FieldValueCompound $fieldValueCompound\n * @property FieldValueDate[] $fieldValueDates\n * @property FieldValueDatetime[] $fieldValueDatetimes\n * @property FieldValueEnum[] $fieldValueEnums\n * @property FieldValueFile[] $fieldValueFiles\n * @property FieldValueNumeric[] $fieldValueNumerics\n * @property FieldValueText[] $fieldValueTexts\n * @property FieldValueTime[] $fieldValueTimes\n */\nclass Field extends MyActiveRecord\n{\n	const TYPE_TEXT     ='T';\n	const TYPE_NUMERIC  ='N';\n	const TYPE_DATE     ='D';\n	const TYPE_TIME     ='t';\n	const TYPE_DATETIME ='d';\n	const TYPE_OPTION   ='O';\n	const TYPE_FILE     ='F';\n	const TYPE_COMPOUND ='C';\n\n	/**\n	 * Returns the static model of the specified AR class.\n	 * @param string $className active record class name.\n	 * @return Field the static model class\n	 */\n	public static function model($className=__CLASS__)\n	{\n		return parent::model($className);\n	}\n\n	/**\n	 * @return string the associated database table name\n	 */\n	public function tableName()\n	{\n		return 'field';\n	}\n\n	/**\n	 * @return array validation rules for model attributes.\n	 */\n	public function rules()\n	{\n		// NOTE: you should only define rules for those attributes that\n		// will receive user inputs.\n		return array(\n			array('fieldname, datatype, description, multiple, label, required, derived, attribute', 'required'),\n			array('multiple, entity_id, required, parent_id, derived, attribute', 'numerical', 'integerOnly'=>true),\n			array('fieldname', 'length', 'max'=>100),\n			array('datatype', 'length', 'max'=>1),\n			array('alias, default, label', 'length', 'max'=>45),\n			array('description', 'safe'),\n			// The following rule is used by search().\n			// Please remove those attributes that should not be searched.\n			array('id, fieldname, datatype, description, multiple, alias, default, entity_id, label, required, parent_id, derived, attribute', 'safe', 'on'=>'search'),\n		);\n	}\n\n	/**\n	 * @return array relational rules.\n	 */\n	public function relations()\n	{\n		// NOTE: you may need to adjust the relation name and the related\n		// class name for the relations automatically generated below.\n		return array(\n			'constraintDatetimes' => array(self::HAS_ONE, 'ConstraintDatetime', 'field_id'),\n			'constraintDeriveds' => array(self::HAS_ONE, 'ConstraintDerived', 'field_id'),\n			'constraintEnums' => array(self::HAS_ONE, 'ConstraintEnum', 'field_id'),\n			'constraintFiles' => array(self::HAS_ONE, 'ConstraintFile', 'field_id'),\n			'constraintNumerics' => array(self::HAS_ONE, 'ConstraintNumeric', 'field_id'),\n			'constraintTexts' => array(self::HAS_ONE, 'ConstraintText', 'field_id'),\n			'entityAttributes' => array(self::HAS_MANY, 'EntityAttribute', 'field_id'),\n			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),\n			'fieldValueCompound' => array(self::HAS_ONE, 'FieldValueCompound', 'id'),\n			'fieldValueDates' => array(self::HAS_MANY, 'FieldValueDate', 'field_id'),\n			'fieldValueDatetimes' => array(self::HAS_MANY, 'FieldValueDatetime', 'field_id'),\n			'fieldValueEnums' => array(self::HAS_MANY, 'FieldValueEnum', 'field_id'),\n			'fieldValueFiles' => array(self::HAS_MANY, 'FieldValueFile', 'field_id'),\n			'fieldValueNumerics' => array(self::HAS_MANY, 'FieldValueNumeric', 'field_id'),\n			'fieldValueTexts' => array(self::HAS_MANY, 'FieldValueText', 'field_id'),\n			'fieldValueTimes' => array(self::HAS_MANY, 'FieldValueTime', 'field_id'),\n		);\n	}\n\n	/**\n	 * @return array customized attribute labels (name=>label)\n	 */\n	public function attributeLabels()\n	{\n		return array(\n			'id' => 'ID',\n			'fieldname' => 'Field Name',\n			'datatype' => 'Data Type',\n			'description' => 'Description',\n			'multiple' => 'Multiple',\n			'alias' => 'Alias',\n			'default' => 'Default',\n			'entity_id' => 'Entity Association',\n			'label' => 'Label',\n			'required' => 'Required',\n			'parent_id' => 'Parent',\n			'derived' => 'Derived',\n			'attribute' => 'Attribute',\n		);\n	}\n\n	/**\n	 * Retrieves a list of models based on the current search/filter conditions.\n	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.\n	 */\n	public function search()\n	{\n		// Warning: Please modify the following code to remove attributes that\n		// should not be searched.\n\n		$criteria=new CDbCriteria;\n\n		$criteria->compare('fieldname',$this->fieldname,false);\n		$criteria->compare('datatype',$this->datatype,true);\n		$criteria->compare('description',$this->description,true);\n		$criteria->compare('multiple',$this->multiple);\n		$criteria->compare('alias',$this->alias,true);\n		$criteria->compare('default',$this->default,true);\n		$criteria->compare('entity_id',$this->entity_id);\n		$criteria->compare('label',$this->label,false);\n		$criteria->compare('required',$this->required);\n		$criteria->compare('parent_id',$this->parent_id);\n		$criteria->compare('derived',$this->derived);\n		$criteria->compare('attribute',$this->attribute);\n		$criteria->compare('deleted',0);\n		return new CActiveDataProvider($this, array(\n			'criteria'=>$criteria,\n		));\n	}\n\n	private static $_items=array();\n		\n	public static function items($type){\n		if(!isset(self::$_items[$type]))\n			self::loadItems($type);\n		return self::$_items[$type];\n	}\n	\n	public static function item($type,$code){\n		if(!isset(self::$_items[$type]))\n			self::loadItems($type);\n		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;\n	}\n	\n	private static function loadItems($type){\n		self::$_items[$type]=array();\n		$models=self::model()->findAll();\n		foreach($models as $model)\n			self::$_items[$type][$model->id]=$model->$type;\n	}\n}\n",
+			"file": "protected/models/Field.php",
+			"file_size": 6674,
+			"file_write_time": 129812999044381124,
+			"settings":
+			{
+				"buffer_size": 6515,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/models/FieldValue.php",
+			"settings":
+			{
+				"buffer_size": 3263,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/models/FieldValueText.php",
+			"settings":
+			{
+				"buffer_size": 3270,
 				"line_ending": "Windows"
 			}
 		}
@@ -154,7 +203,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 104.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
@@ -299,44 +348,70 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldValueController.php",
+		"/C/xampp/htdocs/SegTDD/framework/db/ar/CActiveRecord.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/Entity.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/Form.php",
+		"/C/xampp/htdocs/SegTDD/protected/components/MyActiveRecord.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintEnumForm.php",
+		"/C/xampp/htdocs/SegTDD/js/template.js",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDatetimeForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_form.php",
+		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldController.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDerivedForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/Field.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
+		"/C/xampp/htdocs/SegTDD/js/serializeJSON.js",
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/D/Dropbox/Segworks/Other Documents/logicalDeletion.php",
+		"/C/xampp/htdocs/SegTDD/framework/zii/widgets/assets/gridview/jquery.yiigridview.js",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootActiveForm.php",
+		"/C/xampp/htdocs/SegTDD/css/doc.css",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/input/BootInput.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/view.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/contact.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDerived.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintDerived.php",
+		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintTextForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/create.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDatetime.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintText.php",
+		"/C/xampp/htdocs/SegTDD/framework/zii/widgets/grid/CGridView.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintText.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintNumericForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintEnum.php",
+		"/C/xampp/htdocs/SegTDD/protected/controllers/FormController.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/form/admin.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintFile.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintFile.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintFileForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintEnum.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintNumeric.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintNumeric.php",
+		"/C/xampp/htdocs/SegTDD/protected/controllers/SiteController.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/update.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/LoginForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/FormCategory.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/Category.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/pages/about.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main_login.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/login.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/login.php",
 		"/C/xampp/htdocs/segTDD.phpfogapp.com/protected/config/main.php",
 		"/C/xampp/htdocs/segTDD.phpfogapp.com/protected/config/main (2).php",
 		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log",
-		"/C/xampp/htdocs/SegTDD/css/doc.css",
-		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_form.php",
-		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldController.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/create.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDatetimeForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintTextForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintText.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/Entity.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/view.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/Field.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/LoginForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintEnumForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDerivedForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootButtonColumn.php",
 		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootGridView.php",
 		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootDataColumn.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDerived.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintNumeric.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintFile.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintEnum.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDatetime.php",
 		"/D/Seth Busque/Downloads/Tambakan/create-next-postcard-flyer-smart-colors_designBrief",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintNumericForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintFileForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/update.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/site/contact.php",
-		"/C/xampp/htdocs/SegTDD/protected/controllers/SiteController.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/site/error.php",
 		"/D/Seth Busque/Downloads/Tambakan/field.sql",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
-		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootActiveForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/assets/css/bootstrap-yii.css",
 		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootCarousel.php",
 		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootAlert.php",
@@ -345,15 +420,12 @@
 		"/C/xampp/htdocs/SegTDD/protected/config/test.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/admin.php",
 		"/C/xampp/htdocs/SegTDD/protected/components/UserIdentity.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/site/index.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/User.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/site/login.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_view.php",
 		"/C/xampp/htdocs/SegTDD/protected/components/Controller.php",
 		"/C/xampp/htdocs/SegTDD/protected/.htaccess",
 		"/C/xampp/htdocs/SegTDD/README",
 		"/C/xampp/htdocs/SegTDD/.htaccess",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column2.php",
 		"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/.htaccess",
 		"/C/xampp/htdocs/TRACERdemo.phpfogapp.com/index.php",
@@ -403,30 +475,7 @@
 		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Framework Snippets/yii-controller-class.sublime-snippet",
 		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Bootstrap Snippets/README.md",
 		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Yii Bootstrap Snippets/package-metadata.json",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/div-col.sublime-snippet",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/grid-one.sublime-snippet",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/div-row.sublime-snippet",
-		"//ADMIN-PC/Dropsite/asad",
-		"/C/xampp/htdocs/yii/site/protected/views/scholar/index.php",
-		"/C/xampp/htdocs/yii/framework/web/CClientScript.php",
-		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/input/BootInput.php",
-		"/C/xampp/htdocs/yii/framework/web/CHttpSession.php",
-		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootBadge.php",
-		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootGridView.php",
-		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootCarousel.php",
-		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootBreadcrumbs.php",
-		"/C/xampp/htdocs/yii/site/protected/views/scholar/_view.php",
-		"/C/xampp/htdocs/yii/framework/web/CController.php",
-		"/C/xampp/htdocs/yii/site/protected/views/layouts/column1.php",
-		"/C/xampp/htdocs/yii/site/protected/views/scholar/create.php",
-		"/C/xampp/htdocs/yii/site/protected/views/scholar/_form.php",
-		"/C/xampp/htdocs/yii/site/protected/views/layouts/column2.php",
-		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootListView.php",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/grid-three.sublime-snippet",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/grid-two.sublime-snippet",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/package-metadata.json",
-		"/C/xampp/htdocs/yii/site/protected/views/site/bootstrap2.php",
-		"/C/xampp/htdocs/yii/site/protected/views/site/bootstrap.php"
+		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Twitter Bootstrap Snippets/Scaffolding/div-col.sublime-snippet"
 	],
 	"find":
 	{
@@ -441,9 +490,48 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"case 'N':",
+			"case 'T':",
+			"= $constraintModel; break;",
+			"case ",
+			"constraintDerived",
+			"efaultSelect",
+			"$key",
+			"$value",
+			"$key",
+			"$values",
+			">",
+			"hiddenField",
+			"hidden",
+			"XHtml::jsUrl(",
+			"), CClientScript::POS_HEAD",
+			"$constraintModelsave",
+			" * @property integer $",
+			"* @property ",
+			" * @property string ",
+			" * @",
+			"@property",
+			" * ",
+			"'form' => $form,",
+			"_viewConstraint",
+			"_constraintTextForm",
+			"case ",
+			" break;",
+			"$model",
+			".toggleClass('no-display')",
+			"$model",
+			"$model = Constraint",
+			"	'field_id' => $id,\n					));\n				break;",
+			"$blankModel = new",
+			"findByAttributes(",
+			"$model",
+			"($id,$datatype);;",
+			"$model = break;",
+			"$dataType = '",
+			"$dataType =",
 			"entityname",
 			"*",
 			"</option>  ",
@@ -511,29 +599,59 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "protected/views/layouts/main.php",
+					"file": "protected/views/field/_form.php",
 					"settings":
 					{
-						"buffer_size": 4794,
+						"buffer_size": 5905,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								5311,
+								5311
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2013.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "protected/views/field/_constraintCompoundForm.php",
+					"settings":
+					{
+						"buffer_size": 2574,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								183
+							]
+						],
+						"settings":
+						{
+							"auto_name": "_constraintCompoundForm.php",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -542,79 +660,54 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "protected/config/main.php",
-					"settings":
-					{
-						"buffer_size": 2802,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2802,
-								2802
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 748.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 2,
-					"file": "/C/xampp/htdocs/segTDD.phpfogapp.com/protected/config/main.php",
+					"file": "protected/views/field/_constraintDerivedForm.php",
 					"settings":
 					{
-						"buffer_size": 2877,
+						"buffer_size": 1479,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2152,
-								2152
+								1384,
+								1384
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 596.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "css/doc.css",
+					"file": "protected/views/field/_constraintEnumForm.php",
 					"settings":
 					{
-						"buffer_size": 1327,
+						"buffer_size": 5315,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								83,
-								83
+								451,
+								451
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -624,23 +717,158 @@
 				},
 				{
 					"buffer": 4,
-					"file": "protected/views/site/index.php",
+					"file": "protected/controllers/FieldController.php",
 					"settings":
 					{
-						"buffer_size": 680,
+						"buffer_size": 15332,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								15332,
+								15332
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5944.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "protected/views/field/view.php",
+					"settings":
+					{
+						"buffer_size": 3153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1549,
+								1549
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "protected/views/field/index.php",
+					"settings":
+					{
+						"buffer_size": 2671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								483,
+								483
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "protected/models/Field.php",
+					"settings":
+					{
+						"buffer_size": 6515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1598,
+								1383
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 434.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "protected/models/FieldValue.php",
+					"settings":
+					{
+						"buffer_size": 3263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								593,
+								593
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "protected/models/FieldValueText.php",
+					"settings":
+					{
+						"buffer_size": 3270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								862,
+								862
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -711,6 +939,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 194.0,
+	"side_bar_width": 217.0,
 	"status_bar_visible": true
 }

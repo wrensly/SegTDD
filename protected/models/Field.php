@@ -36,8 +36,17 @@
  * @property FieldValueText[] $fieldValueTexts
  * @property FieldValueTime[] $fieldValueTimes
  */
-class Field extends CActiveRecord
+class Field extends MyActiveRecord
 {
+	const TYPE_TEXT='T';
+	const TYPE_NUMERIC='N';
+	const TYPE_DATE='D';
+	const TYPE_TIME='t';
+	const TYPE_DATETIME='d';
+	const TYPE_OPTION='O';
+	const TYPE_FILE='F';
+	const TYPE_COMPOUND='C';
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -136,20 +145,19 @@ class Field extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('fieldname',$this->fieldname,true);
+		$criteria->compare('fieldname',$this->fieldname,false);
 		$criteria->compare('datatype',$this->datatype,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('multiple',$this->multiple);
 		$criteria->compare('alias',$this->alias,true);
 		$criteria->compare('default',$this->default,true);
 		$criteria->compare('entity_id',$this->entity_id);
-		$criteria->compare('label',$this->label,true);
+		$criteria->compare('label',$this->label,false);
 		$criteria->compare('required',$this->required);
 		$criteria->compare('parent_id',$this->parent_id);
 		$criteria->compare('derived',$this->derived);
 		$criteria->compare('attribute',$this->attribute);
-
+		$criteria->compare('deleted',0);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -174,6 +182,5 @@ class Field extends CActiveRecord
 		$models=self::model()->findAll();
 		foreach($models as $model)
 			self::$_items[$type][$model->id]=$model->$type;
-
 	}
 }

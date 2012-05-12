@@ -33,8 +33,9 @@
  
 <?php $this->endWidget(); ?>
 <div class="control-group">
-	<label class="control-label">View Expression Data</label>
-	<div class="controls">
-		<?php echo CHtml::link('Edit View Code','#viewCodeModal', array('class'=>'btn btn-warning', 'data-toggle'=>'modal')); ?>	
-	</div>
+	<?php echo $form->labelEx($constraintDerivedModel,'view_expression_data',array('class'=>'control-label')); ?>
+    <div class="controls">
+		<?php echo CHtml::link('Edit View Code','#viewCodeModal', array('class'=>'btn btn-warning', 'data-toggle'=>'modal')); ?>
+        <?php echo $form->error($constraintDerivedModel,'view_expression_data'); ?> 
+    </div>
 </div>

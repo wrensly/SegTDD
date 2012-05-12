@@ -13,7 +13,7 @@ $('.search-button').click(function(){
 	$('.search-form').toggle(250);
 	return false;
 });
-$('.search-form form').submit(function(){
+$('.search-form').submit(function(){
 	$.fn.yiiGridView.update('field-grid', {
 		data: $(this).serialize()
 	});
@@ -31,7 +31,6 @@ $this->content_title = 'Manage Fields';
 	or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 	</p>');
 ?>
-
 <?php $this->widget('bootstrap.widgets.BootAlert'); ?>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-warning	')); ?>
@@ -59,22 +58,40 @@ $this->widget('bootstrap.widgets.BootGridView', array(
             'name' => 'id',
         	'selectableRows' => 2,
         ),
-        array(            // display 'author.username' using an expression
+        array(
             'name'=>'entity_id',
             'value'=>'$data->entity[\'entityname\']',
         ),
 
 		'fieldname',
 		'label',
-		array(            // display 'author.username' using an expression
+		array(
             'name'=>'datatype',
             'value'=>array($this,'renderDataType'), 
         ),
+
 		'description',
-		'multiple',
-		'required',
-		'derived',
-		/*
+		array(
+            'name'=>'multiple',
+            'value' =>'Yii::app()->format->boolean($data->multiple)',
+            //array($this,'renderMultiple'),
+        ),
+        array(
+            'name'=>'required',
+            'value' =>'Yii::app()->format->boolean($data->required)',
+            //array($this,'renderRequired'),
+        ),
+        array(
+            'name'=>'derived',
+            'value' =>'Yii::app()->format->boolean($data->derived)',
+            //array($this,'renderDerived'),
+        ),
+        array(
+            'name'=>'attribute',
+            'value' =>'Yii::app()->format->boolean($data->attribute)',
+            //array($this,'renderAttribute'),
+        ),
+        /*
 		'id',
 		'alias',
 		'default',

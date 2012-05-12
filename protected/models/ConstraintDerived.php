@@ -40,7 +40,8 @@ class ConstraintDerived extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id, field_id', 'numerical', 'integerOnly'=>true),
-			array('view_expression_data', 'safe'),
+			array('view_expression_data','required'),
+			array('view_expression_data','safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, field_id, view_expression_data', 'safe', 'on'=>'search'),

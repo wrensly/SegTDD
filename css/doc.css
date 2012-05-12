@@ -39,6 +39,10 @@ margin-top: 18px;
 	resize: none;
 }
 
+.code-display{
+	font-family: "Lucida Console","Consolas","Courier New", Courier, monospace;
+}
+
 .myBodybg {
 	background-image: -ms-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
 	background-image: -moz-radial-gradient(center, ellipse cover, #FFFFFF 0%, #00A3A3 100%);
@@ -110,4 +114,12 @@ margin-top: 18px;
 }
 .loginNotification {
 	text-align: center;
+}
+
+table.templateFrame {
+	margin: 0px;
+}
+
+tfoot td{
+	border-top: 0px;
 }

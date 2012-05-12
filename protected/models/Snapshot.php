@@ -1,26 +1,28 @@
 <?php
 
 /**
- * This is the model class for table "constraint_text".
+ * This is the model class for table "snapshot".
  *
- * The followings are the available columns in table 'constraint_text':
+ * The followings are the available columns in table 'snapshot':
  * @property integer $id
- * @property integer $field_id
- * @property integer $minlength
- * @property integer $maxlength
- * @property string $encoding
- * @property string $format
- * @property string $default_value
+ * @property string $date
  *
  * The followings are the available model relations:
- * @property Field $field
+ * @property FieldValueCompound[] $fieldValueCompounds
+ * @property FieldValueDate[] $fieldValueDates
+ * @property FieldValueDatetime[] $fieldValueDatetimes
+ * @property FieldValueEnum[] $fieldValueEnums
+ * @property FieldValueFile[] $fieldValueFiles
+ * @property FieldValueNumeric[] $fieldValueNumerics
+ * @property FieldValueText[] $fieldValueTexts
+ * @property FieldValueTime[] $fieldValueTimes
  */
-class ConstraintText extends CActiveRecord
+class Snapshot extends MyActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return ConstraintText the static model class
+	 * @return Snapshot the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -32,7 +34,7 @@ class ConstraintText extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'constraint_text';
+		return 'snapshot';
 	}
 
 	/**
@@ -43,12 +45,12 @@ class ConstraintText extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('minlength, maxlength','required'),
-			array('id, field_id, minlength, maxlength', 'numerical', 'integerOnly'=>true),
-			array('encoding, format, default_value', 'safe'),
+			array('id', 'required'),
+			array('id', 'numerical', 'integerOnly'=>true),
+			array('date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, field_id, minlength, maxlength, encoding, format, default_value', 'safe', 'on'=>'search'),
+			array('id, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,7 +62,14 @@ class ConstraintText extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'field' => array(self::BELONGS_TO, 'Field', 'field_id'),
+			'fieldValueCompounds' => array(self::HAS_MANY, 'FieldValueCompound', 'snapshot_id'),
+			'fieldValueDates' => array(self::HAS_MANY, 'FieldValueDate', 'snapshot_id'),
+			'fieldValueDatetimes' => array(self::HAS_MANY, 'FieldValueDatetime', 'snapshot_id'),
+			'fieldValueEnums' => array(self::HAS_MANY, 'FieldValueEnum', 'snapshot_id'),
+			'fieldValueFiles' => array(self::HAS_MANY, 'FieldValueFile', 'snapshot_id'),
+			'fieldValueNumerics' => array(self::HAS_MANY, 'FieldValueNumeric', 'snapshot_id'),
+			'fieldValueTexts' => array(self::HAS_MANY, 'FieldValueText', 'snapshot_id'),
+			'fieldValueTimes' => array(self::HAS_MANY, 'FieldValueTime', 'snapshot_id'),
 		);
 	}
 
@@ -71,12 +80,7 @@ class ConstraintText extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'field_id' => 'Field',
-			'minlength' => 'Minimum Length',
-			'maxlength' => 'Maximum Length',
-			'encoding' => 'Encoding',
-			'format' => 'Format',
-			'default_value' => 'Default Value',
+			'date' => 'Date',
 		);
 	}
 
@@ -92,12 +96,7 @@ class ConstraintText extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('field_id',$this->field_id);
-		$criteria->compare('minlength',$this->minlength);
-		$criteria->compare('maxlength',$this->maxlength);
-		$criteria->compare('encoding',$this->encoding,true);
-		$criteria->compare('format',$this->format,true);
-		$criteria->compare('default_value',$this->default_value,true);
+		$criteria->compare('date',$this->date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

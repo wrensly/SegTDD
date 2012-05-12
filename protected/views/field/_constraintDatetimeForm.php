@@ -34,6 +34,6 @@
 ?>
 <?php echo $form->textFieldRow($constraintDatetimeModel,'format'); ?>
 <?php echo $form->dropDownListRow($constraintDatetimeModel,'timezone',$timezoneSelect,array(
-	'prompt' => '-SELECT-',
+      'options' => array( 'GMT+0.0' => array( 'selected' => true, ), ),
 )); ?>
 <?php echo $form->textFieldRow($constraintDatetimeModel,'default_value'); ?>
