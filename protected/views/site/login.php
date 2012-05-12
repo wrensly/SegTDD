@@ -14,27 +14,33 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 		),
 	)); ?>
 
-<!-- echo "
-		<p class='loginMargin loginNotification alert alert-info'>
-				Please fill out the following form with your login credentials:
-		</p>
-		"; -->
 	<?php
-		Yii::app()->user->setFlash('info', '<center>Please fill out the following form with your login credentials:</center>');
-		$this->widget('bootstrap.widgets.BootAlert');
-	?>
+		$errorOne = $form->error($model,'password');
+		$errorTwo = $form->error($model, 'username');
 
+		if(strip_tags($errorOne) != '' && strip_tags($errorTwo) == '' )
+		{
+			yii::app()->user->setFlash('error' , $errorOne).'a';
+			$this->widget('bootstrap.widgets.BootAlert');
+		}
+		if(strip_tags($errorOne) == '' && strip_tags($errorTwo) == '' )
+		{	
+			Yii::app()->user->setFlash('info', '<center>Please fill out the following form with your login credentials:</center>');
+			$this->widget('bootstrap.widgets.BootAlert');
+		}
+		 
+	?>
 	<div class="form">
 	<!--$form-->
 
 		<div class="row loginMargin">
 			<?php echo $form->textField($model,'username', array('class'=>'myUPTextField', 'placeHolder'=>'Username')); ?>
-			<?php echo $form->error($model,'username');?>
+
 		</div>
 
 		<div class="row loginMargin upMargin">
 			<?php echo $form->passwordField($model,'password', array('class'=>'myUPTextField', 'placeHolder'=>'Password')); ?>
-			<?php echo $form->error($model,'password'); ?>
+
 			<p class="hint">
 				Hint: You may login with <tt>demo/demo</tt> or <tt>admin/admin</tt>.
 			</p>
