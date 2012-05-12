@@ -112,4 +112,43 @@ class Form extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	private static $_items=array();
+		
+	public static function items($type){
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return self::$_items[$type];
+	}
+	
+	public static function item($type,$code){
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
+	}
+	
+	private static function loadItems($type){
+		self::$_items[$type]=array();
+		$models=self::model()->findAll();
+		foreach($models as $model)
+			self::$_items[$type][$model->id]=$model->$type;
+
+	}
+
+	public static function conditionItems($type, $con) {
+		if(isset(self::$_items[$type])) {
+			self::$_items[$type] = null;
+			self::conditionloadItems($type, $con);
+		}
+		else
+			self::conditionloadItems($type, $con);
+		return self::$_items[$type];
+	}
+
+	private static function conditionloadItems($type, $con){
+		self::$_items[$type]=array();
+		$models=self::model()->findAll($con);
+		foreach($models as $model)
+			self::$_items[$type][$model->id]=$model->$type;
+	}
 }

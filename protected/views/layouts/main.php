@@ -44,7 +44,7 @@
 							'items'=>array( 
 								array(
 									'label'=>'manage field', 
-									'url'=>array('/field'), 
+									'url'=>array('/field/index'), 
 									'icon' => 'align-justify white',
 								),
 								array(
@@ -76,12 +76,12 @@
 							'items'=>array( 
 								array(
 									'label'=>'manage entity',
-									'url'=>array('/site/none'),
+									'url'=>array('/entity/index'),
 									'icon' => 'cog white',
 								),
 								array(
 									'label'=>'create entity',
-									'url'=>'#', 
+									'url'=>array('/entity/create'), 
 									'icon'=>'plus white',
 								),
 							),
