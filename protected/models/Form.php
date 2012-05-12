@@ -20,6 +20,7 @@
  */
 class Form extends CActiveRecord
 {
+	public $category_search;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -52,7 +53,7 @@ class Form extends CActiveRecord
 			array('name, description, tags, layout', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, code, name, description, status, tags, layout, entity_id, attribute', 'safe', 'on'=>'search'),
+			array('id, code, name, description, status, tags, layout, entity_id, attribute, category_search', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -97,6 +98,9 @@ class Form extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+		$criteria->together = true;
+		$criteria->with = array('formCategories');
+		
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('code',$this->code,true);
@@ -107,10 +111,18 @@ class Form extends CActiveRecord
 		$criteria->compare('layout',$this->layout,true);
 		$criteria->compare('entity_id',$this->entity_id);
 		$criteria->compare('attribute',$this->attribute);
-
+		$criteria->compare( 'formCategories.category_id', $this->category_search, true );
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-		));
+			'sort'=>array(
+        	'attributes'=>array(
+            'category_search'=>array(
+                'asc'=>'formCategories.category_id',
+                'desc'=>'formCategories.category_id DESC',
+            ),
+        ),
+    ),
+));
 	}
 
 	private static $_items=array();

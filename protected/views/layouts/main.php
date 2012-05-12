@@ -60,12 +60,18 @@
 							'items'=>array(
 								array(
 									'label'=>'manage form',
-									'url'=>array('/form/admin'), 
+									'url'=>array('/formCategory/admin'), 
 									'icon' => 'file white',
 								),
 								array(
 									'label'=>'create form',
-									'url'=>array('/form/create'),
+									'url'=>array('/formCategory/create'),
+									'icon'=>'plus white',
+								),
+
+								array(
+									'label'=>'list category',
+									'url'=>array('/category/index'),
 									'icon'=>'plus white',
 								), 
 							),

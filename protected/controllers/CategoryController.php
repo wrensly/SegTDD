@@ -59,25 +59,6 @@ class CategoryController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
-	{
-		$model=new Category;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Category']))
-		{
-			$model->attributes=$_POST['Category'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
-
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -127,33 +108,31 @@ class CategoryController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model = new Category('search');
+		
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+		$model = new Category;
+		$category = new Category('search');
+		$category->unsetAttributes();  // clear any default values
 
 		if(isset($_GET['Category']))
-			$model->attributes=$_GET['Category'];
+			$category->attributes=$_GET['Category'];
+		else if(isset($_POST['Category']))
+		{
+			$model->attributes=$_POST['Category'];
+			$model->save();
+			$model->unsetAttributes();
+		}
 
-		$dataProvider=new CActiveDataProvider('Category');
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
 			'model' => $model,
+			'category' => $category,
 		));
 	}
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
-	{
-		$model=new Category('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Category']))
-			$model->attributes=$_GET['Category'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

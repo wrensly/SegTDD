@@ -1,21 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "Category".
+ * This is the model class for table "form_tag".
  *
- * The followings are the available columns in table 'Category':
- * @property integer $id
- * @property string $category_name
- * @property string $description
+ * The followings are the available columns in table 'form_tag':
+ * @property string $id
+ * @property integer $form_id
+ * @property integer $tag_id
+ *
  * The followings are the available model relations:
- * @property FormCategory[] $formCategories
+ * @property Form $form
+ * @property Tag $tag
  */
-class Category extends CActiveRecord
+class FormTag extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Category the static model class
+	 * @return FormTag the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -27,7 +29,7 @@ class Category extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'category';
+		return 'form_tag';
 	}
 
 	/**
@@ -38,12 +40,10 @@ class Category extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('category_name', 'length', 'max'=>45),
-			array('description', 'safe'),
-			array('category_name', 'required'),
+			array('form_id, tag_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, category_name, description', 'safe', 'on'=>'search'),
+			array('id, form_id, tag_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,7 +55,8 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'formCategories' => array(self::HAS_MANY, 'FormCategory', 'category_id'),
+			'form' => array(self::BELONGS_TO, 'Form', 'form_id'),
+			'tag' => array(self::BELONGS_TO, 'Tag', 'tag_id'),
 		);
 	}
 
@@ -66,8 +67,8 @@ class Category extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'category_name' => 'Category Name',
-			'description' => 'Description',
+			'form_id' => 'Form',
+			'tag_id' => 'Tag',
 		);
 	}
 
@@ -81,12 +82,13 @@ class Category extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-		$criteria->compare('category_name',$this->category_name,true);
-		$criteria->compare('description',$this->description,true);
+
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('form_id',$this->form_id);
+		$criteria->compare('tag_id',$this->tag_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
 }
-?>

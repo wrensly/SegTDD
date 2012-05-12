@@ -1,23 +1,14 @@
-<div class="wide form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
-)); ?>
-
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'category_name'); ?>
-		<?php echo $form->textField($model,'category_name',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row buttons">
+<div class="form">
+<?php $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
+    'id'=>'inlineForm',
+    'type'=>'inline'
+    //'htmlOptions'=>array('class'=>'well'),
+)); ?>	
+		<?php echo '<b>Search</b>'; ?>
+		<?php echo $form->textFieldRow($model,'category_name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textFieldRow($model,'description',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+
 
 <?php $this->endWidget(); ?>
 

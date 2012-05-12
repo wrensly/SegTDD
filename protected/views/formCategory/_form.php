@@ -45,14 +45,14 @@
 		<?php echo $form->error($formCategory,'category_id'); ?>
 	</div>
 
+
 	<div class="row">
-		<?php echo $form->labelEx($model,'tags'); ?>
-		<?php echo $form->textField($model,'tags',array('maxlength'=>50, 'class'=>'span6')); ?>
-		<?php echo $form->error($model,'tags'); ?>
+		<?php echo $form->labelEx($tags,'tag_name'); ?>
+		<?php echo $form->textField($tags,'tag_name',array('maxlength'=>50, 'class'=>'span6')); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('label'=>'Save')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
