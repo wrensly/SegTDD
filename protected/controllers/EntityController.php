@@ -35,7 +35,7 @@ class EntityController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','entityInst'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -116,7 +116,7 @@ class EntityController extends Controller
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -188,4 +188,40 @@ class EntityController extends Controller
 			$count=0;
 		return $count;
 	}
+
+	public function actionEntityInst($id)
+	{
+		$this->render('entityInst',array(
+			'model'=>$this->loadEntity($id),
+			'id'=>$id,
+		));
+
+		// $model=new EntityInst('search2');
+		// $model->unsetAttributes();  // clear any default values
+		// if(isset($_GET['EntityInst']))
+		// 	$model->attributes=$_GET['EntityInst'];
+
+		// $this->render('entityInst',array(
+		// 	'model'=>$model, 'id'=>$id,
+		// ));
+	}
+
+	private function loadEntity($id)
+	{
+
+		// select fieldname from field where entity_id=(select id from entity where form_id=(select form_id from entity where id=1));
+
+		// $con = new CDbCriteria();
+
+		// $con->select = array('fieldname');
+		// $con->condition = 'entity_id=(select id from entity where form_id=(select form_id from entity where id='.$id.'))';
+
+		// $model=Field::model()->findAll($con);
+		
+		$model=Entity::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
 }

@@ -47,7 +47,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textFieldRow($model,'entityname', array('style'=>'width: 50%;', 'placeHolder' => 'name of the entity')); ?>
+		<?php echo $form->textFieldRow($model,'entity_name', array('style'=>'width: 50%;', 'placeHolder' => 'name of the entity')); ?>
 	</div>
 
 	<div class="row">
@@ -60,7 +60,7 @@
 			$con = 'entity_id ='.$model->id;
 			$criteria = new CDbCriteria;
 			$criteria->condition=$con;
-			echo $form->dropDownListRow($model, 'form_id', Form::conditionItems('code', $criteria), array('class'=>'leftAttributes', 'prompt' => '-SELECT-',));
+			echo $form->dropDownListRow($model, 'form_id', Form::conditionItems('code', $criteria), array('class'=>'leftAttributes', 'prompt' => '-SELECT-Default-Form',));
 			}
 		?>
 	</div>

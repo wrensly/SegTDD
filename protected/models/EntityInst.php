@@ -36,24 +36,13 @@
  * @property FieldValueText[] $fieldValueTexts
  * @property FieldValueTime[] $fieldValueTimes
  */
-class Field extends CActiveRecord
+class EntityInst extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return Field the static model class
 	 */
-
-	private $_newProperty;
-
-     public function getNewProperty(){
-         return $this->_newProperty;
-     }
-
-     public function setNewProperty($newProperty){
-         $this->_newProperty = $newProperty;
-     }
-
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -75,15 +64,14 @@ class Field extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fieldname, datatype, description, multiple, label, required, derived, attribute', 'required'),
-			array('multiple, entity_id, required, parent_id, derived, attribute', 'numerical', 'integerOnly'=>true),
-			array('fieldname', 'length', 'max'=>100),
-			array('datatype', 'length', 'max'=>1),
-			array('alias, default, label', 'length', 'max'=>45),
-			array('description', 'safe'),
+			array('fieldname, label', 'required'),
+			// array('entity_id', 'integerOnly'=>true),
+			// array('fieldname', 'length', 'max'=>100),
+			// array('datatype', 'length', 'max'=>1),
+			// array('label', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, fieldname, datatype, description, multiple, alias, default, entity_id, label, required, parent_id, derived, attribute', 'safe', 'on'=>'search'),
+			array('label', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -123,16 +111,8 @@ class Field extends CActiveRecord
 			'id' => 'ID',
 			'fieldname' => 'Field Name',
 			'datatype' => 'Data Type',
-			'description' => 'Description',
-			'multiple' => 'Multiple',
-			'alias' => 'Alias',
-			'default' => 'Default',
 			'entity_id' => 'Entity Association',
 			'label' => 'Label',
-			'required' => 'Required',
-			'parent_id' => 'Parent',
-			'derived' => 'Derived',
-			'attribute' => 'Attribute',
 		);
 	}
 
@@ -140,40 +120,14 @@ class Field extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($id)
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('fieldname',$this->fieldname,true);
-		$criteria->compare('datatype',$this->datatype,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('multiple',$this->multiple);
-		$criteria->compare('alias',$this->alias,true);
-		$criteria->compare('default',$this->default,true);
-		$criteria->compare('entity_id',$this->entity_id);
-		$criteria->compare('label',$this->label,true);
-		$criteria->compare('required',$this->required);
-		$criteria->compare('parent_id',$this->parent_id);
-		$criteria->compare('derived',$this->derived);
-		$criteria->compare('attribute',$this->attribute);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
-
-	public function search2($id)
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->select = array('fieldname', 'label', 'datatype');
+		$criteria->select = array('fieldname');
 		$criteria->condition = 'entity_id=(select id from entity where form_id=(select form_id from entity where id='.$id.'))';
 
 		$criteria->compare('id',$this->id);
