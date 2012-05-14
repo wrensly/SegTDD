@@ -4,7 +4,7 @@ $this->breadcrumbs=array(
 	$model->id,
 );
 
-$this->content_title = "View Entity - ".$model->entityname;
+$this->content_title = "View Entity - ".$model->entity_name;
 
 $this->menu=array(
 	array('label'=>'Create Entity', 'url'=>array('create')),

@@ -60,7 +60,7 @@
 			$con = 'entity_id ='.$model->id;
 			$criteria = new CDbCriteria;
 			$criteria->condition=$con;
-			echo $form->dropDownListRow($model, 'form_id', Form::conditionItems('code', $criteria), array('class'=>'leftAttributes', 'prompt' => '-SELECT-',));
+			echo $form->dropDownListRow($model, 'form_id', Form::conditionItems('code', $criteria), array('class'=>'leftAttributes', 'prompt' => '-SELECT-Default-Form',));
 			}
 		?>
 	</div>

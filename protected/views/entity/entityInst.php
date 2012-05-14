@@ -29,10 +29,10 @@
 
 </style>
 
-
 <?php
 $this->breadcrumbs=array(
-	'Manage',
+	'Manage'=>array('index'),
+	$model->entity_name,
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -52,13 +52,6 @@ $this->content_title = 'Manage Entity';
 
 ?>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-warning')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
 <div class="offset3">
 <?php 
  	$this->widget('bootstrap.widgets.BootButton', array(
@@ -71,21 +64,53 @@ $this->content_title = 'Manage Entity';
 	));
 ?>
 </div>
+
 <?php
+
+	$criteria=new CDbCriteria;
+	$criteria->select = array('fieldname', 'label', 'datatype');
+	$criteria->condition = 'entity_id=(select id from entity where form_id=(select form_id from entity where id='.$id.'))';
+
+	// $vars = Field::conditionItems('label', $criteria);
+	$vars = Field::model()->findAll($criteria);
+
+?>
+
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+<?php
+	foreach($vars as $vv)
+    	echo '<th>'.$vv->label.'</th>';
+?>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>…</td>
+      <td>…</td>
+    </tr>
+  </tbody>
+</table>
+
+<?php
+
+$var = array('name'=>'label');
+foreach($vars as $vv)
+    	echo '<th>'.$vv->label.'</th>';
+
 
 	$this->widget('bootstrap.widgets.BootGridView', array(
 	'id'=>'entity-grid',
 	'type'=>'striped bordered condensed',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>Field::model()->search2($id),
+	'template'=>'{items}',
 	'columns'=>array(
-			
-		array('name'=>'entity_name', 'header'=>'Name', 'htmlOptions'=>array('style'=>'width: 200px;')),
-			
-		array('name'=>'description'),
 
-		array('value'=>array($this, 'renderEntityCount'), 'header'=>'No. of Instances', 'htmlOptions'=>array('style'=>'width: 100px; text-align: center;')),
-
-		array('name'=>'form_id', 'value'=>'$data->form[\'code\']', 'htmlOptions'=>array('style'=>'width: 200px;')),
+		// array('name'=>'Entity Model', 'value'=>'$data->entity[\'entityname\']', 'htmlOptions'=>array('style'=>'width: 200px;')),
+		// array('name'=>'$list[0]->label'),
+		// array('name'=>'firstname', 'value'=>'firstname'),
+		$var,
 
 		array(
 			'class'=>'bootstrap.widgets.BootButtonColumn',
@@ -93,7 +118,7 @@ $this->content_title = 'Manage Entity';
 				'view' => array(
 						'label' => null,
 						// 'imageUrl' => false,"/form/create"  $data->form_id
-						'url'=>'Yii::app()->controller->createUrl("entityInst", array("id"=>$data->primaryKey))', //Sample Link (next thing to do: create own Boot Button Column(extend CGridColumn))
+						'url'=>'Yii::app()->controller->createUrl("/form/create")', //Sample Link (next thing to do: create own Boot Button Column(extend CGridColumn))
 						'icon'=>'cog white',
 						'options' => array('style'=>'margin-left: 15px;', 'class'=>'btn btn-primary', 'title'=>'Select'),
 						// 'visible'=>'($data->form_id!=null)?true:false;',
