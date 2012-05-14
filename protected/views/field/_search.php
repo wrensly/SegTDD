@@ -32,6 +32,8 @@
 							'size'=>1,
 							'maxlength'=>1
 						) ); ?>
+
+					
  				</div>
  				<div class="span3">
  					<?php echo $form->textAreaRow($model,'description',array('rows'=>6, 'cols'=>50)); ?>

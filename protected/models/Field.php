@@ -133,6 +133,7 @@ class Field extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
+		
 
 		$criteria=new CDbCriteria;
 
@@ -153,7 +154,28 @@ class Field extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+		
 	}
+
+
+		public function searchitem()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+		
+
+		$criteria=new CDbCriteria;
+
+		$criteria=new CDbCriteria;
+
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+		
+	}
+
+
 
 	private static $_items=array();
 		

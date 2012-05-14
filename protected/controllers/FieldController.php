@@ -1,5 +1,6 @@
 <?php
 
+
 class FieldController extends Controller
 {
 	/**
@@ -41,6 +42,11 @@ class FieldController extends Controller
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
+
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions'=>array('InboundSearch','OutboundSearch','admin','FreeSearch','SearchEngine'),
+                'users'=>array('admin'),
+            ),
 		);
 	}
 
@@ -179,12 +185,34 @@ class FieldController extends Controller
 		$model=new Field('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Field']))
+		{
+		
 			$model->attributes=$_GET['Field'];
 
 		$this->render('index',array(
 			'model'=>$model,
 		));
+
+		}
+
+
+	
 	}
+
+
+	public function actionAcceptUserRegistration() {
+
+        if(isset($_POST['button1']))
+        {
+        echo "Accept code here ";
+        }
+      if(isset($_POST['button2']))
+        {
+        echo "Reject code here ";
+        }
+
+       
+    }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
@@ -211,6 +239,9 @@ class FieldController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+
+
 
 	public function renderDataType($data,$row){
 		// ... generate the output for a full address
@@ -239,4 +270,6 @@ class FieldController extends Controller
 			}
         return $dataType;
 	}
+
 }
+
