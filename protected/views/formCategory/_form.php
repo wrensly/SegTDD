@@ -1,74 +1,57 @@
-<div class="form">
-
 <?php $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
     'id'=>'verticalForm',
-    'htmlOptions'=>array('class'=>'well'),
+    'type' => 'horizontal',
 )); ?>
-
-
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'code'); ?>
-		<?php echo $form->textField($model,'code',array('maxlength'=>50, 'class'=>'span6')); ?>
-		<?php echo $form->error($model,'code'); ?>
+	<div class="alert alert-error">
+		<p class="note">Fields with <span class="required">*</span> are required.</p>
 	</div>
-
+	
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('maxlength'=>50, 'class'=>'span6')); ?>
-		<?php echo $form->error($model,'name'); ?>
+		<div class="span6">
+			<fieldset>
+	 			<legend>Properties</legend>
+				<?php echo $form->textFieldRow($model,'code',array('maxlength'=>50,)); ?>
+				<?php echo $form->textFieldRow($model,'name',array('maxlength'=>50,)); ?>
+				<?php echo $form->textAreaRow($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+				<?php echo $form->checkBoxRow($model,'status'); ?>
+			</fieldset>
+		</div>
+		<div class="span6">
+			<fieldset>
+				<legend>Others</legend>
+				<?php echo $form->dropDownListRow($model,'entity_id', CHtml::listData(Entity::model()->findAll(), 'id', 'entity_name')); ?>
+				<div class="control-group">
+					<?php echo $form->labelEx($formCategory,'Category',array('class'=>'control-label')); ?>
+					<div class="controls">
+						<?php echo $form->dropDownList($formCategory,'category_id',CHtml::listData(Category::model()->findAll(), 'id', 'category_name')); ?>
+						<?php echo $form->error($formCategory,'category_id'); ?>
+				    </div>
+				</div>
+				<div class="control-group">
+					<?php echo $form->labelEx($tags,'tag_name',array('class'=>'control-label')); ?>
+					<div class="controls">
+						<?php $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+							'model' => $tags,
+						    'name'=>'tag_name',
+						    'attribute'=>'tag_name',
+						   	'source'=>$suggest,
+						    // additional javascript options for the autocomplete plugin
+						   	'options'=>array(
+						        'minLength'=>'2',
+						    	),
+						    'htmlOptions'=>array(
+						        'style'=>'height:20px;',
+						   		),
+							));
+				    	?>
+					</div>
+				</div>
+			</fieldset>
+		</div>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'description'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->checkBox($model,'status') . ' ' . 'Active' ?>
-		<?php echo $form->error($model,'status'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'Entity Association'); ?>
-		<?php echo $form->dropDownList($model,'entity_id', CHtml::listData(Entity::model()->findAll(), 'id', 'entity_name')); ?>
-		<?php echo $form->error($model,'entity_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($formCategory,'Category'); ?>
-		<?php echo $form->dropDownList($formCategory,'category_id',CHtml::listData(Category::model()->findAll(), 'id', 'category_name')); ?>
-		<?php echo $form->error($formCategory,'category_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($tags,'tag_name'); ?>
-		<?php $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
-		'model' => $tags,
-    	'name'=>'tag_name',
-    	'attribute'=>'tag_name',
-   		'source'=>$suggest,
-    	// additional javascript options for the autocomplete plugin
-    	'options'=>array(
-        'minLength'=>'2',
-    	),
-    	'htmlOptions'=>array(
-        'style'=>'height:20px;',
-    ),
-));
-	?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('label'=>'Save')); ?>
+	<div class="form-actions">
+    	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'type'=>'primary', 'icon'=>'ok white', 'label'=>'Submit')); ?>
+    	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Reset')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- form -->

@@ -12,7 +12,7 @@ $this->menu=array(
 
 echo CHtml::beginForm(array("FieldController/AcceptUserRegistration"),'post');
  
-echo CHtml::textField('',$data, array('placeholder'=>'search'));  
+echo CHtml::textField('','$data', array('placeholder'=>'search'));  
 echo CHtml::submitButton('Search', array('name' =>'button1'));
 
 echo CHtml::endForm();

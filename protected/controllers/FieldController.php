@@ -178,37 +178,20 @@ class FieldController extends Controller
 				    }
 					break;
 			}
-			/*
 			if(isset($_POST[$constraintDataType])){
 				$_POST[$constraintDataType]['field_id'] = $fieldModel->id;
 		    	$constraintModel->attributes = $_POST[$constraintDataType]; 
 		    }
 		    $constraintModelSave = $constraintModel->save();
-		   	echo "Checking POST data if derived is checked...";
-		    if ($_POST['Field']['derived']){
-		    	echo "checked.<br>Checking POST data for derived...";
-				if(isset($_POST['ConstraintDerived'])){
-					echo "found.<br>Associating field_id...";
+		   	if ($_POST['Field']['derived']){
+		    	if(isset($_POST['ConstraintDerived'])){
 					$_POST['ConstraintDerived']['field_id'] = $fieldModel->id;
-			    	echo "OK.<br>Associating POST data...";
 			    	$constraintDerivedModel->attributes = $_POST['ConstraintDerived'];
-			    	echo "OK.<br>Attempting to save...";
 			    	$constraintModelSave = $constraintDerivedModel->save();
-			    	if ($constraintModelSave){
-			    		echo "derived Constraint is saved.";
-			    	} else{
-			    		echo "derived Constraint is not saved.";
-			    		print_r($constraintDerivedModel->getErrors());
-			    	}
-			    }else {
-				echo "not found.<br>";
+			    }
 			}
-			} else {
-				echo "not checked.<br>";
-			}
-			/* if($fieldModelSave && $constraintModelSave)
+			if($fieldModelSave && $constraintModelSave)
 				$this->redirect(array('view','id'=>$fieldModel->id));
-			*/
 		}
 
 		$this->render('create',array(
@@ -375,38 +358,24 @@ class FieldController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionIndex()
-	{
+	public function actionIndex(){
 		$model=new Field('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Field']))
-		{
-		
+		if(isset($_GET['Field'])){
 			$model->attributes=$_GET['Field'];
-		
+		}
 		$this->render('index',array(
 			'model'=>$model,
 		));
-
-		}
-
-
-	
 	}
 
-
 	public function actionAcceptUserRegistration() {
-
-        if(isset($_POST['button1']))
-        {
-        echo "Accept code here ";
+        if(isset($_POST['button1'])){
+        	echo "Accept code here ";
         }
-      if(isset($_POST['button2']))
-        {
-        echo "Reject code here ";
+      	if(isset($_POST['button2'])){
+        	echo "Reject code here ";
         }
-
-       
     }
 
 	/**

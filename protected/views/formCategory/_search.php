@@ -10,7 +10,7 @@
 		<?php echo $form->textFieldRow($model,'name',array('maxlength'=>50)); ?>
 		<?php echo $form->textFieldRow($model,'description',array('maxlength'=>50)); ?>
 		<?php echo $form->dropDownList($model, 'status', array('1' => 'Active', '0' => 'Inactive'), array('prompt' => '-Select Status-')); ?>
-		<?php echo $form->dropDownList($model,'entity_id', CHtml::listData(Entity::model()->findAll(), 'id', 'entityname'), array('prompt' => '-Select Entity-')); ?>
+		<?php echo $form->dropDownList($model,'entity_id', CHtml::listData(Entity::model()->findAll(), 'id', 'entity_name'), array('prompt' => '-Select Entity-')); ?>
 		<?php echo $form->dropDownList($model,'category_name',CHtml::listData(Category::model()->findAll(), 'category_name', 'category_name'), array('prompt' => '-Select Category-')); ?>
 		<?php //echo $form->textFieldRow($tags,'tag_name',array('maxlength'=>50)); ?>
 
