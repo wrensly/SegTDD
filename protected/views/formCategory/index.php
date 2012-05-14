@@ -44,7 +44,6 @@ $this->widget('bootstrap.widgets.BootGridView', array(
 		array('name' => 'status', 'value' => array($this,'renderStatus')),
 		array(
             'class'=>'bootstrap.widgets.BootButtonColumn',
-            'template' => '{view}',
             'htmlOptions'=>array('style'=>'width: 50px'),
         ),
 		/*

@@ -64,7 +64,7 @@ class Tag extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'tag_name' => 'Tag Name',
+			'tag_name' => 'Tags',
 		);
 	}
 

@@ -9,7 +9,5 @@ $this->menu=array(
 );
 $this->content_title = "Create Form";
 ?>
-
-
-
-<?php echo $this->renderPartial('_form', array('model'=>$model, 'formCategory' => $formCategory, 'category' => $category, 'tags' => $tags)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'formCategory' => $formCategory, 
+'category' => $category, 'tags' => $tags, 'suggest'=>$suggest)); ?>

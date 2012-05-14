@@ -11,7 +11,8 @@ $this->menu=array(
 //	array('label'=>'Delete FormCategory', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Form', 'url'=>array('admin')),
 );
-$this->content_title = $model->form->code;
+
+$this->content_title = 'View ' . $model->form->code;
 ?>
 
 <?php $this->widget('bootstrap.widgets.BootDetailView', array(
