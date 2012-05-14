@@ -16,4 +16,4 @@ $this->content_title = "Update " . $model->name;
 
 
 
-<?php echo $this->renderPartial('_form', array('model'=>$model, 'formCategory' => $formCategory, 'category' => $category)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'formCategory' => $formCategory, 'category' => $category, 'tags' => $tags)); ?>

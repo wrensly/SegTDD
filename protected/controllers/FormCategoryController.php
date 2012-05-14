@@ -69,12 +69,14 @@ class FormCategoryController extends Controller
 	public function actionCreate()
 	{
 		$model=new Form;
-		$formCategory = new FormCategory;
-		$category = new Category;
 		$tags = new Tag;
+		$formTag = new FormTag;
+		$category = new Category;
+		$formCategory = new FormCategory;
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		$arr = array();
+		
 		if(isset($_POST['Form']))
 		{
 			$model->attributes=$_POST['Form'];
@@ -83,23 +85,32 @@ class FormCategoryController extends Controller
 			{
 				$tags->attributes=$_POST['Tag'];
 				$arr = preg_split('/,/', $tags->tag_name, -1, PREG_SPLIT_NO_EMPTY);
+
 				foreach($arr as $val)
 				{
-					$tags = new Tag;
+					
 					$tags->tag_name = trim($val);
-					$tagCount = Tag::model()->countByAttributes(array('tag_name' => $tags->tag_name));
-					if($tagCount == 0)
+					$tagCount = Tag::model()->findByAttributes(array('tag_name' => $tags->tag_name));
+					if($tagCount == null)
+					{
 					$tags->save();
+					$tags = new Tag;
+					$formTag->tag_id = $tags->id;
+					}
 					else
-					$tag_id = Tag::model()->findByAttributes(array('tag_name' => $tags->tag_name));
-				
-					$formTag = new FormTag;
-					$formTag->tag_id = $tag_id->id;
+					{
+					$formTag->tag_id = $tagCount->id;
+					}
 					$formTag->form_id = $model->id;
-					$tagCount = FormTag::model()->countByAttributes(array('tag_id' => $formTag->id , 'form_id' => $formTag->id));
+					$tagCount = FormTag::model()->countByAttributes(array('tag_id' => $formTag->tag_id , 'form_id' => $formTag->form_id));
 					if($tagCount == 0)
+					{
 					$formTag->save();
+					$formTag = new FormTag;
+					}
+
 				}
+
 				$formCategory->attributes=$_POST['FormCategory'];
 				$formCategory->form_id = $model->id;
 				$formCategory->save(false);
@@ -107,7 +118,7 @@ class FormCategoryController extends Controller
 			}
 		}
 
-		$this->render('create',array(
+			$this->render('create',array(
 			'model'=>$model,
 			'formCategory' => $formCategory,
 			'category' => $category,
@@ -122,9 +133,14 @@ class FormCategoryController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		
+		$tags = new Tag;
+		$category=new Category;
+		$formTag = new FormTag;
 		$formCategory=$this->loadModel($id);
 		$model=Form::model()->findByPk($formCategory->form_id);
-		$category=new Category;
+		$tags->tag_name = implode(',', $formCategory->getTags($model->id));
+		FormTag::model()->deleteAll('form_id = :form_id', array(':form_id' => $model->id));
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -132,20 +148,49 @@ class FormCategoryController extends Controller
 		if(isset($_POST['Form']))
 		{
 			$model->attributes=$_POST['Form'];
-
 			if($model->save())
 			{
-				$formCategory->attributes=$_POST['FormCategory'];
-				$formCategory->save();
-				$this->redirect(array('view','id'=>$formCategory->id));
-			}
+				$tags = new Tag;
+				$tags->attributes=$_POST['Tag'];
+				$arr = preg_split('/,/', $tags->tag_name, -1, PREG_SPLIT_NO_EMPTY);
 				
+				foreach($arr as $val)
+				{
+					
+					$tags->tag_name = trim($val);
+					$tagCount = Tag::model()->findByAttributes(array('tag_name' => $tags->tag_name));
+					if($tagCount == null)
+					{
+					$tags->save();
+					$formTag->tag_id = $tags->id;
+					$tags = new Tag;
+					}
+					else
+					{
+					$formTag->tag_id = $tagCount->id;
+					}
+					$formTag->form_id = $model->id;
+					$tagCount = FormTag::model()->countByAttributes(array('tag_id' => $formTag->tag_id , 'form_id' => $formTag->form_id));
+					if($tagCount == 0)
+					{
+					$formTag->save();
+					$formTag = new FormTag;
+					}
+
+				}
+
+				$formCategory->attributes=$_POST['FormCategory'];
+				$formCategory->form_id = $model->id;
+				$formCategory->save();
+				$this->redirect(array('view','id'=>$formCategory->id));	
+			}
 		}
 
-		$this->render('update',array(
+			$this->render('update',array(
 			'model'=>$model,
 			'formCategory'=>$formCategory,
 			'category' => $category,
+			'tags' => $tags,
 		));
 	}
 

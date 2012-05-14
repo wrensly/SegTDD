@@ -29,7 +29,11 @@ $this->content_title = "Manage Forms";
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
-)); ?>
+)); 
+
+
+
+?>
 </div>
 
 
