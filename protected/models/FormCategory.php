@@ -14,7 +14,7 @@
  */
 class FormCategory extends CActiveRecord
 {
-	public $code, $name, $description, $status, $layout, $attribute, $category_name, $entity_id;
+	public $code, $name, $description, $status, $layout, $attribute, $category_name, $entity_id, $tags;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -46,7 +46,7 @@ class FormCategory extends CActiveRecord
 			array('name, description, layout, category_name', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('category_name, code, name, description, layout, entity_id', 'safe', 'on'=>'search'),
+			array('category_name, code, name, description, layout, entity_id, tags', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -96,13 +96,19 @@ class FormCategory extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 		$criteria->with = array('form','category');
-		$criteria->compare('form.code',$this->code);
-		$criteria->compare('form.name',$this->name);
-		$criteria->compare('form.description',$this->description);
-		$criteria->compare('category.category_name',$this->category_name);
-		$criteria->compare('form.status',$this->status);
-		$criteria->compare('form.entity_id',$this->entity_id);
 
+		$criteria->alias = 'fc';
+		$criteria->select= 't.tag_name as tag_name';
+		$criteria->join= 'LEFT JOIN form f ON (f.id=fc.form_id) LEFT JOIN form_tag ft on (fc.form_id = ft.form_id) 
+		LEFT JOIN tag t on (t.id = ft.tag_id)';
+
+		$criteria->compare('form.code',$this->code, true);
+		$criteria->compare('form.name',$this->name, true);
+		$criteria->compare('form.description',$this->description, true);
+		$criteria->compare('category.category_name',$this->category_name, true);
+		$criteria->compare('form.status',$this->status, true);
+		$criteria->compare('form.entity_id',$this->entity_id, true);
+		$criteria->compare('tag_name',$this->tags, true);	
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'sort'=>array(
@@ -128,13 +134,11 @@ class FormCategory extends CActiveRecord
                 'asc'=>'form.description',
                 'desc'=>'form.description DESC',
             ),
-            
+        		
             'status'=>array(
                 'asc'=>'form.status',
                 'desc'=>'form.status DESC',
-            ),
-
-            
+            ),   
         ),
     ),
 		));
@@ -142,7 +146,8 @@ class FormCategory extends CActiveRecord
 
 	public function getTags($id)
 	{
-		$sql = "select t.tag_name as tagName from tag t left join form_tag ft on (t.id = ft.tag_id) left join form f on (f.id = ft.form_id) where f.id = :id";
+		$sql = "select t.tag_name as tagName from tag t left join form_tag ft on (t.id = ft.tag_id)
+		left join form f on (f.id = ft.form_id) where f.id = :id";
 		$command = Yii::app()->db->createCommand($sql);
 		$command->bindParam(":id",$id,PDO::PARAM_STR);
 		$tags = $command->query()->readAll();

@@ -5,6 +5,8 @@
     'htmlOptions'=>array('class'=>'well'),
 )); ?>
 
+
+
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -45,10 +47,22 @@
 		<?php echo $form->error($formCategory,'category_id'); ?>
 	</div>
 
-
 	<div class="row">
 		<?php echo $form->labelEx($tags,'tag_name'); ?>
-		<?php echo $form->textField($tags,'tag_name',array('maxlength'=>50, 'class'=>'span6')); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+		'model' => $tags,
+    	'name'=>'tag_name',
+    	'attribute'=>'tag_name',
+   		'source'=>$suggest,
+    	// additional javascript options for the autocomplete plugin
+    	'options'=>array(
+        'minLength'=>'2',
+    	),
+    	'htmlOptions'=>array(
+        'style'=>'height:20px;',
+    ),
+));
+	?>
 	</div>
 
 	<div class="row buttons">

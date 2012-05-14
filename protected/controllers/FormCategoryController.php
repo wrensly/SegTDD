@@ -123,6 +123,7 @@ class FormCategoryController extends Controller
 			'formCategory' => $formCategory,
 			'category' => $category,
 			'tags' => $tags,
+			'suggest' => $this->actionSuggest(),
 		));
 	}
 
@@ -191,6 +192,7 @@ class FormCategoryController extends Controller
 			'formCategory'=>$formCategory,
 			'category' => $category,
 			'tags' => $tags,
+			'suggest' => $this->actionSuggest(),
 		));
 	}
 
@@ -244,9 +246,21 @@ class FormCategoryController extends Controller
 
 		$this->render('admin',array(
 			'model'=>$model,
+			
 		));
 	}
 
+
+	public function actionSuggest()
+	{
+   		$model = Tag::model()->findAll();
+   		$result = array();
+   		foreach ($model as $val){
+    	$result[] = $val->tag_name . ',';
+   		}
+   		return $result;
+  	}
+ 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

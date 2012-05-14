@@ -22,7 +22,6 @@ $('.search-form form').submit(function(){
 });
 ");
 $this->content_title = "Manage Forms";
-
 ?>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
