@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'Entity':
  * @property integer $id
- * @property string $entityname
+ * @property string $entity_name
  * @property string $description
  * @property integer $form_id
  *
@@ -41,7 +41,7 @@ class Entity extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'Entity';
+		return 'entity';
 	}
 
 	/**
@@ -53,10 +53,10 @@ class Entity extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('form_id', 'numerical', 'integerOnly'=>true),
-			array('entityname, description', 'safe'),
+			array('entity_name, description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, entityname, description, form_id', 'safe', 'on'=>'search'),
+			array('id, entity_name, description, form_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -91,7 +91,7 @@ class Entity extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'entityname' => 'Entityname',
+			'entity_name' => 'Entity Name',
 			'description' => 'Description',
 			'form_id' => 'Default Form',
 		);
@@ -109,7 +109,7 @@ class Entity extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('entityname',$this->entityname,true);
+		$criteria->compare('entity_name',$this->entityname,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('form_id',$this->form_id);
 

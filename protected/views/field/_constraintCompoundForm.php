@@ -1,3 +1,6 @@
+<?php /**
+ *  @todo make the selected options from each dropdown list disappear from other dropdowns
+ */ ?>
 <div class="panel">
     <table class="templateFrame grid table">
         <thead class="templateHead">

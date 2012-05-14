@@ -11,7 +11,6 @@ $form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 ));
 
 Yii::app()->clientScript->registerScript('switchConstraint', "
-
 function toggleConstraint(object){
 	var datatype = $('option:selected', object).val();
 	$('#constraintText').hide(250);
@@ -22,41 +21,24 @@ function toggleConstraint(object){
 	$('#constraintCompound').hide(250);
 
 	switch (datatype) {
-		case 'T':
-			$('#constraintText').show(250);
-			break;
-		case 'N':
-			$('#constraintNumeric').show(250);
-			break;
+		case 'T': $('#constraintText').show(250);     break;
+		case 'N': $('#constraintNumeric').show(250);  break;
 		case 'D':
 		case 't':
-		case 'd':
-			$('#constraintDatetime').show(250);
-			break;
-		case 'O':
-			$('#constraintEnum').show(250);
-			break;
-		case 'F':
-			$('#constraintFile').show(250);
-			break;
-		case 'C':
-			$('#constraintCompound').show(250);
-			break;
-		default:
-			break;
+		case 'd': $('#constraintDatetime').show(250); break;
+		case 'O': $('#constraintEnum').show(250);     break;
+		case 'F': $('#constraintFile').show(250);     break;
+		case 'C': $('#constraintCompound').show(250); break;
+		default :                                     break;
 	}
 }
 toggleConstraint($('#Field_datatype'));
-$('#Field_datatype').change(function(){
-	toggleConstraint(this);
-});
+$('#Field_datatype').change(function(){ toggleConstraint(this); });
 ");
 
 Yii::app()->clientScript->registerScript('derived-checked', "
 $('#Field_derived').is(':checked') ? $('#constraintDerived').show(250) : $('#constraintDerived').hide(250);
-$('#Field_derived').click(function(){
-	$('#constraintDerived').toggle(250);
-});
+$('#Field_derived').click(function(){ $('#constraintDerived').toggle(250); });
 ");
 
 ?>
@@ -81,23 +63,6 @@ $('#Field_derived').click(function(){
 							'maxlength'=>45,
 							'hint' => 'Short Name of the field when querying to the database.',)); ?>
 						<?php
-						if (!isset($fieldModel->datatype)){
-							echo $form->dropDownListRow($fieldModel,'datatype',
-								array(
-									'T' => 'Text',
-									'N' => 'Numeric',
-									'D' => 'Date',
-									't' => 'Time',
-									'd' => 'Datetime',
-									'O' => 'Option',
-									'F' => 'File',
-									'C' => 'Compound',
-								),
-								array(
-									'size'=>1,
-									'maxlength'=>1
-								) );
-						} else {
 							echo $form->dropDownListRow($fieldModel,'datatype',
 								array(
 									'T' => 'Text',
@@ -112,9 +77,8 @@ $('#Field_derived').click(function(){
 								array(
 									'size'=>1,
 									'maxlength'=>1,
-									'disabled'=>true,
-								) );
-						}
+									'disabled'=>isset($fieldModel->datatype),
+								));
 						?>	 				
 	 					<?php echo $form->textAreaRow($fieldModel,'description',array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->checkBoxRow($fieldModel,'multiple'); ?>
@@ -171,7 +135,7 @@ $('#Field_derived').click(function(){
 			</fieldset>
 			<fieldset>
 				<legend>Others</legend>
-				<?php echo $form->dropDownListRow($fieldModel,'entity_id',Entity::items('entityname'),array(
+				<?php echo $form->dropDownListRow($fieldModel,'entity_id',Entity::items('entity_name'),array(
 					'hint' => 'Select an entity to associate this field.',)); ?>
 			</fieldset>
 		</div>

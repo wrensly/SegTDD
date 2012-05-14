@@ -1,3 +1,9 @@
+<?php
+Yii::app()->clientScript->registerScript('derived-checked', "
+$('#Field_derived').is(':checked') ? $('#constraintDerived').show(250) : $('#constraintDerived').hide(250);
+$('#Field_derived').click(function(){ $('#constraintDerived').toggle(250); });
+");
+?>
 <?php $this->beginWidget('bootstrap.widgets.BootModal', array('id'=>'viewCodeModal')); ?>
  
 <div class="modal-header">

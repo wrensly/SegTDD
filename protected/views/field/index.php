@@ -60,7 +60,7 @@ $this->widget('bootstrap.widgets.BootGridView', array(
         ),
         array(
             'name'=>'entity_id',
-            'value'=>'$data->entity[\'entityname\']',
+            'value'=>'$data->entity[\'entity_name\']',
         ),
 
 		'fieldname',

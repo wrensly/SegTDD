@@ -1,2 +1,2 @@
-<?php echo $form->textFieldRow($constraintFileModel,'minsize'); ?>
-<?php echo $form->textFieldRow($constraintFileModel,'maxsize'); ?>
+<?php echo $form->textFieldRow($constraintFileModel,'minsize',array('value'=>'1')); ?>
+<?php echo $form->textFieldRow($constraintFileModel,'maxsize',array('value'=>'25600')); ?>

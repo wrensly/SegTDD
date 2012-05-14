@@ -44,7 +44,7 @@ class FieldController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','testFieldValue'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -462,5 +462,11 @@ class FieldController extends Controller
 			case 'C': $dataType = 'Compound'; break;
 		}
         return $dataType;
+	}
+	public function actionTestFieldValue(){
+		echo "Loading a new object FieldValue...";
+		$FieldValueModel = new FieldValue(97);
+		var_dump($FieldValueModel);
+		echo "done.";
 	}
 }

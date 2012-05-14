@@ -4,21 +4,10 @@
  * This is the model class for tables "field_value_*".
  *
  * The followings are the available columns in tables 'field_value_*':
- * @property integer $id
- * @property integer $field_id
- * @property string $value
- * @property integer $entity_id
- * @property integer $priority
- * @property integer $snapshot_id
- * @property integer $entity_instance_id
  *
  * The followings are the available model relations:
- * @property Entity $entity
- * @property EntityInstance $entityInstance
- * @property Field $field
- * @property Snapshot $snapshot
  */
-class FieldValue extends MyActiveRecord
+class FieldValueModel extends CActiveRecord
 {
 	const TYPE_TEXT     ='T';
 	const TYPE_NUMERIC  ='N';

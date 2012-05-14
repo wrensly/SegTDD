@@ -38,14 +38,14 @@
  */
 class Field extends MyActiveRecord
 {
-	const TYPE_TEXT='T';
-	const TYPE_NUMERIC='N';
-	const TYPE_DATE='D';
-	const TYPE_TIME='t';
-	const TYPE_DATETIME='d';
-	const TYPE_OPTION='O';
-	const TYPE_FILE='F';
-	const TYPE_COMPOUND='C';
+	const TYPE_TEXT     ='T';
+	const TYPE_NUMERIC  ='N';
+	const TYPE_DATE     ='D';
+	const TYPE_TIME     ='t';
+	const TYPE_DATETIME ='d';
+	const TYPE_OPTION   ='O';
+	const TYPE_FILE     ='F';
+	const TYPE_COMPOUND ='C';
 
 	/**
 	 * Returns the static model of the specified AR class.
