@@ -100,7 +100,7 @@ $this->content_title = 'View Field '.$fieldModel->fieldname;
 		<?php $this->widget('bootstrap.widgets.BootDetailView', array(
 			'data'=>$fieldModel,
 			'attributes'=>array(
-				'entity.entityname',
+				'entity.entity_name',
 			),
 		)); ?>
 	</div>

@@ -20,13 +20,16 @@ class FieldValueModel extends CActiveRecord
 
 	private $_fieldModel;
 	private $_fieldValueModel;
-
+	private $_metadata;
+	private $_constraints;
 	/**
 	 * Constructor.
 	 * @param int $field_id primary key of the field to associate a field value on.
 	 */
 	public function __construct($field_id)
 	{
+		parent::__construct();
+		
 		$_fieldModel = $this->loadModelOf('Field',$field_id);
 
 		switch($_fieldModel->datatype){

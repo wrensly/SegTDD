@@ -96,7 +96,6 @@ class FieldController extends Controller
 		}
 
 		$this->render('view',array(
-
 			'fieldModel'              =>$fieldModel,
 			'constraintTextModel'     =>$constraintTextModel,
 			'constraintNumericModel'  =>$constraintNumericModel,
@@ -104,7 +103,6 @@ class FieldController extends Controller
 			'constraintEnumModel'     =>$constraintEnumModel,
 			'constraintFileModel'     =>$constraintFileModel,
 			'constraintDerivedModel'  =>$constraintDerivedModel,
-
 		));
 	}
 
@@ -465,8 +463,15 @@ class FieldController extends Controller
 	}
 	public function actionTestFieldValue(){
 		echo "Loading a new object FieldValue...";
-		$FieldValueModel = new FieldValue(97);
-		var_dump($FieldValueModel);
-		echo "done.";
+		$fieldValue = new FieldValue;
+		$fieldValue->initValueOf(85);
+		echo "done.<br>Setting entity_instance_id...";
+		$fieldValue->setAttribute('entity_instance_id','1');
+		echo "done.<br>Setting value...";
+		$fieldValue->setAttribute('value','2');
+		echo "done.<br>Saving...";
+		if($fieldValue->save()){
+			echo "done.";
+		} else echo "failed.";
 	}
 }

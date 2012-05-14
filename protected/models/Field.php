@@ -19,12 +19,12 @@
  * @property integer $attribute
  *
  * The followings are the available model relations:
- * @property ConstraintDatetime[] $constraintDatetimes
- * @property ConstraintDerived[] $constraintDeriveds
- * @property ConstraintEnum[] $constraintEnums
- * @property ConstraintFile[] $constraintFiles
- * @property ConstraintNumeric[] $constraintNumerics
- * @property ConstraintText[] $constraintTexts
+ * @property ConstraintDatetime[] $constraintDatetime
+ * @property ConstraintDerived[] $constraintDerived
+ * @property ConstraintEnum[] $constraintEnum
+ * @property ConstraintFile[] $constraintFile
+ * @property ConstraintNumeric[] $constraintNumeric
+ * @property ConstraintText[] $constraintText
  * @property EntityAttribute[] $entityAttributes
  * @property Entity $entity
  * @property FieldValueCompound $fieldValueCompound
@@ -93,12 +93,12 @@ class Field extends MyActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'constraintDatetimes' => array(self::HAS_ONE, 'ConstraintDatetime', 'field_id'),
-			'constraintDeriveds' => array(self::HAS_ONE, 'ConstraintDerived', 'field_id'),
-			'constraintEnums' => array(self::HAS_ONE, 'ConstraintEnum', 'field_id'),
-			'constraintFiles' => array(self::HAS_ONE, 'ConstraintFile', 'field_id'),
-			'constraintNumerics' => array(self::HAS_ONE, 'ConstraintNumeric', 'field_id'),
-			'constraintTexts' => array(self::HAS_ONE, 'ConstraintText', 'field_id'),
+			'constraintDatetime' => array(self::HAS_ONE, 'ConstraintDatetime', 'field_id'),
+			'constraintDerived' => array(self::HAS_ONE, 'ConstraintDerived', 'field_id'),
+			'constraintEnum' => array(self::HAS_ONE, 'ConstraintEnum', 'field_id'),
+			'constraintFile' => array(self::HAS_ONE, 'ConstraintFile', 'field_id'),
+			'constraintNumeric' => array(self::HAS_ONE, 'ConstraintNumeric', 'field_id'),
+			'constraintText' => array(self::HAS_ONE, 'ConstraintText', 'field_id'),
 			'entityAttributes' => array(self::HAS_MANY, 'EntityAttribute', 'field_id'),
 			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
 			'fieldValueCompound' => array(self::HAS_ONE, 'FieldValueCompound', 'id'),

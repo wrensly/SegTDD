@@ -109,7 +109,7 @@ class Entity extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('entity_name',$this->entityname,true);
+		$criteria->compare('entity_name',$this->entity_name,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('form_id',$this->form_id);
 

@@ -19,7 +19,7 @@ $this->content_title = $model->form->code;
 	'attributes'=>array(
 		'id',
 		array('name' => 'category_name', 'value' => $model->category->category_name),
-		array('label'=>	'Entity Association', 'value' => $entity->entityname),	
+		array('label'=>	'Entity Association', 'value' => $entity->entity_name),	
 		array('name' => 'code', 'value' => $model->form->code),
 		array('name' => 'name', 'value' => $model->form->name),
 		array('name' => 'description', 'value' => $model->form->description),

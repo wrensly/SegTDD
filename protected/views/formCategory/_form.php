@@ -35,7 +35,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Entity Association'); ?>
-		<?php echo $form->dropDownList($model,'entity_id', CHtml::listData(Entity::model()->findAll(), 'id', 'entityname')); ?>
+		<?php echo $form->dropDownList($model,'entity_id', CHtml::listData(Entity::model()->findAll(), 'id', 'entity_name')); ?>
 		<?php echo $form->error($model,'entity_id'); ?>
 	</div>
 

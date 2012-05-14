@@ -4,7 +4,7 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('entityname')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('entity_name')); ?>:</b>
 	<?php echo CHtml::encode($data->entityname); ?>
 	<br />
 

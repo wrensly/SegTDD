@@ -79,7 +79,7 @@ $this->content_title = 'Manage Entities';
 	'dataProvider'=>$model->search(),
 	'columns'=>array(
 			
-		array('name'=>'entityname', 'header'=>'Name', 'htmlOptions'=>array('style'=>'width: 200px;')),
+		array('name'=>'entity_name', 'header'=>'Name', 'htmlOptions'=>array('style'=>'width: 200px;')),
 			
 		array('name'=>'description'),
 

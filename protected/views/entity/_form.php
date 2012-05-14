@@ -47,7 +47,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textFieldRow($model,'entityname', array('style'=>'width: 50%;', 'placeHolder' => 'name of the entity')); ?>
+		<?php echo $form->textFieldRow($model,'entity_name', array('style'=>'width: 50%;', 'placeHolder' => 'name of the entity')); ?>
 	</div>
 
 	<div class="row">

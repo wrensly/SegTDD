@@ -19,7 +19,7 @@ $this->menu=array(
 		'data'=>$model,
 		'attributes'=>array(
 			'id',
-			'entityname',
+			'entity_name',
 			'description',
 			'form.code',
 		),
