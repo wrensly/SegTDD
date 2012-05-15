@@ -1,45 +1,22 @@
-<?php
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.advanced-search-form').toggle(250);
-	return false;
-});
-$('.search-form').submit(function(){
-	$.fn.yiiGridView.update('entity-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-$('.advanced-search-form').submit(function(){
-	$.fn.yiiGridView.update('entity-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-
-$form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
+	'type' => 'horizontal',
 	'htmlOptions' => array(
 		'class' => 'advanced-search-form',
 		'style' => 'display:none',
 	),
-	'type' => 'vertical',
 )); ?>
-	<div class="row">
-		<?php echo $form->textFieldRow($model,'entity_name', array('style'=>'width: 50%;', 'placeHolder' => 'name of the entity')); ?>
+<div class="row">
+	<div class="span6">
+		<?php echo $form->textFieldRow($model,'entity_name', array('placeHolder' => 'name of the entity')); ?>
+		<?php echo $form->textAreaRow($model,'description',array('rows'=>5, 'placeHolder' => 'entity description')); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->textAreaRow($model,'description',array('rows'=>5, 'style'=>'width: 50%;', 'placeHolder' => 'entity description')); ?>
-	</div>
-
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'icon'=>'search', 'label'=>'Search')); ?>
-		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Clear Fields')); ?>
-	</div>
+</div>
+<div class="form-actions">
+	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'type'=>'primary', 'icon'=>'ok white', 'label'=>'Search')); ?>
+	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Clear Fields')); ?>
+</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- search-form -->
+<!-- search-form -->
