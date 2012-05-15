@@ -1,0 +1,339 @@
+2012/05/15 10:43:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/
+---
+2012/05/15 10:44:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/index.htm
+---
+2012/05/15 10:44:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/index.htm
+---
+2012/05/15 10:44:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/entity/index.htm
+---
+2012/05/15 10:44:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/entity/entityInst/3.htm
+---
+2012/05/15 10:44:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/index.htm
+---
+2012/05/15 10:44:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/
+---
+2012/05/15 10:44:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/index.htm
+---
+2012/05/15 10:44:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "renderer".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('renderer')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('renderer')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('renderer/render...')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/renderer/renderer/7.htm
+HTTP_REFERER=http://localhost/SegTDD/renderer/index.htm
+---
+2012/05/15 10:44:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/renderer/7.htm
+---
+2012/05/15 10:44:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 10:47:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/index.htm
+---
+2012/05/15 10:54:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/entity/index.htm
+---
+2012/05/15 10:55:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/entity/entityInst/3.htm
+---
+2012/05/15 10:56:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/index.htm
+---
+2012/05/15 10:56:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/index.htm
+---
+2012/05/15 10:59:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "renderer".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('renderer')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('renderer')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('renderer/render...')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/renderer/renderer/7.htm
+HTTP_REFERER=http://localhost/SegTDD/renderer/index.htm
+---
+2012/05/15 10:59:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/renderer/7.htm
+---
+2012/05/15 10:59:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "renderer".' in C:\wamp\www\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CController.php(271): CController->missingAction('renderer')
+#1 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('renderer')
+#2 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('renderer/render...')
+#3 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/renderer/renderer/7.htm
+HTTP_REFERER=http://localhost/SegTDD/renderer/index.htm
+---
+2012/05/15 10:59:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/renderer/7.htm
+---
+2012/05/15 10:59:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/index.htm
+---
+2012/05/15 11:48:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/index.htm
+---
+2012/05/15 11:48:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 11:55:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 11:57:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 11:57:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 11:58:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:02:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:03:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:03:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:03:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:03:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:03:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:05:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:05:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---
+2012/05/15 12:06:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/renderer/
+---

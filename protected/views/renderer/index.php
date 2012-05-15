@@ -14,7 +14,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('entity-grid', {
+	$.fn.yiiGridView.update('form-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,7 +26,7 @@ $this->content_title = 'Form Renderer';
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-warning')); ?>
 <div class="search-form" style="display:none">
-<?php // $this->renderPartial('_search',array('model'=>$model, )); ?>
+<?php  $this->renderPartial('_search',array('model'=>$model, )); ?>
 </div><!-- search-form -->
 
 <?php
