@@ -32,7 +32,7 @@ $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 ?>
 
 <div class="input-append">
-<?
+<?php
 if($this->search['simple']){
 echo $form->textFieldRow($model,'fieldname',array('class'=>'span3'));
 $this->widget('bootstrap.widgets.BootButton', array(

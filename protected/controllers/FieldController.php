@@ -3,15 +3,6 @@
 
 class FieldController extends Controller
 {
-	const TYPE_TEXT     ='T';
-	const TYPE_NUMERIC  ='N';
-	const TYPE_DATE     ='D';
-	const TYPE_TIME     ='t';
-	const TYPE_DATETIME ='d';
-	const TYPE_OPTION   ='O';
-	const TYPE_FILE     ='F';
-	const TYPE_COMPUTED ='X';
-	const TYPE_COMPOUND ='C';
 
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -84,15 +75,15 @@ class FieldController extends Controller
 		// if the constraint model is not null, update the initialized constraint models
 		if($constraintModel!==null){
 			switch ($fieldModel->datatype){
-				case self::CONSTRAINT_TEXT     : $constraintTextModel     = $constraintModel; break;
-				case self::CONSTRAINT_NUMERIC  : $constraintNumericModel  = $constraintModel; break;
-				case self::CONSTRAINT_DATE     :
-				case self::CONSTRAINT_TIME     :
-				case self::CONSTRAINT_DATETIME : $constraintDatetimeModel = $constraintModel; break;
-				case self::CONSTRAINT_OPTION   : $constraintEnumModel     = $constraintModel; break;
-				case self::CONSTRAINT_FILE     : $constraintFileModel     = $constraintModel; break;
-				case self::CONSTRAINT_COMPUTED : $constraintComputedModel = $constraintModel; break;
-				case self::CONSTRAINT_COMPOUND :                                              break;
+				case 'T' : $constraintTextModel     = $constraintModel; break;
+				case 'N' : $constraintNumericModel  = $constraintModel; break;
+				case 'D' :
+				case 't' :
+				case 'd' : $constraintDatetimeModel = $constraintModel; break;
+				case 'O' : $constraintEnumModel     = $constraintModel; break;
+				case 'F' : $constraintFileModel     = $constraintModel; break;
+				case 'X' : $constraintComputedModel = $constraintModel; break;
+				case 'C' :                                              break;
 			};
 		}
 
@@ -140,27 +131,27 @@ class FieldController extends Controller
 			$constraintDataType     = '';
 			$constraintModel        = null;
 			switch ($dataType){
-				case self::CONSTRAINT_TEXT :
+				case 'T' :
 					$constraintDataType = 'ConstraintText';
 					$constraintModel    = $constraintTextModel;     break;
-				case self::CONSTRAINT_NUMERIC :
+				case 'N' :
 					$constraintDataType = 'ConstraintNumeric';
 					$constraintModel    = $constraintNumericModel;  break;
-				case self::CONSTRAINT_DATE :
-				case self::CONSTRAINT_TIME :
-				case self::CONSTRAINT_DATETIME :
+				case 'D' :
+				case 't' :
+				case 'd' :
 					$constraintDataType = 'ConstraintDatetime';
 					$constraintModel    = $constraintDatetimeModel; break;
-				case self::CONSTRAINT_OPTION :
+				case 'O' :
 					$constraintDataType = 'ConstraintEnum';
 					$constraintModel    = $constraintEnumModel;     break;
-				case self::CONSTRAINT_FILE :
+				case 'F' :
 					$constraintDataType = 'ConstraintFile';
 					$constraintModel    = $constraintFileModel;     break;
-				case self::CONSTRAINT_COMPUTED :
+				case 'X' :
 					$constraintDataType = 'ConstraintComputed';
 					$constraintModel    = $constraintComputedModel; break;
-				case self::CONSTRAINT_COMPOUND :
+				case 'C' :
 					$constraintDataType = null;
 					if(isset($_POST['ConstraintCompound'])){
 						$child = $_POST['ConstraintCompound']['child'];
@@ -219,15 +210,15 @@ class FieldController extends Controller
 		// if the constraint model is not null, update the initialized constraint models
 		if($constraintModel!==null){
 			switch ($fieldModel->datatype){
-				case self::CONSTRAINT_TEXT     : $constraintTextModel     = $constraintModel; break;
-				case self::CONSTRAINT_NUMERIC  : $constraintNumericModel  = $constraintModel; break;
-				case self::CONSTRAINT_DATE     :
-				case self::CONSTRAINT_TIME     :
-				case self::CONSTRAINT_DATETIME : $constraintDatetimeModel = $constraintModel; break;
-				case self::CONSTRAINT_OPTION   : $constraintEnumModel     = $constraintModel; break;
-				case self::CONSTRAINT_FILE     : $constraintFileModel     = $constraintModel; break;
-				case self::CONSTRAINT_COMPUTED : $constraintComputedModel = $constraintModel; break;
-				case self::CONSTRAINT_COMPOUND :                                              break;
+				case 'T'     : $constraintTextModel     = $constraintModel; break;
+				case 'N'  : $constraintNumericModel  = $constraintModel; break;
+				case 'D'     :
+				case 't'     :
+				case 'd' : $constraintDatetimeModel = $constraintModel; break;
+				case 'O'   : $constraintEnumModel     = $constraintModel; break;
+				case 'F'     : $constraintFileModel     = $constraintModel; break;
+				case 'X' : $constraintComputedModel = $constraintModel; break;
+				case 'C' :                                              break;
 			};
 		}
 
@@ -250,27 +241,27 @@ class FieldController extends Controller
 			$constraintDataType     = '';
 			$constraintModel        = null;
 			switch ($dataType){
-				case self::CONSTRAINT_TEXT :
+				case 'T' :
 					$constraintDataType = 'ConstraintText';
 					$constraintModel    = $constraintTextModel;     break;
-				case self::CONSTRAINT_NUMERIC :
+				case 'N' :
 					$constraintDataType = 'ConstraintNumeric';
 					$constraintModel    = $constraintNumericModel;  break;
-				case self::CONSTRAINT_DATE :
-				case self::CONSTRAINT_TIME :
-				case self::CONSTRAINT_DATETIME :
+				case 'D' :
+				case 't' :
+				case 'd' :
 					$constraintDataType = 'ConstraintDatetime';
 					$constraintModel    = $constraintDatetimeModel; break;
-				case self::CONSTRAINT_OPTION :
+				case 'O' :
 					$constraintDataType = 'ConstraintEnum';
 					$constraintModel    = $constraintEnumModel;     break;
-				case self::CONSTRAINT_FILE :
+				case 'F' :
 					$constraintDataType = 'ConstraintFile';
 					$constraintModel    = $constraintFileModel;     break;
-				case self::CONSTRAINT_COMPUTED :
+				case 'X' :
 					$constraintDataType = 'ConstraintComputed';
 					$constraintModel    = $constraintComputedModel;     break;
-				case self::CONSTRAINT_COMPOUND :
+				case 'C' :
 					if(isset($_POST['ConstraintCompound'])){
 						$child = $_POST['ConstraintCompound']['child'];
 						foreach($child as $key => $id){
@@ -368,21 +359,21 @@ class FieldController extends Controller
 	public function loadConstraintModel($id,$datatype)
 	{
 		switch ($datatype){
-			case self::CONSTRAINT_TEXT     : 
+			case 'T'     : 
 				$model =     ConstraintText::model()->findByAttributes(array('field_id' => $id, )); break;
-			case self::CONSTRAINT_NUMERIC  : 
+			case 'N'  : 
 				$model =  Constraintnumeric::model()->findByAttributes(array('field_id' => $id, )); break;
-			case self::CONSTRAINT_DATE     :
-			case self::CONSTRAINT_TIME     :
-			case self::CONSTRAINT_DATETIME : 
+			case 'D'     :
+			case 't'     :
+			case 'd' : 
 				$model = ConstraintDatetime::model()->findByAttributes(array('field_id' => $id, )); break;
-			case self::CONSTRAINT_OPTION   : 
+			case 'O'   : 
 				$model =     ConstraintEnum::model()->findByAttributes(array('field_id' => $id, )); break;
-			case self::CONSTRAINT_FILE     : 
+			case 'F'     : 
 				$model =     ConstraintFile::model()->findByAttributes(array('field_id' => $id, )); break;
-			case self::CONSTRAINT_COMPUTED : 
+			case 'X' : 
 				$model = ConstraintComputed::model()->findByAttributes(array('field_id' => $id, )); break;
-			case self::CONSTRAINT_COMPOUND : 
+			case 'C' : 
 				$model = null;
 		};
 		//if($model===null)
@@ -423,15 +414,15 @@ class FieldController extends Controller
 	public function renderDataType($data,$row){
 		$dataType = '';
 		switch ($data->datatype){
-			case self::CONSTRAINT_TEXT     : $dataType = 'Text';     break;
-			case self::CONSTRAINT_NUMERIC  : $dataType = 'Numeric';  break;
-			case self::CONSTRAINT_DATE     : $dataType = 'Date';     break;
-			case self::CONSTRAINT_TIME     : $dataType = 'Time';     break;
-			case self::CONSTRAINT_DATETIME : $dataType = 'Datetime'; break;
-			case self::CONSTRAINT_OPTION   : $dataType = 'Option';   break;
-			case self::CONSTRAINT_FILE     : $dataType = 'File';     break;
-			case self::CONSTRAINT_COMPUTED : $dataType = 'Computed'; break;
-			case self::CONSTRAINT_COMPOUND : $dataType = 'Compound'; break;
+			case 'T'     : $dataType = 'Text';     break;
+			case 'N'  : $dataType = 'Numeric';  break;
+			case 'D'     : $dataType = 'Date';     break;
+			case 't'     : $dataType = 'Time';     break;
+			case 'd' : $dataType = 'Datetime'; break;
+			case 'O'   : $dataType = 'Option';   break;
+			case 'F'     : $dataType = 'File';     break;
+			case 'X' : $dataType = 'Computed'; break;
+			case 'C' : $dataType = 'Compound'; break;
 		}
         return $dataType;
 	}
