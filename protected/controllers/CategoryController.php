@@ -104,7 +104,8 @@ class CategoryController extends Controller
 	}
 
 	/**
-	 * Lists all models.
+	 * Lists and Creates the model.
+	 * Searching of the model.
 	 */
 	public function actionIndex()
 	{
@@ -130,14 +131,6 @@ class CategoryController extends Controller
 		));
 	}
 
-	/**
-	 * Manages all models.
-	 */
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer the ID of the model to be loaded
-	 */
 	public function loadModel($id)
 	{
 		$model=Category::model()->findByPk($id);

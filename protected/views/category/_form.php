@@ -2,10 +2,12 @@
 
 <?php $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
     'id'=>'verticalForm',
-    'htmlOptions'=>array('class'=>'well'),
+    'type' => 'horizontal',
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<div class="alert alert-error">
+		<p class="note">Fields with <span class="required">*</span> are required.</p>
+	</div>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -22,8 +24,9 @@
 	</div>
 
 	<div class="row buttons">
-		<?php $this->widget('bootstrap.widgets.BootButton', array('label' => 'Save', 'icon' => 'ok', 'buttonType' => 'submit')); ?>
+		<?php $this->widget('bootstrap.widgets.BootButton', array('label' => 'Save', 'icon' => 'ok white', 'buttonType' => 'submit', 'type' => 'primary')); ?>
 		<?php $this->widget('bootstrap.widgets.BootButton', array('label' => 'Cancel', 'icon' => 'remove', 'htmlOptions'=>array('data-dismiss'=>'modal'))); ?>
+		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Reset')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

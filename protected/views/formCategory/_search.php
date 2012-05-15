@@ -15,7 +15,9 @@
 		<?php //echo $form->textFieldRow($tags,'tag_name',array('maxlength'=>50)); ?>
 
 		<div class = "row">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<br><br>
+		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'type'=>'primary', 'icon'=>'search', 'label'=>'Search')); ?>
+		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Reset')); ?>
 		</div>
 
 <?php $this->endWidget(); ?>

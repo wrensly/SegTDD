@@ -6,8 +6,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Category', 'url'=>array('index')),
 	array('label'=>'Create Category', 'url'=>array('create')),
+	array('label'=>'Manage Category', 'url'=>array('index')),
+	
 );
 $this->content_title = 'Update' . ' ' . $model->category_name;
 ?>
