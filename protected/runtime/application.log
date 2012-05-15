@@ -1,0 +1,62 @@
+2012/05/15 11:31:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/index
+---
+2012/05/15 11:31:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/
+---
+2012/05/15 11:32:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'segtdd.constraint_computed' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `constraint_computed`.
+in C:\wamp\www\SegTDD\protected\controllers\FieldController.php (122)
+in C:\wamp\www\SegTDD\index.php (16)
+2012/05/15 11:32:05 [error] [exception.CDbException] exception 'CDbException' with message 'The table "constraint_computed" for active record class "ConstraintComputed" cannot be found in the database.' in C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(ConstraintComputed))
+#1 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('ConstraintCompu...')
+#2 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(122): CActiveRecord->__construct()
+#4 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionCreate()
+#5 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('create')
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/create')
+#15 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/SegTDD/field/create.htm
+HTTP_REFERER=http://localhost/SegTDD/formCategory/index
+---
+2012/05/15 11:33:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/
+---
+2012/05/15 11:33:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\wamp\www\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/index.php
+---

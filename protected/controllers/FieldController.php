@@ -3,15 +3,15 @@
 
 class FieldController extends Controller
 {
-	const TYPE_TEXT     = Field::TYPE_TEXT;
-	const TYPE_NUMERIC  = Field::TYPE_NUMERIC;
-	const TYPE_DATE     = Field::TYPE_DATE;
-	const TYPE_TIME     = Field::TYPE_TIME;
-	const TYPE_DATETIME = Field::TYPE_DATETIME;
-	const TYPE_OPTION   = Field::TYPE_OPTION;
-	const TYPE_FILE     = Field::TYPE_FILE;
-	const TYPE_COMPUTED = Field::TYPE_COMPUTED;
-	const TYPE_COMPOUND = Field::TYPE_COMPOUND;
+	const TYPE_TEXT     ='T';
+	const TYPE_NUMERIC  ='N';
+	const TYPE_DATE     ='D';
+	const TYPE_TIME     ='t';
+	const TYPE_DATETIME ='d';
+	const TYPE_OPTION   ='O';
+	const TYPE_FILE     ='F';
+	const TYPE_COMPUTED ='X';
+	const TYPE_COMPOUND ='C';
 
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
