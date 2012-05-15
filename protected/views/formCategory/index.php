@@ -23,10 +23,11 @@ $('.search-form form').submit(function(){
 $this->content_title = "Manage Forms";
 ?>
 
+
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button  btn btn-warning')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
-	'model'=>$model,
+	'model'=>$model,	
 )); ?>
 </div>
 

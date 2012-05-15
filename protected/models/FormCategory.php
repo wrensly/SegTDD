@@ -144,6 +144,28 @@ class FormCategory extends CActiveRecord
 		));
 	}
 
+		public function search3($model)
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->select = array('code','name', 'description', 'status',);
+		$criteria->condition = 'select * from field where fieldname='.$model.'';
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('entity_id',$this->entity_id);
+		$criteria->compare('fieldname',$this->fieldname,true);
+		$criteria->compare('label',$this->label,true);
+		$criteria->compare('datatype',$this->datatype,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('description',$this->description,true);
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
 	public function getTags($id)
 	{
 		$sql = "select t.tag_name as tagName from tag t left join form_tag ft on (t.id = ft.tag_id)

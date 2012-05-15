@@ -364,19 +364,11 @@ class FieldController extends Controller
 		if(isset($_GET['Field'])){
 			$model->attributes=$_GET['Field'];
 		}
-		$this->render('index',array(
-			'model'=>$model,
-		));
+		else{
+			$model->attributes=$_GET['Field'];
+		}
+		$this->render('index', array('model'=>$model));
 	}
-
-	public function actionAcceptUserRegistration() {
-        if(isset($_POST['button1'])){
-        	echo "Accept code here ";
-        }
-      	if(isset($_POST['button2'])){
-        	echo "Reject code here ";
-        }
-    }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

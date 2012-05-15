@@ -129,12 +129,14 @@ class EntityController extends Controller
 	{
 		$model=new Entity('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Entity']))
+		if(isset($_GET['Entity'])){
 			$model->attributes=$_GET['Entity'];
-
-		$this->render('index',array(
-			'model'=>$model,
-		));
+		}
+		else{
+			$model->attributes=$_GET['Entity'];
+		}
+		
+		$this->render('index', array('model'=>$model));
 	}
 
 	/**

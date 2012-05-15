@@ -11,10 +11,16 @@ $this->menu=array(
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
-	$('.search-form').toggle();
+	$('.advanced-search-form').toggle(250);
 	return false;
 });
-$('.search-form form').submit(function(){
+$('.search-form').submit(function(){
+	$.fn.yiiGridView.update('form-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+$('.advanced-search-form').submit(function(){
 	$.fn.yiiGridView.update('form-grid', {
 		data: $(this).serialize()
 	});
@@ -24,15 +30,11 @@ $('.search-form form').submit(function(){
 $this->content_title = "Manage Forms";
 ?>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); 
+<?php $this->widget('bootstrap.widgets.BootAlert'); ?>
 
-
-
-?>
+<?php $this->renderPartial('_simpleSearch',array(
+	'model'=>$model
+)); ?><!-- search-form -->
 </div>
 
 
