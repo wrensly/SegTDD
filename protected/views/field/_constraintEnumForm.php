@@ -109,8 +109,15 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.jso
 </div>
  
 <?php $this->endWidget(); ?>
-<?php echo $form->textFieldRow($constraintEnumModel,'minselect',array('value'=>'1')); ?>
-<?php echo $form->textFieldRow($constraintEnumModel,'maxselect',array('value'=>'1')); ?>
+<?php
+// Setting the default values
+defineDefaultsof($constraintEnumModel,array(
+    'minselect' => 1,
+    'maxselect' => 1,
+));
+?>
+<?php echo $form->textFieldRow($constraintEnumModel,'minselect'); ?>
+<?php echo $form->textFieldRow($constraintEnumModel,'maxselect'); ?>
 <div class="control-group">
 	<label class="control-label">Options</label>
 	<div class="controls">

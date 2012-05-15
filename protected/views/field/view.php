@@ -38,11 +38,6 @@ $this->content_title = 'View Field '.$fieldModel->fieldname;
 		            //$this->renderBoolean($fieldModel,'required'),
 		        ),
 		        array(
-		            'name'=>'derived',
-		            'value'=>Yii::app()->format->boolean($fieldModel->derived),
-		            //$this->renderBoolean($fieldModel,'derived'),
-		        ),
-		        array(
 		            'name'=>'attribute',
 		            'value'=>Yii::app()->format->boolean($fieldModel->attribute),
 		            //$this->renderBoolean($fieldModel,'attribute'),
@@ -81,27 +76,46 @@ $this->content_title = 'View Field '.$fieldModel->fieldname;
 						'constraintFileModel' =>$constraintFileModel,
 					));
 				   	break;
+				case 'X':
+					echo $this->renderPartial('_viewConstraintComputed', array(
+						'constraintComputedModel' =>$constraintComputedModel,
+					));
+					break;
 				case 'C':
-					$this->widget('bootstrap.widgets.BootDetailView', array(
-						'data'=>$fieldModel,
-						'attributes'=>array(
-					        'parent_id',
-						),
+				echo $this->renderPartial('_viewConstraintCompound', array(
+						'fieldModel' =>$fieldModel,
 					));
 					break;
 			};
-			if ($fieldModel->derived == 1){
-				echo $this->renderPartial('_viewConstraintDerived', array(
-						'constraintDerivedModel' =>$constraintDerivedModel,
-					));
-			}
 		?>
 		<h3>Others</h3>
-		<?php $this->widget('bootstrap.widgets.BootDetailView', array(
+		<?php
+		$this->widget('bootstrap.widgets.BootDetailView', array(
 			'data'=>$fieldModel,
 			'attributes'=>array(
-				'entity.entity_name',
+				array(
+						'name' => 'entity_id',
+						'label' => 'Entity Association',
+						'type' => 'raw',
+				        'value' => CHtml::link(CHtml::encode($fieldModel->entity->entity_name),
+				        	array('entity/view','id'=>$fieldModel->entity->id)),
+			        ),
 			),
-		)); ?>
+		));
+		if($fieldModel->parent_id!=null){
+			$this->widget('bootstrap.widgets.BootDetailView', array(
+				'data'=>$fieldModel,
+				'attributes'=>array(
+					array(
+						'name' => 'parent_id',
+						'label' => 'Parent Field',
+						'type' => 'raw',
+				        'value' => CHtml::link(CHtml::encode($fieldModel->parent->fieldname),
+				        	array('field/view','id'=>$fieldModel->parent->id)),
+			        ),
+				),
+			));
+		}
+		?>
 	</div>
 </div>

@@ -75,14 +75,19 @@ $encodingSelect = array(
 	'IBM866'=>'CP866',
 	'KOI8-R'=>'Cyrillic KOI8-R',
 );
+// array sort
 asort($encodingSelect);
 ?>
-<?php echo $form->textFieldRow($constraintTextModel,'minlength',array('value'=>'1')); ?>
-<?php echo $form->textFieldRow($constraintTextModel,'maxlength',array('value'=>'45')); ?>
-<?php echo $form->dropDownListRow($constraintTextModel,'encoding',$encodingSelect,array(
-	'options' => array(
-		'UTF-8' => array('selected' => true),
-	),
-)); ?>
+<?php
+// Setting the default values
+defineDefaultsof($constraintTextModel,array(
+	'minlength' => 1,
+	'maxlength' => 45,
+	'encoding'  => 'UTF-8',
+));
+?>
+<?php echo $form->textFieldRow($constraintTextModel,'minlength'); ?>
+<?php echo $form->textFieldRow($constraintTextModel,'maxlength'); ?>
+<?php echo $form->dropDownListRow($constraintTextModel,'encoding',$encodingSelect); ?>
 <?php echo $form->textFieldRow($constraintTextModel,'format'); ?>
 <?php echo $form->textFieldRow($constraintTextModel,'default_value'); ?>

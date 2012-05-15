@@ -26,6 +26,7 @@
 							'd' => 'Datetime',
 							'O' => 'Option',
 							'F' => 'File',
+							'X' => 'Computed',
 							'C' => 'Compound',
 						),
 						array(
@@ -39,7 +40,6 @@
  					<?php echo $form->textAreaRow($model,'description',array('rows'=>6, 'cols'=>50)); ?>
 					<?php echo $form->checkBoxRow($model,'multiple'); ?>
 					<?php echo $form->checkBoxRow($model,'required'); ?>
-					<?php echo $form->checkBoxRow($model,'derived'); ?>
 					<?php echo $form->checkBoxRow($model,'attribute'); ?>
  				</div>
  			</div>
@@ -48,7 +48,6 @@
 	<div class="span6">
 		<fieldset>
 			<legend>Constraints</legend>
-			<?php echo $form->textFieldRow($model,'default',array('size'=>45,'maxlength'=>45)); ?>
 		</fieldset>
 		<fieldset>
 			<legend>Others</legend>

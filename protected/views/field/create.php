@@ -18,5 +18,5 @@ $this->content_title = 'Create Field';
 	'constraintDatetimeModel' =>$constraintDatetimeModel,
 	'constraintEnumModel'     =>$constraintEnumModel,
 	'constraintFileModel'     =>$constraintFileModel,
-	'constraintDerivedModel'  =>$constraintDerivedModel,
+	'constraintComputedModel' =>$constraintComputedModel,
 )); ?>

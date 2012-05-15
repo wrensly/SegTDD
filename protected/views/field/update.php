@@ -22,5 +22,5 @@ $this->content_title = 'Update Field '.$fieldModel->fieldname;
 	'constraintDatetimeModel' =>$constraintDatetimeModel,
 	'constraintEnumModel'     =>$constraintEnumModel,
 	'constraintFileModel'     =>$constraintFileModel,
-	'constraintDerivedModel'  =>$constraintDerivedModel,
-	)); ?>
+	'constraintComputedModel'  =>$constraintComputedModel,
+)); ?>

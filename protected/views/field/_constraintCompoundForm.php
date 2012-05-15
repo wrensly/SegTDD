@@ -42,13 +42,18 @@
             </tr>
         </tfoot>
         <tbody class="templateTarget" id="childFieldsForm">
+        <?php
+            $i = 0;
+            $childFields = $fieldModel->fields;
+            foreach ($childFields as $childField){
+        ?>
             <tr class="templateContent">
                 <td>
-                	<?php echo CHtml::dropDownList('ConstraintCompound[child][0]',null,Field::items('fieldname'),array(
+                	<?php echo CHtml::dropDownList('ConstraintCompound[child][$i]',$childField->id,Field::items('fieldname'),array(
 						'prompt' => '-SELECT-',)); ?>
                 </td>
                 <td>
-                    <input type="hidden" class="rowIndex" value="0" />
+                    <input type="hidden" class="rowIndex" value="<?php echo $i; ?>" />
                     <?php $this->widget('bootstrap.widgets.BootButton', array(
                         'label' => '',
                         'type' => 'danger',
@@ -59,6 +64,31 @@
                     )); ?>
                 </td>
             </tr>
+        <?php
+            $i++;
+            } 
+            if($childFields == null){
+        ?>
+            <tr class="templateContent">
+                <td>
+                    <?php echo CHtml::dropDownList('ConstraintCompound[child][$i]',null,Field::items('fieldname'),array(
+                        'prompt' => '-SELECT-',)); ?>
+                </td>
+                <td>
+                    <input type="hidden" class="rowIndex" value="<?php echo $i; ?>" />
+                    <?php $this->widget('bootstrap.widgets.BootButton', array(
+                        'label' => '',
+                        'type' => 'danger',
+                        'icon' => 'minus white',
+                        'htmlOptions' => array(
+                                'class' => 'remove',
+                            ),
+                    )); ?>
+                </td>
+            </tr>
+        <?php 
+            }
+        ?>
         </tbody>
     </table>
 </div><!--panel-->

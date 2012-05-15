@@ -15,19 +15,21 @@
  * @property string $label
  * @property integer $required
  * @property integer $parent_id
- * @property integer $derived
  * @property integer $attribute
  *
  * The followings are the available model relations:
  * @property ConstraintDatetime[] $constraintDatetime
- * @property ConstraintDerived[] $constraintDerived
+ * @property ConstraintComputed[] $constraintComputed
  * @property ConstraintEnum[] $constraintEnum
  * @property ConstraintFile[] $constraintFile
  * @property ConstraintNumeric[] $constraintNumeric
  * @property ConstraintText[] $constraintText
  * @property EntityAttribute[] $entityAttributes
  * @property Entity $entity
- * @property FieldValueCompound $fieldValueCompound
+ * @property Field $parent
+ * @property Field[] $fields
+ * @property FieldValueCompound[] $fieldValueCompounds
+ * @property FieldValueComputed[] $fieldValueComputeds
  * @property FieldValueDate[] $fieldValueDates
  * @property FieldValueDatetime[] $fieldValueDatetimes
  * @property FieldValueEnum[] $fieldValueEnums
@@ -45,6 +47,7 @@ class Field extends MyActiveRecord
 	const TYPE_DATETIME ='d';
 	const TYPE_OPTION   ='O';
 	const TYPE_FILE     ='F';
+	const TYPE_COMPUTED ='X';
 	const TYPE_COMPOUND ='C';
 
 	/**
@@ -84,15 +87,15 @@ class Field extends MyActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fieldname, datatype, description, multiple, label, required, derived, attribute', 'required'),
-			array('multiple, entity_id, required, parent_id, derived, attribute', 'numerical', 'integerOnly'=>true),
+			array('fieldname, datatype, description, multiple, label, required, attribute', 'required'),
+			array('multiple, entity_id, required, parent_id, attribute', 'numerical', 'integerOnly'=>true),
 			array('fieldname', 'length', 'max'=>100),
 			array('datatype', 'length', 'max'=>1),
 			array('alias, default, label', 'length', 'max'=>45),
 			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, fieldname, datatype, description, multiple, alias, default, entity_id, label, required, parent_id, derived, attribute', 'safe', 'on'=>'search'),
+			array('id, fieldname, datatype, description, multiple, alias, default, entity_id, label, required, parent_id, attribute', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -105,14 +108,17 @@ class Field extends MyActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'constraintDatetime' => array(self::HAS_ONE, 'ConstraintDatetime', 'field_id'),
-			'constraintDerived' => array(self::HAS_ONE, 'ConstraintDerived', 'field_id'),
+			'constraintComputed' => array(self::HAS_ONE, 'ConstraintComputed', 'field_id'),
 			'constraintEnum' => array(self::HAS_ONE, 'ConstraintEnum', 'field_id'),
 			'constraintFile' => array(self::HAS_ONE, 'ConstraintFile', 'field_id'),
 			'constraintNumeric' => array(self::HAS_ONE, 'ConstraintNumeric', 'field_id'),
 			'constraintText' => array(self::HAS_ONE, 'ConstraintText', 'field_id'),
 			'entityAttributes' => array(self::HAS_MANY, 'EntityAttribute', 'field_id'),
 			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
-			'fieldValueCompound' => array(self::HAS_ONE, 'FieldValueCompound', 'id'),
+			'parent' => array(self::BELONGS_TO, 'Field', 'parent_id'),
+            'fields' => array(self::HAS_MANY, 'Field', 'parent_id'),
+			'fieldValueCompounds' => array(self::HAS_MANY, 'FieldValueCompound', 'id'),
+			'fieldValueComputeds' => array(self::HAS_MANY, 'FieldValueComputed', 'id'),
 			'fieldValueDates' => array(self::HAS_MANY, 'FieldValueDate', 'field_id'),
 			'fieldValueDatetimes' => array(self::HAS_MANY, 'FieldValueDatetime', 'field_id'),
 			'fieldValueEnums' => array(self::HAS_MANY, 'FieldValueEnum', 'field_id'),
@@ -140,7 +146,6 @@ class Field extends MyActiveRecord
 			'label' => 'Label',
 			'required' => 'Required',
 			'parent_id' => 'Parent',
-			'derived' => 'Derived',
 			'attribute' => 'Attribute',
 		);
 	}
@@ -167,7 +172,6 @@ class Field extends MyActiveRecord
 		$criteria->compare('label',$this->label,false);
 		$criteria->compare('required',$this->required);
 		$criteria->compare('parent_id',$this->parent_id);
-		$criteria->compare('derived',$this->derived);
 		$criteria->compare('attribute',$this->attribute);
 		$criteria->compare('deleted',0);
 		return new CActiveDataProvider($this, array(
@@ -216,23 +220,29 @@ public function search2($id)
 	}
 
 	private static $_items=array();
-		
-	public static function items($type){
-		if(!isset(self::$_items[$type]))
-			self::loadItems($type);
-		return self::$_items[$type];
+	
+	/**
+	 * Function for getting a list of records
+	 * @param string the name of the property to load
+	 * @return string[] array of records $primary_index => $property 
+	 */	
+	public static function items($property){
+		if(!isset(self::$_items[$property]))
+			self::loadItems($property);
+		return self::$_items[$property];
 	}
 	
-	public static function item($type,$code){
-		if(!isset(self::$_items[$type]))
-			self::loadItems($type);
-		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
-	}
-	
-	private static function loadItems($type){
-		self::$_items[$type]=array();
-		$models=self::model()->findAll();
+	/**
+	 * Function for getting a list of records if the list is not set
+	 * @param string the name of the property to load
+	 * @return string[] array of records $primary_index => $property 
+	 */	
+	private static function loadItems($property){
+		self::$_items[$property]=array();
+		$criteria=new CDbCriteria;
+		$criteria->compare('deleted',0);
+		$models=self::model()->findAll($criteria);
 		foreach($models as $model)
-			self::$_items[$type][$model->id]=$model->$type;
+			self::$_items[$property][$model->id]=$model->$property;
 	}
 }

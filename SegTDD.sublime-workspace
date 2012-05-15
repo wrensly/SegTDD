@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"childFie",
+				"childFields"
+			],
+			[
+				"gr",
+				"gridDataProvider"
+			],
+			[
+				"con",
+				"constraintNumericModel"
+			],
+			[
 				"Field",
 				"FieldValueModel"
 			],
@@ -119,41 +131,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "protected/views/field/_form.php",
-			"settings":
-			{
-				"buffer_size": 5510,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "protected/models/FieldValue.php",
-			"settings":
-			{
-				"buffer_size": 8293,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\n\nclass FieldController extends Controller\n{\n	const TYPE_TEXT     = Field::TYPE_TEXT;\n	const TYPE_NUMERIC  = Field::TYPE_NUMERIC;\n	const TYPE_DATE     = Field::TYPE_DATE;\n	const TYPE_TIME     = Field::TYPE_TIME;\n	const TYPE_DATETIME = Field::TYPE_DATETIME;\n	const TYPE_OPTION   = Field::TYPE_OPTION;\n	const TYPE_FILE     = Field::TYPE_FILE;\n	const TYPE_COMPOUND = Field::TYPE_COMPOUND;\n\n	/**\n	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning\n	 * using two-column layout. See 'protected/views/layouts/column2.php'.\n	 */\n	public $layout='//layouts/column1_mod';\n\n	/**\n	 * @return array action filters\n	 */\n	public function filters()\n	{\n		return array(\n			'accessControl', // perform access control for CRUD operations\n		);\n	}\n\n	/**\n	 * Specifies the access control rules.\n	 * This method is used by the 'accessControl' filter.\n	 * @return array access control rules\n	 */\n	public function accessRules()\n	{\n		return array(\n			array('allow',  // allow all users to perform 'index' and 'view' actions\n				'actions'=>array('index','view'),\n				'users'=>array('*'),\n			),\n			array('allow', // allow authenticated user to perform 'create' and 'update' actions\n				'actions'=>array('create','update'),\n				'users'=>array('@'),\n			),\n			array('allow', // allow admin user to perform 'admin' and 'delete' actions\n				'actions'=>array('admin','delete','testFieldValue'),\n				'users'=>array('admin'),\n			),\n			array('deny',  // deny all users\n				'users'=>array('*'),\n			),\n		);\n	}\n\n	/**\n	 * Displays a particular model.\n	 * @param integer $id the ID of the model to be displayed\n	 */\n	public function actionView($id)\n	{\n\n		// load field model\n		$fieldModel              = $this->loadModel($id);\n\n		// initialize constraint models\n		$constraintTextModel     = new ConstraintText;\n		$constraintNumericModel  = new ConstraintNumeric;\n		$constraintDatetimeModel = new ConstraintDatetime;\n		$constraintEnumModel     = new ConstraintEnum;\n		$constraintFileModel     = new ConstraintFile;\n		$constraintDerivedModel  = new ConstraintDerived;\n\n		// load the constraint model according to the data type of the loaded model\n		$constraintModel = $this->loadConstraintModel($id,$fieldModel->datatype);\n\n		// if the constraint model is not null, update the initialized constraint models\n		if($constraintModel!==null){\n			switch ($fieldModel->datatype){\n				case 'T': $constraintTextModel     = $constraintModel; break;\n				case 'N': $constraintNumericModel  = $constraintModel; break;\n				case 'D':\n				case 't':\n				case 'd': $constraintDatetimeModel = $constraintModel; break;\n				case 'O': $constraintEnumModel     = $constraintModel; break;\n				case 'F': $constraintFileModel     = $constraintModel; break;\n				case 'C':                                              break;\n			};\n		}\n\n		if($fieldModel->derived){\n			$constraintModel = $this->loadConstraintModel($id,'R');\n			if($constraintModel!==null){\n				$constraintDerivedModel = $constraintModel;\n			}\n		}\n\n		$this->render('view',array(\n			'fieldModel'              =>$fieldModel,\n			'constraintTextModel'     =>$constraintTextModel,\n			'constraintNumericModel'  =>$constraintNumericModel,\n			'constraintDatetimeModel' =>$constraintDatetimeModel,\n			'constraintEnumModel'     =>$constraintEnumModel,\n			'constraintFileModel'     =>$constraintFileModel,\n			'constraintDerivedModel'  =>$constraintDerivedModel,\n		));\n	}\n\n	/**\n	 * Creates a new model.\n	 * If creation is successful, the browser will be redirected to the 'view' page.\n	 */\n	public function actionCreate()\n	{\n		$fieldModel              = new Field;\n		$constraintTextModel     = new ConstraintText;\n		$constraintNumericModel  = new ConstraintNumeric;\n		$constraintDatetimeModel = new ConstraintDatetime;\n		$constraintEnumModel     = new ConstraintEnum;\n		$constraintFileModel     = new ConstraintFile;\n		$constraintDerivedModel  = new ConstraintDerived;\n\n		// Uncomment the following line if AJAX validation is needed\n		$this->performAjaxValidations(array(\n			$fieldModel,\n			$constraintTextModel,\n			$constraintNumericModel,\n			$constraintDatetimeModel,\n			$constraintEnumModel,\n			$constraintFileModel,\n			$constraintDerivedModel,\n		));\n		\n		if(isset($_POST['Field']))\n		{\n			$fieldModel->attributes = $_POST['Field'];\n			//$fieldModelSave         = $fieldModel->save();\n			$dataType               = $_POST['Field']['datatype'];\n			$constraintDataType     = '';\n			$constraintModel        = null;\n			switch ($dataType){\n				case 'T':\n					$constraintDataType = 'ConstraintText';\n					$constraintModel    = $constraintTextModel;     break;\n				case 'N':\n					$constraintDataType = 'ConstraintNumeric';\n					$constraintModel    = $constraintNumericModel;  break;\n				case 'D':\n				case 't':\n				case 'd':\n					$constraintDataType = 'ConstraintDatetime';\n					$constraintModel    = $constraintDatetimeModel; break;\n				case 'O':\n					$constraintDataType = 'ConstraintEnum';\n					$constraintModel    = $constraintEnumModel;     break;\n				case 'F':\n					$constraintDataType = 'ConstraintFile';\n					$constraintModel    = $constraintFileModel;     break;\n				case 'C':\n					if(isset($_POST['ConstraintCompound'])){\n						$child = $_POST['ConstraintCompound']['child'];\n						foreach($child as $key => $id){\n							$fieldModel = $this->loadModel($id);\n							$fieldModel->setAttribute('parent_id', '-1'); \n                    		echo \"Updating \".$fieldModel->fieldname.\"...\";\n                    		if ($fieldModel->save()){\n                    			echo \"OK.<br>\";\n                    		} else {\n                    			echo \"failed.<br>\";\n                    		}\n						}\n				    }\n					break;\n			}\n			/*\n			if(isset($_POST[$constraintDataType])){\n				$_POST[$constraintDataType]['field_id'] = $fieldModel->id;\n		    	$constraintModel->attributes = $_POST[$constraintDataType]; \n		    }\n		    $constraintModelSave = $constraintModel->save();\n		   	echo \"Checking POST data if derived is checked...\";\n		    if ($_POST['Field']['derived']){\n		    	echo \"checked.<br>Checking POST data for derived...\";\n				if(isset($_POST['ConstraintDerived'])){\n					echo \"found.<br>Associating field_id...\";\n					$_POST['ConstraintDerived']['field_id'] = $fieldModel->id;\n			    	echo \"OK.<br>Associating POST data...\";\n			    	$constraintDerivedModel->attributes = $_POST['ConstraintDerived'];\n			    	echo \"OK.<br>Attempting to save...\";\n			    	$constraintModelSave = $constraintDerivedModel->save();\n			    	if ($constraintModelSave){\n			    		echo \"derived Constraint is saved.\";\n			    	} else{\n			    		echo \"derived Constraint is not saved.\";\n			    		print_r($constraintDerivedModel->getErrors());\n			    	}\n			    }else {\n				echo \"not found.<br>\";\n			}\n			} else {\n				echo \"not checked.<br>\";\n			}\n			/* if($fieldModelSave && $constraintModelSave)\n				$this->redirect(array('view','id'=>$fieldModel->id));\n			*/\n		}\n\n		$this->render('create',array(\n			'fieldModel'              =>$fieldModel,\n			'constraintTextModel'     =>$constraintTextModel,\n			'constraintNumericModel'  =>$constraintNumericModel,\n			'constraintDatetimeModel' =>$constraintDatetimeModel,\n			'constraintEnumModel'     =>$constraintEnumModel,\n			'constraintFileModel'     =>$constraintFileModel,\n			'constraintDerivedModel'  =>$constraintDerivedModel,\n		));\n	}\n\n	/**\n	 * Updates a particular model.\n	 * If update is successful, the browser will be redirected to the 'view' page.\n	 * @param integer $id the ID of the model to be updated\n	 */\n	public function actionUpdate($id)\n	{\n		// load field model\n		$fieldModel              = $this->loadModel($id);\n\n		// initialize constraint models\n		$constraintTextModel     = new ConstraintText;\n		$constraintNumericModel  = new ConstraintNumeric;\n		$constraintDatetimeModel = new ConstraintDatetime;\n		$constraintEnumModel     = new ConstraintEnum;\n		$constraintFileModel     = new ConstraintFile;\n		$constraintDerivedModel  = new ConstraintDerived;\n\n		// load the constraint model according to the data type of the loaded model\n		$constraintModel = $this->loadConstraintModel($id,$fieldModel->datatype);\n\n		// if the constraint model is not null, update the initialized constraint models\n		if($constraintModel!==null){\n			switch ($fieldModel->datatype){\n				case 'T': $constraintTextModel     = $constraintModel; break;\n				case 'N': $constraintNumericModel  = $constraintModel; break;\n				case 'D':\n				case 't':\n				case 'd': $constraintDatetimeModel = $constraintModel; break;\n				case 'O': $constraintEnumModel     = $constraintModel; break;\n				case 'F': $constraintFileModel     = $constraintModel; break;\n				case 'C':                                              break;\n			};\n		}\n\n		if($fieldModel->derived){\n			$constraintModel = $this->loadConstraintModel($id,'R');\n			if($constraintModel!==null){\n				$constraintDerivedModel = $constraintModel;\n			}\n		}\n\n		// Uncomment the following line if AJAX validation is needed\n		$this->performAjaxValidations(array(\n			$fieldModel,\n			$constraintTextModel,\n			$constraintNumericModel,\n			$constraintDatetimeModel,\n			$constraintEnumModel,\n			$constraintFileModel,\n			$constraintDerivedModel,\n		));\n\n		if(isset($_POST['Field']))\n		{\n			$fieldModel->attributes = $_POST['Field'];\n			$fieldModelSave         = $fieldModel->save();\n			$dataType               = $_POST['Field']['datatype'];\n			$constraintDataType     = '';\n			$constraintModel        = null;\n			switch ($dataType){\n				case 'T':\n					$constraintDataType = 'ConstraintText';\n					$constraintModel    = $constraintTextModel;     break;\n				case 'N':\n					$constraintDataType = 'ConstraintNumeric';\n					$constraintModel    = $constraintNumericModel;  break;\n				case 'D':\n				case 't':\n				case 'd':\n					$constraintDataType = 'ConstraintDatetime';\n					$constraintModel    = $constraintDatetimeModel; break;\n				case 'O':\n					$constraintDataType = 'ConstraintEnum';\n					$constraintModel    = $constraintEnumModel;     break;\n				case 'F':\n					$constraintDataType = 'ConstraintFile';\n					$constraintModel    = $constraintFileModel;     break;\n				case 'C':\n					break;\n			}\n			if(isset($_POST[$constraintDataType])){\n				$_POST[$constraintDataType]['field_id'] = $fieldModel->id;\n		    	$constraintModel->attributes = $_POST[$constraintDataType]; \n		    }\n		    $constraintModelSave = $constraintModel->save();\n\n		    if ($_POST['Field']['derived']){\n		    	if(isset($_POST['ConstraintDerived'])){\n					$_POST['ConstraintDerived']['field_id'] = $fieldModel->id;\n			    	$constraintDerivedModel->attributes = $_POST['ConstraintDerived'];\n			    	$constraintModelSave = $constraintDerivedModel->save();\n			    }\n			}\n			if($fieldModelSave && $constraintModelSave)\n				$this->redirect(array('view','id'=>$fieldModel->id));\n		}\n\n		$this->render('update',array(\n			'fieldModel'              =>$fieldModel,\n			'constraintTextModel'     =>$constraintTextModel,\n			'constraintNumericModel'  =>$constraintNumericModel,\n			'constraintDatetimeModel' =>$constraintDatetimeModel,\n			'constraintEnumModel'     =>$constraintEnumModel,\n			'constraintFileModel'     =>$constraintFileModel,\n			'constraintDerivedModel'  =>$constraintDerivedModel,\n		));\n	}\n\n	/**\n	 * Deletes a particular model.\n	 * If deletion is successful, the browser will be redirected to the 'admin' page.\n	 * @param integer $id the ID of the model to be deleted\n	 */\n	public function actionDelete($id)\n	{\n		if(Yii::app()->request->isPostRequest)\n		{\n			// load the field model\n			$fieldModel = $this->loadModel($id);\n			\n			// load the constraint model according to the data type of the loaded model\n			$constraintModel = $this->loadConstraintModel($id,$fieldModel->datatype);\n\n			// if the constraint model is not null, delete the constraint\n			if($constraintModel!==null){\n				$constraintModel->delete();\n			}\n\n			// if the field is derived, load the constraint model for derived fields\n			if ($fieldModel->derived){\n				$constraintModel = $this->loadConstraintModel($id,'R');\n\n				// if the constraint model is not null, delete the constraint\n				if($constraintModel!==null){\n					$constraintModel->delete();\n				}\n			}\n\n			// we only allow deletion via POST request\n			$fieldModel->delete();\n\n			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser\n			if(!isset($_GET['ajax']))\n				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));\n		}\n		else\n			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');\n	}\n\n	/**\n	 * Manages all models.\n	 */\n	public function actionIndex()\n	{\n		$model=new Field('search');\n		$model->unsetAttributes();  // clear any default values\n		if(isset($_GET['Field']))\n			$model->attributes=$_GET['Field'];\n		\n		$this->render('index',array(\n			'model'=>$model,\n		));\n	}\n\n	/**\n	 * Returns the data model based on the primary key given in the GET variable.\n	 * If the data model is not found, an HTTP exception will be raised.\n	 * @param integer the ID of the model to be loaded\n	 */\n	public function loadModel($id)\n	{\n		$model=Field::model()->findByPk($id);\n		if($model===null)\n			throw new CHttpException(404,'The requested page does not exist.');\n		return $model;\n	}\n\n	/**\n	 * Returns the data model based on the primary key given in the GET variable.\n	 * If the data model is not found, an HTTP exception will be raised.\n	 * @param integer the ID of the model to be loaded\n	 */\n	public function loadConstraintModel($id,$datatype)\n	{\n		switch ($datatype){\n			case 'T': $model =     ConstraintText::model()->findByAttributes(array('field_id' => $id, )); break;\n			case 'N': $model =  Constraintnumeric::model()->findByAttributes(array('field_id' => $id, )); break;\n			case 'D':\n			case 't':\n			case 'd': $model = ConstraintDatetime::model()->findByAttributes(array('field_id' => $id, )); break;\n			case 'O': $model =     ConstraintEnum::model()->findByAttributes(array('field_id' => $id, )); break;\n			case 'F': $model =     ConstraintFile::model()->findByAttributes(array('field_id' => $id, )); break;\n			// special switch case for derived\n			case 'R': $model =  ConstraintDerived::model()->findByAttributes(array('field_id' => $id, )); break;\n		};\n		//if($model===null)\n		return $model;\n	}\n\n	/**\n	 * Performs the AJAX validation.\n	 * @param CModel the model to be validated\n	 */\n	protected function performAjaxValidation($model)\n	{\n		if(isset($_POST['ajax']) && $_POST['ajax']==='field-form')\n		{\n			echo CActiveForm::validate($model);\n			Yii::app()->end();\n		}\n	}\n\n	/**\n	 * Performs AJAX validations on multiple models.\n	 * @param array Array of models to be validated\n	 */\n	protected function performAjaxValidations($model)\n	{\n		if(isset($_POST['ajax']) && $_POST['ajax']==='field-form')\n		{\n			echo CActiveForm::validate($model);\n			Yii::app()->end();\n		}\n	}\n\n	/**\n	 * Renders the name of the data type according to a mnemonic\n	 * @param CModel The model of the current row data\n	 * @param integer The row index\n	 */\n	public function renderDataType($data,$row){\n		$dataType = '';\n		switch ($data->datatype){\n			case 'T': $dataType = 'Text';     break;\n			case 'N': $dataType = 'Numeric';  break;\n			case 'D': $dataType = 'Date';     break;\n			case 't': $dataType = 'Time';     break;\n			case 'd': $dataType = 'Datetime'; break;\n			case 'O': $dataType = 'Option';   break;\n			case 'F': $dataType = 'File';     break;\n			case 'C': $dataType = 'Compound'; break;\n		}\n        return $dataType;\n	}\n	public function actionTestFieldValue(){\n		echo \"Loading a new object FieldValue...\";\n		$fieldValue = new FieldValue;\n		$fieldValue->initValueOf(85);\n		echo \"done.<br>Setting entity_instance_id...\";\n		$fieldValue->setAttribute('entity_instance_id','1');\n		echo \"done.<br>Setting value...\";\n		$fieldValue->setAttribute('value','2');\n		echo \"done.<br>Saving...\";\n		if($fieldValue->save()){\n			echo \"done.\";s \n		} else echo \"failed.\";\n	}\n}\n",
-			"file": "protected/controllers/FieldController.php",
-			"file_size": 16257,
-			"file_write_time": 129814558372997169,
-			"settings":
-			{
-				"buffer_size": 15782,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "protected/components/MyActiveRecord.php",
-			"settings":
-			{
-				"buffer_size": 1082,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -303,69 +280,80 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log.1",
-		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_searchitem.php",
+		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldController.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/Field.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_form.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/view.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintTextForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintCompound.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintCompoundForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintComputedForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintComputed.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintEnumForm.php",
+		"/C/xampp/htdocs/SegTDD/css/doc.css",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintEnum.php",
+		"/C/xampp/htdocs/SegTDD/protected/components/helpers.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDatetimeForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintNumericForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintFileForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
+		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
+		"/C/xampp/htdocs/SegTDD/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintText.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootActiveForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/create.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/update.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/entity/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintComputed.php",
+		"/D/Dropbox/Segworks/Data Model/New SegTDD Schema.sql",
+		"/C/xampp/htdocs/SegTDD/protected/views/entity/_view.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/entity/view.php",
+		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log",
+		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log.1",
+		"/C/xampp/htdocs/SegTDD/protected/models/Entity.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDerivedForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/create.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_form.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_search.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/FieldValue.php",
+		"/C/xampp/htdocs/SegTDD/protected/components/MyActiveRecord.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/admin.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/FormCategoryController.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/FormController.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_search.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_form.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/view.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/entity/view.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_search.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/entity/_view.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/entity/index.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/update.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/admin_trash.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/EntityController.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/Entity.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/create.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_form.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_listAttView.php",
 		"/C/xampp/htdocs/SegTDD/framework/db/ar/CActiveRecord.php",
-		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldController.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/Field.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/view.php",
 		"/C/xampp/htdocs/SegTDD/framework/base/CModel.php",
 		"/C/xampp/htdocs/SegTDD/framework/db/ar/CActiveRecordBehavior.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueNumeric.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/FieldValue.php",
 		"/C/xampp/htdocs/SegTDD/framework/base/CApplication.php",
 		"/C/xampp/htdocs/SegTDD/framework/base/CApplicationComponent.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintEnumForm.php",
 		"/C/xampp/htdocs/SegTDD/js/template.js",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDatetimeForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintNumericForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDerivedForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintCompoundForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintTextForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintFileForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueText.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldValueController.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/Form.php",
-		"/C/xampp/htdocs/SegTDD/protected/components/MyActiveRecord.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_form.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
 		"/C/xampp/htdocs/SegTDD/js/serializeJSON.js",
 		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/D/Dropbox/Segworks/Other Documents/logicalDeletion.php",
 		"/C/xampp/htdocs/SegTDD/framework/zii/widgets/assets/gridview/jquery.yiigridview.js",
-		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootActiveForm.php",
-		"/C/xampp/htdocs/SegTDD/css/doc.css",
 		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/input/BootInput.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/site/contact.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDerived.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintDerived.php",
-		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/create.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDatetime.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintText.php",
 		"/C/xampp/htdocs/SegTDD/framework/zii/widgets/grid/CGridView.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintText.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintEnum.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/form/admin.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintFile.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintFile.php",
@@ -374,7 +362,6 @@
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintNumeric.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/SiteController.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/site/index.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/update.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/LoginForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FormCategory.php",
@@ -382,7 +369,6 @@
 		"/C/xampp/htdocs/SegTDD/protected/views/site/pages/about.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main_login.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/layouts/login.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/site/login.php",
 		"/C/xampp/htdocs/segTDD.phpfogapp.com/protected/config/main.php",
 		"/C/xampp/htdocs/segTDD.phpfogapp.com/protected/config/main (2).php",
@@ -421,16 +407,7 @@
 		"/C/xampp/htdocs/yii/site/protected/views/scholar/_search.php",
 		"/C/xampp/htdocs/yii/site/protected/views/layouts/column1_mod.php",
 		"/C/xampp/htdocs/yii/site/protected/config/main.php",
-		"/C/xampp/htdocs/yii/site/.htaccess",
-		"/C/xampp/htdocs/yii/site/protected/models/Scholar.php",
-		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootActiveForm.php",
-		"/C/xampp/htdocs/yii/site/protected/views/layouts/main.php",
-		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/C/xampp/htdocs/yii/site/protected/behaviors/EJsonBehavior.php",
-		"/C/xampp/htdocs/yii/site/protected/views/scholar/view.php",
-		"/C/xampp/htdocs/yii/site/protected/components/Controller.php",
-		"/C/xampp/htdocs/yii/site/protected/extensions/bootstrap/widgets/BootButtonColumn.php",
-		"/C/xampp/htdocs/yii/site/protected/models/Admin.php"
+		"/C/xampp/htdocs/yii/site/.htaccess"
 	],
 	"find":
 	{
@@ -445,9 +422,46 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"$type",
+			"'C'",
+			"'X'",
+			"'F'",
+			"'O'",
+			"'d'",
+			"'t'",
+			"'D'",
+			"'N'",
+			"'T'",
+			"case 'T': ",
+			"length'",
+			"length",
+			"0;",
+			"property",
+			"EOL",
+			"value",
+			"Numeric",
+			"$constraintTextModel",
+			"Derived",
+			"derived",
+			"Derived",
+			"derived",
+			"Derived",
+			"<?",
+			"derived",
+			"Derived",
+			"constraintDerived",
+			"Derived",
+			"derived",
+			"Field_derived",
+			"derived",
+			"Derived",
+			"<div class=\"row\">\n		<?php echo $form->labelEx($model",
+			"<div class=\"row\">\n		<?php echo $form->labelEx",
+			" ?>\n	</div>",
+			"<div class=\"row\">",
 			"getMetadata",
 			"$this->_id",
 			"$this->field_id",
@@ -538,24 +552,7 @@
 			"breadcrumbs",
 			"menu",
 			"3E3D32",
-			"Current",
-			"3B3A32",
-			"#272822",
-			"#F8F8F2",
-			"#272822",
-			"icon-barcode",
-			"\"\"",
-			">\"",
-			"\"<",
-			";}",
-			"{back",
-			".icon",
-			"$secondary",
-			"#99cc99",
-			"<?php echo $heading; ?>",
-			"$heading",
-			"<?php echo $heading; ?>",
-			"$heading"
+			"Current"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -573,118 +570,8 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "protected/views/field/_form.php",
-					"settings":
-					{
-						"buffer_size": 5510,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1373,
-								1373
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1572.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "protected/models/FieldValue.php",
-					"settings":
-					{
-						"buffer_size": 8293,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1065,
-								1065
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 166.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "protected/controllers/FieldController.php",
-					"settings":
-					{
-						"buffer_size": 15782,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15751,
-								15751
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 6179.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "protected/components/MyActiveRecord.php",
-					"settings":
-					{
-						"buffer_size": 1082,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								636,
-								636
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -748,6 +635,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 204.0,
+	"side_bar_width": 195.0,
 	"status_bar_visible": true
 }

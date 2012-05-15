@@ -40,7 +40,16 @@ $numericPresetsSelect = array(
  			'prompt' => '-SELECT-',)); ?>
     </div>
 </div>
-<?php echo $form->textFieldRow($constraintNumericModel,'decimaldigit',array('value'=>'0')); ?>
-<?php echo $form->textFieldRow($constraintNumericModel,'minvalue',array('value'=>'0')); ?>
-<?php echo $form->textFieldRow($constraintNumericModel,'maxvalue',array('value'=>'100')); ?>
-<?php echo $form->textFieldRow($constraintNumericModel,'default_value',array('value'=>'0')); ?>
+<?php
+// Setting the default values
+defineDefaultsof($constraintNumericModel,array(
+	'decimaldigit'  => 0,
+	'minvalue'      => 0,
+	'maxvalue'      => 100,
+	'default_value' => 0,
+));
+?>
+<?php echo $form->textFieldRow($constraintNumericModel,'decimaldigit'); ?>
+<?php echo $form->textFieldRow($constraintNumericModel,'minvalue'); ?>
+<?php echo $form->textFieldRow($constraintNumericModel,'maxvalue'); ?>
+<?php echo $form->textFieldRow($constraintNumericModel,'default_value'); ?>

@@ -4,27 +4,12 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-
 $this->menu=array(
-	array('label'=>'Create Field', 'url'=>array('create')),
+	array(
+		'label'=>'Create Field',
+		'url'=>array('create')
+	),
 );
-
-
-echo CHtml::beginForm(array("FieldController/AcceptUserRegistration"),'post');
- 
-echo CHtml::textField('','$data', array('placeholder'=>'search'));  
-echo CHtml::submitButton('Search', array('name' =>'button1'));
-
-echo CHtml::endForm();
-
-?>
-
-
-
-
-	
-
-<?php
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -43,8 +28,6 @@ $this->content_title = 'Manage Fields';
 
 ?>
 
-
-
 <?php 
 	Yii::app()->user->setFlash('info', '
 	<p>You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -57,7 +40,6 @@ $this->content_title = 'Manage Fields';
 <?php $this->renderPartial('_search',array(
 	'model'=>$model
 )); ?><!-- search-form -->
-
 
 <?php 
 $template = "
@@ -101,11 +83,6 @@ $template = "
             'name'=>'required',
             'value' =>'Yii::app()->format->boolean($data->required)',
             //array($this,'renderRequired'),
-        ),
-        array(
-            'name'=>'derived',
-            'value' =>'Yii::app()->format->boolean($data->derived)',
-            //array($this,'renderDerived'),
         ),
         array(
             'name'=>'attribute',

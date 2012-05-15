@@ -18,6 +18,7 @@ function toggleConstraint(object){
 	$('#constraintDatetime').hide(250);
 	$('#constraintEnum').hide(250);
 	$('#constraintFile').hide(250);
+	$('#constraintComputed').hide(250);
 	$('#constraintCompound').hide(250);
 
 	switch (datatype) {
@@ -28,6 +29,7 @@ function toggleConstraint(object){
 		case 'd': $('#constraintDatetime').show(250); break;
 		case 'O': $('#constraintEnum').show(250);     break;
 		case 'F': $('#constraintFile').show(250);     break;
+		case 'X': $('#constraintComputed').show(250); break;
 		case 'C': $('#constraintCompound').show(250); break;
 		default :                                     break;
 	}
@@ -36,9 +38,9 @@ toggleConstraint($('#Field_datatype'));
 $('#Field_datatype').change(function(){ toggleConstraint(this); });
 ");
 
-Yii::app()->clientScript->registerScript('derived-checked', "
-$('#Field_derived').is(':checked') ? $('#constraintDerived').show(250) : $('#constraintDerived').hide(250);
-$('#Field_derived').click(function(){ $('#constraintDerived').toggle(250); });
+Yii::app()->clientScript->registerScript('computed-checked', "
+$('#Field_computed').is(':checked') ? $('#constraintComputed').show(250) : $('#constraintComputed').hide(250);
+$('#Field_computed').click(function(){ $('#constraintComputed').toggle(250); });
 ");
 
 ?>
@@ -72,6 +74,7 @@ $('#Field_derived').click(function(){ $('#constraintDerived').toggle(250); });
 									'd' => 'Datetime',
 									'O' => 'Option',
 									'F' => 'File',
+									'X' => 'Computed',
 									'C' => 'Compound',
 								),
 								array(
@@ -79,11 +82,13 @@ $('#Field_derived').click(function(){ $('#constraintDerived').toggle(250); });
 									'maxlength'=>1,
 									'disabled'=>isset($fieldModel->datatype),
 								));
-						?>	 				
+							if(isset($fieldModel->datatype)){
+								echo $form->hiddenField($fieldModel,'datatype');
+							}
+						?>
 	 					<?php echo $form->textAreaRow($fieldModel,'description',array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->checkBoxRow($fieldModel,'multiple'); ?>
 						<?php echo $form->checkBoxRow($fieldModel,'required'); ?>
-						<?php echo $form->checkBoxRow($fieldModel,'derived'); ?>
 						<?php echo $form->checkBoxRow($fieldModel,'attribute'); ?>
 	 		</fieldset>
 		</div>
@@ -120,10 +125,10 @@ $('#Field_derived').click(function(){ $('#constraintDerived').toggle(250); });
 						'constraintFileModel' =>$constraintFileModel,
 					)); ?>					
 				</div>
-				<div id="constraintDerived" class="constraint no-display">
-					<?php echo $this->renderPartial('_constraintDerivedForm', array(
+				<div id="constraintComputed" class="constraint no-display">
+					<?php echo $this->renderPartial('_constraintComputedForm', array(
 						'form' => $form,
-						'constraintDerivedModel' =>$constraintDerivedModel,
+						'constraintComputedModel' =>$constraintComputedModel,
 					)); ?>					
 				</div>
 				<div id="constraintCompound" class="constraint no-display">

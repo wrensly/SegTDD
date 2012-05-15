@@ -10,6 +10,7 @@ class FieldController extends Controller
 	const TYPE_DATETIME = Field::TYPE_DATETIME;
 	const TYPE_OPTION   = Field::TYPE_OPTION;
 	const TYPE_FILE     = Field::TYPE_FILE;
+	const TYPE_COMPUTED = Field::TYPE_COMPUTED;
 	const TYPE_COMPOUND = Field::TYPE_COMPOUND;
 
 	/**
@@ -75,7 +76,7 @@ class FieldController extends Controller
 		$constraintDatetimeModel = new ConstraintDatetime;
 		$constraintEnumModel     = new ConstraintEnum;
 		$constraintFileModel     = new ConstraintFile;
-		$constraintDerivedModel  = new ConstraintDerived;
+		$constraintComputedModel = new ConstraintComputed;
 
 		// load the constraint model according to the data type of the loaded model
 		$constraintModel = $this->loadConstraintModel($id,$fieldModel->datatype);
@@ -83,22 +84,16 @@ class FieldController extends Controller
 		// if the constraint model is not null, update the initialized constraint models
 		if($constraintModel!==null){
 			switch ($fieldModel->datatype){
-				case 'T': $constraintTextModel     = $constraintModel; break;
-				case 'N': $constraintNumericModel  = $constraintModel; break;
-				case 'D':
-				case 't':
-				case 'd': $constraintDatetimeModel = $constraintModel; break;
-				case 'O': $constraintEnumModel     = $constraintModel; break;
-				case 'F': $constraintFileModel     = $constraintModel; break;
-				case 'C':                                              break;
+				case self::CONSTRAINT_TEXT     : $constraintTextModel     = $constraintModel; break;
+				case self::CONSTRAINT_NUMERIC  : $constraintNumericModel  = $constraintModel; break;
+				case self::CONSTRAINT_DATE     :
+				case self::CONSTRAINT_TIME     :
+				case self::CONSTRAINT_DATETIME : $constraintDatetimeModel = $constraintModel; break;
+				case self::CONSTRAINT_OPTION   : $constraintEnumModel     = $constraintModel; break;
+				case self::CONSTRAINT_FILE     : $constraintFileModel     = $constraintModel; break;
+				case self::CONSTRAINT_COMPUTED : $constraintComputedModel = $constraintModel; break;
+				case self::CONSTRAINT_COMPOUND :                                              break;
 			};
-		}
-
-		if($fieldModel->derived){
-			$constraintModel = $this->loadConstraintModel($id,'R');
-			if($constraintModel!==null){
-				$constraintDerivedModel = $constraintModel;
-			}
 		}
 
 		$this->render('view',array(
@@ -108,7 +103,7 @@ class FieldController extends Controller
 			'constraintDatetimeModel' =>$constraintDatetimeModel,
 			'constraintEnumModel'     =>$constraintEnumModel,
 			'constraintFileModel'     =>$constraintFileModel,
-			'constraintDerivedModel'  =>$constraintDerivedModel,
+			'constraintComputedModel'  =>$constraintComputedModel,
 		));
 	}
 
@@ -124,7 +119,7 @@ class FieldController extends Controller
 		$constraintDatetimeModel = new ConstraintDatetime;
 		$constraintEnumModel     = new ConstraintEnum;
 		$constraintFileModel     = new ConstraintFile;
-		$constraintDerivedModel  = new ConstraintDerived;
+		$constraintComputedModel  = new ConstraintComputed;
 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidations(array(
@@ -134,74 +129,69 @@ class FieldController extends Controller
 			$constraintDatetimeModel,
 			$constraintEnumModel,
 			$constraintFileModel,
-			$constraintDerivedModel,
+			$constraintComputedModel,
 		));
 		
 		if(isset($_POST['Field']))
 		{
 			$fieldModel->attributes = $_POST['Field'];
-			//$fieldModelSave         = $fieldModel->save();
+			$fieldModelSave         = $fieldModel->save();
 			$dataType               = $_POST['Field']['datatype'];
 			$constraintDataType     = '';
 			$constraintModel        = null;
 			switch ($dataType){
-				case 'T':
+				case self::CONSTRAINT_TEXT :
 					$constraintDataType = 'ConstraintText';
 					$constraintModel    = $constraintTextModel;     break;
-				case 'N':
+				case self::CONSTRAINT_NUMERIC :
 					$constraintDataType = 'ConstraintNumeric';
 					$constraintModel    = $constraintNumericModel;  break;
-				case 'D':
-				case 't':
-				case 'd':
+				case self::CONSTRAINT_DATE :
+				case self::CONSTRAINT_TIME :
+				case self::CONSTRAINT_DATETIME :
 					$constraintDataType = 'ConstraintDatetime';
 					$constraintModel    = $constraintDatetimeModel; break;
-				case 'O':
+				case self::CONSTRAINT_OPTION :
 					$constraintDataType = 'ConstraintEnum';
 					$constraintModel    = $constraintEnumModel;     break;
-				case 'F':
+				case self::CONSTRAINT_FILE :
 					$constraintDataType = 'ConstraintFile';
 					$constraintModel    = $constraintFileModel;     break;
-				case 'C':
+				case self::CONSTRAINT_COMPUTED :
+					$constraintDataType = 'ConstraintComputed';
+					$constraintModel    = $constraintComputedModel; break;
+				case self::CONSTRAINT_COMPOUND :
+					$constraintDataType = null;
 					if(isset($_POST['ConstraintCompound'])){
 						$child = $_POST['ConstraintCompound']['child'];
 						foreach($child as $key => $id){
-							$fieldModel = $this->loadModel($id);
-							$fieldModel->setAttribute('parent_id', '-1'); 
-                    		echo "Updating ".$fieldModel->fieldname."...";
-                    		if ($fieldModel->save()){
-                    			echo "OK.<br>";
-                    		} else {
-                    			echo "failed.<br>";
+							if($id!=null){
+								$childFieldModel = $this->loadModel($id);
+								$childFieldModel->setAttribute('parent_id', $fieldModel->id); 
+                    			$constraintModelSave = $childFieldModel->save();
                     		}
 						}
 				    }
 					break;
 			}
-			if(isset($_POST[$constraintDataType])){
+			if(isset($_POST[$constraintDataType]) && ($constraintDataType!=null)){
 				$_POST[$constraintDataType]['field_id'] = $fieldModel->id;
-		    	$constraintModel->attributes = $_POST[$constraintDataType]; 
+		    	$constraintModel->attributes = $_POST[$constraintDataType];
+		    	$constraintModelSave = $constraintModel->save();
 		    }
-		    $constraintModelSave = $constraintModel->save();
-		   	if ($_POST['Field']['derived']){
-		    	if(isset($_POST['ConstraintDerived'])){
-					$_POST['ConstraintDerived']['field_id'] = $fieldModel->id;
-			    	$constraintDerivedModel->attributes = $_POST['ConstraintDerived'];
-			    	$constraintModelSave = $constraintDerivedModel->save();
-			    }
-			}
-			if($fieldModelSave && $constraintModelSave)
+
+		   	if($fieldModelSave && $constraintModelSave)
 				$this->redirect(array('view','id'=>$fieldModel->id));
 		}
 
 		$this->render('create',array(
-			'fieldModel'              =>$fieldModel,
-			'constraintTextModel'     =>$constraintTextModel,
-			'constraintNumericModel'  =>$constraintNumericModel,
-			'constraintDatetimeModel' =>$constraintDatetimeModel,
-			'constraintEnumModel'     =>$constraintEnumModel,
-			'constraintFileModel'     =>$constraintFileModel,
-			'constraintDerivedModel'  =>$constraintDerivedModel,
+			'fieldModel'               =>$fieldModel,
+			'constraintTextModel'      =>$constraintTextModel,
+			'constraintNumericModel'   =>$constraintNumericModel,
+			'constraintDatetimeModel'  =>$constraintDatetimeModel,
+			'constraintEnumModel'      =>$constraintEnumModel,
+			'constraintFileModel'      =>$constraintFileModel,
+			'constraintComputedModel'  =>$constraintComputedModel,
 		));
 	}
 
@@ -216,12 +206,12 @@ class FieldController extends Controller
 		$fieldModel              = $this->loadModel($id);
 
 		// initialize constraint models
-		$constraintTextModel     = new ConstraintText;
-		$constraintNumericModel  = new ConstraintNumeric;
-		$constraintDatetimeModel = new ConstraintDatetime;
-		$constraintEnumModel     = new ConstraintEnum;
-		$constraintFileModel     = new ConstraintFile;
-		$constraintDerivedModel  = new ConstraintDerived;
+		$constraintTextModel      = new ConstraintText;
+		$constraintNumericModel   = new ConstraintNumeric;
+		$constraintDatetimeModel  = new ConstraintDatetime;
+		$constraintEnumModel      = new ConstraintEnum;
+		$constraintFileModel      = new ConstraintFile;
+		$constraintComputedModel  = new ConstraintComputed;
 
 		// load the constraint model according to the data type of the loaded model
 		$constraintModel = $this->loadConstraintModel($id,$fieldModel->datatype);
@@ -229,22 +219,16 @@ class FieldController extends Controller
 		// if the constraint model is not null, update the initialized constraint models
 		if($constraintModel!==null){
 			switch ($fieldModel->datatype){
-				case 'T': $constraintTextModel     = $constraintModel; break;
-				case 'N': $constraintNumericModel  = $constraintModel; break;
-				case 'D':
-				case 't':
-				case 'd': $constraintDatetimeModel = $constraintModel; break;
-				case 'O': $constraintEnumModel     = $constraintModel; break;
-				case 'F': $constraintFileModel     = $constraintModel; break;
-				case 'C':                                              break;
+				case self::CONSTRAINT_TEXT     : $constraintTextModel     = $constraintModel; break;
+				case self::CONSTRAINT_NUMERIC  : $constraintNumericModel  = $constraintModel; break;
+				case self::CONSTRAINT_DATE     :
+				case self::CONSTRAINT_TIME     :
+				case self::CONSTRAINT_DATETIME : $constraintDatetimeModel = $constraintModel; break;
+				case self::CONSTRAINT_OPTION   : $constraintEnumModel     = $constraintModel; break;
+				case self::CONSTRAINT_FILE     : $constraintFileModel     = $constraintModel; break;
+				case self::CONSTRAINT_COMPUTED : $constraintComputedModel = $constraintModel; break;
+				case self::CONSTRAINT_COMPOUND :                                              break;
 			};
-		}
-
-		if($fieldModel->derived){
-			$constraintModel = $this->loadConstraintModel($id,'R');
-			if($constraintModel!==null){
-				$constraintDerivedModel = $constraintModel;
-			}
 		}
 
 		// Uncomment the following line if AJAX validation is needed
@@ -255,7 +239,7 @@ class FieldController extends Controller
 			$constraintDatetimeModel,
 			$constraintEnumModel,
 			$constraintFileModel,
-			$constraintDerivedModel,
+			$constraintComputedModel,
 		));
 
 		if(isset($_POST['Field']))
@@ -266,40 +250,46 @@ class FieldController extends Controller
 			$constraintDataType     = '';
 			$constraintModel        = null;
 			switch ($dataType){
-				case 'T':
+				case self::CONSTRAINT_TEXT :
 					$constraintDataType = 'ConstraintText';
 					$constraintModel    = $constraintTextModel;     break;
-				case 'N':
+				case self::CONSTRAINT_NUMERIC :
 					$constraintDataType = 'ConstraintNumeric';
 					$constraintModel    = $constraintNumericModel;  break;
-				case 'D':
-				case 't':
-				case 'd':
+				case self::CONSTRAINT_DATE :
+				case self::CONSTRAINT_TIME :
+				case self::CONSTRAINT_DATETIME :
 					$constraintDataType = 'ConstraintDatetime';
 					$constraintModel    = $constraintDatetimeModel; break;
-				case 'O':
+				case self::CONSTRAINT_OPTION :
 					$constraintDataType = 'ConstraintEnum';
 					$constraintModel    = $constraintEnumModel;     break;
-				case 'F':
+				case self::CONSTRAINT_FILE :
 					$constraintDataType = 'ConstraintFile';
 					$constraintModel    = $constraintFileModel;     break;
-				case 'C':
+				case self::CONSTRAINT_COMPUTED :
+					$constraintDataType = 'ConstraintComputed';
+					$constraintModel    = $constraintComputedModel;     break;
+				case self::CONSTRAINT_COMPOUND :
+					if(isset($_POST['ConstraintCompound'])){
+						$child = $_POST['ConstraintCompound']['child'];
+						foreach($child as $key => $id){
+							if($id!=null){
+								$childfieldModel = $this->loadModel($id);
+								$childfieldModel->setAttribute('parent_id', $fieldModel->id); 
+                    			$constraintModelSave = $childfieldModel->save();
+                    		} $constraintModelSave = true;
+						}
+				    }
 					break;
 			}
 			if(isset($_POST[$constraintDataType])){
 				$_POST[$constraintDataType]['field_id'] = $fieldModel->id;
-		    	$constraintModel->attributes = $_POST[$constraintDataType]; 
+		    	$constraintModel->attributes = $_POST[$constraintDataType];
+		    	$constraintModelSave = $constraintModel->save();
 		    }
-		    $constraintModelSave = $constraintModel->save();
 
-		    if ($_POST['Field']['derived']){
-		    	if(isset($_POST['ConstraintDerived'])){
-					$_POST['ConstraintDerived']['field_id'] = $fieldModel->id;
-			    	$constraintDerivedModel->attributes = $_POST['ConstraintDerived'];
-			    	$constraintModelSave = $constraintDerivedModel->save();
-			    }
-			}
-			if($fieldModelSave && $constraintModelSave)
+		    if($fieldModelSave && $constraintModelSave)
 				$this->redirect(array('view','id'=>$fieldModel->id));
 		}
 
@@ -310,7 +300,7 @@ class FieldController extends Controller
 			'constraintDatetimeModel' =>$constraintDatetimeModel,
 			'constraintEnumModel'     =>$constraintEnumModel,
 			'constraintFileModel'     =>$constraintFileModel,
-			'constraintDerivedModel'  =>$constraintDerivedModel,
+			'constraintComputedModel'  =>$constraintComputedModel,
 		));
 	}
 
@@ -332,16 +322,6 @@ class FieldController extends Controller
 			// if the constraint model is not null, delete the constraint
 			if($constraintModel!==null){
 				$constraintModel->delete();
-			}
-
-			// if the field is derived, load the constraint model for derived fields
-			if ($fieldModel->derived){
-				$constraintModel = $this->loadConstraintModel($id,'R');
-
-				// if the constraint model is not null, delete the constraint
-				if($constraintModel!==null){
-					$constraintModel->delete();
-				}
 			}
 
 			// we only allow deletion via POST request
@@ -399,15 +379,22 @@ class FieldController extends Controller
 	public function loadConstraintModel($id,$datatype)
 	{
 		switch ($datatype){
-			case 'T': $model =     ConstraintText::model()->findByAttributes(array('field_id' => $id, )); break;
-			case 'N': $model =  Constraintnumeric::model()->findByAttributes(array('field_id' => $id, )); break;
-			case 'D':
-			case 't':
-			case 'd': $model = ConstraintDatetime::model()->findByAttributes(array('field_id' => $id, )); break;
-			case 'O': $model =     ConstraintEnum::model()->findByAttributes(array('field_id' => $id, )); break;
-			case 'F': $model =     ConstraintFile::model()->findByAttributes(array('field_id' => $id, )); break;
-			// special switch case for derived
-			case 'R': $model =  ConstraintDerived::model()->findByAttributes(array('field_id' => $id, )); break;
+			case self::CONSTRAINT_TEXT     : 
+				$model =     ConstraintText::model()->findByAttributes(array('field_id' => $id, )); break;
+			case self::CONSTRAINT_NUMERIC  : 
+				$model =  Constraintnumeric::model()->findByAttributes(array('field_id' => $id, )); break;
+			case self::CONSTRAINT_DATE     :
+			case self::CONSTRAINT_TIME     :
+			case self::CONSTRAINT_DATETIME : 
+				$model = ConstraintDatetime::model()->findByAttributes(array('field_id' => $id, )); break;
+			case self::CONSTRAINT_OPTION   : 
+				$model =     ConstraintEnum::model()->findByAttributes(array('field_id' => $id, )); break;
+			case self::CONSTRAINT_FILE     : 
+				$model =     ConstraintFile::model()->findByAttributes(array('field_id' => $id, )); break;
+			case self::CONSTRAINT_COMPUTED : 
+				$model = ConstraintComputed::model()->findByAttributes(array('field_id' => $id, )); break;
+			case self::CONSTRAINT_COMPOUND : 
+				$model = null;
 		};
 		//if($model===null)
 		return $model;
@@ -447,18 +434,19 @@ class FieldController extends Controller
 	public function renderDataType($data,$row){
 		$dataType = '';
 		switch ($data->datatype){
-			case 'T': $dataType = 'Text';     break;
-			case 'N': $dataType = 'Numeric';  break;
-			case 'D': $dataType = 'Date';     break;
-			case 't': $dataType = 'Time';     break;
-			case 'd': $dataType = 'Datetime'; break;
-			case 'O': $dataType = 'Option';   break;
-			case 'F': $dataType = 'File';     break;
-			case 'C': $dataType = 'Compound'; break;
+			case self::CONSTRAINT_TEXT     : $dataType = 'Text';     break;
+			case self::CONSTRAINT_NUMERIC  : $dataType = 'Numeric';  break;
+			case self::CONSTRAINT_DATE     : $dataType = 'Date';     break;
+			case self::CONSTRAINT_TIME     : $dataType = 'Time';     break;
+			case self::CONSTRAINT_DATETIME : $dataType = 'Datetime'; break;
+			case self::CONSTRAINT_OPTION   : $dataType = 'Option';   break;
+			case self::CONSTRAINT_FILE     : $dataType = 'File';     break;
+			case self::CONSTRAINT_COMPUTED : $dataType = 'Computed'; break;
+			case self::CONSTRAINT_COMPOUND : $dataType = 'Compound'; break;
 		}
         return $dataType;
 	}
-
+	
 	public function actionTestFieldValue(){
 		echo "Loading a new object FieldValue...";
 		$fieldValue = new FieldValue;
@@ -472,6 +460,5 @@ class FieldController extends Controller
 			echo "done.";
 		} else echo "failed.";
 	}
-
 }
 

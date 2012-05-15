@@ -20,7 +20,23 @@
 </div>
  
 <div class="modal-body">
-    <?php echo $constraintEnumModel->picklist; ?>
+    <table class="table table-striped">
+	    <tr>
+	    	<th>Value</th>
+	    	<th>Label</th>
+	    <tr>
+    <?php
+        $options = CJSON::decode($constraintEnumModel->picklist);
+        foreach($options as $value => $label){
+    ?>
+    	<tr>
+	    	<td><?php echo $value; ?></td>
+	    	<td><?php echo $label; ?></td>
+	    <tr>
+    <?php
+        }
+    ?>
+    </table>
 </div>
  
 <div class="modal-footer">
