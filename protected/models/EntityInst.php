@@ -127,7 +127,7 @@ class EntityInst extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->select = array('fieldname');
+		$criteria->select = array('fieldname', 'label', 'datatype');
 		$criteria->condition = 'entity_id=(select id from entity where form_id=(select form_id from entity where id='.$id.'))';
 
 		$criteria->compare('id',$this->id);

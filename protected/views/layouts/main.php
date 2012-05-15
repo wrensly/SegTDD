@@ -72,8 +72,20 @@
 								array(
 									'label'=>'list category',
 									'url'=>array('/category/index'),
-									'icon'=>'plus white',
-								), 
+									'icon'=>'list white',
+								),
+
+								array(
+									'label'=>'Form Editor',
+									'url'=>array('#'),
+									'icon'=>'edit white',
+								),
+
+								array(
+									'label'=>'Form Renderer',
+									'url'=>array('/renderer/index'),
+									'icon'=>'list-alt white',
+								),  
 							),
 						),
 						array(
