@@ -138,20 +138,24 @@ class Entity extends CActiveRecord
 			));
 	}
 
+	// Array variable that will hold items
 	private static $_items=array();
-		
+	
+	/**
+	 * Retrieve data by calling loadItems and return the data.
+	 * @param  Name of database field that holds the data, CDbCriteria object.
+	 * @return items from the database.
+	 */	
 	public static function items($type){
 		if(!isset(self::$_items[$type]))
 			self::loadItems($type);
 		return self::$_items[$type];
 	}
 	
-	public static function item($type,$code){
-		if(!isset(self::$_items[$type]))
-			self::loadItems($type);
-		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
-	}
-	
+	/**
+	 * Retrieves data from database and assign it to $_items.
+	 * @param  Name of database field that holds the data.
+	 */
 	private static function loadItems($type){
 		self::$_items[$type]=array();
 		$models=self::model()->findAll();

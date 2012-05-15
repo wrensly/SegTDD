@@ -182,8 +182,8 @@ class EntityController extends Controller
 				'condition'=>'entity_id='.$data->id,
 			)
 		);
-		if($count==null)
-			$count=0;
+		if($count==0)
+			$count='no instance';
 		return $count;
 	}
 
@@ -193,29 +193,10 @@ class EntityController extends Controller
 			'model'=>$this->loadEntity($id),
 			'id'=>$id,
 		));
-
-		// $model=new EntityInst('search2');
-		// $model->unsetAttributes();  // clear any default values
-		// if(isset($_GET['EntityInst']))
-		// 	$model->attributes=$_GET['EntityInst'];
-
-		// $this->render('entityInst',array(
-		// 	'model'=>$model, 'id'=>$id,
-		// ));
 	}
 
 	private function loadEntity($id)
-	{
-
-		// select fieldname from field where entity_id=(select id from entity where form_id=(select form_id from entity where id=1));
-
-		// $con = new CDbCriteria();
-
-		// $con->select = array('fieldname');
-		// $con->condition = 'entity_id=(select id from entity where form_id=(select form_id from entity where id='.$id.'))';
-
-		// $model=Field::model()->findAll($con);
-		
+	{	
 		$model=Entity::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');

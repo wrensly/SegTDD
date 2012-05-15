@@ -125,20 +125,24 @@ class Form extends CActiveRecord
 ));
 	}
 
+	// Array variable that will hold items
 	private static $_items=array();
-		
+	
+	/**
+	 * Retrieve data by calling loadItems and return the data.
+	 * @param  Name of database field that holds the data, CDbCriteria object.
+	 * @return items from the database.
+	 */
 	public static function items($type){
 		if(!isset(self::$_items[$type]))
 			self::loadItems($type);
 		return self::$_items[$type];
 	}
 	
-	public static function item($type,$code){
-		if(!isset(self::$_items[$type]))
-			self::loadItems($type);
-		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
-	}
-	
+	/**
+	 * Retrieves data from database and assign it to $_items.
+	 * @param  Name of database field that holds the data.
+	 */
 	private static function loadItems($type){
 		self::$_items[$type]=array();
 		$models=self::model()->findAll();
@@ -147,7 +151,11 @@ class Form extends CActiveRecord
 
 	}
 
-	//--------------With Conditions
+	/**
+	 * Retrieve data by calling conditionloadItems and return the data.
+	 * @param  Name of database field that holds the data, CDbCriteria object.
+	 * @return items from the database.
+	 */
 	public static function conditionItems($type, $con) {
 		if(isset(self::$_items[$type])) {
 			self::$_items[$type] = null;
@@ -158,6 +166,10 @@ class Form extends CActiveRecord
 		return self::$_items[$type];
 	}
 
+	/**
+	 * Retrieves data from database  using a condition and assign it to $_items.
+	 * @param  Name of database field that holds the data, CDbCriteria object.
+	 */
 	private static function conditionloadItems($type, $con){
 		self::$_items[$type]=array();
 		$models=self::model()->findAll($con);
