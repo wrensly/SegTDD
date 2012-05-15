@@ -8,29 +8,16 @@ $this->menu=array(
 	array('label'=>'Create Entity Model', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle(250);
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('form-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-
 $this->content_title = 'Form Renderer';
+
+$this->search = array(
+	'simple' => true,
+	'advanced' => true,
+	'model' => $model,
+);
 ?>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-warning')); ?>
-<div class="search-form" style="display:none">
-<?php  $this->renderPartial('_search',array('model'=>$model, )); ?>
-</div><!-- search-form -->
-
 <?php
-
 	$this->widget('bootstrap.widgets.BootGridView', array(
 	'id'=>'entity-grid',
 	'type'=>'striped',

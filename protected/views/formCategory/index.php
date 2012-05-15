@@ -8,34 +8,19 @@ $this->menu=array(
 	array('label'=>'Manage Form', 'url'=>array('index')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('form-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 $this->content_title = "Manage Forms";
+
+$this->search = array(
+	'simple' => true,
+	'advanced' => true,
+	'model' => $model,
+);
 ?>
 
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button  btn btn-warning')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,	
-)); ?>
-</div>
-
-<?php 
-
+<?php
 $this->widget('bootstrap.widgets.BootGridView', array(
 	'id'=>'form-grid',
-	'type'=>'striped bordered condensed',
+	'type'=>'striped',
     'dataProvider'=>$model->search(),
 	'columns'=>array(
 		array('name' => 'code', 'value' => '$data->form->code'),

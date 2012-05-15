@@ -4,36 +4,26 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Category', 'url'=>'#myModal', 'linkOptions'=>array('data-toggle'=>'modal')),
+	array(
+		'label'=>'Create Category',
+		'url'=>'#myModal',
+		'linkOptions'=>array('data-toggle'=>'modal'),
+	),
 );
 
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('form-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-
 $this->content_title = "List of Categories";
+
+$this->search = array(
+	'simple' => true,
+	'advanced' => false,
+	'model' => $model,
+);
 ?>
-<div class="search-form">
-<?php $this->renderPartial('_search',array(
-	'model'=>$category,
-)); ?>
-</div>
 
 <?php 
-
 $this->widget('bootstrap.widgets.BootGridView', array(
 	'id'=>'form-grid',
-	'type'=>'striped bordered condensed',
+	'type'=>'striped',
     'dataProvider'=>$category->search(),
 	'columns'=>array(
 		'category_name',
@@ -45,7 +35,9 @@ $this->widget('bootstrap.widgets.BootGridView', array(
 		))); 
 ?>
 
-<?php $this->beginWidget('bootstrap.widgets.BootModal', array('id'=>'myModal')); ?>
+<?php $this->beginWidget('bootstrap.widgets.BootModal', array(
+	'id'=>'myModal',
+	'htmlOptions' => array('style'=>'display:none'))); ?>
  
 <div class="modal-header">
     <a class="close" data-dismiss="modal">&times;</a>
@@ -55,8 +47,5 @@ $this->widget('bootstrap.widgets.BootGridView', array(
 <div class="modal-body">
     <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>
- 
+
 <?php $this->endWidget(); ?>
-
-
-
