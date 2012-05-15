@@ -5,11 +5,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Form', 'url'=>array('index')),
 	array('label'=>'Create Form', 'url'=>array('create')),
 	array('label'=>'Update Form', 'url'=> Yii::app()->createUrl('formCategory/', array('update'=> $model->id))),
 //	array('label'=>'Delete FormCategory', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Form', 'url'=>array('admin')),
+	array('label'=>'Manage Form', 'url'=>array('index')),
 );
 
 $this->content_title = 'View ' . $model->form->code;

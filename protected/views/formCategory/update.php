@@ -6,10 +6,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Form', 'url'=>array('index')),
 	array('label'=>'Create Form', 'url'=>array('create')),
 	array('label'=>'View Form', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Form', 'url'=>array('admin')),
+	array('label'=>'Manage Form', 'url'=>array('index')),
 );
 $this->content_title = "Update " . $model->name; 
 ?>

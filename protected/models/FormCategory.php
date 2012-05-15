@@ -1,3 +1,4 @@
+
 <?php
 
 /**
@@ -7,7 +8,14 @@
  * @property integer $id
  * @property integer $category_id
  * @property integer $form_id
- *
+ * @property string  $code
+ * @property string  $name,
+ * @property string  $description, 
+ * @property boolean $status, 
+ * @property string  $layout, 
+ * @property string  $category_name, 
+ * @property integer $entity_id, 
+ * @property string  $tags;
  * The followings are the available model relations:
  * @property Category $category
  * @property Form $form
@@ -41,9 +49,9 @@ class FormCategory extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, category_id, form_id, status, attribute', 'numerical', 'integerOnly'=>true),
+			array('id, form_id, status, attribute', 'numerical', 'integerOnly'=>true),
 			array('code', 'length', 'max'=>50),
-			array('name, description, layout, category_name', 'safe'),
+			array('category_id', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('category_name, code, name, description, layout, entity_id, tags', 'safe', 'on'=>'search'),
@@ -75,12 +83,12 @@ class FormCategory extends CActiveRecord
 			'category_id' => 'Category',
 			'form_id' => 'Form',
 			'category_name' => 'Category',
-			'code' => 'Code',
+			'code' => 'Form Code',
 			'name' => 'Form Name',
 			'description' => 'Description',
 			'layout' => 'Layout',
 			'attribute' => 'Attribute',
-			'status' => 'Status',
+			'status' => 'Active',
 			'entity_id' => 'Entity Name',
 		);
 	}
@@ -88,6 +96,8 @@ class FormCategory extends CActiveRecord
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 * Added additional conditions for the searching of tags.
+	 * Added relational search with related tables (Form, Category)
 	 */
 	public function search()
 	{
@@ -143,8 +153,8 @@ class FormCategory extends CActiveRecord
     ),
 		));
 	}
-
-		public function search3($model)
+	
+	public function search3($model)
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
@@ -165,7 +175,11 @@ class FormCategory extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-
+	/**
+	 * @return array of Tag that is associated with the form
+	 * @param id of the form.
+	 * 
+	 */
 	public function getTags($id)
 	{
 		$sql = "select t.tag_name as tagName from tag t left join form_tag ft on (t.id = ft.tag_id)
