@@ -1,6 +1,24 @@
-<div class="wide form">
+<?php
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.advanced-search-form').toggle(250);
+	return false;
+});
+$('.search-form').submit(function(){
+	$.fn.yiiGridView.update('entity-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+$('.advanced-search-form').submit(function(){
+	$.fn.yiiGridView.update('entity-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 
-<?php $form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
+$form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 	'htmlOptions' => array(
@@ -9,8 +27,6 @@
 	),
 	'type' => 'vertical',
 )); ?>
-	
-
 	<div class="row">
 		<?php echo $form->textFieldRow($model,'entity_name', array('style'=>'width: 50%;', 'placeHolder' => 'name of the entity')); ?>
 	</div>
