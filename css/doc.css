@@ -141,3 +141,11 @@ white-space: pre-wrap;
 word-break: break-all;
 word-wrap: break-word;
 }
+
+form.search-form {
+margin: 0 18px 0 0;
+}
+
+.search-form button {
+	height: 28px;
+}

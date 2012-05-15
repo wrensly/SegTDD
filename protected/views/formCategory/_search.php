@@ -31,14 +31,11 @@
 	
 		<?php echo $form->dropDownList($model,'entity_id', CHtml::listData(Entity::model()->findAll(), 'id', 'entity_name'), array('prompt' => '-Select Entity-')); ?>
 
-	
- 		<?php echo $form->dropDownList($model,'category_name',CHtml::listData(Category::model()->findAll(), 'category_name', 'category_name'), array('prompt' => '-Select Category-')); ?>
-		<?php //echo $form->textFieldRow($tags,'tag_name',array('maxlength'=>50)); ?>
-	
-		<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'icon'=>'search', 'label'=>'Search')); ?>
-		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Clear Fields')); ?>
-	</div>
+		<div class = "row">
+		<br><br>
+		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'type'=>'primary', 'icon'=>'search', 'label'=>'Search')); ?>
+		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Reset')); ?>
+		</div>
 
 <?php $this->endWidget(); ?>
 

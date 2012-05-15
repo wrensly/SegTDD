@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"heigh",
+				"height"
+			],
+			[
 				"childFie",
 				"childFields"
 			],
@@ -131,6 +135,54 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "protected/controllers/FieldController.php",
+			"settings":
+			{
+				"buffer_size": 16296,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/views/field/index.php",
+			"settings":
+			{
+				"buffer_size": 1797,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/doc.css",
+			"settings":
+			{
+				"buffer_size": 3256,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/views/layouts/column1_mod.php",
+			"settings":
+			{
+				"buffer_size": 893,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/components/Controller.php",
+			"settings":
+			{
+				"buffer_size": 934,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/views/field/_search.php",
+			"settings":
+			{
+				"buffer_size": 1286,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -138,6 +190,10 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
 			[
 				"Bootstrap for",
 				"Snippet: Bootstrap horizontal form"
@@ -280,7 +336,13 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_advancedSearch.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_simpleSearch.php",
+		"/C/xampp/htdocs/SegTDD/protected/controllers/EntityController.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log",
+		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log.1",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_searchitem.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldController.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/Field.php",
@@ -298,7 +360,6 @@
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDatetimeForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintNumericForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintFileForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
 		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
 		"/C/xampp/htdocs/SegTDD/index.php",
@@ -311,8 +372,6 @@
 		"/D/Dropbox/Segworks/Data Model/New SegTDD Schema.sql",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_view.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/view.php",
-		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log",
-		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log.1",
 		"/C/xampp/htdocs/SegTDD/protected/models/Entity.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDerivedForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/create.php",
@@ -328,7 +387,6 @@
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_search.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/update.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/admin_trash.php",
-		"/C/xampp/htdocs/SegTDD/protected/controllers/EntityController.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/create.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_form.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_listAttView.php",
@@ -405,9 +463,7 @@
 		"/C/xampp/htdocs/yii/site/protected/views/scholar/admin.php",
 		"/C/Users/Seth Busque/TRACERdemo.phpfogapp.com/site/protected/config/main.php",
 		"/C/xampp/htdocs/yii/site/protected/views/scholar/_search.php",
-		"/C/xampp/htdocs/yii/site/protected/views/layouts/column1_mod.php",
-		"/C/xampp/htdocs/yii/site/protected/config/main.php",
-		"/C/xampp/htdocs/yii/site/.htaccess"
+		"/C/xampp/htdocs/yii/site/protected/views/layouts/column1_mod.php"
 	],
 	"find":
 	{
@@ -570,8 +626,170 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "protected/controllers/FieldController.php",
+					"settings":
+					{
+						"buffer_size": 16296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38,
+								50
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "protected/views/field/index.php",
+					"settings":
+					{
+						"buffer_size": 1797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								263,
+								263
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/doc.css",
+					"settings":
+					{
+						"buffer_size": 3256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3256,
+								3256
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1929.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "protected/views/layouts/column1_mod.php",
+					"settings":
+					{
+						"buffer_size": 893,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								747,
+								747
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "protected/components/Controller.php",
+					"settings":
+					{
+						"buffer_size": 934,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								932,
+								932
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 42.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "protected/views/field/_search.php",
+					"settings":
+					{
+						"buffer_size": 1286,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1257,
+								1257
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 462.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

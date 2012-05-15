@@ -344,9 +344,6 @@ class FieldController extends Controller
 		if(isset($_GET['Field'])){
 			$model->attributes=$_GET['Field'];
 		}
-		else{
-			$model->attributes=$_GET['Field'];
-		}
 		$this->render('index', array('model'=>$model));
 	}
 

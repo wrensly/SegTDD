@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create Form', 'url'=>array('create')),
-	array('label'=>'Manage Form', 'url'=>array('admin')),
+	array('label'=>'Manage Form', 'url'=>array('index')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

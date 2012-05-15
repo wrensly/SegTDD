@@ -64,6 +64,9 @@ class FormCategoryController extends Controller
 
 	/**
 	 * Creates a new model.
+	 * Creates a new Tag if does not exist and associates it with the form
+	 * Associate Category to Form
+	 * Associate form to an Entity
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
@@ -80,7 +83,7 @@ class FormCategoryController extends Controller
 		if(isset($_POST['Form']))
 		{
 			$model->attributes=$_POST['Form'];
-
+			
 			if($model->save())
 			{
 				$tags->attributes=$_POST['Tag'];
@@ -88,35 +91,32 @@ class FormCategoryController extends Controller
 
 				foreach($arr as $val)
 				{
-					
 					$tags->tag_name = trim($val);
 					$tagCount = Tag::model()->findByAttributes(array('tag_name' => $tags->tag_name));
-					if($tagCount == null)
-					{
+
+				if($tagCount == null)
+				{
 					$tags->save();
-					$tags = new Tag;
 					$formTag->tag_id = $tags->id;
-					}
-					else
-					{
+					$tags = new Tag;
+				}
+				else
+				{
 					$formTag->tag_id = $tagCount->id;
-					}
+				}
 					$formTag->form_id = $model->id;
-					$tagCount = FormTag::model()->countByAttributes(array('tag_id' => $formTag->tag_id , 'form_id' => $formTag->form_id));
-					if($tagCount == 0)
-					{
 					$formTag->save();
 					$formTag = new FormTag;
-					}
-
 				}
+
+			}
 
 				$formCategory->attributes=$_POST['FormCategory'];
 				$formCategory->form_id = $model->id;
 				$formCategory->save(false);
 				$this->redirect(array('view','id'=>$formCategory->id));
-			}
 		}
+		
 
 			$this->render('create',array(
 			'model'=>$model,
@@ -129,6 +129,9 @@ class FormCategoryController extends Controller
 
 	/**
 	 * Updates a particular model.
+	 * Updates association of Tags.
+	 * Updates association Category to Form.
+	 * Updates association of form to an Entity
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
@@ -157,35 +160,31 @@ class FormCategoryController extends Controller
 				
 				foreach($arr as $val)
 				{
-					
 					$tags->tag_name = trim($val);
 					$tagCount = Tag::model()->findByAttributes(array('tag_name' => $tags->tag_name));
-					if($tagCount == null)
-					{
+				if($tagCount == null)
+				{
 					$tags->save();
 					$formTag->tag_id = $tags->id;
 					$tags = new Tag;
-					}
-					else
-					{
+				}
+				else
+				{
 					$formTag->tag_id = $tagCount->id;
-					}
+				}
 					$formTag->form_id = $model->id;
-					$tagCount = FormTag::model()->countByAttributes(array('tag_id' => $formTag->tag_id , 'form_id' => $formTag->form_id));
-					if($tagCount == 0)
-					{
 					$formTag->save();
 					$formTag = new FormTag;
-					}
-
 				}
+
+			}
 
 				$formCategory->attributes=$_POST['FormCategory'];
 				$formCategory->form_id = $model->id;
 				$formCategory->save();
 				$this->redirect(array('view','id'=>$formCategory->id));	
-			}
 		}
+		
 
 			$this->render('update',array(
 			'model'=>$model,
@@ -235,28 +234,15 @@ class FormCategoryController extends Controller
 	}
 
 	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new FormCategory('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['FormCategory']))
-			$model->attributes=$_GET['FormCategory'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-			
-		));
-	}
-
-
+	 *Array of Data for the autocomplete of Tags
+	 *Returns an array of Tags
+	*/
 	public function actionSuggest()
 	{
    		$model = Tag::model()->findAll();
    		$result = array();
    		foreach ($model as $val){
-    	$result[] = $val->tag_name . ',';
+    	$result[] = $val->tag_name;
    		}
    		return $result;
   	}
@@ -286,7 +272,11 @@ class FormCategoryController extends Controller
 			Yii::app()->end();
 		}
 	}
-
+	/**
+	 * Converts boolean data to String for attribute Status
+	 * @param $data = data of the model.
+	 * @param $row = access each row of data.
+	 */
 	public function renderStatus($data, $row)
 	{
 		if($data->form->status == 1)

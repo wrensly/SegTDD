@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/jquery.tagsinput.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/doc.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
@@ -59,21 +59,33 @@
 							'url'=>array('/form/index'), 
 							'items'=>array(
 								array(
-									'label'=>'manage form',
-									'url'=>array('/formCategory/admin'), 
+									'label'=>'Manage Form',
+									'url'=>array('/formCategory/index'), 
 									'icon' => 'file white',
 								),
 								array(
-									'label'=>'create form',
+									'label'=>'Create Form',
 									'url'=>array('/formCategory/create'),
 									'icon'=>'plus white',
 								),
 
 								array(
-									'label'=>'list category',
+									'label'=>'Manage Category',
 									'url'=>array('/category/index'),
-									'icon'=>'plus white',
-								), 
+									'icon'=>'list white',
+								),
+
+								array(
+									'label'=>'Form Editor',
+									'url'=>array('#'),
+									'icon'=>'edit white',
+								),
+
+								array(
+									'label'=>'Form Renderer',
+									'url'=>array('/renderer/index'),
+									'icon'=>'list-alt white',
+								),  
 							),
 						),
 						array(

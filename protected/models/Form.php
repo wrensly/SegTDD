@@ -50,10 +50,11 @@ class Form extends CActiveRecord
 			
 			array('id, status, entity_id, attribute', 'numerical', 'integerOnly'=>true),
 			array('code', 'length', 'max'=>50),
-			array('name, description, tags, layout', 'safe'),
+			array('tags, layout, description', 'safe'),
+			array('name, code, entity_id, status', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, code, name, description, status, tags, layout, entity_id, attribute, category_search', 'safe', 'on'=>'search'),
+			array('id, code, name, description, status, tags, layout, entity_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,7 +81,7 @@ class Form extends CActiveRecord
 			'code' => 'Code',
 			'name' => 'Name',
 			'description' => 'Description',
-			'status' => 'Status',
+			'status' => 'Active',
 			'tags' => 'Tags',
 			'layout' => 'Layout',
 			'entity_id' => 'Entity',
@@ -98,47 +99,34 @@ class Form extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-		$criteria->together = true;
-		$criteria->with = array('formCategories');
-		
-
 		$criteria->compare('id',$this->id);
 		$criteria->compare('code',$this->code,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
-		$criteria->compare('status',$this->status);
-		$criteria->compare('tags',$this->tags,true);
-		$criteria->compare('layout',$this->layout,true);
-		$criteria->compare('entity_id',$this->entity_id);
-		$criteria->compare('attribute',$this->attribute);
-		$criteria->compare( 'formCategories.category_id', $this->category_search, true );
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-			'sort'=>array(
-        	'attributes'=>array(
-            'category_search'=>array(
-                'asc'=>'formCategories.category_id',
-                'desc'=>'formCategories.category_id DESC',
-            ),
-        ),
-    ),
-));
+		));
 	}
 
+	// Array variable that will hold items
 	private static $_items=array();
-		
+	
+	/**
+	 * Retrieve data by calling loadItems and return the data.
+	 * @param  Name of database field that holds the data, CDbCriteria object.
+	 * @return items from the database.
+	 */
 	public static function items($type){
 		if(!isset(self::$_items[$type]))
 			self::loadItems($type);
 		return self::$_items[$type];
 	}
 	
-	public static function item($type,$code){
-		if(!isset(self::$_items[$type]))
-			self::loadItems($type);
-		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
-	}
-	
+	/**
+	 * Retrieves data from database and assign it to $_items.
+	 * @param  Name of database field that holds the data.
+	 */
 	private static function loadItems($type){
 		self::$_items[$type]=array();
 		$models=self::model()->findAll();
@@ -147,7 +135,11 @@ class Form extends CActiveRecord
 
 	}
 
-	//--------------With Conditions
+	/**
+	 * Retrieve data by calling conditionloadItems and return the data.
+	 * @param  Name of database field that holds the data, CDbCriteria object.
+	 * @return items from the database.
+	 */
 	public static function conditionItems($type, $con) {
 		if(isset(self::$_items[$type])) {
 			self::$_items[$type] = null;
@@ -158,6 +150,10 @@ class Form extends CActiveRecord
 		return self::$_items[$type];
 	}
 
+	/**
+	 * Retrieves data from database  using a condition and assign it to $_items.
+	 * @param  Name of database field that holds the data, CDbCriteria object.
+	 */
 	private static function conditionloadItems($type, $con){
 		self::$_items[$type]=array();
 		$models=self::model()->findAll($con);

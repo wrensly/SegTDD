@@ -25,4 +25,6 @@ class Controller extends CController
 	 * @var string the content title of the current page.
 	 */
 	public $content_title = '';
+
+	public $search = array();
 }

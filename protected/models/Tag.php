@@ -38,7 +38,7 @@ class Tag extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tag_name', 'required'),
+			array('id, tag_name', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, tag_name', 'safe', 'on'=>'search'),

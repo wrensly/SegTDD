@@ -1,4 +1,8 @@
-<?php $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
+<?php 
+$cs=Yii::app()->getClientScript();
+$cs->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.tagsinput');
+
+$form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
     'id'=>'verticalForm',
     'type' => 'horizontal',
 )); ?>
@@ -13,7 +17,8 @@
 				<?php echo $form->textFieldRow($model,'code',array('maxlength'=>50,)); ?>
 				<?php echo $form->textFieldRow($model,'name',array('maxlength'=>50,)); ?>
 				<?php echo $form->textAreaRow($model,'description',array('rows'=>6, 'cols'=>50)); ?>
-				<?php echo $form->checkBoxRow($model,'status'); ?>
+				<?php echo $form->checkBoxRow($model,'status', array('checked' => true)); ?>
+				
 			</fieldset>
 		</div>
 		<div class="span6">
@@ -31,9 +36,10 @@
 					<?php echo $form->labelEx($tags,'tag_name',array('class'=>'control-label')); ?>
 					<div class="controls">
 						<?php $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
-							'model' => $tags,
+							
+							'id' => 'add',
 						    'name'=>'tag_name',
-						    'attribute'=>'tag_name',
+						   
 						   	'source'=>$suggest,
 						    // additional javascript options for the autocomplete plugin
 						   	'options'=>array(
@@ -43,7 +49,10 @@
 						        'style'=>'height:20px;',
 						   		),
 							));
-				    	?>
+						?>
+						<?php echo CHtml::button('Add', array('onClick' => 'addTag()')) . '<br><br>';?>
+						<?php echo $form->textField($tags,'tag_name',array('id' => 'tag', 'disabled' => 'true')); ?>
+ 						
 					</div>
 				</div>
 			</fieldset>
