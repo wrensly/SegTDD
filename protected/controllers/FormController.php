@@ -156,13 +156,14 @@ class FormController extends Controller
 	{
 		$model=new Form('search');
 		$model->unsetAttributes();  // clear any default values
-
-		if(isset($_GET['Form']))
+		if(isset($_GET['Form'])){
 			$model->attributes=$_GET['Form'];
-
-		$this->render('index',array(
-			'model' => $model,
-		));
+		}
+		else{
+			$model->attributes=$_GET['Form'];
+		}
+		
+		$this->render('index', array('model'=>$model));
 	}
 
 	/**

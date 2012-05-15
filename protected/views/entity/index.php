@@ -37,10 +37,16 @@ $this->breadcrumbs=array(
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
-	$('.search-form').toggle(250);
+	$('.advanced-search-form').toggle(250);
 	return false;
 });
-$('.search-form form').submit(function(){
+$('.search-form').submit(function(){
+	$.fn.yiiGridView.update('entity-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+$('.advanced-search-form').submit(function(){
 	$.fn.yiiGridView.update('entity-grid', {
 		data: $(this).serialize()
 	});
@@ -51,13 +57,12 @@ $('.search-form form').submit(function(){
 $this->content_title = 'Manage Entity';
 
 ?>
+<?php $this->widget('bootstrap.widgets.BootAlert'); ?>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-warning')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+<?php $this->renderPartial('_simpleSearch',array(
+	'model'=>$model
+)); ?><!-- search-form -->
+
 
 <div class="offset3">
 <?php 

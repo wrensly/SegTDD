@@ -13,7 +13,7 @@ $this->menu=array(
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
-	$('.search-form').toggle(250);
+	$('.advanced-search-form').toggle(250);
 	return false;
 });
 $('.search-form').submit(function(){
@@ -36,8 +36,7 @@ $this->content_title = 'Manage Fields';
 ?>
 <?php $this->widget('bootstrap.widgets.BootAlert'); ?>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-warning	')); ?>
-<?php $this->renderPartial('_search',array(
+<?php $this->renderPartial('_simpleSearch',array(
 	'model'=>$model
 )); ?><!-- search-form -->
 
