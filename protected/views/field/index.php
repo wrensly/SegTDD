@@ -11,34 +11,14 @@ $this->menu=array(
 	),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.advanced-search-form').toggle(250);
-	return false;
-});
-$('.search-form').submit(function(){
-	$.fn.yiiGridView.update('field-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-
 $this->content_title = 'Manage Fields';
 
+$this->search = array(
+	'simple' => true,
+	'advanced' => true,
+	'model' => $model,
+);
 ?>
-
-<?php 
-	Yii::app()->user->setFlash('info', '
-	<p>You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-	or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-	</p>');
-?>
-<?php $this->widget('bootstrap.widgets.BootAlert'); ?>
-
-<?php $this->renderPartial('_simpleSearch',array(
-	'model'=>$model
-)); ?><!-- search-form -->
 
 <?php 
 $template = "

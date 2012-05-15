@@ -132,10 +132,6 @@ class EntityController extends Controller
 		if(isset($_GET['Entity'])){
 			$model->attributes=$_GET['Entity'];
 		}
-		else{
-			$model->attributes=$_GET['Entity'];
-		}
-		
 		$this->render('index', array('model'=>$model));
 	}
 
