@@ -109,6 +109,7 @@ class Form extends CActiveRecord
 		));
 	}
 
+
 	// Array variable that will hold items
 	private static $_items=array();
 	

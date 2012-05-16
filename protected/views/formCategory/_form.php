@@ -1,6 +1,6 @@
 <?php 
 $cs=Yii::app()->getClientScript();
-$cs->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.tagsinput');
+$cs->registerScriptFile(Yii::app()->createUrl($this->route));
 
 $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
     'id'=>'verticalForm',
