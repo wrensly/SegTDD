@@ -7,16 +7,16 @@
  * @property integer $id
  * @property integer $field_id
  * @property integer $field_value_id
+ * @property integer $entity_id
  * @property integer $priority
  * @property integer $snapshot_id
- * @property integer $entity_id
  * @property integer $entity_instance_id
  *
  * The followings are the available model relations:
- * @property EntityInstance $entityInstance
- * @property Field $id0
- * @property Snapshot $snapshot
  * @property Entity $entity
+ * @property EntityInstance $entityInstance
+ * @property Field $field
+ * @property Snapshot $snapshot
  */
 class FieldValueCompound extends MyActiveRecord
 {
@@ -46,11 +46,11 @@ class FieldValueCompound extends MyActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
-			array('id, field_id, field_value_id, priority, snapshot_id, entity_id, entity_instance_id', 'numerical', 'integerOnly'=>true),
+			array('field_id, field_value_id, entity_id, priority, snapshot_id, entity_instance_id', 'required'),
+			array('field_id, field_value_id, entity_id, priority, snapshot_id, entity_instance_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, field_id, field_value_id, priority, snapshot_id, entity_id, entity_instance_id', 'safe', 'on'=>'search'),
+			array('id, field_id, field_value_id, entity_id, priority, snapshot_id, entity_instance_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,10 +62,10 @@ class FieldValueCompound extends MyActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'entityInstance' => array(self::BELONGS_TO, 'EntityInstance', 'entity_instance_id'),
-			'id0' => array(self::BELONGS_TO, 'Field', 'id'),
-			'snapshot' => array(self::BELONGS_TO, 'Snapshot', 'snapshot_id'),
 			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
+			'entityInstance' => array(self::BELONGS_TO, 'EntityInstance', 'entity_instance_id'),
+			'field' => array(self::BELONGS_TO, 'Field', 'field_id'),
+			'snapshot' => array(self::BELONGS_TO, 'Snapshot', 'snapshot_id'),
 		);
 	}
 
@@ -78,9 +78,9 @@ class FieldValueCompound extends MyActiveRecord
 			'id' => 'ID',
 			'field_id' => 'Field',
 			'field_value_id' => 'Field Value',
+			'entity_id' => 'Entity',
 			'priority' => 'Priority',
 			'snapshot_id' => 'Snapshot',
-			'entity_id' => 'Entity',
 			'entity_instance_id' => 'Entity Instance',
 		);
 	}
@@ -99,9 +99,9 @@ class FieldValueCompound extends MyActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('field_id',$this->field_id);
 		$criteria->compare('field_value_id',$this->field_value_id);
+		$criteria->compare('entity_id',$this->entity_id);
 		$criteria->compare('priority',$this->priority);
 		$criteria->compare('snapshot_id',$this->snapshot_id);
-		$criteria->compare('entity_id',$this->entity_id);
 		$criteria->compare('entity_instance_id',$this->entity_instance_id);
 
 		return new CActiveDataProvider($this, array(

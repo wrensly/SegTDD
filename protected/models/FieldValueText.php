@@ -46,9 +46,8 @@ class FieldValueText extends MyActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
-			array('id, field_id, entity_id, priority, snapshot_id, entity_instance_id', 'numerical', 'integerOnly'=>true),
-			array('value', 'safe'),
+			array('field_id, value, entity_id, priority, entity_instance_id', 'required'),
+			array('field_id, entity_id, priority, snapshot_id, entity_instance_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, field_id, value, entity_id, priority, snapshot_id, entity_instance_id', 'safe', 'on'=>'search'),

@@ -13,10 +13,10 @@
  * @property integer $entity_instance_id
  *
  * The followings are the available model relations:
+ * @property Entity $entity
  * @property EntityInstance $entityInstance
  * @property Field $field
  * @property Snapshot $snapshot
- * @property Entity $entity
  */
 class FieldValueDate extends MyActiveRecord
 {
@@ -46,9 +46,8 @@ class FieldValueDate extends MyActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
-			array('id, field_id, entity_id, priority, snapshot_id, entity_instance_id', 'numerical', 'integerOnly'=>true),
-			array('value', 'safe'),
+			array('field_id, value, entity_id, priority, snapshot_id, entity_instance_id', 'required'),
+			array('field_id, entity_id, priority, snapshot_id, entity_instance_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, field_id, value, entity_id, priority, snapshot_id, entity_instance_id', 'safe', 'on'=>'search'),
@@ -63,10 +62,10 @@ class FieldValueDate extends MyActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
 			'entityInstance' => array(self::BELONGS_TO, 'EntityInstance', 'entity_instance_id'),
 			'field' => array(self::BELONGS_TO, 'Field', 'field_id'),
 			'snapshot' => array(self::BELONGS_TO, 'Snapshot', 'snapshot_id'),
-			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
 		);
 	}
 

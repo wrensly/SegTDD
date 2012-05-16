@@ -36,7 +36,7 @@ class FieldController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','testFieldValue'),
+				'actions'=>array('admin','delete','testFieldValue', 'test'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -427,17 +427,49 @@ class FieldController extends Controller
 	}
 	
 	public function actionTestFieldValue(){
-		echo "Loading a new object FieldValue...";
-		$fieldValue = new FieldValue;
-		$fieldValue->initValueOf(85);
-		echo "done.<br>Setting entity_instance_id...";
-		$fieldValue->setAttribute('entity_instance_id','1');
-		echo "done.<br>Setting value...";
-		$fieldValue->setAttribute('value','2');
-		echo "done.<br>Saving...";
-		if($fieldValue->save()){
+		$fieldValue = new FieldValue(149);
+		$fieldValueModel = $fieldValue->model();
+		$fieldValueModel->entity_instance_id = 1;
+		$fieldValueModel->value = 4;
+		$fieldValueModel->field_id = 148;
+		$fieldValueModel->entity_id = 0;
+		$fieldValueModel->priority = 0;
+		$fieldValueModel->setIsNewRecord(true);
+		echo "done.<br>Saving:<pre>",var_dump($fieldValueModel->attributes),"</pre>";
+		if($fieldValueModel->save()){
 			echo "done.";
-		} else echo "failed.";
+		} else echo "failed.<pre>", var_dump($fieldValueModel->getErrors()), "</pre>";
+	}
+
+	public function actionTest(){
+		$formGen = new FormGenerator(2);
+		
+		$section1 = array(
+			'label' => 'Section 1',
+			'order' => '1',
+			'items' => array(
+				'fieldset 1' => array(1,2,3,4,5),
+				'fieldset 2' => array(6,7),
+				8,9,10,
+			),
+		);
+
+		$section2 = array(
+			'label' => 'Section 2',
+			'order' => '2',
+			'items' => array(
+				'fieldset 1' => array(1,2,3,4,5),
+				'fieldset 2' => array(6,7),
+				8,9,10,
+			),
+		);
+		
+		$form  = array(
+			'items' => array($section1,$section2),
+		);
+
+		$formGen->generate($form);
+		echo $formGen->previewXML();
 	}
 }
 

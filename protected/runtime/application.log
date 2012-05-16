@@ -1,0 +1,525 @@
+2012/05/16 06:21:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/index.php
+---
+2012/05/16 06:21:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/index.htm
+---
+2012/05/16 06:57:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/
+---
+2012/05/16 08:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/create.htm
+---
+2012/05/16 08:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.tagsinput".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('js/jquery.tagsi...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/js/jquery.tagsinput
+HTTP_REFERER=http://localhost/SegTDD/formCategory/create.htm
+---
+2012/05/16 08:37:50 [error] [php] Undefined index: Tag (C:\xampp\htdocs\SegTDD\protected\controllers\FormCategoryController.php:89)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FormCategoryController->runAction()
+#1 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FormCategoryController->filterAccessControl()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FormCategoryController->runActionWithFilters()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FormCategoryController->run()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/formCategory/create.htm
+in C:\xampp\htdocs\SegTDD\protected\controllers\FormCategoryController.php (89)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 08:39:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/formCategory/index.htm
+---
+2012/05/16 08:41:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/16 08:41:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "test.".' in C:\xampp\htdocs\SegTDD\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(271): CController->missingAction('test.')
+#1 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('test.')
+#2 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/test.')
+#3 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/SegTDD/field/test..htm
+---
+2012/05/16 08:41:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/test..htm
+---
+2012/05/16 08:41:40 [error] [php] SimpleXMLElement::__construct() [<a href='simplexmlelement.--construct'>simplexmlelement.--construct</a>]: Entity: line 2: parser error : XML declaration allowed only at the start of the document (C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php:21)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(444): FormGenerator->__construct()
+#1 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTest()
+#2 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#7 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#10 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#11 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#12 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/test.htm
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (21)
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (13)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (444)
+2012/05/16 08:42:12 [error] [php] SimpleXMLElement::__construct() [<a href='simplexmlelement.--construct'>simplexmlelement.--construct</a>]: Entity: line 1: parser error : parsing XML declaration: '?&gt;' expected (C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(444): FormGenerator->__construct()
+#1 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTest()
+#2 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#7 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#10 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#11 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#12 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/test.htm
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (20)
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (13)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (444)
+2012/05/16 09:04:55 [error] [php] Undefined variable: xml (C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php:26)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#2 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/test.htm
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (26)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (445)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 09:05:34 [error] [php] include(Chtml.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\SegTDD\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php(61): spl_autoload_call()
+#1 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(446): FormGenerator->previewXML()
+#2 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTest()
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#7 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#8 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#11 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#12 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#13 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/test.htm
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (61)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (446)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 10:35:10 [error] [php] SimpleXMLElement::addAttribute() [<a href='simplexmlelement.addattribute'>simplexmlelement.addattribute</a>]: Attribute already exists (C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php:46)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(470): FormGenerator->generate()
+#1 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTest()
+#2 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#7 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#10 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#11 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#12 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/test.htm
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (46)
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (27)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (470)
+2012/05/16 10:56:23 [error] [php] preg_replace() [<a href='function.preg-replace'>function.preg-replace</a>]: No ending delimiter '&gt;' found (C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php:94)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTest()
+#1 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#3 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#6 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#10 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#11 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/test.htm
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (94)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (472)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 11:34:49 [error] [php] Undefined variable: xml (C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php:68)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#2 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/test.htm
+in C:\xampp\htdocs\SegTDD\protected\components\FormGenerator.php (68)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (470)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 12:07:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field
+---
+2012/05/16 12:36:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "TestFieldValue".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('TestFieldValue')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/TestFieldValue
+---
+2012/05/16 12:36:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/TestFieldValue
+---
+2012/05/16 12:36:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/
+---
+2012/05/16 12:36:46 [error] [php] Missing argument 1 for FieldValue::__construct(), called in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php on line 431 and defined (C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php:12)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#2 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/testFieldValue
+in C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php (12)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (431)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 12:55:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php:34
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php(42): FieldValue->loadModelOf('Field', NULL)
+#1 C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php(14): FieldValue->loadMetadata()
+#2 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(431): FieldValue->__construct(85)
+#3 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTestFieldValue()
+#4 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('testFieldValue')
+#13 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/testField...')
+#14 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/field/testFieldValue
+---
+2012/05/16 12:55:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/testFieldValue
+---
+2012/05/16 12:55:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/create.htm
+---
+2012/05/16 12:57:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/148.htm
+---
+2012/05/16 12:57:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/16 12:58:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php:34
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php(42): FieldValue->loadModelOf('Field', NULL)
+#1 C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php(14): FieldValue->loadMetadata()
+#2 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(431): FieldValue->__construct(148)
+#3 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTestFieldValue()
+#4 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('TestFieldValue')
+#13 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/TestField...')
+#14 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/field/TestFieldValue.htm
+---
+2012/05/16 12:58:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/TestFieldValue.htm
+---
+2012/05/16 12:59:05 [error] [php] Undefined variable: _fieldValueModel (C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php:21)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#2 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/TestFieldValue.htm
+in C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php (21)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (432)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 13:02:55 [error] [php] var_dump() expects at least 1 parameter, 0 given (C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#2 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/TestFieldValue.htm
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (432)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 13:09:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/index.htm
+---
+2012/05/16 13:36:10 [error] [php] Undefined variable: fieldValueModel (C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php:17)
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): FieldController->runAction()
+#2 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): FieldController->filterAccessControl()
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): FieldController->runActionWithFilters()
+#8 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): FieldController->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\SegTDD\index.php(16): CWebApplication->run()
+REQUEST_URI=/SegTDD/field/TestFieldValue.htm
+in C:\xampp\htdocs\SegTDD\protected\components\FieldValue.php (17)
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (431)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 14:12:40 [error] [exception.CDbException] exception 'CDbException' with message 'The active record cannot be inserted to database because it is not new.' in C:\xampp\htdocs\SegTDD\framework\db\ar\CActiveRecord.php:1007
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(438): CActiveRecord->insert()
+#1 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTestFieldValue()
+#2 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('TestFieldValue')
+#11 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/TestField...')
+#12 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#14 {main}
+REQUEST_URI=/SegTDD/field/TestFieldValue.htm
+---
+2012/05/16 14:15:47 [error] [exception.CDbException] exception 'CDbException' with message 'The active record cannot be inserted to database because it is not new.' in C:\xampp\htdocs\SegTDD\framework\db\ar\CActiveRecord.php:1007
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(438): CActiveRecord->insert()
+#1 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTestFieldValue()
+#2 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('TestFieldValue')
+#11 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/TestField...')
+#12 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#14 {main}
+REQUEST_URI=/SegTDD/field/TestFieldValue.htm
+---
+2012/05/16 14:17:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/create.htm
+---
+2012/05/16 14:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/field/149.htm
+---
+2012/05/16 14:20:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`segtdd`.`field_value_numeric`, CONSTRAINT `numeric_snapshot_id` FOREIGN KEY (`snapshot_id`) REFERENCES `snapshot` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `field_value_numeric` (`entity_instance_id`, `value`, `field_id`, `entity_id`, `priority`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php (440)
+in C:\xampp\htdocs\SegTDD\index.php (16)
+2012/05/16 14:20:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`segtdd`.`field_value_numeric`, CONSTRAINT `numeric_snapshot_id` FOREIGN KEY (`snapshot_id`) REFERENCES `snapshot` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `field_value_numeric` (`entity_instance_id`, `value`, `field_id`, `entity_id`, `priority`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\xampp\htdocs\SegTDD\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\xampp\htdocs\SegTDD\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SegTDD\protected\controllers\FieldController.php(440): CActiveRecord->save()
+#3 C:\xampp\htdocs\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionTestFieldValue()
+#4 C:\xampp\htdocs\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\htdocs\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(276): CController->run('TestFieldValue')
+#13 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/TestField...')
+#14 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/field/TestFieldValue.htm
+---
+2012/05/16 14:23:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.tagsinput.css".' in C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('jquery.tagsinpu...')
+#1 C:\xampp\htdocs\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SegTDD\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/SegTDD/jquery.tagsinput.css
+HTTP_REFERER=http://localhost/SegTDD/site/index.htm
+---
