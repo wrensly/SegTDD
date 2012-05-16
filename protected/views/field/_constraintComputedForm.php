@@ -20,7 +20,7 @@ $('#Field_computed').click(function(){ $('#constraintComputed').toggle(250); });
         'rows'=>6,
         'cols'=>200,
         'class'=>'view-code-textarea well',
-        )); ?>
+        )); ?>  
 </div>
  
 <div class="modal-footer">
