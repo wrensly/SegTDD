@@ -1,5 +1,4 @@
 <?php
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.advanced-search-form').toggle(250);
