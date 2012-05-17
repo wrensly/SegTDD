@@ -109,10 +109,12 @@ class FormGenerator
 	}
 
 	public function asXML(){
-		return $this->xml->asXML();
+		$dom = dom_import_simplexml($this->xml)->ownerDocument;
+		$dom->formatOutput = true;
+		return $dom->saveXML();
 	}
 
 	public function previewXML(){
-		return '<pre>'.CHtml::encode($this->xml->asXML()).'</pre>';
+		return '<pre>'.CHtml::encode($this->asXML()).'</pre>';
 	}
 }

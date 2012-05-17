@@ -40,15 +40,18 @@ $this->widget('bootstrap.widgets.BootButton', array(
 	'type'=>'success', 
 	'icon'=>'search white', 
 	'label'=>'',
+	'htmlOptions' => array('title'=>"Search"),
 ));
 }
 if($this->search['advanced']){
+?>
+<?php
 	$this->widget('bootstrap.widgets.BootButton', array(
 		'buttonType'=>'button',
 		'type'=>'success', 
-		'icon' => 'cog white',
+		'icon' => 'chevron-down white',
 		'label' => '',
-		'htmlOptions' => array('class'=>'search-button'),
+		'htmlOptions' => array('class'=>'search-button', 'title'=>"Advanced Search"),
 	));
 }
 ?>

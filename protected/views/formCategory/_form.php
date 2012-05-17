@@ -1,6 +1,7 @@
 <?php 
 $cs=Yii::app()->getClientScript();
-$cs->registerScriptFile(Yii::app()->createUrl($this->route));
+$cs->registerCssFile(Yii::app()->baseUrl.'/css/jquery.tagsinput.css');
+$cs->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.tagsinput.js');
 
 $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
     'id'=>'verticalForm',
@@ -38,7 +39,7 @@ $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 						<?php $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
 							
 							'id' => 'add',
-						    'name'=>'tag_name',
+						    'name'=>'Tag[tag_name]',
 						   
 						   	'source'=>$suggest,
 						    // additional javascript options for the autocomplete plugin

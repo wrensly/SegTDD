@@ -5,7 +5,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create Form', 'url'=>array('create')),
-	array('label'=>'Manage Form', 'url'=>array('index')),
 );
 
 
@@ -20,10 +19,19 @@ $this->search = array(
 ?>
 
 <?php
+$template = "
+{items}
+<div class='row'>
+	<div class='span6'>{summary}</div>
+	<div class='span6'>{pager}</div>
+</div>";
+
 $this->widget('bootstrap.widgets.BootGridView', array(
-	'id'=>'form-grid',
+	'id'=>'field-grid',
 	'type'=>'striped',
-    'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->search(),
+	'template'=> $template,
+	'pagerCssClass' => 'pagination pull-right',
 	'columns'=>array(
 		array('name' => 'code', 'value' => '$data->form->code'),
 		array('name' => 'name', 'value' => '$data->form->name'),
@@ -31,12 +39,17 @@ $this->widget('bootstrap.widgets.BootGridView', array(
 		array('name' => 'category_name', 'value' => '$data->category->category_name'),
 		array('name' => 'status', 'value' => array($this,'renderStatus')),
 		array(
-        	'type' => 'raw',
-        	'value' => 'CHtml::link(\'Open in Editor\',array(\'formCategory/editor\',\'id\'=>$data->id))',
-        ),
-        array(
+			'header'=>'Actions',
             'class'=>'bootstrap.widgets.BootButtonColumn',
-            'htmlOptions'=>array('style'=>'width: 50px'),
+            'htmlOptions'=>array('style'=>'width: 70px'),
+            'buttons'=> array(
+            	'editor' => array(
+				    'label'=>'Open In Editor',     // text label of the button
+				    'icon'=>'edit',
+				    'url'=>'Yii::app()->createUrl("formCategory/editor",array("id"=>$data->id))',
+				),
+            ),
+            'template'=>'{view} {update} {delete} {editor}',
         ),
 		/*
 		'layout',
@@ -48,37 +61,3 @@ $this->widget('bootstrap.widgets.BootGridView', array(
 
 
 ?>
-
-<?php $this->beginWidget('bootstrap.widgets.BootModal', array('id'=>'myModal')); ?>
- 
-<div class="modal-header">
-    <a class="close" data-dismiss="modal">&times;</a>
-    <h3>Edit View Expression Code</h3>
-</div>
- 
-<div class="modal-body">
-    <p>One fine body...</p>
-</div>
- 
-<div class="modal-footer">
-    <?php $this->widget('bootstrap.widgets.BootButton', array(
-        'type'=>'primary',
-        'label'=>'Save changes',
-        'url'=>'#',
-        'htmlOptions'=>array('data-dismiss'=>'modal'),
-    )); ?>
-    <?php $this->widget('bootstrap.widgets.BootButton', array(
-        'label'=>'Close',
-        'url'=>'#',
-        'htmlOptions'=>array('data-dismiss'=>'modal'),
-    )); ?>
-</div>
- 
-<?php $this->endWidget(); ?>
-
-<?php $this->widget('bootstrap.widgets.BootButton', array(
-    'label'=>'Edit View Code',
-    'url'=>'#myModal',
-    'type'=>'primary',
-    'htmlOptions'=>array('data-toggle'=>'modal'),
-)); ?>

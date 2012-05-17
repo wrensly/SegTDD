@@ -22,13 +22,13 @@ $this->search = array(
 
 <?php 
 $template = "
-	{items}
-	<div class='row'>
-		<div class='span6'>{summary}</div>
-		<div class='span6'>{pager}</div>
-	</div>";
+{items}
+<div class='row'>
+	<div class='span6'>{summary}</div>
+	<div class='span6'>{pager}</div>
+</div>";
 
-	$this->widget('bootstrap.widgets.BootGridView', array(
+$this->widget('bootstrap.widgets.BootGridView', array(
 	'id'=>'field-grid',
 	'type'=>'striped',
 	'dataProvider'=>$model->search(),
@@ -36,11 +36,6 @@ $template = "
 	'pagerCssClass' => 'pagination pull-right',
 	'columns'=>array(
 		array(
-            'class'=>'zii.widgets.grid.CCheckBoxColumn',
-            'name' => 'id',
-        	'selectableRows' => 2,
-        ),
-        array(
             'name'=>'entity_id',
             'value'=>'$data->entity[\'entity_name\']',
         ),

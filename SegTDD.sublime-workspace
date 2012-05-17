@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"add",
+				"addClass"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"border",
+				"border	border-bottom-style: style"
+			],
+			[
+				"lis",
+				"list	list-style-type: other"
+			],
+			[
 				"heigh",
 				"height"
 			],
@@ -96,10 +112,6 @@
 				"width"
 			],
 			[
-				"border",
-				"border	border-bottom-style: style"
-			],
-			[
 				"a",
 				"act	Yii Create controller action method"
 			],
@@ -136,19 +148,36 @@
 	"buffers":
 	[
 		{
-			"file": "protected/components/FormGenerator.php",
+			"file": "protected/views/formCategory/_editor.php",
 			"settings":
 			{
-				"buffer_size": 3111,
-				"line_ending": "Windows",
-				"name": "FormGenerator.php"
+				"buffer_size": 1272,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "protected/models/Form.php",
+			"file": "protected/views/formCategory/_editor2.php",
 			"settings":
 			{
-				"buffer_size": 4505,
+				"buffer_size": 2820,
+				"line_ending": "Windows",
+				"name": "_editor2.php"
+			}
+		},
+		{
+			"file": "js/formEditor.js",
+			"settings":
+			{
+				"buffer_size": 1378,
+				"line_ending": "Windows",
+				"name": "formEditor.js"
+			}
+		},
+		{
+			"file": "protected/extensions/CodeMirror/CodeMirror.php",
+			"settings":
+			{
+				"buffer_size": 2965,
 				"line_ending": "Windows"
 			}
 		},
@@ -156,7 +185,23 @@
 			"file": "protected/controllers/FieldController.php",
 			"settings":
 			{
-				"buffer_size": 15512,
+				"buffer_size": 15513,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/components/FormGenerator.php",
+			"settings":
+			{
+				"buffer_size": 3189,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/doc.css",
+			"settings":
+			{
+				"buffer_size": 3792,
 				"line_ending": "Windows"
 			}
 		},
@@ -165,31 +210,6 @@
 			"settings":
 			{
 				"buffer_size": 3088,
-				"line_ending": "Windows",
-				"name": "FieldValue.php"
-			}
-		},
-		{
-			"file": "framework/db/ar/CActiveRecord.php",
-			"settings":
-			{
-				"buffer_size": 82783,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "protected/config/main.php",
-			"settings":
-			{
-				"buffer_size": 2793,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "protected/models/FieldValueNumeric.php",
-			"settings":
-			{
-				"buffer_size": 3335,
 				"line_ending": "Windows"
 			}
 		}
@@ -346,24 +366,65 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/SegTDD/protected/controllers/FormCategoryController.php",
+		"/C/xampp/htdocs/SegTDD/protected/controllers/FormController.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_form.php",
+		"/C/xampp/htdocs/SegTDD/js/serializeJSON.js",
+		"/C/xampp/htdocs/SegTDD/js/template.js",
+		"/C/xampp/htdocs/SegTDD/protected/views/entity/_search.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootAlert.php",
+		"/C/xampp/htdocs/SegTDD/css/doc.css",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintComputedForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintEnumForm.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintComputed.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/components/Bootstrap.php",
+		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/CodeMirror/CodeMirror.php",
+		"/C/xampp/htdocs/SegTDD/framework/utils/CFileHelper.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootWidget.php",
+		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootButtonColumn.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/category/_search.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_search.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/view.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/view.php",
+		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldController.php",
+		"/C/xampp/htdocs/SegTDD/protected/components/FormGenerator.php",
+		"//ADMIN-PC/Dropsite/test.xml",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_view.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/entity/view.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/create.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_form.php",
+		"/C/xampp/htdocs/SegTDD/js/jquery.tagsinput.js",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_advancedSearch.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/FormCategory.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/category/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/index.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/textArea.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/category/_form.php",
+		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/pages/about.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/Form.php",
+		"/C/xampp/htdocs/SegTDD/protected/components/FieldValue.php",
+		"/C/xampp/htdocs/SegTDD/framework/db/ar/CActiveRecord.php",
+		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueNumeric.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintCompound.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/index.php",
 		"/C/xampp/htdocs/SegTDD/framework/base/CModel.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueText.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueDatetime.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueEnum.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueFile.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueTime.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueNumeric.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/Field.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueCompound.php",
-		"/C/xampp/htdocs/SegTDD/framework/db/ar/CActiveRecord.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValueOld.php",
 		"/C/xampp/htdocs/SegTDD/protected/components/test.xml",
 		"/C/xampp/htdocs/SegTDD/protected/components/test2.xml",
 		"/C/xampp/htdocs/SegTDD/protected/components/UserIdentity.php",
-		"/C/xampp/htdocs/SegTDD/protected/controllers/FormCategoryController.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_form.php",
-		"/C/xampp/htdocs/SegTDD/protected/controllers/FormController.php",
-		"/C/xampp/htdocs/SegTDD/protected/components/FormGenerator.php",
 		"/C/xampp/php/php.ini",
 		"/C/xampp/htdocs/SegTDD/framework/gii/CCodeGenerator.php",
 		"/C/xampp/htdocs/SegTDD/framework/gii/generators/crud/CrudGenerator.php",
@@ -375,47 +436,27 @@
 		"/C/xampp/htdocs/SegTDD/framework/gii/generators/model/ModelGenerator.php",
 		"/C/xampp/htdocs/SegTDD/framework/gii/generators/model/ModelCode.php",
 		"/C/xampp/htdocs/SegTDD/framework/gii/controllers/DefaultController.php",
-		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/index.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/entity/_search.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/index.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_simpleSearch.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_advancedSearch.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_advancedSearch.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/renderer/_search.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/renderer/index.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/renderer/_advancedSearch.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_advancedSearch.php",
-		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldController.php",
-		"/C/xampp/htdocs/SegTDD/css/doc.css",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
 		"/C/xampp/htdocs/SegTDD/protected/components/Controller.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/index.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/category/index.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_search.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintEnumForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/category/_search.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/Entity.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/FormCategory.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/admin.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_simpleSearch.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/EntityController.php",
 		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log.1",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_searchitem.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_form.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/view.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintTextForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintCompound.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintCompoundForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintComputedForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintComputed.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintEnum.php",
 		"/C/xampp/htdocs/SegTDD/protected/components/helpers.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDatetimeForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintNumericForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintFileForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/config/main.php",
 		"/C/xampp/htdocs/SegTDD/index.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintText.php",
 		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootActiveForm.php",
@@ -424,12 +465,9 @@
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintComputed.php",
 		"/D/Dropbox/Segworks/Data Model/New SegTDD Schema.sql",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_view.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/entity/view.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintDerivedForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/create.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/FieldValue.php",
 		"/C/xampp/htdocs/SegTDD/protected/components/MyActiveRecord.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/view.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/update.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/admin_trash.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/create.php",
@@ -438,10 +476,7 @@
 		"/C/xampp/htdocs/SegTDD/framework/db/ar/CActiveRecordBehavior.php",
 		"/C/xampp/htdocs/SegTDD/framework/base/CApplication.php",
 		"/C/xampp/htdocs/SegTDD/framework/base/CApplicationComponent.php",
-		"/C/xampp/htdocs/SegTDD/js/template.js",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/FieldValueController.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/Form.php",
-		"/C/xampp/htdocs/SegTDD/js/serializeJSON.js",
 		"/C/Users/Seth Busque/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/D/Dropbox/Segworks/Other Documents/logicalDeletion.php",
 		"/C/xampp/htdocs/SegTDD/framework/zii/widgets/assets/gridview/jquery.yiigridview.js",
@@ -449,7 +484,6 @@
 		"/C/xampp/htdocs/SegTDD/protected/views/site/contact.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDerived.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintDerived.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintDatetime.php",
 		"/C/xampp/htdocs/SegTDD/framework/zii/widgets/grid/CGridView.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintText.php",
@@ -459,29 +493,15 @@
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintEnum.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintNumeric.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintNumeric.php",
-		"/C/xampp/htdocs/SegTDD/protected/controllers/SiteController.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/site/index.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/LoginForm.php",
-		"/C/xampp/htdocs/SegTDD/protected/models/Category.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/site/pages/about.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main_login.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/login.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/site/login.php",
-		"/C/xampp/htdocs/segTDD.phpfogapp.com/protected/config/main.php",
-		"/C/xampp/htdocs/segTDD.phpfogapp.com/protected/config/main (2).php",
-		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootButtonColumn.php",
-		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootGridView.php",
-		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootDataColumn.php",
-		"/D/Seth Busque/Downloads/Tambakan/create-next-postcard-flyer-smart-colors_designBrief"
+		"/C/xampp/htdocs/SegTDD/protected/controllers/SiteController.php"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 		]
@@ -636,28 +656,27 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "protected/components/FormGenerator.php",
+					"file": "protected/views/formCategory/_editor.php",
 					"settings":
 					{
-						"buffer_size": 3111,
+						"buffer_size": 1272,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1778,
-								1778
+								826,
+								826
 							]
 						],
 						"settings":
 						{
-							"auto_name": "FormGenerator.php",
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -668,45 +687,72 @@
 				},
 				{
 					"buffer": 1,
-					"file": "protected/models/Form.php",
+					"file": "protected/views/formCategory/_editor2.php",
 					"settings":
 					{
-						"buffer_size": 4505,
+						"buffer_size": 2820,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								606,
+								606
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"auto_name": "_editor2.php",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1986.0,
+						"translation.y": 210.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "protected/controllers/FieldController.php",
+					"file": "js/formEditor.js",
 					"settings":
 					{
-						"buffer_size": 15512,
+						"buffer_size": 1378,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14975,
-								14975
+								733,
+								779
+							]
+						],
+						"settings":
+						{
+							"auto_name": "formEditor.js",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 179.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "protected/extensions/CodeMirror/CodeMirror.php",
+					"settings":
+					{
+						"buffer_size": 2965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1611,
+								1611
 							]
 						],
 						"settings":
@@ -715,13 +761,94 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5873.0,
+						"translation.y": 798.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
+					"file": "protected/controllers/FieldController.php",
+					"settings":
+					{
+						"buffer_size": 15513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15102,
+								15102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5798.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "protected/components/FormGenerator.php",
+					"settings":
+					{
+						"buffer_size": 3189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1771,
+								1771
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 414.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "css/doc.css",
+					"settings":
+					{
+						"buffer_size": 3792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3790,
+								3790
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2391.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "protected/components/FieldValue.php",
 					"settings":
 					{
@@ -732,35 +859,8 @@
 						"selection":
 						[
 							[
-								386,
-								386
-							]
-						],
-						"settings":
-						{
-							"auto_name": "FieldValue.php",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 28.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "framework/db/ar/CActiveRecord.php",
-					"settings":
-					{
-						"buffer_size": 82783,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								29301,
-								29305
+								196,
+								196
 							]
 						],
 						"settings":
@@ -769,61 +869,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 11570.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "protected/config/main.php",
-					"settings":
-					{
-						"buffer_size": 2793,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2473,
-								2473
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1124.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "protected/models/FieldValueNumeric.php",
-					"settings":
-					{
-						"buffer_size": 3335,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1673,
-								1673
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 504.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -862,10 +908,6 @@
 		]
 	},
 	"menu_visible": true,
-	"output.phpdocumentor":
-	{
-		"height": 208.0
-	},
 	"replace":
 	{
 		"height": 0.0
@@ -895,6 +937,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 194.0,
+	"side_bar_width": 204.0,
 	"status_bar_visible": true
 }
