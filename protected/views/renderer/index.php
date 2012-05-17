@@ -30,6 +30,8 @@ $this->search = array(
 
 		array('name'=>'description'),
 
+		array('name'=>'layout'),
+
 		array(
 			'class'=>'bootstrap.widgets.BootButtonColumn',
 			'template'=>'{view}',
@@ -37,7 +39,7 @@ $this->search = array(
 				'view' => array(
 						'label' => null,
 						// 'imageUrl' => false,"/form/create"  $data->form_id
-						'url'=>'Yii::app()->controller->createUrl("renderer", array("id"=>$data->primaryKey))', //Sample Link (next thing to do: create own Boot Button Column(extend CGridColumn))
+						'url'=>'Yii::app()->controller->createUrl("render", array("id"=>$data->primaryKey))', //Sample Link (next thing to do: create own Boot Button Column(extend CGridColumn))
 						'icon'=>'eye-open',
 						'options' => array('style'=>'margin-left: 10px;', 'title'=>'Render'),
 						// 'visible'=>'($data->form_id!=null)?true:false;',
