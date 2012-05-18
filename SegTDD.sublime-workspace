@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"margin-t",
+				"margin-top"
+			],
+			[
 				"add",
 				"addClass"
 			],
@@ -148,7 +152,15 @@
 	"buffers":
 	[
 		{
-			"file": "protected/views/formCategory/_editor.php",
+			"file": "protected/controllers/FormCategoryController.php",
+			"settings":
+			{
+				"buffer_size": 8443,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/views/formCategory/_XMLeditor.php",
 			"settings":
 			{
 				"buffer_size": 1272,
@@ -156,7 +168,7 @@
 			}
 		},
 		{
-			"file": "protected/views/formCategory/_editor2.php",
+			"file": "protected/views/formCategory/_formEditor.php",
 			"settings":
 			{
 				"buffer_size": 2820,
@@ -198,18 +210,26 @@
 			}
 		},
 		{
-			"file": "css/doc.css",
-			"settings":
-			{
-				"buffer_size": 3792,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "protected/components/FieldValue.php",
 			"settings":
 			{
 				"buffer_size": 3088,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/views/layouts/main.php",
+			"settings":
+			{
+				"buffer_size": 4944,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "protected/views/formCategory/index.php",
+			"settings":
+			{
+				"buffer_size": 1500,
 				"line_ending": "Windows"
 			}
 		}
@@ -366,6 +386,10 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/SegTDD/css/doc.css",
+		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/pages/about.php",
+		"/C/xampp/htdocs/SegTDD/protected/views/site/error.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/FormCategoryController.php",
 		"/C/xampp/htdocs/SegTDD/protected/controllers/FormController.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_form.php",
@@ -373,7 +397,6 @@
 		"/C/xampp/htdocs/SegTDD/js/template.js",
 		"/C/xampp/htdocs/SegTDD/protected/views/entity/_search.php",
 		"/C/xampp/htdocs/SegTDD/protected/extensions/bootstrap/widgets/BootAlert.php",
-		"/C/xampp/htdocs/SegTDD/css/doc.css",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintComputedForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_constraintEnumForm.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintComputed.php",
@@ -387,7 +410,6 @@
 		"/C/xampp/htdocs/SegTDD/protected/views/category/_search.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/_search.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/_search.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/layouts/column1_mod.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/layouts/main.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/field/view.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/view.php",
@@ -406,7 +428,6 @@
 		"/C/xampp/htdocs/SegTDD/protected/views/formCategory/textArea.php",
 		"/C/xampp/htdocs/SegTDD/protected/views/category/_form.php",
 		"/C/xampp/htdocs/SegTDD/protected/runtime/application.log",
-		"/C/xampp/htdocs/SegTDD/protected/views/site/pages/about.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/Form.php",
 		"/C/xampp/htdocs/SegTDD/protected/components/FieldValue.php",
 		"/C/xampp/htdocs/SegTDD/framework/db/ar/CActiveRecord.php",
@@ -492,8 +513,7 @@
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintFile.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintEnum.php",
 		"/C/xampp/htdocs/SegTDD/protected/models/ConstraintNumeric.php",
-		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintNumeric.php",
-		"/C/xampp/htdocs/SegTDD/protected/controllers/SiteController.php"
+		"/C/xampp/htdocs/SegTDD/protected/views/field/_viewConstraintNumeric.php"
 	],
 	"find":
 	{
@@ -501,7 +521,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 		]
@@ -656,12 +676,39 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "protected/views/formCategory/_editor.php",
+					"file": "protected/controllers/FormCategoryController.php",
+					"settings":
+					{
+						"buffer_size": 8443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1192,
+								1192
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 497.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "protected/views/formCategory/_XMLeditor.php",
 					"settings":
 					{
 						"buffer_size": 1272,
@@ -677,17 +724,18 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 43.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "protected/views/formCategory/_editor2.php",
+					"buffer": 2,
+					"file": "protected/views/formCategory/_formEditor.php",
 					"settings":
 					{
 						"buffer_size": 2820,
@@ -704,16 +752,17 @@
 						"settings":
 						{
 							"auto_name": "_editor2.php",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 210.0,
+						"translation.y": 42.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "js/formEditor.js",
 					"settings":
 					{
@@ -731,7 +780,8 @@
 						"settings":
 						{
 							"auto_name": "formEditor.js",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 179.0,
@@ -740,7 +790,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "protected/extensions/CodeMirror/CodeMirror.php",
 					"settings":
 					{
@@ -767,7 +817,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "protected/controllers/FieldController.php",
 					"settings":
 					{
@@ -794,7 +844,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "protected/components/FormGenerator.php",
 					"settings":
 					{
@@ -821,33 +871,6 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "css/doc.css",
-					"settings":
-					{
-						"buffer_size": 3792,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3790,
-								3790
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2391.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 7,
 					"file": "protected/components/FieldValue.php",
 					"settings":
@@ -861,6 +884,60 @@
 							[
 								196,
 								196
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "protected/views/layouts/main.php",
+					"settings":
+					{
+						"buffer_size": 4944,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4232,
+								4232
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1951.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "protected/views/formCategory/index.php",
+					"settings":
+					{
+						"buffer_size": 1500,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
 							]
 						],
 						"settings":

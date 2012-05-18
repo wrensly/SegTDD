@@ -12,6 +12,7 @@ body {
 	padding-bottom: 10px;
 	border-top: 1px solid #C9E0ED;
 	font-size: 85%;
+	margin-top: 36px;
 }
 
 .right{
@@ -158,6 +159,7 @@ background: #eee;
 background: none;
 }
 
+/* CodeMirror */
 .CodeMirror-scroll{
 	height: auto;
 	overflow-y: hidden;
@@ -192,4 +194,12 @@ background: none;
 
 .fieldsList-alternate{
 	background #eee;
+}
+
+/* Twitter Bootstrap Override for active list */
+.navbar .nav .dropdown-menu .active > a, 
+.navbar .nav .dropdown-menu .active > a:hover {
+	color: white;
+	text-decoration: none;
+	background-color: #08C;
 }

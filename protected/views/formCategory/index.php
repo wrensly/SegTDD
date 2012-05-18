@@ -16,6 +16,7 @@ $this->search = array(
 	'advanced' => true,
 	'model' => $model,
 );
+
 ?>
 
 <?php
@@ -46,7 +47,7 @@ $this->widget('bootstrap.widgets.BootGridView', array(
             	'editor' => array(
 				    'label'=>'Open In Editor',     // text label of the button
 				    'icon'=>'edit',
-				    'url'=>'Yii::app()->createUrl("formCategory/editor",array("id"=>$data->id))',
+				    'url'=>'Yii::app()->createUrl("formCategory/formEditor",array("id"=>$data->id))',
 				),
             ),
             'template'=>'{view} {update} {delete} {editor}',
