@@ -47,11 +47,22 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textFieldRow($model,'entity_name', array('style'=>'width: 50%;', 'placeHolder' => 'name of the entity')); ?>
+		<?php echo $form->textFieldRow($model,'entity_name', 
+									   array(
+										'style'		  =>'width: 50%;', 
+										'placeHolder' => 'name of the entity'
+										)); 
+		?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textAreaRow($model,'description',array('rows'=>5, 'style'=>'width: 50%;', 'placeHolder' => 'entity description')); ?>
+		<?php echo $form->textAreaRow($model,'description',
+									  array(
+										'rows'		  =>5,
+										'style'	      =>'width: 50%;',
+										'placeHolder' => 'entity description'
+										)); 
+		?>
 	</div>
 
 	<div class='row'>
@@ -72,9 +83,21 @@
 				$lb='Save changes?';
 			}
 		?>
-
-		<?php  $this->widget('bootstrap.widgets.BootButton', array('label'=>$lb, 'buttonType'=>'submit', 'type'=>'primary', 'icon'=>'ok white',)); ?>
-		<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Cancel')); ?>
+		<?php $this->widget('bootstrap.widgets.BootButton', 
+			  array(
+				'label'		=>$lb, 
+				'buttonType'=>'submit', 
+				'type'		=>'primary', 
+				'icon'		=>'ok white',
+				)); 
+		?>
+		<?php $this->widget('bootstrap.widgets.BootButton', 
+			  array(
+			   'buttonType'	=>'reset',
+			   'icon'		=>'remove', 
+			   'label'		=>'Cancel',
+			   )); 
+		?>
 	</div>
 
 <?php $this->endWidget(); ?>

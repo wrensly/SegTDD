@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "constraint_datetime".
  *
@@ -67,10 +66,10 @@ class ConstraintDatetime extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'field_id' => 'Field',
-			'format' => 'Format',
-			'timezone' => 'Timezone',
+			'id' 			=> 'ID',
+			'field_id'	    => 'Field',
+			'format'	    => 'Format',
+			'timezone' 	    => 'Timezone',
 			'default_value' => 'Default Value',
 		);
 	}
@@ -83,8 +82,7 @@ class ConstraintDatetime extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('field_id',$this->field_id);
@@ -97,3 +95,4 @@ class ConstraintDatetime extends CActiveRecord
 		));
 	}
 }
+?>

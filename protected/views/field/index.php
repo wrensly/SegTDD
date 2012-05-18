@@ -29,37 +29,37 @@ $template = "
 </div>";
 
 $this->widget('bootstrap.widgets.BootGridView', array(
-	'id'=>'field-grid',
-	'type'=>'striped',
+	'id'		  =>'field-grid',
+	'type'		  =>'striped',
 	'dataProvider'=>$model->search(),
-	'template'=> $template,
+	'template'	  => $template,
 	'pagerCssClass' => 'pagination pull-right',
 	'columns'=>array(
 		array(
-            'name'=>'entity_id',
+            'name' =>'entity_id',
             'value'=>'$data->entity[\'entity_name\']',
         ),
 
 		'fieldname',
 		'label',
 		array(
-            'name'=>'datatype',
+            'name' =>'datatype',
             'value'=>array($this,'renderDataType'), 
         ),
 
 		'description',
 		array(
-            'name'=>'multiple',
+            'name'  =>'multiple',
             'value' =>'Yii::app()->format->boolean($data->multiple)',
             //array($this,'renderMultiple'),
         ),
         array(
-            'name'=>'required',
+            'name'  =>'required',
             'value' =>'Yii::app()->format->boolean($data->required)',
             //array($this,'renderRequired'),
         ),
         array(
-            'name'=>'attribute',
+            'name'  =>'attribute',
             'value' =>'Yii::app()->format->boolean($data->attribute)',
             //array($this,'renderAttribute'),
         ),

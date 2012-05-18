@@ -55,15 +55,15 @@ $('#Field_computed').click(function(){ $('#constraintComputed').toggle(250); });
 	 					<?php echo $form->textFieldRow($fieldModel,'fieldname', array(
 			 				'size'=>60,
 			 				'maxlength'=>100, 
-			 				'hint' => 'Name of the field just like naming a column in a database.',)); ?>
+			 				'hint'=> 'Name of the field just like naming a column in a database.',)); ?>
 						<?php echo $form->textFieldRow($fieldModel,'label',array(
 							'size'=>45,
 							'maxlength'=>45,
-							'hint' => 'Label of the field that appears in the actual form.',)); ?>
+							'hint'=> 'Label of the field that appears in the actual form.',)); ?>
 						<?php echo $form->textFieldRow($fieldModel,'alias',array(
 							'size'=>45,
 							'maxlength'=>45,
-							'hint' => 'Short Name of the field when querying to the database.',)); ?>
+							'hint'=> 'Short Name of the field when querying to the database.',)); ?>
 						<?php
 							echo $form->dropDownListRow($fieldModel,'datatype',
 								array(
@@ -146,8 +146,21 @@ $('#Field_computed').click(function(){ $('#constraintComputed').toggle(250); });
 		</div>
 	</div>
 	<div class="form-actions">
-    	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'type'=>'primary', 'icon'=>'ok white', 'label'=>'Submit')); ?>
-    	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Reset')); ?>
+    	<?php $this->widget('bootstrap.widgets.BootButton', 
+    							array(
+    								'buttonType'=>'submit', 
+    								'type'		=>'primary', 
+    								'icon'		=>'ok white',
+    								'label'		=>'Submit'
+    								 ));
+    	?>
+    	<?php $this->widget('bootstrap.widgets.BootButton', 
+    							array(
+    								'buttonType'=>'reset',
+    								'icon'		=>'remove', 
+    								'label'		=>'Reset'
+    								 ));
+    	?>
 	</div>
 
 <?php $this->endWidget(); ?>

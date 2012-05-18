@@ -1,8 +1,6 @@
 <?php
-
 /**
  * This is the model class for table "constraint_numeric".
- *
  * The followings are the available columns in table 'constraint_numeric':
  * @property integer $id
  * @property integer $field_id
@@ -10,7 +8,6 @@
  * @property double $maxvalue
  * @property double $default_value
  * @property integer $decimaldigit
- *
  * The followings are the available model relations:
  * @property Field $field
  */
@@ -68,11 +65,11 @@ class ConstraintNumeric extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'field_id' => 'Field',
-			'minvalue' => 'Minimum Value',
-			'maxvalue' => 'Maximum Value',
-			'default_value' => 'Default Value',
+			'id' 		   => 'ID',
+			'field_id' 	   => 'Field',
+			'minvalue' 	   => 'Minimum Value',
+			'maxvalue' 	   => 'Maximum Value',
+			'default_value'=> 'Default Value',
 			'decimaldigit' => 'No. of Decimal Digits',
 		);
 	}
@@ -85,8 +82,7 @@ class ConstraintNumeric extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('field_id',$this->field_id);
@@ -100,3 +96,4 @@ class ConstraintNumeric extends CActiveRecord
 		));
 	}
 }
+?>

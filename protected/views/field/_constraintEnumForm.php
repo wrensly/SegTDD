@@ -39,9 +39,9 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.jso
                     <td colspan="3">
                         <?php $this->widget('bootstrap.widgets.BootButton', array(
                             'label' => 'Add Option',
-                            'type' => 'warning',
-                            'icon' => 'plus white',
-                            'htmlOptions' => array(
+                            'type'  => 'warning',
+                            'icon'  => 'plus white',
+                            'htmlOptions'   => array(
                                     'class' => 'add',
                                 ),
                         )); ?>
@@ -53,9 +53,9 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.jso
                                     <input type="hidden" class="rowIndex" value="{0}" />
                                     <?php $this->widget('bootstrap.widgets.BootButton', array(
                                         'label' => '',
-                                        'type' => 'danger',
-                                        'icon' => 'minus white',
-                                        'htmlOptions' => array(
+                                        'type'  => 'danger',
+                                        'icon'  => 'minus white',
+                                        'htmlOptions'   => array(
                                                 'class' => 'remove',
                                             ),
                                     )); ?>
@@ -82,9 +82,9 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.jso
                                 <input type="hidden" class="rowIndex" value="$i" />
                                 <?php $this->widget('bootstrap.widgets.BootButton', array(
                                     'label' => '',
-                                    'type' => 'danger',
-                                    'icon' => 'minus white',
-                                    'htmlOptions' => array(
+                                    'type'  => 'danger',
+                                    'icon'  => 'minus white',
+                                    'htmlOptions'   => array(
                                             'class' => 'remove',
                                         ),
                                 )); ?>
@@ -101,9 +101,9 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.jso
  
 <div class="modal-footer">
     <?php $this->widget('bootstrap.widgets.BootButton', array(
-        'type'=>'primary',
+        'type' =>'primary',
         'label'=>'Save changes',
-        'url'=>'#',
+        'url'  =>'#',
         'htmlOptions'=>array('data-dismiss'=>'modal', 'id' => 'modalSave'),
     )); ?>
 </div>
@@ -116,14 +116,17 @@ defineDefaultsof($constraintEnumModel,array(
     'maxselect' => 1,
 ));
 ?>
+
 <?php echo $form->textFieldRow($constraintEnumModel,'minselect'); ?>
 <?php echo $form->textFieldRow($constraintEnumModel,'maxselect'); ?>
+
 <div class="control-group">
 	<label class="control-label">Options</label>
 	<div class="controls">
 		<?php echo CHtml::link('Modify Options','#optionsListModal', array('class'=>'btn btn-warning', 'data-toggle'=>'modal')); ?>	
 	</div>
 </div>
+
 <?php echo $form->dropDownListRow($constraintEnumModel,'default_value',$options,array(
       'prompt' => '-SELECT-',
 )); ?>

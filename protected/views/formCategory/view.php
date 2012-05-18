@@ -34,14 +34,14 @@ $this->content_title = 'View ' . $model->form->code;
 			'attributes'=>array(
 				array('name' => 'category_name', 'value' => $model->category->category_name),
 				array(
-					'label' => 'Entity Association',
+					'label'=> 'Entity Association',
 					'type' => 'raw',
-			        'value' => CHtml::link(CHtml::encode($entity->entity_name),
+			        'value'=> CHtml::link(CHtml::encode($entity->entity_name),
 			        	array('entity/view','id'=>$entity->id)),
 		        ),
 				array('name' => 'tags', 'value' => implode(',', $tags)),
 				array(
-		            'name'=>'layout',
+		            'name' =>'layout',
 		            'type' => 'raw',
 		            'value'=> CHtml::link('View Code','#viewCodeModal', array('class'=>'btn btn-warning btn-mini', 'data-toggle'=>'modal')),
 		        ),
@@ -71,7 +71,7 @@ $this->content_title = 'View ' . $model->form->code;
 <div class="modal-footer">
     <?php $this->widget('bootstrap.widgets.BootButton', array(
         'label'=>'Close',
-        'url'=>'#',
+        'url'  =>'#',
         'htmlOptions'=>array('data-dismiss'=>'modal'),
     )); ?>
 </div>

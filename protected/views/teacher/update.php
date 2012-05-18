@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create Teacher', 'url'=>array('create')),
-	array('label'=>'View Teacher', 'url'=>array('view', 'id'=>$model->TID)),
+	array('label'=>'View Teacher',   'url'=>array('view', 'id'=>$model->TID)),
 	array('label'=>'Manage Teacher', 'url'=>array('admin')),
 );
 ?>

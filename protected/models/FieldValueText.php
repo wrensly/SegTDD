@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "field_value_text".
  *
@@ -62,10 +61,10 @@ class FieldValueText extends MyActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
+			'entity' 		 => array(self::BELONGS_TO, 'Entity', 'entity_id'),
 			'entityInstance' => array(self::BELONGS_TO, 'EntityInstance', 'entity_instance_id'),
-			'field' => array(self::BELONGS_TO, 'Field', 'field_id'),
-			'snapshot' => array(self::BELONGS_TO, 'Snapshot', 'snapshot_id'),
+			'field' 		 => array(self::BELONGS_TO, 'Field', 'field_id'),
+			'snapshot' 		 => array(self::BELONGS_TO, 'Snapshot', 'snapshot_id'),
 		);
 	}
 
@@ -75,11 +74,11 @@ class FieldValueText extends MyActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'field_id' => 'Field',
-			'value' => 'Value',
-			'entity_id' => 'Entity',
-			'priority' => 'Priority',
+			'id' 		  => 'ID',
+			'field_id'    => 'Field',
+			'value' 	  => 'Value',
+			'entity_id'   => 'Entity',
+			'priority' 	  => 'Priority',
 			'snapshot_id' => 'Snapshot',
 			'entity_instance_id' => 'Entity Instance',
 		);
@@ -109,3 +108,4 @@ class FieldValueText extends MyActiveRecord
 		));
 	}
 }
+?>

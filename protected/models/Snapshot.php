@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "snapshot".
  *
@@ -63,13 +62,13 @@ class Snapshot extends MyActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'fieldValueCompounds' => array(self::HAS_MANY, 'FieldValueCompound', 'snapshot_id'),
-			'fieldValueDates' => array(self::HAS_MANY, 'FieldValueDate', 'snapshot_id'),
+			'fieldValueDates' 	  => array(self::HAS_MANY, 'FieldValueDate', 'snapshot_id'),
 			'fieldValueDatetimes' => array(self::HAS_MANY, 'FieldValueDatetime', 'snapshot_id'),
-			'fieldValueEnums' => array(self::HAS_MANY, 'FieldValueEnum', 'snapshot_id'),
-			'fieldValueFiles' => array(self::HAS_MANY, 'FieldValueFile', 'snapshot_id'),
-			'fieldValueNumerics' => array(self::HAS_MANY, 'FieldValueNumeric', 'snapshot_id'),
-			'fieldValueTexts' => array(self::HAS_MANY, 'FieldValueText', 'snapshot_id'),
-			'fieldValueTimes' => array(self::HAS_MANY, 'FieldValueTime', 'snapshot_id'),
+			'fieldValueEnums' 	  => array(self::HAS_MANY, 'FieldValueEnum', 'snapshot_id'),
+			'fieldValueFiles' 	  => array(self::HAS_MANY, 'FieldValueFile', 'snapshot_id'),
+			'fieldValueNumerics'  => array(self::HAS_MANY, 'FieldValueNumeric', 'snapshot_id'),
+			'fieldValueTexts' 	  => array(self::HAS_MANY, 'FieldValueText', 'snapshot_id'),
+			'fieldValueTimes'  	  => array(self::HAS_MANY, 'FieldValueTime', 'snapshot_id'),
 		);
 	}
 
@@ -79,7 +78,7 @@ class Snapshot extends MyActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id'   => 'ID',
 			'date' => 'Date',
 		);
 	}
@@ -92,7 +91,6 @@ class Snapshot extends MyActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
@@ -103,3 +101,4 @@ class Snapshot extends MyActiveRecord
 		));
 	}
 }
+?>

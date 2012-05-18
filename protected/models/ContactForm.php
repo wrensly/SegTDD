@@ -1,12 +1,14 @@
 <?php
-
 /**
  * ContactForm class.
  * ContactForm is the data structure for keeping
  * contact form data. It is used by the 'contact' action of 'SiteController'.
  */
 class ContactForm extends CFormModel
-{
+{	
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public $name;
 	public $email;
 	public $subject;
@@ -40,3 +42,4 @@ class ContactForm extends CFormModel
 		);
 	}
 }
+?>

@@ -30,23 +30,23 @@ class FieldController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'users'=>array('*'),
+				'users'	 =>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'	 =>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete','testFieldValue', 'test'),
-				'users'=>array('admin'),
+				'users'	 =>array('admin'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('*'),
+				'users'	 =>array('*'),
 			),
 
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
                 'actions'=>array('InboundSearch','OutboundSearch','admin','FreeSearch','SearchEngine'),
-                'users'=>array('admin'),
+                'users'	 =>array('admin'),
             ),
 		);
 	}
@@ -57,7 +57,6 @@ class FieldController extends Controller
 	 */
 	public function actionView($id)
 	{
-
 		// load field model
 		$fieldModel              = $this->loadModel($id);
 
@@ -94,7 +93,7 @@ class FieldController extends Controller
 			'constraintDatetimeModel' =>$constraintDatetimeModel,
 			'constraintEnumModel'     =>$constraintEnumModel,
 			'constraintFileModel'     =>$constraintFileModel,
-			'constraintComputedModel'  =>$constraintComputedModel,
+			'constraintComputedModel' =>$constraintComputedModel,
 		));
 	}
 
@@ -210,13 +209,13 @@ class FieldController extends Controller
 		// if the constraint model is not null, update the initialized constraint models
 		if($constraintModel!==null){
 			switch ($fieldModel->datatype){
-				case 'T'     : $constraintTextModel     = $constraintModel; break;
-				case 'N'  : $constraintNumericModel  = $constraintModel; break;
-				case 'D'     :
-				case 't'     :
+				case 'T' : $constraintTextModel     = $constraintModel; break;
+				case 'N' : $constraintNumericModel  = $constraintModel; break;
+				case 'D' :
+				case 't' :
 				case 'd' : $constraintDatetimeModel = $constraintModel; break;
-				case 'O'   : $constraintEnumModel     = $constraintModel; break;
-				case 'F'     : $constraintFileModel     = $constraintModel; break;
+				case 'O' : $constraintEnumModel     = $constraintModel; break;
+				case 'F' : $constraintFileModel     = $constraintModel; break;
 				case 'X' : $constraintComputedModel = $constraintModel; break;
 				case 'C' :                                              break;
 			};
@@ -260,7 +259,7 @@ class FieldController extends Controller
 					$constraintModel    = $constraintFileModel;     break;
 				case 'X' :
 					$constraintDataType = 'ConstraintComputed';
-					$constraintModel    = $constraintComputedModel;     break;
+					$constraintModel    = $constraintComputedModel; break;
 				case 'C' :
 					if(isset($_POST['ConstraintCompound'])){
 						$child = $_POST['ConstraintCompound']['child'];
@@ -291,7 +290,7 @@ class FieldController extends Controller
 			'constraintDatetimeModel' =>$constraintDatetimeModel,
 			'constraintEnumModel'     =>$constraintEnumModel,
 			'constraintFileModel'     =>$constraintFileModel,
-			'constraintComputedModel'  =>$constraintComputedModel,
+			'constraintComputedModel' =>$constraintComputedModel,
 		));
 	}
 
@@ -329,8 +328,9 @@ class FieldController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionIndex(){
-		$model=new Field('search');
+	public function actionIndex()
+	{
+		$model = new Field('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Field'])){
 			$model->attributes=$_GET['Field'];
@@ -361,19 +361,19 @@ class FieldController extends Controller
 		switch ($datatype){
 			case 'T'     : 
 				$model =     ConstraintText::model()->findByAttributes(array('field_id' => $id, )); break;
-			case 'N'  : 
+			case 'N'  	 : 
 				$model =  Constraintnumeric::model()->findByAttributes(array('field_id' => $id, )); break;
 			case 'D'     :
 			case 't'     :
-			case 'd' : 
+			case 'd' 	 : 
 				$model = ConstraintDatetime::model()->findByAttributes(array('field_id' => $id, )); break;
-			case 'O'   : 
+			case 'O'     : 
 				$model =     ConstraintEnum::model()->findByAttributes(array('field_id' => $id, )); break;
 			case 'F'     : 
 				$model =     ConstraintFile::model()->findByAttributes(array('field_id' => $id, )); break;
-			case 'X' : 
+			case 'X'     : 
 				$model = ConstraintComputed::model()->findByAttributes(array('field_id' => $id, )); break;
-			case 'C' : 
+			case 'C'     : 
 				$model = null;
 		};
 		//if($model===null)
@@ -411,23 +411,28 @@ class FieldController extends Controller
 	 * @param CModel The model of the current row data
 	 * @param integer The row index
 	 */
-	public function renderDataType($data,$row){
+	public function renderDataType($data,$row)
+	{
 		$dataType = '';
 		switch ($data->datatype){
-			case 'T'     : $dataType = 'Text';     break;
+			case 'T'  : $dataType = 'Text';     break;
 			case 'N'  : $dataType = 'Numeric';  break;
-			case 'D'     : $dataType = 'Date';     break;
-			case 't'     : $dataType = 'Time';     break;
-			case 'd' : $dataType = 'Datetime'; break;
-			case 'O'   : $dataType = 'Option';   break;
-			case 'F'     : $dataType = 'File';     break;
-			case 'X' : $dataType = 'Computed'; break;
-			case 'C' : $dataType = 'Compound'; break;
+			case 'D'  : $dataType = 'Date';     break;
+			case 't'  : $dataType = 'Time';     break;
+			case 'd'  : $dataType = 'Datetime'; break;
+			case 'O'  : $dataType = 'Option';   break;
+			case 'F'  : $dataType = 'File';     break;
+			case 'X'  : $dataType = 'Computed'; break;
+			case 'C'  : $dataType = 'Compound'; break;
 		}
         return $dataType;
 	}
 	
-	public function actionTestFieldValue(){
+	/**	
+	 * @todo Compose PHP doc
+	 */
+	public function actionTestFieldValue()
+	{
 		$fieldValue = new FieldValue(149);
 		$fieldValueModel = $fieldValue->model();
 		$fieldValueModel->entity_instance_id = 1;
@@ -442,7 +447,11 @@ class FieldController extends Controller
 		} else echo "failed.<pre>", var_dump($fieldValueModel->getErrors()), "</pre>";
 	}
 
-	public function actionTest(){
+	/**	
+	 * @todo Compose PHP doc
+	 */
+	public function actionTest()
+	{
 		$formGen = new FormGenerator(2);
 		
 		$section1 = array(
@@ -473,4 +482,5 @@ class FieldController extends Controller
 		echo $formGen->previewXML();
 	}
 }
+?>
 

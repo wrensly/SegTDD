@@ -20,12 +20,12 @@ $('.advanced-search-form').submit(function(){
 ");
 
 $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'post',
-    'id'=>'inlineForm',
-    'type'=>'inline',
-    'htmlOptions' => array(
-		'class' => 'search-form pull-right',
+	'action'	 =>Yii::app()->createUrl($this->route),
+	'method'	 =>'post',
+    'id'	     =>'inlineForm',
+    'type'	     =>'inline',
+    'htmlOptions'=> array(
+		'class'  => 'search-form pull-right',
 	),
    // 'htmlOptions'=>array('class'=>'well'),
 ));
@@ -33,26 +33,27 @@ $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 
 <div class="input-append">
 <?php
-if($this->search['simple']){
-echo $form->textFieldRow($model,'category_name',array('class'=>'span2','maxlength'=>45));
-$this->widget('bootstrap.widgets.BootButton', array(
-	'buttonType'=>'submit', 
-	'type'=>'success', 
-	'icon'=>'search white', 
-	'label'=>'',
-));
+	if($this->search['simple']){
+		echo $form->textFieldRow($model,'category_name',array('class'=>'span2','maxlength'=>45));
+		$this->widget('bootstrap.widgets.BootButton',
+				array(
+				'buttonType'=>'submit', 
+				'type'		=>'success', 
+				'icon'		=>'search white', 
+				'label'		=>'',
+				));
 }
-if($this->search['advanced']){
-	$this->widget('bootstrap.widgets.BootButton', array(
-		'buttonType'=>'button',
-		'type'=>'success', 
-		'icon' => 'chevron-down white',
-		'label' => '',
-		'htmlOptions' => array('class'=>'search-button'),
-	));
+	if($this->search['advanced']){
+		$this->widget('bootstrap.widgets.BootButton', 
+				array(
+				'buttonType' =>'button',
+				'type'		 =>'success', 
+				'icon' 	 	 => 'chevron-down white',
+				'label'		 => '',
+				'htmlOptions'=> array('class'=>'search-button'),
+				));
 }
 ?>
 </div>
-<?php
-$this->endWidget();
-?>
+
+<?php $this->endWidget(); ?>

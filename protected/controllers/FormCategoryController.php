@@ -1,5 +1,7 @@
 <?php
-
+	/**	
+	 * @todo Compose PHP doc
+	 */
 class FormCategoryController extends Controller
 {
 	/**
@@ -28,18 +30,18 @@ class FormCategoryController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'users'=>array('*'),
+				'users'	 =>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'	 =>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete','formeditor','xmleditor'),
-				'users'=>array('admin'),
+				'users'	 =>array('admin'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('*'),
+				'users'	 =>array('*'),
 			),
 		);
 	}
@@ -50,14 +52,14 @@ class FormCategoryController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$model = $this->loadModel($id);
-		$form = Form::model()->findByPk($model->form_id);
+		$model  = $this->loadModel($id);
+		$form   = Form::model()->findByPk($model->form_id);
 		$entity = Entity::model()->findByPk($form->entity_id);
-		$tags = $model->getTags($model->form_id);
+		$tags   = $model->getTags($model->form_id);
 		$this->render('view',array(
-			'model'=>$model,
+			'model' =>$model,
 			'entity'=>$entity,
-			'tags'=>$tags,
+			'tags'	=>$tags,
 		));
 
 	}
@@ -71,15 +73,14 @@ class FormCategoryController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Form;
-		$tags = new Tag;
-		$formTag = new FormTag;
+		$model = new Form;
+		$tags  = new Tag;
+		$formTag  = new FormTag;
 		$category = new Category;
 		$formCategory = new FormCategory;
 		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		
 		if(isset($_POST['Form']))
 		{
 			$model->attributes=$_POST['Form'];
@@ -119,11 +120,11 @@ class FormCategoryController extends Controller
 		
 
 			$this->render('create',array(
-			'model'=>$model,
+			'model'		   =>$model,
 			'formCategory' => $formCategory,
-			'category' => $category,
-			'tags' => $tags,
-			'suggest' => $this->actionSuggest(),
+			'category' 	   => $category,
+			'tags' 		   => $tags,
+			'suggest' 	   => $this->actionSuggest(),
 		));
 	}
 
@@ -137,7 +138,6 @@ class FormCategoryController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		
 		$tags = new Tag;
 		$category=new Category;
 		$formTag = new FormTag;
@@ -148,7 +148,6 @@ class FormCategoryController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Form']))
 		{
 			$model->attributes=$_POST['Form'];
@@ -187,11 +186,11 @@ class FormCategoryController extends Controller
 		
 
 			$this->render('update',array(
-			'model'=>$model,
+			'model'		  =>$model,
 			'formCategory'=>$formCategory,
-			'category' => $category,
-			'tags' => $tags,
-			'suggest' => $this->actionSuggest(),
+			'category'    => $category,
+			'tags' 		  => $tags,
+			'suggest' 	  => $this->actionSuggest(),
 		));
 	}
 
@@ -220,7 +219,6 @@ class FormCategoryController extends Controller
 	 */
 	public function actionIndex()
 	{
-
 		$model=new FormCategory('search');
 		$model->unsetAttributes(); 
 		
@@ -243,7 +241,6 @@ class FormCategoryController extends Controller
 		$form = Form::model()->findByPk($model->form_id);
 		$entity = Entity::model()->findByPk($form->entity_id);
 		$tags = $model->getTags($model->form_id);
-		
 
 		if(isset($_POST['Form']))
 		{
@@ -272,7 +269,6 @@ class FormCategoryController extends Controller
 		$entity = Entity::model()->findByPk($form->entity_id);
 		$tags = $model->getTags($model->form_id);
 		
-
 		if(isset($_POST['Form']))
 		{
 			$form->attributes=$_POST['Form'];
@@ -288,6 +284,7 @@ class FormCategoryController extends Controller
 			'tags'=>$tags,
 		));
 	}
+
 	/**
 	 *Array of Data for the autocomplete of Tags
 	 *Returns an array of Tags
@@ -309,7 +306,7 @@ class FormCategoryController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=FormCategory::model()->findByPk($id);
+		$model = FormCategory::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -339,3 +336,4 @@ class FormCategoryController extends Controller
 		return 'Inactive';
 	}
 }
+?>

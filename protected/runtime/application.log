@@ -1,0 +1,74 @@
+2012/05/18 08:31:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1452 Cannot add or update a child row: a foreign key constraint fails (`segtdd/constraint_text`, CONSTRAINT `constraint_text_field_id` FOREIGN KEY (`field_id`) REFERENCES `field` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `constraint_text` (`minlength`, `maxlength`, `encoding`, `format`, `default_value`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\wamp\www\SegTDD\protected\controllers\FieldController.php (170)
+in C:\wamp\www\SegTDD\index.php (16)
+2012/05/18 08:31:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1452 Cannot add or update a child row: a foreign key constraint fails (`segtdd/constraint_text`, CONSTRAINT `constraint_text_field_id` FOREIGN KEY (`field_id`) REFERENCES `field` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `constraint_text` (`minlength`, `maxlength`, `encoding`, `format`, `default_value`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\wamp\www\SegTDD\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\SegTDD\protected\controllers\FieldController.php(170): CActiveRecord->save()
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FieldController->actionCreate()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('create')
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('field/create')
+#14 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/field/create.htm
+HTTP_REFERER=http://localhost/SegTDD/field/create.htm
+---
+2012/05/18 08:57:07 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1452 Cannot add or update a child row: a foreign key constraint fails (`segtdd/form_category`, CONSTRAINT `form_id_FK` FOREIGN KEY (`form_id`) REFERENCES `form` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `form_category` (`category_id`) VALUES (:yp0).
+in C:\wamp\www\SegTDD\protected\controllers\FormCategoryController.php (117)
+in C:\wamp\www\SegTDD\index.php (16)
+2012/05/18 08:57:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1452 Cannot add or update a child row: a foreign key constraint fails (`segtdd/form_category`, CONSTRAINT `form_id_FK` FOREIGN KEY (`form_id`) REFERENCES `form` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `form_category` (`category_id`) VALUES (:yp0)' in C:\wamp\www\SegTDD\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\wamp\www\SegTDD\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\SegTDD\protected\controllers\FormCategoryController.php(117): CActiveRecord->save(false)
+#3 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): FormCategoryController->actionCreate()
+#4 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('create')
+#13 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('formCategory/cr...')
+#14 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/SegTDD/formCategory/create.htm
+HTTP_REFERER=http://localhost/SegTDD/formCategory/create.htm
+---
+2012/05/18 09:36:02 [error] [exception.CException] exception 'CException' with message 'EntityController cannot find the requested view "_advancedSearch".' in C:\wamp\www\SegTDD\framework\web\CController.php:879
+Stack trace:
+#0 C:\wamp\www\SegTDD\protected\views\layouts\column1_mod.php(39): CController->renderPartial('_advancedSearch', Array)
+#1 C:\wamp\www\SegTDD\framework\web\CBaseController.php(127): require('C:\wamp\www\Seg...')
+#2 C:\wamp\www\SegTDD\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\Seg...', Array, true)
+#3 C:\wamp\www\SegTDD\framework\web\CController.php(785): CBaseController->renderFile('C:\wamp\www\Seg...', Array, true)
+#4 C:\wamp\www\SegTDD\protected\controllers\EntityController.php(135): CController->render('index', Array)
+#5 C:\wamp\www\SegTDD\framework\web\actions\CInlineAction.php(50): EntityController->actionIndex()
+#6 C:\wamp\www\SegTDD\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\SegTDD\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\wamp\www\SegTDD\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\SegTDD\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\wamp\www\SegTDD\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\SegTDD\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\wamp\www\SegTDD\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(276): CController->run('index')
+#15 C:\wamp\www\SegTDD\framework\web\CWebApplication.php(135): CWebApplication->runController('entity/index')
+#16 C:\wamp\www\SegTDD\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\SegTDD\index.php(16): CApplication->run()
+#18 {main}
+REQUEST_URI=/SegTDD/entity/index.htm
+HTTP_REFERER=http://localhost/SegTDD/formCategory/3.htm
+---

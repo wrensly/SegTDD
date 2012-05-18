@@ -1,8 +1,6 @@
 <?php
-
 /**
  * This is the model class for table "constraint_text".
- *
  * The followings are the available columns in table 'constraint_text':
  * @property integer $id
  * @property integer $field_id
@@ -11,7 +9,6 @@
  * @property string $encoding
  * @property string $format
  * @property string $default_value
- *
  * The followings are the available model relations:
  * @property Field $field
  */
@@ -70,12 +67,12 @@ class ConstraintText extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'field_id' => 'Field',
-			'minlength' => 'Minimum Length',
-			'maxlength' => 'Maximum Length',
-			'encoding' => 'Encoding',
-			'format' => 'Format',
+			'id' 			=> 'ID',
+			'field_id'	    => 'Field',
+			'minlength'     => 'Minimum Length',
+			'maxlength' 	=> 'Maximum Length',
+			'encoding' 		=> 'Encoding',
+			'format' 		=> 'Format',
 			'default_value' => 'Default Value',
 		);
 	}
@@ -88,8 +85,7 @@ class ConstraintText extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('field_id',$this->field_id);
@@ -104,3 +100,4 @@ class ConstraintText extends CActiveRecord
 		));
 	}
 }
+?>

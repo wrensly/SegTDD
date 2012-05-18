@@ -4,6 +4,7 @@ $('#Field_computed').is(':checked') ? $('#constraintComputed').show(250) : $('#c
 $('#Field_computed').click(function(){ $('#constraintComputed').toggle(250); });
 ");
 ?>
+
 <?php $this->beginWidget('bootstrap.widgets.BootModal', array('id'=>'viewCodeModal')); ?>
  
 <div class="modal-header">
@@ -16,6 +17,7 @@ $('#Field_computed').click(function(){ $('#constraintComputed').toggle(250); });
         <a class="close" data-dismiss="alert">×</a>
         <strong>Use Javascript!</strong> Please use javascript in defining your View Expression code.
     </div>
+
     <?php echo $form->textArea($constraintComputedModel,'view_expression_data',array(
         'rows'=>6,
         'cols'=>200,
@@ -25,19 +27,20 @@ $('#Field_computed').click(function(){ $('#constraintComputed').toggle(250); });
  
 <div class="modal-footer">
     <?php $this->widget('bootstrap.widgets.BootButton', array(
-        'type'=>'primary',
+        'type' =>'primary',
         'label'=>'Save changes',
-        'url'=>'#',
+        'url'  =>'#',
         'htmlOptions'=>array('data-dismiss'=>'modal'),
     )); ?>
     <?php $this->widget('bootstrap.widgets.BootButton', array(
         'label'=>'Close',
-        'url'=>'#',
+        'url'  =>'#',
         'htmlOptions'=>array('data-dismiss'=>'modal'),
     )); ?>
 </div>
  
 <?php $this->endWidget(); ?>
+
 <div class="control-group">
 	<?php echo $form->labelEx($constraintComputedModel,'view_expression_data',array('class'=>'control-label')); ?>
     <div class="controls">

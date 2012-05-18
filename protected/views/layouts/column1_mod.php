@@ -15,7 +15,7 @@
 						$this->widget('bootstrap.widgets.BootButton',$item);
 					} else {
 						$this->widget('bootstrap.widgets.BootButtonGroup', array(
-							'type' => 'success',
+							'type'    => 'success',
 							'buttons' => array(
 								array( 'label' => 'Options', 'items' => $this->menu, ),
 							),

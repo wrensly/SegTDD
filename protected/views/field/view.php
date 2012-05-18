@@ -23,22 +23,22 @@ $this->content_title = 'View Field '.$fieldModel->fieldname;
 				'label',
 				'alias',
 				array(
-		            'name'=>'datatype',
+		            'name' =>'datatype',
 		            'value'=>$this->renderDataType($fieldModel,0),
 		        ),
 				'description',
 				array(
-		            'name'=>'multiple',
+		            'name' =>'multiple',
 		            'value'=>Yii::app()->format->boolean($fieldModel->multiple),
 		            //$this->renderBoolean($fieldModel,'multiple'),
 		        ),
 				array(
-		            'name'=>'required',
+		            'name' =>'required',
 		            'value'=>Yii::app()->format->boolean($fieldModel->required),
 		            //$this->renderBoolean($fieldModel,'required'),
 		        ),
 		        array(
-		            'name'=>'attribute',
+		            'name' =>'attribute',
 		            'value'=>Yii::app()->format->boolean($fieldModel->attribute),
 		            //$this->renderBoolean($fieldModel,'attribute'),
 		        ),
@@ -95,9 +95,9 @@ $this->content_title = 'View Field '.$fieldModel->fieldname;
 			'attributes'=>array(
 				array(
 						'name' => 'entity_id',
-						'label' => 'Entity Association',
+						'label'=> 'Entity Association',
 						'type' => 'raw',
-				        'value' => CHtml::link(CHtml::encode($fieldModel->entity->entity_name),
+				        'value'=> CHtml::link(CHtml::encode($fieldModel->entity->entity_name),
 				        	array('entity/view','id'=>$fieldModel->entity->id)),
 			        ),
 			),

@@ -5,8 +5,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Entity', 'url'=>array('index')),
-	array('label'=>'Create Entity', 'url'=>array('create')),
+	array('label'=>'List Entity',  'url'=>array('index')),
+	array('label'=>'Create Entity','url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -38,10 +38,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'entity-grid',
+	'id'		  =>'entity-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
+	'filter'	  =>$model,
+	'columns'	  =>array(
 		'id',
 		'entity_name',
 		'description',

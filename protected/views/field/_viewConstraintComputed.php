@@ -2,7 +2,7 @@
 			'data'=>$constraintComputedModel,
 			'attributes'=>array(
 				array(
-		            'name'=>'view_expression_data',
+		            'name' =>'view_expression_data',
 		            'type' => 'raw',
 		            'value'=> CHtml::link('View Code','#viewCodeModal', array('class'=>'btn btn-warning btn-mini', 'data-toggle'=>'modal')),
 		        ),

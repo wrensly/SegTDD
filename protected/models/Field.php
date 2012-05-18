@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "field".
  *
@@ -55,17 +54,25 @@ class Field extends MyActiveRecord
 	 * @param string $className active record class name.
 	 * @return Field the static model class
 	 */
-
 	private $_newProperty;
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
      public function getNewProperty(){
          return $this->_newProperty;
      }
 
+     /**	
+	 * @todo Compose PHP doc
+	 */
      public function setNewProperty($newProperty){
          $this->_newProperty = $newProperty;
      }
 
+    /**	
+	 * @todo Compose PHP doc
+	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -109,23 +116,23 @@ class Field extends MyActiveRecord
 		return array(
 			'constraintDatetime' => array(self::HAS_ONE, 'ConstraintDatetime', 'field_id'),
 			'constraintComputed' => array(self::HAS_ONE, 'ConstraintComputed', 'field_id'),
-			'constraintEnum' => array(self::HAS_ONE, 'ConstraintEnum', 'field_id'),
-			'constraintFile' => array(self::HAS_ONE, 'ConstraintFile', 'field_id'),
-			'constraintNumeric' => array(self::HAS_ONE, 'ConstraintNumeric', 'field_id'),
-			'constraintText' => array(self::HAS_ONE, 'ConstraintText', 'field_id'),
-			'entityAttributes' => array(self::HAS_MANY, 'EntityAttribute', 'field_id'),
-			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
-			'parent' => array(self::BELONGS_TO, 'Field', 'parent_id'),
-            'fields' => array(self::HAS_MANY, 'Field', 'parent_id'),
-			'fieldValueCompounds' => array(self::HAS_MANY, 'FieldValueCompound', 'id'),
-			'fieldValueComputeds' => array(self::HAS_MANY, 'FieldValueComputed', 'id'),
-			'fieldValueDates' => array(self::HAS_MANY, 'FieldValueDate', 'field_id'),
-			'fieldValueDatetimes' => array(self::HAS_MANY, 'FieldValueDatetime', 'field_id'),
-			'fieldValueEnums' => array(self::HAS_MANY, 'FieldValueEnum', 'field_id'),
-			'fieldValueFiles' => array(self::HAS_MANY, 'FieldValueFile', 'field_id'),
+			'constraintEnum' 	 => array(self::HAS_ONE, 'ConstraintEnum', 'field_id'),
+			'constraintFile' 	 => array(self::HAS_ONE, 'ConstraintFile', 'field_id'),
+			'constraintNumeric'  => array(self::HAS_ONE, 'ConstraintNumeric', 'field_id'),
+			'constraintText' 	 => array(self::HAS_ONE, 'ConstraintText', 'field_id'),
+			'entityAttributes' 	 => array(self::HAS_MANY, 'EntityAttribute', 'field_id'),
+			'entity' 			 => array(self::BELONGS_TO, 'Entity', 'entity_id'),
+			'parent' 			 => array(self::BELONGS_TO, 'Field', 'parent_id'),
+            'fields' 			 => array(self::HAS_MANY, 'Field', 'parent_id'),
+			'fieldValueCompounds'=> array(self::HAS_MANY, 'FieldValueCompound', 'id'),
+			'fieldValueComputeds'=> array(self::HAS_MANY, 'FieldValueComputed', 'id'),
+			'fieldValueDates' 	 => array(self::HAS_MANY, 'FieldValueDate', 'field_id'),
+			'fieldValueDatetimes'=> array(self::HAS_MANY, 'FieldValueDatetime', 'field_id'),
+			'fieldValueEnums' 	 => array(self::HAS_MANY, 'FieldValueEnum', 'field_id'),
+			'fieldValueFiles' 	 => array(self::HAS_MANY, 'FieldValueFile', 'field_id'),
 			'fieldValueNumerics' => array(self::HAS_MANY, 'FieldValueNumeric', 'field_id'),
-			'fieldValueTexts' => array(self::HAS_MANY, 'FieldValueText', 'field_id'),
-			'fieldValueTimes' => array(self::HAS_MANY, 'FieldValueTime', 'field_id'),
+			'fieldValueTexts'	 => array(self::HAS_MANY, 'FieldValueText', 'field_id'),
+			'fieldValueTimes'	 => array(self::HAS_MANY, 'FieldValueTime', 'field_id'),
 		);
 	}
 
@@ -135,18 +142,18 @@ class Field extends MyActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'fieldname' => 'Field Name',
-			'datatype' => 'Data Type',
-			'description' => 'Description',
-			'multiple' => 'Multiple',
-			'alias' => 'Alias',
-			'default' => 'Default',
-			'entity_id' => 'Entity Association',
-			'label' => 'Label',
-			'required' => 'Required',
-			'parent_id' => 'Parent',
-			'attribute' => 'Attribute',
+			'id' 		 => 'ID',
+			'fieldname'  => 'Field Name',
+			'datatype'   => 'Data Type',
+			'description'=> 'Description',
+			'multiple' 	 => 'Multiple',
+			'alias' 	 => 'Alias',
+			'default' 	 => 'Default',
+			'entity_id'  => 'Entity Association',
+			'label' 	 => 'Label',
+			'required'   => 'Required',
+			'parent_id'  => 'Parent',
+			'attribute'  => 'Attribute',
 		);
 	}
 
@@ -158,7 +165,6 @@ class Field extends MyActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-		
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('fieldname',$this->fieldname,false);
@@ -176,10 +182,11 @@ class Field extends MyActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
-
 	}
 
-
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function search3($model)
 	{
 		// Warning: Please modify the following code to remove attributes that
@@ -202,12 +209,13 @@ class Field extends MyActiveRecord
 		));
 	}
 	
-
-public function search2($id)
+	/**	
+	 * @todo Compose PHP doc
+	 */
+	public function search2($id)
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 
 		$criteria->select = array('fieldname', 'label', 'datatype');
@@ -224,6 +232,9 @@ public function search2($id)
 		));
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	private static $_items=array();
 	
 	/**
@@ -251,3 +262,4 @@ public function search2($id)
 			self::$_items[$property][$model->id]=$model->$property;
 	}
 }
+?>

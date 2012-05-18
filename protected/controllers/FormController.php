@@ -1,7 +1,9 @@
 <?php
-
-class FormController extends Controller
-{
+	/**	
+	 * @todo Compose PHP doc
+	 */
+ class FormController extends Controller
+ {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -28,18 +30,18 @@ class FormController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'users'=>array('*'),
+				'users'  =>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'	 =>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'	 =>array('admin'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('*'),
+				'users'	 =>array('*'),
 			),
 		);
 	}
@@ -52,9 +54,9 @@ class FormController extends Controller
 	{
 
 		$formCategory = FormCategory::model()->findByAttributes(array('form_id'=>$id));
-		$category = Category::model()->findByPk($formCategory->category_id);
+		$category 	  = Category::model()->findByPk($formCategory->category_id);
 		$this->render('view',array(
-			'model'=> $this->loadModel($id),
+			'model'	   => $this->loadModel($id),
 			'category' => $category,
 		));
 	
@@ -66,13 +68,12 @@ class FormController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Form;
+		$model = new Form;
 		$formCategory = new FormCategory;
 		$category = new Category;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Form']))
 		{
 			$model->attributes=$_POST['Form'];
@@ -83,9 +84,7 @@ class FormController extends Controller
 				$formCategory->form_id = $model->id;
 				$formCategory->save(false);
 				$this->redirect(array('view','id'=>$model->id));
-
 			}
-				
 		}
 
 		$this->render('create',array(
@@ -108,7 +107,6 @@ class FormController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Form']))
 		{
 			$model->attributes=$_POST['Form'];
@@ -118,15 +116,13 @@ class FormController extends Controller
 				$formCategory->attributes=$_POST['FormCategory'];
 				$formCategory->save();
 				$this->redirect(array('view','id'=>$model->id));
-			}
-				
+			}	
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 			'formCategory' => $formCategory,
 			'category' => $category,
-			
 		));
 	}
 
@@ -208,6 +204,9 @@ class FormController extends Controller
 		}
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function renderStatus($data, $row)
 	{
 		if($data->status == 1)
@@ -216,3 +215,4 @@ class FormController extends Controller
 	}
 
 }
+?>

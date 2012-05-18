@@ -9,7 +9,7 @@ $this->content_title = "Update Entity - ".$model->entity_name;
 
 $this->menu=array(
 	array('label'=>'Create Entity', 'url'=>array('create')),
-	array('label'=>'View Entity', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'View Entity',   'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Entity', 'url'=>array('index')),
 );
 ?>

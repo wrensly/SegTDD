@@ -18,7 +18,7 @@ Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/formE
 			<div class="span9">
 				<?php
 					$form = $this->widget('zii.widgets.jui.CJuiSortable',array(
-						'items' => array(),
+						'items' 	  => array(),
 						'htmlOptions' => array(
 							'class' => 'connectedSortable'
 						),
@@ -31,7 +31,7 @@ Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/formE
 				?>
 				<?php
 					$this->widget('bootstrap.widgets.BootTabbable', array(
-				    	'type'=>'tabs', // 'tabs' or 'pills'
+				    	'type'     =>'tabs', // 'tabs' or 'pills'
 				    	'placement'=>'left', // 'above', 'right', 'below' or 'left'
 				    	'htmlOptions' => array('id' => 'formEditor'),
 					));
@@ -44,20 +44,20 @@ Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/formE
 		<div class="well">
 			<?php $this->widget('bootstrap.widgets.BootButton', array(
 				'buttonType'=>'button',
-				'type'=>'warning',
-				'icon'=>'plus white',
-				'label'=>'Add Section',
-				'size'=>'mini',
+				'type'	  	=>'warning',
+				'icon'		=>'plus white',
+				'label'		=>'Add Section',
+				'size'		=>'mini',
 				'htmlOptions'=>array(
 					'id' => 'AddSectionButton',
 				),
 			)); ?>
 			<?php $this->widget('bootstrap.widgets.BootButton', array(
 				'buttonType'=>'button',
-				'type'=>'primary',
-				'icon'=>'ok white',
-				'label'=>'Save',
-				'size'=>'mini',
+				'type'		=>'primary',
+				'icon'		=>'ok white',
+				'label'		=>'Save',
+				'size'		=>'mini',
 			)); ?>
 		</div>
 		<h3>Available Fields</h3>
@@ -97,7 +97,7 @@ Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/formE
 <!-- form -->
 <?php
 		$form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
-			'id'=>'newSectionForm',
+			'id'   =>'newSectionForm',
 			'type' => 'inline',
 			'htmlOptions' => array(
 				'class'=>"well",
@@ -106,9 +106,9 @@ Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/formE
 		echo CHtml::textField('newSection');
 		$this->widget('bootstrap.widgets.BootButton', array(
 			'buttonType'=>'submit',
-			'type'=>'primary',
-			'icon'=>'ok white',
-			'label'=>'Add',
+			'type'		=>'primary',
+			'icon'		=>'ok white',
+			'label'		=>'Add',
 			'htmlOptions' => array('id' => 'submitSection'),
 		));
 		$this->endWidget();

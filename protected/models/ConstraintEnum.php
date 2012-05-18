@@ -1,8 +1,6 @@
 <?php
-
 /**
  * This is the model class for table "constraint_enum".
- *
  * The followings are the available columns in table 'constraint_enum':
  * @property integer $id
  * @property integer $field_id
@@ -68,11 +66,11 @@ class ConstraintEnum extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'field_id' => 'Field',
-			'maxselect' => 'Maximum No. of Selected Items',
-			'minselect' => 'Minimum No. of Selected Items',
-			'picklist' => 'Picklist',
+			'id' 			=> 'ID',
+			'field_id' 		=> 'Field',
+			'maxselect'	    => 'Maximum No. of Selected Items',
+			'minselect' 	=> 'Minimum No. of Selected Items',
+			'picklist' 		=> 'Picklist',
 			'default_value' => 'Default Selected Value',
 		);
 	}
@@ -100,3 +98,4 @@ class ConstraintEnum extends CActiveRecord
 		));
 	}
 }
+?>

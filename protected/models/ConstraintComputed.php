@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "constraint_computed".
  *
@@ -66,8 +65,8 @@ class ConstraintComputed extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'field_id' => 'Field',
+			'id' 		=> 'ID',
+			'field_id'  => 'Field',
 			'view_expression_data' => 'View Expression Data',
 		);
 	}
@@ -80,7 +79,6 @@ class ConstraintComputed extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
@@ -92,3 +90,4 @@ class ConstraintComputed extends CActiveRecord
 		));
 	}
 }
+?>

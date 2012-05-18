@@ -1,7 +1,8 @@
-<?php $form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
-	'type' => 'horizontal',
+<?php 
+	$form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
+	'action' 	  =>Yii::app()->createUrl($this->route),
+	'method' 	  =>'get',
+	'type'		  => 'horizontal',
 	'htmlOptions' => array(
 		'class' => 'advanced-search-form',
 		'style' => 'display:none',
@@ -25,20 +26,33 @@
 				'C' => 'Compound',
 			),
 			array(
-				'size'=>1,
+				'size'	   =>1,
 				'maxlength'=>1
 			) ); ?>
 	</div>
-	<div class="span6">
+  	<div class="span6">
 		<?php echo $form->textAreaRow($model,'description',array('rows'=>1, 'cols'=>50)); ?>
-	<?php echo $form->checkBoxRow($model,'multiple'); ?>
-	<?php echo $form->checkBoxRow($model,'required'); ?>
-	<?php echo $form->checkBoxRow($model,'attribute'); ?>
-	</div>
+		<?php echo $form->checkBoxRow($model,'multiple'); ?>
+		<?php echo $form->checkBoxRow($model,'required'); ?>
+		<?php echo $form->checkBoxRow($model,'attribute'); ?>
+  	</div>
 </div>
 <div class="form-actions">
-	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'type'=>'primary', 'icon'=>'ok white', 'label'=>'Search')); ?>
-	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Clear Fields')); ?>
+	<?php $this->widget('bootstrap.widgets.BootButton', 
+						array(
+							 'buttonType'=>'submit',
+							 'type'		 =>'primary', 
+							 'icon'		 =>'ok white',
+							 'label'	 =>'Search'
+							 )); 
+	?>
+	<?php $this->widget('bootstrap.widgets.BootButton', 
+						array(
+							 'buttonType'=>'reset',
+							 'icon'	    =>'remove',
+							 'label'		=>'Clear Fields'
+						  	 ));
+	?>
 </div>
 
 <?php $this->endWidget(); ?>

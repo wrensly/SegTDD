@@ -12,13 +12,13 @@ $this->content_title = "Form Editor";
 
 Yii::app()->CodeMirror->load('Form_layout',array(
 	'lineNumbers' => true,
-	'mode' => 'xml',
+	'mode' 	  => 'xml',
 	'tabSize' => 2,
-	'theme' => 'ambiance',
+	'theme'   => 'ambiance',
 ));
 
 $form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
-	'id'=>'field-form',
+	'id'   =>'field-form',
 	'type' => 'horizontal',
 	'enableAjaxValidation'=>true,
 ));
@@ -30,10 +30,10 @@ $form=$this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 			<div class="pull-right">
 				<?php $this->widget('bootstrap.widgets.BootButton', array(
 					'buttonType'=>'submit',
-					'type'=>'primary',
-					'icon'=>'ok white',
-					'label'=>'Save',
-					'size'=>'mini',
+					'type'		=>'primary',
+					'icon'		=>'ok white',
+					'label'		=>'Save',
+					'size'		=>'mini',
 				)); ?>
 			</div>
 		</div>

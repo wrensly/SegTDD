@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "entity_instance".
  *
@@ -62,15 +61,15 @@ class EntityInstance extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
+			'entity'              => array(self::BELONGS_TO, 'Entity', 'entity_id'),
 			'fieldValueCompounds' => array(self::HAS_MANY, 'FieldValueCompound', 'entity_instance_id'),
-			'fieldValueDates' => array(self::HAS_MANY, 'FieldValueDate', 'entity_instance_id'),
+			'fieldValueDates' 	  => array(self::HAS_MANY, 'FieldValueDate', 'entity_instance_id'),
 			'fieldValueDatetimes' => array(self::HAS_MANY, 'FieldValueDatetime', 'entity_instance_id'),
-			'fieldValueEnums' => array(self::HAS_MANY, 'FieldValueEnum', 'entity_instance_id'),
-			'fieldValueFiles' => array(self::HAS_MANY, 'FieldValueFile', 'entity_instance_id'),
-			'fieldValueNumerics' => array(self::HAS_MANY, 'FieldValueNumeric', 'entity_instance_id'),
-			'fieldValueTexts' => array(self::HAS_MANY, 'FieldValueText', 'entity_instance_id'),
-			'fieldValueTimes' => array(self::HAS_MANY, 'FieldValueTime', 'entity_instance_id'),
+			'fieldValueEnums' 	  => array(self::HAS_MANY, 'FieldValueEnum', 'entity_instance_id'),
+			'fieldValueFiles' 	  => array(self::HAS_MANY, 'FieldValueFile', 'entity_instance_id'),
+			'fieldValueNumerics'  => array(self::HAS_MANY, 'FieldValueNumeric', 'entity_instance_id'),
+			'fieldValueTexts' 	  => array(self::HAS_MANY, 'FieldValueText', 'entity_instance_id'),
+			'fieldValueTimes' 	  => array(self::HAS_MANY, 'FieldValueTime', 'entity_instance_id'),
 		);
 	}
 
@@ -93,7 +92,6 @@ class EntityInstance extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
@@ -104,3 +102,4 @@ class EntityInstance extends CActiveRecord
 		));
 	}
 }
+?>

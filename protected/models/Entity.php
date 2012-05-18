@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "Entity".
  *
@@ -68,19 +67,19 @@ class Entity extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'form' => array(self::BELONGS_TO, 'Form', 'form_id'),
-			'entityAttribute' => array(self::HAS_ONE, 'EntityAttribute', 'id'),
-			'entityInstances' => array(self::HAS_MANY, 'EntityInstance', 'entity_id'),
-			'fields' => array(self::HAS_MANY, 'Field', 'entity_id'),
-			'fieldValueCompounds' => array(self::HAS_MANY, 'FieldValueCompound', 'entity_id'),
-			'fieldValueDates' => array(self::HAS_MANY, 'FieldValueDate', 'entity_id'),
-			'fieldValueDatetimes' => array(self::HAS_MANY, 'FieldValueDatetime', 'entity_id'),
-			'fieldValueEnums' => array(self::HAS_MANY, 'FieldValueEnum', 'entity_id'),
-			'fieldValueFiles' => array(self::HAS_MANY, 'FieldValueFile', 'entity_id'),
+			'form' 				 => array(self::BELONGS_TO, 'Form', 'form_id'),
+			'entityAttribute'    => array(self::HAS_ONE, 'EntityAttribute', 'id'),
+			'entityInstances'    => array(self::HAS_MANY, 'EntityInstance', 'entity_id'),
+			'fields' 			 => array(self::HAS_MANY, 'Field', 'entity_id'),
+			'fieldValueCompounds'=> array(self::HAS_MANY, 'FieldValueCompound', 'entity_id'),
+			'fieldValueDates' 	 => array(self::HAS_MANY, 'FieldValueDate', 'entity_id'),
+			'fieldValueDatetimes'=> array(self::HAS_MANY, 'FieldValueDatetime', 'entity_id'),
+			'fieldValueEnums' 	 => array(self::HAS_MANY, 'FieldValueEnum', 'entity_id'),
+			'fieldValueFiles' 	 => array(self::HAS_MANY, 'FieldValueFile', 'entity_id'),
 			'fieldValueNumerics' => array(self::HAS_MANY, 'FieldValueNumeric', 'entity_id'),
-			'fieldValueTexts' => array(self::HAS_MANY, 'FieldValueText', 'entity_id'),
-			'fieldValueTimes' => array(self::HAS_MANY, 'FieldValueTime', 'entity_id'),
-			'forms' => array(self::HAS_MANY, 'Form', 'entity_id'),
+			'fieldValueTexts' 	 => array(self::HAS_MANY, 'FieldValueText', 'entity_id'),
+			'fieldValueTimes' 	 => array(self::HAS_MANY, 'FieldValueTime', 'entity_id'),
+			'forms' 			 => array(self::HAS_MANY, 'Form', 'entity_id'),
 		);
 	}
 
@@ -90,10 +89,10 @@ class Entity extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' 		  => 'ID',
 			'entity_name' => 'Entity Name',
 			'description' => 'Description',
-			'form_id' => 'Default Form',
+			'form_id' 	  => 'Default Form',
 		);
 	}
 
@@ -105,8 +104,7 @@ class Entity extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('entity_name',$this->entity_name,true);
@@ -118,12 +116,14 @@ class Entity extends CActiveRecord
 		));
 	}
 
+	/**
+	* @todo Compose PHP doc
+	*/
 	public function search2($model)
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
 		$criteria->select = array('id','entity_name','description','form_id');
 		$criteria->condition = 'select * from entity where entity_name='.$model.'';
@@ -163,3 +163,4 @@ class Entity extends CActiveRecord
 			self::$_items[$type][$model->id]=$model->$type;
 	}
 }
+?>

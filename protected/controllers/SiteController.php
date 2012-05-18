@@ -1,7 +1,9 @@
 <?php
-
-class SiteController extends Controller
-{
+ /**	
+	 * @todo Compose PHP doc
+	 */	
+ class SiteController extends Controller
+ {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -15,14 +17,14 @@ class SiteController extends Controller
 	{
 		return array(
 			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
+			'captcha'	   =>array(
+				'class'	   =>'CCaptchaAction',
 				'backColor'=>0xFFFFFF,
 			),
 			// page action renders "static" pages stored under 'protected/views/site/pages'
 			// They can be accessed via: index.php?r=site/page&view=FileName
-			'page'=>array(
-				'class'=>'CViewAction',
+				'page'		=>array(
+				'class'		=>'CViewAction',
 			),
 		);
 	}
@@ -116,3 +118,4 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->homeUrl);
 	}
 }
+?>

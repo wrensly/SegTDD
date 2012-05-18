@@ -32,9 +32,9 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <?php $this->widget('bootstrap.widgets.BootGridView', array(
-	'id'=>'teacher-grid',
+	'id'		  =>'teacher-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	'filter'	  =>$model,
 	'columns'=>array(
 		'TID',
 		'Firstname',

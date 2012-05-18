@@ -21,8 +21,8 @@ $('.advanced-search-form').submit(function(){
 $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'post',
-    'id'=>'inlineForm',
-    'type'=>'inline',
+    'id'	=>'inlineForm',
+    'type'	=>'inline',
     'htmlOptions' => array(
 		'class' => 'search-form pull-right',
 	),
@@ -36,17 +36,17 @@ if($this->search['simple']){
 echo $form->textFieldRow($model,'name',array('class'=>'span3'));
 $this->widget('bootstrap.widgets.BootButton', array(
 	'buttonType'=>'submit', 
-	'type'=>'success', 
-	'icon'=>'search white', 
-	'label'=>'',
+	'type'		=>'success', 
+	'icon'		=>'search white', 
+	'label'		=>'',
 ));
 }
 if($this->search['advanced']){
 	$this->widget('bootstrap.widgets.BootButton', array(
 		'buttonType'=>'button',
-		'type'=>'success', 
-		'icon' => 'cog white',
-		'label' => '',
+		'type'		=>'success', 
+		'icon' 		=> 'cog white',
+		'label' 	=> '',
 		'htmlOptions' => array('class'=>'search-button'),
 	));
 }

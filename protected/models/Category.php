@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "Category".
  *
@@ -8,6 +7,7 @@
  * @property string $category_name
  * @property string $description
  * The followings are the available model relations:
+ *
  * @property FormCategory[] $formCategories
  */
 class Category extends CActiveRecord
@@ -65,9 +65,9 @@ class Category extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' 		    => 'ID',
 			'category_name' => 'Category Name',
-			'description' => 'Description',
+			'description' 	=> 'Description',
 		);
 	}
 
@@ -79,8 +79,8 @@ class Category extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
+		
 		$criteria->compare('category_name',$this->category_name,true);
 		$criteria->compare('description',$this->description,true);
 

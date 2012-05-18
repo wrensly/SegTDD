@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "teacher".
  *
@@ -68,9 +67,9 @@ class Teacher extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'accounts' => array(self::HAS_MANY, 'Account', 'tid'),
+			'accounts' 		 => array(self::HAS_MANY, 'Account', 'tid'),
 			'assignsubjects' => array(self::HAS_MANY, 'Assignsubject', 'TID'),
-			'classlists' => array(self::HAS_MANY, 'Classlist', 'TID'),
+			'classlists' 	 => array(self::HAS_MANY, 'Classlist', 'TID'),
 			'subjectteaches' => array(self::HAS_MANY, 'Subjectteach', 'TID'),
 		);
 	}
@@ -81,16 +80,16 @@ class Teacher extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'TID' => 'Tid',
-			'Firstname' => 'Firstname',
-			'Midname' => 'Midname',
-			'Lastname' => 'Lastname',
-			'Address' => 'Address',
-			'Bdate' => 'Bdate',
-			'Status' => 'Status',
-			'Level' => 'Level',
+			'TID' 		  => 'Tid',
+			'Firstname'   => 'Firstname',
+			'Midname' 	  => 'Midname',
+			'Lastname'    => 'Lastname',
+			'Address'     => 'Address',
+			'Bdate' 	  => 'Bdate',
+			'Status' 	  => 'Status',
+			'Level' 	  => 'Level',
 			'SubjectArea' => 'Subject Area',
-			'inactiveDate' => 'Inactive Date',
+			'inactiveDate'=> 'Inactive Date',
 		);
 	}
 
@@ -102,7 +101,6 @@ class Teacher extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('TID',$this->TID,true);
@@ -121,3 +119,4 @@ class Teacher extends CActiveRecord
 		));
 	}
 }
+?>

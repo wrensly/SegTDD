@@ -28,12 +28,12 @@ $template = "
 </div>";
 
 $this->widget('bootstrap.widgets.BootGridView', array(
-	'id'=>'field-grid',
-	'type'=>'striped',
+	'id'		  =>'form-grid',
+	'type'		  =>'striped',
 	'dataProvider'=>$model->search(),
-	'template'=> $template,
+	'template'	  => $template,
 	'pagerCssClass' => 'pagination pull-right',
-	'columns'=>array(
+	'columns' => array(
 		array('name' => 'code', 'value' => '$data->form->code'),
 		array('name' => 'name', 'value' => '$data->form->name'),
 		array('name' => 'description', 'value' => '$data->form->description'),
@@ -41,13 +41,13 @@ $this->widget('bootstrap.widgets.BootGridView', array(
 		array('name' => 'status', 'value' => array($this,'renderStatus')),
 		array(
 			'header'=>'Actions',
-            'class'=>'bootstrap.widgets.BootButtonColumn',
+            'class' =>'bootstrap.widgets.BootButtonColumn',
             'htmlOptions'=>array('style'=>'width: 70px'),
             'buttons'=> array(
             	'editor' => array(
 				    'label'=>'Open In Editor',     // text label of the button
-				    'icon'=>'edit',
-				    'url'=>'Yii::app()->createUrl("formCategory/formEditor",array("id"=>$data->id))',
+				    'icon' =>'edit',
+				    'url'  =>'Yii::app()->createUrl("formCategory/formEditor",array("id"=>$data->id))',
 				),
             ),
             'template'=>'{view} {update} {delete} {editor}',
@@ -57,6 +57,5 @@ $this->widget('bootstrap.widgets.BootGridView', array(
 		'entity_id',
 		'attribute',
 		*/
-		
 		)));
 ?>

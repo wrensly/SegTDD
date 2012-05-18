@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create Form', 'url'=>array('create')),
-	array('label'=>'View Form', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'View Form',   'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Form', 'url'=>array('index')),
 );
 $this->content_title = "Update " . $model->name; 
@@ -15,5 +15,12 @@ $this->content_title = "Update " . $model->name;
 
 
 
-<?php echo $this->renderPartial('_form', array('model'=>$model, 'formCategory' => $formCategory, 
-'category' => $category, 'tags' => $tags, 'suggest' => $suggest)); ?>
+<?php echo $this->renderPartial('_form', 
+									array(
+										'model'		   =>$model,
+										'formCategory' => $formCategory,
+										'category' 	   => $category,
+										'tags' 		   => $tags,
+										'suggest'      => $suggest
+										 )); 
+?>

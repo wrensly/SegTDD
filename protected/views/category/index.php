@@ -5,8 +5,8 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array(
-		'label'=>'Create Category',
-		'url'=>'#myModal',
+		'label'		 =>'Create Category',
+		'url'		 =>'#myModal',
 		'htmlOptions'=>array('data-toggle'=>'modal'),
 	),
 );
@@ -14,9 +14,9 @@ $this->menu=array(
 $this->content_title = "List of Categories";
 
 $this->search = array(
-	'simple' => true,
-	'advanced' => false,
-	'model' => $model,
+	'simple'  => true,
+	'advanced'=> false,
+	'model'   => $model,
 );
 ?>
 
@@ -29,33 +29,37 @@ $template = "
 </div>";
 
 $this->widget('bootstrap.widgets.BootGridView', array(
-	'id'=>'field-grid',
-	'type'=>'striped',
-    'dataProvider'=>$category->search(),
-	'template'=> $template,
-	'pagerCssClass' => 'pagination pull-right',
-	'columns'=>array(
-		'category_name',
-		'description',
-		array(
-            'class'=>'bootstrap.widgets.BootButtonColumn',
-            'htmlOptions'=>array('style'=>'width: 50px'),
+	'id'			=>'field-grid',
+	'type'			=>'striped',
+    'dataProvider'  =>$category->search(),
+	'template'		=>$template,
+	'pagerCssClass' =>'pagination pull-right',
+	'columns'		=>array(
+						'category_name',
+						'description',
+							array(
+            				'class'		 =>'bootstrap.widgets.BootButtonColumn',
+            				'htmlOptions'=>array('style'=>'width: 50px'),
         ),
 	)
 )); 
 ?>
 
 <?php $this->beginWidget('bootstrap.widgets.BootModal', array(
-	'id'=>'myModal',
+	'id'		  =>'myModal',
 	'htmlOptions' => array('style'=>'display:none'))); ?>
  
 <div class="modal-header">
+
     <a class="close" data-dismiss="modal">&times;</a>
     <h3>Create Category</h3>
+
 </div>
- 
+
 <div class="modal-body">
+
     <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+    
 </div>
 
 <?php $this->endWidget(); ?>

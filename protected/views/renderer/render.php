@@ -24,7 +24,20 @@ $this->widget('bootstrap.widgets.BootTabbable', array(
 
 ?>
 <div class="form-actions">
-    <?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'type'=>'primary', 'icon'=>'ok white', 'label'=>'Submit')); ?>
-    <?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Reset')); ?>
+    <?php $this->widget('bootstrap.widgets.BootButton', 
+                array(
+                    'buttonType'=>'submit', 
+                    'type'      =>'primary', 
+                    'icon'      =>'ok white', 
+                    'label'     =>'Submit'
+                    )); 
+    ?>
+    <?php $this->widget('bootstrap.widgets.BootButton', 
+                array(
+                    'buttonType'=>'reset', 
+                    'icon'=>'remove', 
+                    'label'=>'Reset'
+                    )); 
+    ?>
 </div>
 <?php $this->endWidget(); ?>

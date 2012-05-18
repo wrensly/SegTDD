@@ -1,19 +1,33 @@
 <?php
+	/**	
+	 * @todo Compose PHP doc
+	 */
+class RenderField extends CActiveRecord
+{
+	/**	
+	 * @todo Compose PHP doc
+	 */
+	private $prop;	
 
-class RenderField extends CActiveRecord {
-
-	private $prop;
-
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function getProp()
 	{
         return $this->prop;
     }
 
+    /**	
+	 * @todo Compose PHP doc
+	 */
     public function setProp($newProperty)
     {
         $this->prop = $newProperty;
     }
 
+    /**	
+	 * @todo Compose PHP doc
+	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -27,11 +41,13 @@ class RenderField extends CActiveRecord {
 		return 'field';
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function search($id)
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 
 		$criteria->select = array('fieldname', 'label', 'datatype');
@@ -47,7 +63,5 @@ class RenderField extends CActiveRecord {
 			'criteria'=>$criteria,
 		));
 	}
-
 }
-
 ?>

@@ -29,8 +29,8 @@ function setPreset(digits,min,max,def){
 $numericPresetsSelect = array(
 	'b' => 'Boolean',
 	'i' => 'Integer',
-	'd'  => 'Decimal',
-	'm'   => 'Currency',
+	'd' => 'Decimal',
+	'm' => 'Currency',
 );
 ?>
 <div class="control-group">

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "tag".
  *
@@ -63,7 +62,7 @@ class Tag extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' 	   => 'ID',
 			'tag_name' => 'Tags',
 		);
 	}
@@ -76,8 +75,7 @@ class Tag extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('tag_name',$this->tag_name,true);
@@ -87,3 +85,4 @@ class Tag extends CActiveRecord
 		));
 	}
 }
+?>

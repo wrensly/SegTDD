@@ -11,9 +11,9 @@ $this->menu=array(
 $this->content_title = 'Form Renderer';
 
 $this->search = array(
-	'simple' => true,
+	'simple'   => true,
 	'advanced' => true,
-	'model' => $model,
+	'model'    => $model,
 );
 ?>
 
@@ -35,22 +35,21 @@ $this->search = array(
 		array(
 			'class'=>'bootstrap.widgets.BootButtonColumn',
 			'template'=>'{view}',
-			'buttons'=>array(
-				'view' => array(
+			'buttons' =>array(
+				'view'=> array(
 						'label' => null,
 						// 'imageUrl' => false,"/form/create"  $data->form_id
-						'url'=>'Yii::app()->controller->createUrl("render", array("id"=>$data->primaryKey))', //Sample Link (next thing to do: create own Boot Button Column(extend CGridColumn))
-						'icon'=>'eye-open',
+						'url'	=>'Yii::app()->controller->createUrl("render", array("id"=>$data->primaryKey))', //Sample Link (next thing to do: create own Boot Button Column(extend CGridColumn))
+						'icon'	=>'eye-open',
 						'options' => array('style'=>'margin-left: 10px;', 'title'=>'Render'),
 						// 'visible'=>'($data->form_id!=null)?true:false;',
 					),
 				),
 			// 'updateButtonUrl' => 'Yii::app()->controller->createUrl("#entityModal",array("id"=>$data->primaryKey))',
-			'htmlOptions'=>array('style'=>'width: 10px; text-align:top-center;'),
+			'htmlOptions' => array('style'=>'width: 10px; text-align:top-center;'),
 		),
 
 	),
 	// 'htmlOptions'=>array('style'=>'width: 134.2%;' /*width: 1165px*/ ),
 )); 
-
 ?>

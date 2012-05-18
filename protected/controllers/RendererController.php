@@ -1,10 +1,17 @@
 <?php
-
-class RendererController extends Controller
-{
-
+ /**	
+	 * @todo Compose PHP doc
+	 */
+ class RendererController extends Controller
+ {
+ 	/**	
+	 * @todo Compose PHP doc
+	 */
 	public $layout='//layouts/column1_mod';
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function actionIndex()
 	{	
 		$model = new Form('search');
@@ -15,6 +22,9 @@ class RendererController extends Controller
 		$this->render('index', array('model'=>$model));
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function actionRender($id)
 	{	
 		$this->render('render',array(
@@ -23,6 +33,9 @@ class RendererController extends Controller
 		));
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	private function loadFormModel($id)
 	{	
 		$model=Form::model()->findByPk($id);
@@ -31,20 +44,25 @@ class RendererController extends Controller
 		return $model;
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index'),
-				'users'=>array('*'),
+				'users'	 =>array('*'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('*'),
+				'users'	 =>array('*'),
 			),
 		);
 	}
 
-
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	private function parseXML($elem, $field_model, $field_val_model, $field_cons, $form, $tabs)
   	{
 	  switch($elem)
@@ -111,19 +129,19 @@ class RendererController extends Controller
 			   $tabs['content'] .=  "<div class='controls'>";
 			  
     		   $tabs['content'] .=	$this->widget('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker',array(
-    		   		'model'=>$field_val_model,
-    		   		'attribute'=>'value',
-                	'mode'=>'date', 
-                	'language' => '',
-   					'options' => array(
-                		'ampm' => true,
-                		'showOn' => 'button',
-                		'buttonImage' => Yii::app()->baseUrl . '/images/calendar.gif',
+    		   		'model'		=>$field_val_model,
+    		   		'attribute' =>'value',
+                	'mode'		=>'date', 
+                	'language'  => '',
+   					'options'   => array(
+                		'ampm' 		     => true,
+                		'showOn' 	     => 'button',
+                		'buttonImage'    => Yii::app()->baseUrl . '/images/calendar.gif',
                 		'buttonImageOnly'=>true,
-                		'changeMonth' => true,
-                		'changeYear' => true,
-                		'constraintInput' => true,
-                		'autoSize' => true,
+                		'changeMonth' 	 => true,
+                		'changeYear' 	 => true,
+                		'constraintInput'=> true,
+                		'autoSize' 		 => true,
                 		),
    					), true);
 					//required
@@ -156,19 +174,19 @@ class RendererController extends Controller
 			   $tabs['content'] .=  "<div class='controls'>";
 			  
     		   $tabs['content'] .=	$this->widget('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker',array(
-    		   		'model'=>$field_val_model,
-    		   		'attribute'=>'value',
-                	'mode'=>'datetime', 
-                	'language' => '',
-                	'options' => array(
-                		'ampm' => true,
-                		'showOn' => 'button',
-                		'buttonImage' => Yii::app()->baseUrl . '/images/calendar.gif',
+    		   		'model'		=>$field_val_model,
+    		   		'attribute' =>'value',
+                	'mode'		=>'datetime', 
+                	'language'	=> '',
+                	'options'   =>array(
+                		'ampm' 			 => true,
+                		'showOn'		 => 'button',
+                		'buttonImage'    => Yii::app()->baseUrl . '/images/calendar.gif',
                 		'buttonImageOnly'=>true,
-                		'changeMonth' => true,
-                		'changeYear' => true,
-                		'constraintInput' => true,
-                		'autoSize' => true,
+                		'changeMonth' 	 => true,
+                		'changeYear' 	 => true,
+                		'constraintInput'=> true,
+                		'autoSize' 	     => true,
                 		),
    					), true);
 					//required
@@ -179,7 +197,11 @@ class RendererController extends Controller
 	    }
   	}
 
-	public function renderXML($xml, $form, $id) {
+  	/**	
+	 * @todo Compose PHP doc
+	 */
+	public function renderXML($xml, $form, $id)
+	{
 		$tabs = array();
 		$tabs_f = array();
 		$i=true;
@@ -406,6 +428,9 @@ class RendererController extends Controller
 		return $tabs_f;
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	private function loadFieldModel($id)
 	{
 		$model=Field::model()->findByPk($id);
@@ -457,3 +482,4 @@ class RendererController extends Controller
 	}
 	*/
 }
+?>

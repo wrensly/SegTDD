@@ -6,7 +6,10 @@
  * user login form data. It is used by the 'login' action of 'SiteController'.
  */
 class LoginForm extends CFormModel
-{
+{	
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public $username;
 	public $password;
 	public $rememberMe;
@@ -74,5 +77,5 @@ class LoginForm extends CFormModel
 		else
 			return false;
 	}
-
 }
+?>

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "field_value_file".
  *
@@ -64,10 +63,10 @@ class FieldValueFile extends MyActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
+			'entity' 	 	 => array(self::BELONGS_TO, 'Entity', 'entity_id'),
 			'entityInstance' => array(self::BELONGS_TO, 'EntityInstance', 'entity_instance_id'),
-			'field' => array(self::BELONGS_TO, 'Field', 'field_id'),
-			'snapshot' => array(self::BELONGS_TO, 'Snapshot', 'snapshot_id'),
+			'field' 		 => array(self::BELONGS_TO, 'Field', 'field_id'),
+			'snapshot' 		 => array(self::BELONGS_TO, 'Snapshot', 'snapshot_id'),
 		);
 	}
 
@@ -77,12 +76,12 @@ class FieldValueFile extends MyActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'field_id' => 'Field',
-			'filename' => 'Filename',
-			'entity_id' => 'Entity',
-			'filetype' => 'Filetype',
-			'priority' => 'Priority',
+			'id' 		  => 'ID',
+			'field_id'    => 'Field',
+			'filename'    => 'Filename',
+			'entity_id'   => 'Entity',
+			'filetype'	  => 'Filetype',
+			'priority' 	  => 'Priority',
 			'snapshot_id' => 'Snapshot',
 			'entity_instance_id' => 'Entity Instance',
 		);
@@ -96,7 +95,6 @@ class FieldValueFile extends MyActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
@@ -113,3 +111,4 @@ class FieldValueFile extends MyActiveRecord
 		));
 	}
 }
+?>

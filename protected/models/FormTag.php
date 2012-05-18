@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "form_tag".
  *
@@ -66,9 +65,9 @@ class FormTag extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' 	  => 'ID',
 			'form_id' => 'Form',
-			'tag_id' => 'Tag',
+			'tag_id'  => 'Tag',
 		);
 	}
 
@@ -80,7 +79,6 @@ class FormTag extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
@@ -92,3 +90,4 @@ class FormTag extends CActiveRecord
 		));
 	}
 }
+?>

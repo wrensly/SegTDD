@@ -1,6 +1,4 @@
-
 <?php
-
 /**
  * This is the model class for table "form_category".
  *
@@ -22,7 +20,19 @@
  */
 class FormCategory extends CActiveRecord
 {
-	public $code, $name, $description, $status, $layout, $attribute, $category_name, $entity_id, $tags;
+	/**	
+	 * @todo Compose PHP doc
+	 */
+	public $code; 
+	public $name; 
+	public $description; 
+	public $status; 
+	public $layout;
+	public $attribute; 
+	public $category_name;
+	public $entity_id;
+	public $tags;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -58,8 +68,6 @@ class FormCategory extends CActiveRecord
 		);
 	}
 
-	
-
 	/**
 	 * @return array relational rules.
 	 */
@@ -69,7 +77,7 @@ class FormCategory extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
-			'form' => array(self::BELONGS_TO, 'Form', 'form_id'),
+			'form' 	   => array(self::BELONGS_TO, 'Form', 'form_id'),
 		);
 	}
 
@@ -79,17 +87,17 @@ class FormCategory extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'category_id' => 'Category',
-			'form_id' => 'Form',
+			'id'		    => 'ID',
+			'category_id' 	=> 'Category',
+			'form_id' 		=> 'Form',
 			'category_name' => 'Category',
-			'code' => 'Form Code',
-			'name' => 'Form Name',
-			'description' => 'Description',
-			'layout' => 'Layout',
-			'attribute' => 'Attribute',
-			'status' => 'Active',
-			'entity_id' => 'Entity Name',
+			'code' 			=> 'Form Code',
+			'name' 			=> 'Form Name',
+			'description'   => 'Description',
+			'layout' 		=> 'Layout',
+			'attribute' 	=> 'Attribute',
+			'status' 		=> 'Active',
+			'entity_id' 	=> 'Entity Name',
 		);
 	}
 
@@ -103,7 +111,6 @@ class FormCategory extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
 		$criteria->with = array('form','category');
 
@@ -119,40 +126,43 @@ class FormCategory extends CActiveRecord
 		$criteria->compare('form.entity_id',$this->entity_id, true);
 		$criteria->compare('tag_name',$this->tags, true);	
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-			'sort'=>array(
-        	'attributes'=>array(
+			'criteria'  => $criteria,
+			'sort'	    => array(
+        	'attributes'=> array(
         	'id',
 
-        	'category_name'=>array(
-                'asc'=>'form.description',
-                'desc'=>'form.description DESC',
+        	'category_name' =>array(
+                'asc'		=>'form.description',
+                'desc'		=>'form.description DESC',
             ),
 
-            'name'=>array( 
-                'asc'=>'form.name',
-                'desc'=>'form.name DESC',
+            'name' => array( 
+                'asc'	=>'form.name',
+                'desc'	=>'form.name DESC',
             ),
 
-            'code'=>array(
-                'asc'=>'form.code',
-                'desc'=>'form.code DESC',
+            'code' => array(
+                'asc'	=>'form.code',
+                'desc'	=>'form.code DESC',
             ),
 
-            'description'=>array(
-                'asc'=>'form.description',
-                'desc'=>'form.description DESC',
+            'description' => array(
+                'asc'	=>'form.description',
+                'desc'	=>'form.description DESC',
             ),
         		
-            'status'=>array(
-                'asc'=>'form.status',
-                'desc'=>'form.status DESC',
+            'status' => array(
+                'asc'	=>'form.status',
+                'desc'	=>'form.status DESC',
             ),   
         ),
     ),
 		));
 	}
 	
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function search3($model)
 	{
 		// Warning: Please modify the following code to remove attributes that
@@ -194,3 +204,4 @@ class FormCategory extends CActiveRecord
 		return $arr;
 	}
 }
+?>

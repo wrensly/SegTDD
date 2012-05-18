@@ -13,9 +13,9 @@
                 <td colspan="2">
                     <?php $this->widget('bootstrap.widgets.BootButton', array(
                         'label' => 'Add a Child Field',
-                        'type' => 'warning',
-                        'icon' => 'plus white',
-                        'htmlOptions' => array(
+                        'type'  => 'warning',
+                        'icon'  => 'plus white',
+                        'htmlOptions'   => array(
                                 'class' => 'add',
                             ),
                     )); ?>
@@ -29,9 +29,9 @@
                                 <input type="hidden" class="rowIndex" value="{0}" />
                                 <?php $this->widget('bootstrap.widgets.BootButton', array(
                                     'label' => '',
-                                    'type' => 'danger',
-                                    'icon' => 'minus white',
-                                    'htmlOptions' => array(
+                                    'type'  => 'danger',
+                                    'icon'  => 'minus white',
+                                    'htmlOptions'   => array(
                                             'class' => 'remove',
                                         ),
                                 )); ?>
@@ -56,9 +56,9 @@
                     <input type="hidden" class="rowIndex" value="<?php echo $i; ?>" />
                     <?php $this->widget('bootstrap.widgets.BootButton', array(
                         'label' => '',
-                        'type' => 'danger',
-                        'icon' => 'minus white',
-                        'htmlOptions' => array(
+                        'type'  => 'danger',
+                        'icon'  => 'minus white',
+                        'htmlOptions'   => array(
                                 'class' => 'remove',
                             ),
                     )); ?>
@@ -78,9 +78,9 @@
                     <input type="hidden" class="rowIndex" value="<?php echo $i; ?>" />
                     <?php $this->widget('bootstrap.widgets.BootButton', array(
                         'label' => '',
-                        'type' => 'danger',
-                        'icon' => 'minus white',
-                        'htmlOptions' => array(
+                        'type'  => 'danger',
+                        'icon'  => 'minus white',
+                        'htmlOptions'   => array(
                                 'class' => 'remove',
                             ),
                     )); ?>

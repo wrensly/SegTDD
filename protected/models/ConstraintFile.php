@@ -1,8 +1,6 @@
 <?php
-
 /**
  * This is the model class for table "constraint_file".
- *
  * The followings are the available columns in table 'constraint_file':
  * @property integer $id
  * @property integer $field_id
@@ -65,8 +63,8 @@ class ConstraintFile extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'field_id' => 'Field',
+			'id' 	  => 'ID',
+			'field_id'=> 'Field',
 			'minsize' => 'Minimum File Size (KB)',
 			'maxsize' => 'Maximum File Size (KB)',
 		);
@@ -80,8 +78,7 @@ class ConstraintFile extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('field_id',$this->field_id);
@@ -93,3 +90,4 @@ class ConstraintFile extends CActiveRecord
 		));
 	}
 }
+?>

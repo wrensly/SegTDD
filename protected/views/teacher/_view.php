@@ -40,7 +40,5 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('inactiveDate')); ?>:</b>
 	<?php echo CHtml::encode($data->inactiveDate); ?>
 	<br />
-
 	*/ ?>
-
 </div>

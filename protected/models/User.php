@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "user".
  *
@@ -62,7 +61,7 @@ class User extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' 	   => 'ID',
 			'username' => 'Username',
 			'password' => 'Password',
 		);
@@ -77,7 +76,7 @@ class User extends CActiveRecord
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
 
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
@@ -88,11 +87,18 @@ class User extends CActiveRecord
 		));
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function validatePassword($password){
 		return $this->hashPassword($password)===$this->password;
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function hashPassword($password){
 		return md5($password);
 	}
 }
+?>

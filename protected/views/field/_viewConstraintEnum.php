@@ -4,7 +4,7 @@
 				'maxselect',
 				'minselect',
 				array(
-		            'name'=>'picklist',
+		            'name' =>'picklist',
 		            'type' => 'raw',
 		            'value'=> CHtml::link('View Options','#optionsListModal', array('class'=>'btn btn-warning btn-mini', 'data-toggle'=>'modal')),
 		        ),
@@ -42,7 +42,7 @@
 <div class="modal-footer">
     <?php $this->widget('bootstrap.widgets.BootButton', array(
         'label'=>'Close',
-        'url'=>'#',
+        'url'  =>'#',
         'htmlOptions'=>array('data-dismiss'=>'modal'),
     )); ?>
 </div>

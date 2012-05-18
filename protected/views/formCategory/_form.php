@@ -38,10 +38,10 @@ $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 					<div class="controls">
 						<?php $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
 							
-							'id' => 'add',
+							'id'  => 'add',
 						    'name'=>'Tag[tag_name]',
 						   
-						   	'source'=>$suggest,
+						   	'source' =>$suggest,
 						    // additional javascript options for the autocomplete plugin
 						   	'options'=>array(
 						        'minLength'=>'2',
@@ -60,8 +60,21 @@ $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 		</div>
 	</div>
 	<div class="form-actions">
-    	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'type'=>'primary', 'icon'=>'ok white', 'label'=>'Submit')); ?>
-    	<?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'reset', 'icon'=>'remove', 'label'=>'Reset')); ?>
+    	<?php $this->widget('bootstrap.widgets.BootButton', 
+    							array(
+    								'buttonType'=>'submit',
+    								'type'		=>'primary',
+    								'icon'		=>'ok white',
+    								 'label'	=>'Submit'
+    								 )); 
+    	?>
+    	<?php $this->widget('bootstrap.widgets.BootButton', 
+    							array(
+    								'buttonType'=>'reset',
+    								'icon'		=>'remove',
+    								'label'		=>'Reset'
+    								 ));
+    	?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -1,5 +1,7 @@
 <?php
-
+/**	
+	 * @todo Compose PHP doc
+	 */
 class EntityController extends Controller
 {
 	/**
@@ -28,18 +30,18 @@ class EntityController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'users'=>array('*'),
+				'users'	 =>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'	 =>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete','entityInst'),
-				'users'=>array('admin'),
+				'users'	 =>array('admin'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('*'),
+				'users'	 =>array('*'),
 			),
 		);
 	}
@@ -89,14 +91,12 @@ class EntityController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Entity']))
 		{
 			$model->attributes=$_POST['Entity'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
 		$this->render('update',array(
 			'model'=>$model,
 		));
@@ -176,7 +176,11 @@ class EntityController extends Controller
 		}
 	}
 
-	public function renderEntityCount($data, $row) {
+	/**	
+	 * @todo Compose PHP doc
+	 */
+	public function renderEntityCount($data, $row) 
+	{
 		$count=EntityInstance::model()->count( 
 			array(
 				'condition'=>'entity_id='.$data->id,
@@ -187,6 +191,9 @@ class EntityController extends Controller
 		return $count;
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public function actionEntityInst($id)
 	{
 		$this->render('entityInst',array(
@@ -195,6 +202,9 @@ class EntityController extends Controller
 		));
 	}
 
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	private function loadEntity($id)
 	{	
 		$model=Entity::model()->findByPk($id);
@@ -202,5 +212,5 @@ class EntityController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-
 }
+?>

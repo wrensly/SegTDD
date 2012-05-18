@@ -32,68 +32,68 @@
 					'items' => array(
 						array(
 							'label'=>'Dashboard',
-							'url'=>array('/site/index'),
+							'url'  =>array('/site/index'),
 						),
 						array(
 							'label'=>'Field', 
-							'url'=>array(
+							'url'  =>array(
 								'/site/page',
 								'view'=>'about',
 							), 
-							'items'=>array( 
+							'items' => array( 
 								array(
 									'label'=>'Manage Fields', 
-									'url'=>array('/field/index'), 
+									'url'  =>array('/field/index'), 
 									'icon' => 'align-justify',
 								),
 								array(
 									'label'=>'Create Field',
-									'url'=>array('/field/create'),
-									'icon'=>'plus',
+									'url'  =>array('/field/create'),
+									'icon' =>'plus',
 								),
 							),
 						),
 						array(
 							'label'=>'Form',
-							'url'=>array('/form/index'), 
+							'url'  =>array('/form/index'), 
 							'items'=>array(
 								array(
 									'label'=>'Manage Forms',
-									'url'=>array('/formCategory/index'), 
+									'url'  =>array('/formCategory/index'), 
 									'icon' => 'file',
 								),
 								array(
 									'label'=>'Create Form',
-									'url'=>array('/formCategory/create'),
-									'icon'=>'plus',
+									'url'  =>array('/formCategory/create'),
+									'icon' =>'plus',
 								),
 
 								array(
 									'label'=>'Manage Categories',
-									'url'=>array('/category/index'),
-									'icon'=>'list',
+									'url'  =>array('/category/index'),
+									'icon' =>'list',
 								),
 
 								array(
 									'label'=>'Form Renderer',
-									'url'=>array('/renderer/index'),
-									'icon'=>'list-alt',
+									'url'  =>array('/renderer/index'),
+									'icon' =>'list-alt',
 								),  
 							),
 						),
 						array(
 							'label'=>'Entity', 
-							'url'=>array('/site/none'), 
+							'url'  =>array('/site/none'), 
 							'items'=>array( 
 								array(
 									'label'=>'Manage Entities',
-									'url'=>array('/entity/index'),
+									'url'  =>array('/entity/index'),
 									'icon' => 'cog',
 								),
 								array(
 									'label'=>'Create Entity',
-									'url'=>array('/entity/create'), 
-									'icon'=>'plus',
+									'url'  =>array('/entity/create'), 
+									'icon' =>'plus',
 								),
 							),
 						),
@@ -104,25 +104,25 @@
 					'htmlOptions' => array('class' => 'pull-right'),
 					'items' => array(
 						array(
-							'label' => 'Users',
-							'url' => '#',
+							'label'  => 'Users',
+							'url'    => '#',
 							'visible'=>Yii::app()->user->isGuest,
-							'items' => array(
+							'items'  => array(
 								array(
 									'label'=>'Login',
-									'url'=>array('/site/login'),
+									'url'  =>array('/site/login'),
 									'icon' => 'user'
 								),
 							),
 						),
 						array(
-							'label' => 'Welcome, '.Yii::app()->user->name.'!', 
-							'url' => '#',
+							'label'  => 'Welcome, '.Yii::app()->user->name.'!', 
+							'url'    => '#',
 							'visible'=>!Yii::app()->user->isGuest,
-							'items' => array(
+							'items'  => array(
 								array(
 									'label'=>'Logout',
-									'url'=>array('/site/logout'),
+									'url'  =>array('/site/logout'),
 									'icon' => 'off'
 								),
 							),
@@ -158,7 +158,7 @@
 					</div>
 					<div class="span6 right">
 						<?php $this->widget('bootstrap.widgets.BootMenu', array(
-						    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
+						    'type' =>'pills', // '', 'tabs', 'pills' (or 'list')
 						    'items'=>array(
 						        array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 								array('label'=>'Contact Us', 'url'=>array('/site/contact')),

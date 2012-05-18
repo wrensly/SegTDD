@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create Field', 'url'=>array('create')),
-	array('label'=>'View Field', 'url'=>array('view', 'id'=>$fieldModel->id)),
+	array('label'=>'View Field',   'url'=>array('view', 'id'=>$fieldModel->id)),
 	array('label'=>'Manage Field', 'url'=>array('index')),
 );
 
@@ -22,5 +22,5 @@ $this->content_title = 'Update Field '.$fieldModel->fieldname;
 	'constraintDatetimeModel' =>$constraintDatetimeModel,
 	'constraintEnumModel'     =>$constraintEnumModel,
 	'constraintFileModel'     =>$constraintFileModel,
-	'constraintComputedModel'  =>$constraintComputedModel,
+	'constraintComputedModel' =>$constraintComputedModel,
 )); ?>

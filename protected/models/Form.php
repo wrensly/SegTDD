@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "Form".
  *
@@ -20,6 +19,9 @@
  */
 class Form extends CActiveRecord
 {
+	/**	
+	 * @todo Compose PHP doc
+	 */
 	public $category_search;
 	/**
 	 * Returns the static model of the specified AR class.
@@ -66,7 +68,7 @@ class Form extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'entity' => array(self::BELONGS_TO, 'Entity', 'entity_id'),
+			'entity' 		 => array(self::BELONGS_TO, 'Entity', 'entity_id'),
 			'formCategories' => array(self::HAS_MANY, 'FormCategory', 'form_id'),
 		);
 	}
@@ -77,15 +79,15 @@ class Form extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'code' => 'Code',
-			'name' => 'Name',
+			'id' 		  => 'ID',
+			'code' 		  => 'Code',
+			'name' 		  => 'Name',
 			'description' => 'Description',
-			'status' => 'Active',
-			'tags' => 'Tags',
-			'layout' => 'Layout',
-			'entity_id' => 'Entity',
-			'attribute' => 'Attribute',
+			'status' 	  => 'Active',
+			'tags' 		  => 'Tags',
+			'layout' 	  => 'Layout',
+			'entity_id'	  => 'Entity',
+			'attribute'   => 'Attribute',
 		);
 	}
 
@@ -97,8 +99,8 @@ class Form extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
+		$criteria = new CDbCriteria;
 
-		$criteria=new CDbCriteria;
 		$criteria->compare('id',$this->id);
 		$criteria->compare('code',$this->code,true);
 		$criteria->compare('name',$this->name,true);
@@ -109,7 +111,6 @@ class Form extends CActiveRecord
 		));
 	}
 
-
 	// Array variable that will hold items
 	private static $_items=array();
 	
@@ -118,9 +119,10 @@ class Form extends CActiveRecord
 	 * @param  Name of database field that holds the data, CDbCriteria object.
 	 * @return items from the database.
 	 */
-	public static function items($type){
+	public static function items($type)
+	{
 		if(!isset(self::$_items[$type]))
-			self::loadItems($type);
+			   self::loadItems($type);
 		return self::$_items[$type];
 	}
 	
@@ -128,12 +130,12 @@ class Form extends CActiveRecord
 	 * Retrieves data from database and assign it to $_items.
 	 * @param  Name of database field that holds the data.
 	 */
-	private static function loadItems($type){
+	private static function loadItems($type)
+	{
 		self::$_items[$type]=array();
 		$models=self::model()->findAll();
 		foreach($models as $model)
 			self::$_items[$type][$model->id]=$model->$type;
-
 	}
 
 	/**
@@ -141,7 +143,8 @@ class Form extends CActiveRecord
 	 * @param  Name of database field that holds the data, CDbCriteria object.
 	 * @return items from the database.
 	 */
-	public static function conditionItems($type, $con) {
+	public static function conditionItems($type, $con) 
+	{
 		if(isset(self::$_items[$type])) {
 			self::$_items[$type] = null;
 			self::conditionloadItems($type, $con);
@@ -155,10 +158,12 @@ class Form extends CActiveRecord
 	 * Retrieves data from database  using a condition and assign it to $_items.
 	 * @param  Name of database field that holds the data, CDbCriteria object.
 	 */
-	private static function conditionloadItems($type, $con){
+	private static function conditionloadItems($type, $con)
+	{
 		self::$_items[$type]=array();
 		$models=self::model()->findAll($con);
 		foreach($models as $model)
 			self::$_items[$type][$model->id]=$model->$type;
 	}
 }
+?>
