@@ -6,13 +6,13 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form').submit(function(){
-	$.fn.yiiGridView.update('field-grid', {
+	$.fn.yiiGridView.update('form-grid', {
 		data: $(this).serialize()
 	});
 	return false;
 });
 $('.advanced-search-form').submit(function(){
-	$.fn.yiiGridView.update('field-grid', {
+	$.fn.yiiGridView.update('form-grid', {
 		data: $(this).serialize()
 	});
 	return false;
