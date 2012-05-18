@@ -254,12 +254,11 @@ class FormCategoryController extends Controller
 			}	
 		}
 
-		$this->render('_editor',array(
+		$this->render('_editor2',array(
 			'model'=>$model,
 			'entity'=>$entity,
 			'tags'=>$tags,
 		));
-
 	}
 
 	/**

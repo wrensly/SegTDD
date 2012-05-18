@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<form type="horizontal" formID="2" sectionType="tabs">
+<sections>
+<section label="Section 1" order="1">
+<field field_id="5"/>
+<fieldset label="fieldset 1">
+<field field_id="1"/>
+<field field_id="2"/>
+<field field_id="3"/>
+<field field_id="4"/>
+<field field_id="5"/>
+</fieldset>
+<fieldset label="fieldset 2">
+<field field_id="6"/>
+<field field_id="7"/>
+</fieldset>
+<field field_id="8"/>
+<field field_id="9"/>
+<field field_id="10"/>
+</section>
+<section label="Section 2" order="2">
+<fieldset label="fieldset 1">
+<field field_id="1"/>
+<field field_id="2"/>
+<field field_id="3"/>
+<field field_id="4"/>
+<field field_id="5"/>
+</fieldset>
+<fieldset label="fieldset 2">
+<field field_id="6"/>
+<field field_id="7"/>
+</fieldset>
+<field field_id="8"/>
+<field field_id="9"/>
+<field field_id="10"/>
+</section>
+</sections>
+</form>

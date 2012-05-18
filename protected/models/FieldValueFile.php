@@ -47,10 +47,9 @@ class FieldValueFile extends MyActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
-			array('id, field_id, entity_id, priority, snapshot_id, entity_instance_id', 'numerical', 'integerOnly'=>true),
+			array('field_id, filename, entity_id, filetype, priority, snapshot_id, entity_instance_id', 'required'),
+			array('field_id, entity_id, priority, snapshot_id, entity_instance_id', 'numerical', 'integerOnly'=>true),
 			array('filetype', 'length', 'max'=>50),
-			array('filename', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, field_id, filename, entity_id, filetype, priority, snapshot_id, entity_instance_id', 'safe', 'on'=>'search'),

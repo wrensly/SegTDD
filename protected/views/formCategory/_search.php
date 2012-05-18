@@ -46,7 +46,7 @@ if($this->search['advanced']){
 	$this->widget('bootstrap.widgets.BootButton', array(
 		'buttonType'=>'button',
 		'type'=>'success', 
-		'icon' => 'cog white',
+		'icon' => 'chevron-down white',
 		'label' => '',
 		'htmlOptions' => array('class'=>'search-button'),
 	));

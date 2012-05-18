@@ -111,7 +111,6 @@ class FormCategory extends CActiveRecord
 		$criteria->select= 't.tag_name as tag_name';
 		$criteria->join= 'LEFT JOIN form f ON (f.id=fc.form_id) LEFT JOIN form_tag ft on (fc.form_id = ft.form_id) 
 		LEFT JOIN tag t on (t.id = ft.tag_id)';
-
 		$criteria->compare('form.code',$this->code, true);
 		$criteria->compare('form.name',$this->name, true);
 		$criteria->compare('form.description',$this->description, true);

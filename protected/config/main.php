@@ -13,7 +13,7 @@ return array(
 	'defaultController'=>'site',
 
 	// preloading 'log' component
-	'preload'=>array('log', 'bootstrap',),
+	'preload'=>array('log', 'bootstrap','CodeMirror'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -82,15 +82,16 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
-				array(
+				/*array(
 					'class'=>'CWebLogRoute',
-				),
-				*/
+				),*/
 			),
 		),
 		'bootstrap'=>array(
 			'class'=>'ext.bootstrap.components.Bootstrap',
+		),
+		'CodeMirror'=>array(
+			'class'=>'ext.CodeMirror.CodeMirror',
 		),
 	),
 

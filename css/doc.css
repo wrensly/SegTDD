@@ -149,3 +149,47 @@ margin: 0 18px 0 0;
 .search-form button {
 	height: 28px;
 }
+
+.grid-view thead th {
+background: #eee;
+}
+
+.grid-view thead th a {
+background: none;
+}
+
+.CodeMirror-scroll{
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+	width: 100%;
+}
+
+.editor-toolbar{
+	margin: 0 0 18px 0;
+}
+
+.ui-sortable{
+	list-style: none;
+	padding: 5px;
+	margin: 0 0 18px 0px;
+}
+
+.ui-sortable > li {
+	padding: 6px;
+}
+
+.ui-sortable > li:hover {
+	color: white;
+	background-color: #08C;
+}
+
+.fieldsList-placeholder{
+	height: 18px;
+	line-height: 1.2em;
+	border: 1px dashed #08C;
+}
+
+.fieldsList-alternate{
+	background #eee;
+}

@@ -7,7 +7,7 @@ $this->menu=array(
 	array(
 		'label'=>'Create Category',
 		'url'=>'#myModal',
-		'linkOptions'=>array('data-toggle'=>'modal'),
+		'htmlOptions'=>array('data-toggle'=>'modal'),
 	),
 );
 
@@ -21,18 +21,28 @@ $this->search = array(
 ?>
 
 <?php 
+$template = "
+{items}
+<div class='row'>
+	<div class='span6'>{summary}</div>
+	<div class='span6'>{pager}</div>
+</div>";
+
 $this->widget('bootstrap.widgets.BootGridView', array(
-	'id'=>'form-grid',
+	'id'=>'field-grid',
 	'type'=>'striped',
     'dataProvider'=>$category->search(),
+	'template'=> $template,
+	'pagerCssClass' => 'pagination pull-right',
 	'columns'=>array(
 		'category_name',
 		'description',
-	array(
+		array(
             'class'=>'bootstrap.widgets.BootButtonColumn',
             'htmlOptions'=>array('style'=>'width: 50px'),
         ),
-		))); 
+	)
+)); 
 ?>
 
 <?php $this->beginWidget('bootstrap.widgets.BootModal', array(
