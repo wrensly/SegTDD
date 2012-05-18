@@ -35,7 +35,7 @@ class FormCategoryController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','editor'),
+				'actions'=>array('admin','delete','formeditor','xmleditor'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -237,7 +237,7 @@ class FormCategoryController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionEditor($id)
+	public function actionFormEditor($id)
 	{
 		$model = $this->loadModel($id);
 		$form = Form::model()->findByPk($model->form_id);
@@ -254,13 +254,40 @@ class FormCategoryController extends Controller
 			}	
 		}
 
-		$this->render('_editor2',array(
+		$this->render('_formEditor',array(
 			'model'=>$model,
 			'entity'=>$entity,
 			'tags'=>$tags,
 		));
 	}
 
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionXMLEditor($id)
+	{
+		$model = $this->loadModel($id);
+		$form = Form::model()->findByPk($model->form_id);
+		$entity = Entity::model()->findByPk($form->entity_id);
+		$tags = $model->getTags($model->form_id);
+		
+
+		if(isset($_POST['Form']))
+		{
+			$form->attributes=$_POST['Form'];
+			//echo var_dump($form->attributes);
+			if($form->save()){
+				$this->redirect(array('view','id'=>$model->id));
+			}	
+		}
+
+		$this->render('_XMLeditor',array(
+			'model'=>$model,
+			'entity'=>$entity,
+			'tags'=>$tags,
+		));
+	}
 	/**
 	 *Array of Data for the autocomplete of Tags
 	 *Returns an array of Tags

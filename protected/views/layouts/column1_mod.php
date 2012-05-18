@@ -1,10 +1,11 @@
 <?php $this->beginContent('//layouts/main'); ?>
 <div class="page-header">
 	<div class="row">
-		<div class="span6">
+		<div class="span12">
+		<div class="pull-left">
 			<h1><?php echo $this->content_title; ?></h1>
 		</div>
-		<div class="span6">
+		<div class="pull-right">
 			<?php 
 				if( count($this->menu) != 0 ){
 					if(count($this->menu) == 1){
@@ -27,6 +28,7 @@
 					'model'=>$this->search['model'],
 				));
 			?>
+		</div>
 		</div>
 	</div>
 </div>

@@ -42,14 +42,14 @@
 							), 
 							'items'=>array( 
 								array(
-									'label'=>'manage field', 
+									'label'=>'Manage Fields', 
 									'url'=>array('/field/index'), 
-									'icon' => 'align-justify white',
+									'icon' => 'align-justify',
 								),
 								array(
-									'label'=>'create field',
+									'label'=>'Create Field',
 									'url'=>array('/field/create'),
-									'icon'=>'plus white',
+									'icon'=>'plus',
 								),
 							),
 						),
@@ -58,26 +58,26 @@
 							'url'=>array('/form/index'), 
 							'items'=>array(
 								array(
-									'label'=>'Manage Form',
+									'label'=>'Manage Forms',
 									'url'=>array('/formCategory/index'), 
-									'icon' => 'file white',
+									'icon' => 'file',
 								),
 								array(
 									'label'=>'Create Form',
 									'url'=>array('/formCategory/create'),
-									'icon'=>'plus white',
+									'icon'=>'plus',
 								),
 
 								array(
-									'label'=>'Manage Category',
+									'label'=>'Manage Categories',
 									'url'=>array('/category/index'),
-									'icon'=>'list white',
+									'icon'=>'list',
 								),
 
 								array(
 									'label'=>'Form Renderer',
 									'url'=>array('/renderer/index'),
-									'icon'=>'list-alt white',
+									'icon'=>'list-alt',
 								),  
 							),
 						),
@@ -86,14 +86,14 @@
 							'url'=>array('/site/none'), 
 							'items'=>array( 
 								array(
-									'label'=>'manage entity',
+									'label'=>'Manage Entities',
 									'url'=>array('/entity/index'),
-									'icon' => 'cog white',
+									'icon' => 'cog',
 								),
 								array(
-									'label'=>'create entity',
+									'label'=>'Create Entity',
 									'url'=>array('/entity/create'), 
-									'icon'=>'plus white',
+									'icon'=>'plus',
 								),
 							),
 						),
@@ -148,23 +148,27 @@
 	<div class="clear"></div>
 
 	<div class="row">
-		<div class="footer">
-			<div class="span6">
-				Copyright &copy; <?php echo date('Y'); ?> by Segworks Technologies Corporation.
-				All Rights Reserved.<br/>
-				<?php echo Yii::powered(); ?>
+		<div class="span12">
+			<div class="footer">
+				<div class="row">
+					<div class="span6">
+						Copyright &copy; <?php echo date('Y'); ?> by Segworks Technologies Corporation.
+						All Rights Reserved.<br/>
+						<?php echo Yii::powered(); ?>
+					</div>
+					<div class="span6 right">
+						<?php $this->widget('bootstrap.widgets.BootMenu', array(
+						    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
+						    'items'=>array(
+						        array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+								array('label'=>'Contact Us', 'url'=>array('/site/contact')),
+						    ),
+						    'htmlOptions' => array('class' => 'pull-right')
+						)); ?>
+					</div>
+				</div><!-- footer -->
 			</div>
-			<div class="span6 right">
-				<?php $this->widget('bootstrap.widgets.BootMenu', array(
-				    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
-				    'items'=>array(
-				        array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-						array('label'=>'Contact Us', 'url'=>array('/site/contact')),
-				    ),
-				    'htmlOptions' => array('class' => 'pull-right')
-				)); ?>
-			</div>
-		</div><!-- footer -->
+		</div>
 	</div>
 </div><!-- page -->
 </body>
